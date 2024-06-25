@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tablero de Control - Sisri</title>
     <style>
-        body {
+       body {
             font-family: Arial, sans-serif;
-            background-color: #e8f5e9;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
+            background-color: #e8f5e9;
         }
         header {
             background-color: #388e3c;
@@ -21,18 +18,19 @@
             text-align: center;
             position: relative;
         }
-        header h1 {
-            margin: 0;
+        header img {
+            width: 160px; /* Adjust logo size */
+            height: auto;
+            position: relative; /* Center the logo */
+            top: 0;
+            left: 0;
+            transform: none;
         }
         header .auth-links {
             position: absolute;
             right: 10px;
-            top: 10px;
-        }
-        header .auth-links a {
-            color: white;
-            margin-left: 10px;
-            text-decoration: none;
+            top: 50%;
+            transform: translateY(-50%); /* Center vertically */
         }
         nav {
             display: flex;
@@ -128,7 +126,7 @@
 </head>
 <body>
     <header>
-        <h1>Sisri</h1>
+        <img src="images/logo sisri blanco (1).png" alt="Logo">
         <div class="auth-links">
             <a href="#">Sign in</a>
             <a href="#">Sign up</a>

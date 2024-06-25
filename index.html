@@ -16,25 +16,23 @@
         header {
             background-color: #388e3c;
             color: white;
-            padding: 25px 0;
+            padding: 20px 0;
             text-align: center;
             position: relative; /* Ensure the logo is positioned correctly */
         }
         header img {
             width: 160px; /* Adjust logo size */
             height: auto;
-            position: absolute;
-            left: 650px; /* Adjust logo position */
-            top: 2%; /* Adjust logo position */
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
+            position: relative; /* Center the logo */
+            top: 0;
+            left: 0;
+            transform: none;
         }
         .auth-links {
             position: absolute;
-            right: 10px; /* Adjust auth links position */
-            top: 10px; /* Adjust auth links position */
+            right: 20px; /* Adjust auth links position */
+            top: 50%;
+            transform: translateY(-50%); /* Center vertically */
         }
         .auth-links a {
             color: white;
@@ -58,7 +56,7 @@
             background-color: #66bb6a;
         }
         .container {
-            padding: 25px;
+            padding: 20px;
         }
         .carousel-inner img {
             width: 100%;
@@ -107,7 +105,6 @@
 <body>
     <header>
         <img src="images/logo sisri blanco (1).png" alt="Logo">
-        <h1>Sisri</h1>
         <div class="auth-links">
             <a href="#">Sign in</a>
             <a href="#">Sign up</a>
