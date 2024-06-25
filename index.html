@@ -18,14 +18,28 @@
             color: white;
             padding: 20px 0;
             text-align: center;
+            position: relative; /* Ensure the logo is positioned correctly */
         }
-        header{
-            <div class="image">
-                <img src="images/logo sisri blanco (1).png" class="d-block w-10"> 
+        header img {
+            width: 50px; /* Adjust logo size */
+            height: auto;
+            position: absolute;
+            left: 10px; /* Adjust logo position */
+            top: 10px; /* Adjust logo position */
         }
         header h1 {
             margin: 0;
             font-size: 2.5rem;
+        }
+        .auth-links {
+            position: absolute;
+            right: 10px; /* Adjust auth links position */
+            top: 10px; /* Adjust auth links position */
+        }
+        .auth-links a {
+            color: white;
+            margin-left: 10px;
+            text-decoration: none;
         }
         nav {
             display: flex;
@@ -92,15 +106,19 @@
 </head>
 <body>
     <header>
+        <img src="images/logo sisri blanco (1).png" alt="Logo">
         <h1>Sisri</h1>
+        <div class="auth-links">
+            <a href="#">Sign in</a>
+            <a href="#">Sign up</a>
+        </div>
     </header>
     <nav>
         <a href="index.html">Inicio</a>
-        <a href="saber.html"> ¿Qué debes de saber?</a>
+        <a href="saber.html">¿Qué debes de saber?</a>
         <a href="sobrenos.html">Sobre Nosotros</a>
         <a href="servicios.html">Servicios</a>
         <a href="funcionam.html">Funcionamiento</a>
-        <a href="redc.html">Red de Comunicación</a>
         <a href="contacto.html">Contacto</a>
         <a href="modelo.html">Modelo</a>
         <a href="tablero.html">Tablero</a>
