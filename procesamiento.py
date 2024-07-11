@@ -4,7 +4,7 @@ import plotly.graph_objs as go
 import plotly.figure_factory as ff
 
 # Cargar los datos
-df = pd.read_csv('/Users/juangamez/Documents/GitHub/sisri/cucumber_greenhouse_data_penman-2.csv')
+df = pd.read_csv('/Users/aleyanez/Documents/GitHub/sisri/cucumber_greenhouse_data_penman-2.csv')
 
 # Generar gráficos
 # 1. Histogramas de las variables ambientales
