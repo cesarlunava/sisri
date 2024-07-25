@@ -1,0 +1,1134 @@
+2024-07-25 09:34:36,192 - ERROR - Error setting up sensors: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2024-07-25 09:39:43,218 - ERROR - Error setting up sensors: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2024-07-25 11:11:25,995 - INFO - Solenoid valve turned on
+2024-07-25 11:11:25,995 - INFO - Readings: Temp=27.1°C, Humidity=78.7%, Soil Moisture=11.1%
+2024-07-25 11:11:26,999 - INFO - Solenoid valve turned off
+2024-07-25 11:11:27,000 - INFO - Readings: Temp=16.9°C, Humidity=82.5%, Soil Moisture=96.9%
+2024-07-25 11:11:28,003 - INFO - Solenoid valve turned off
+2024-07-25 11:11:28,003 - INFO - Readings: Temp=18.2°C, Humidity=66.1%, Soil Moisture=57.0%
+2024-07-25 11:11:29,006 - INFO - Solenoid valve turned off
+2024-07-25 11:11:29,007 - INFO - Readings: Temp=17.5°C, Humidity=39.7%, Soil Moisture=57.4%
+2024-07-25 11:11:30,010 - INFO - Solenoid valve turned off
+2024-07-25 11:11:30,011 - INFO - Readings: Temp=18.4°C, Humidity=54.5%, Soil Moisture=97.0%
+2024-07-25 11:11:31,024 - INFO - Solenoid valve turned off
+2024-07-25 11:11:31,024 - INFO - Readings: Temp=24.6°C, Humidity=83.6%, Soil Moisture=71.2%
+2024-07-25 11:11:32,027 - INFO - Solenoid valve turned off
+2024-07-25 11:11:32,028 - INFO - Readings: Temp=30.7°C, Humidity=51.5%, Soil Moisture=45.2%
+2024-07-25 11:11:33,031 - INFO - Solenoid valve turned on
+2024-07-25 11:11:33,031 - INFO - Readings: Temp=25.0°C, Humidity=48.3%, Soil Moisture=17.4%
+2024-07-25 11:11:34,034 - INFO - Solenoid valve turned on
+2024-07-25 11:11:34,034 - INFO - Readings: Temp=24.8°C, Humidity=40.8%, Soil Moisture=16.9%
+2024-07-25 11:11:35,037 - INFO - Solenoid valve turned on
+2024-07-25 11:11:35,038 - INFO - Readings: Temp=30.7°C, Humidity=75.7%, Soil Moisture=0.2%
+2024-07-25 11:11:36,054 - INFO - Solenoid valve turned off
+2024-07-25 11:11:36,054 - INFO - Readings: Temp=18.3°C, Humidity=46.1%, Soil Moisture=74.0%
+2024-07-25 11:11:37,057 - INFO - Solenoid valve turned off
+2024-07-25 11:11:37,057 - INFO - Readings: Temp=25.6°C, Humidity=37.6%, Soil Moisture=97.3%
+2024-07-25 11:11:38,060 - INFO - Solenoid valve turned off
+2024-07-25 11:11:38,060 - INFO - Readings: Temp=29.3°C, Humidity=73.3%, Soil Moisture=65.8%
+2024-07-25 11:11:39,065 - INFO - Solenoid valve turned off
+2024-07-25 11:11:39,066 - INFO - Readings: Temp=28.4°C, Humidity=83.2%, Soil Moisture=37.9%
+2024-07-25 11:11:40,068 - INFO - Solenoid valve turned on
+2024-07-25 11:11:40,069 - INFO - Readings: Temp=23.0°C, Humidity=84.2%, Soil Moisture=21.9%
+2024-07-25 11:11:41,071 - INFO - Solenoid valve turned on
+2024-07-25 11:11:41,071 - INFO - Readings: Temp=30.8°C, Humidity=57.4%, Soil Moisture=24.8%
+2024-07-25 11:11:42,073 - INFO - Solenoid valve turned off
+2024-07-25 11:11:42,074 - INFO - Readings: Temp=21.7°C, Humidity=30.7%, Soil Moisture=98.7%
+2024-07-25 11:11:43,078 - INFO - Solenoid valve turned off
+2024-07-25 11:11:43,079 - INFO - Readings: Temp=28.6°C, Humidity=84.3%, Soil Moisture=84.9%
+2024-07-25 11:11:44,081 - INFO - Solenoid valve turned off
+2024-07-25 11:11:44,081 - INFO - Readings: Temp=25.3°C, Humidity=42.6%, Soil Moisture=93.9%
+2024-07-25 11:11:45,085 - INFO - Solenoid valve turned off
+2024-07-25 11:11:45,085 - INFO - Readings: Temp=32.4°C, Humidity=56.5%, Soil Moisture=65.6%
+2024-07-25 11:11:46,097 - INFO - Solenoid valve turned off
+2024-07-25 11:11:46,097 - INFO - Readings: Temp=22.7°C, Humidity=62.1%, Soil Moisture=53.3%
+2024-07-25 11:11:47,100 - INFO - Solenoid valve turned off
+2024-07-25 11:11:47,101 - INFO - Readings: Temp=25.7°C, Humidity=36.7%, Soil Moisture=73.7%
+2024-07-25 11:11:48,103 - INFO - Solenoid valve turned off
+2024-07-25 11:11:48,103 - INFO - Readings: Temp=18.8°C, Humidity=62.3%, Soil Moisture=37.4%
+2024-07-25 11:11:49,105 - INFO - Solenoid valve turned on
+2024-07-25 11:11:49,105 - INFO - Readings: Temp=15.2°C, Humidity=71.6%, Soil Moisture=1.3%
+2024-07-25 11:11:50,108 - INFO - Solenoid valve turned off
+2024-07-25 11:11:50,108 - INFO - Readings: Temp=25.0°C, Humidity=30.3%, Soil Moisture=36.0%
+2024-07-25 11:11:51,120 - INFO - Solenoid valve turned off
+2024-07-25 11:11:51,120 - INFO - Readings: Temp=25.9°C, Humidity=86.6%, Soil Moisture=81.8%
+2024-07-25 11:11:52,123 - INFO - Solenoid valve turned off
+2024-07-25 11:11:52,123 - INFO - Readings: Temp=26.4°C, Humidity=49.3%, Soil Moisture=52.5%
+2024-07-25 11:11:53,149 - INFO - Solenoid valve turned off
+2024-07-25 11:11:53,149 - INFO - Readings: Temp=24.1°C, Humidity=71.7%, Soil Moisture=99.2%
+2024-07-25 11:11:54,153 - INFO - Solenoid valve turned off
+2024-07-25 11:11:54,153 - INFO - Readings: Temp=18.1°C, Humidity=30.7%, Soil Moisture=47.4%
+2024-07-25 11:11:55,156 - INFO - Solenoid valve turned on
+2024-07-25 11:11:55,156 - INFO - Readings: Temp=28.9°C, Humidity=54.9%, Soil Moisture=5.4%
+2024-07-25 11:11:56,169 - INFO - Solenoid valve turned off
+2024-07-25 11:11:56,169 - INFO - Readings: Temp=34.2°C, Humidity=73.6%, Soil Moisture=41.4%
+2024-07-25 11:11:57,182 - INFO - Solenoid valve turned off
+2024-07-25 11:11:57,183 - INFO - Readings: Temp=23.4°C, Humidity=61.6%, Soil Moisture=88.2%
+2024-07-25 11:11:58,185 - INFO - Solenoid valve turned off
+2024-07-25 11:11:58,185 - INFO - Readings: Temp=29.5°C, Humidity=64.2%, Soil Moisture=38.7%
+2024-07-25 11:11:59,187 - INFO - Solenoid valve turned off
+2024-07-25 11:11:59,187 - INFO - Readings: Temp=34.9°C, Humidity=44.0%, Soil Moisture=46.6%
+2024-07-25 11:12:00,190 - INFO - Solenoid valve turned off
+2024-07-25 11:12:00,190 - INFO - Readings: Temp=15.0°C, Humidity=67.1%, Soil Moisture=75.1%
+2024-07-25 11:12:01,193 - INFO - Solenoid valve turned on
+2024-07-25 11:12:01,193 - INFO - Readings: Temp=26.5°C, Humidity=79.7%, Soil Moisture=29.3%
+2024-07-25 11:12:02,207 - INFO - Solenoid valve turned off
+2024-07-25 11:12:02,208 - INFO - Readings: Temp=17.1°C, Humidity=79.6%, Soil Moisture=80.2%
+2024-07-25 11:12:03,211 - INFO - Solenoid valve turned on
+2024-07-25 11:12:03,211 - INFO - Readings: Temp=26.2°C, Humidity=30.2%, Soil Moisture=2.9%
+2024-07-25 11:12:04,215 - INFO - Solenoid valve turned on
+2024-07-25 11:12:04,215 - INFO - Readings: Temp=21.4°C, Humidity=38.8%, Soil Moisture=23.3%
+2024-07-25 11:12:05,218 - INFO - Solenoid valve turned off
+2024-07-25 11:12:05,218 - INFO - Readings: Temp=32.1°C, Humidity=66.7%, Soil Moisture=98.4%
+2024-07-25 11:12:06,220 - INFO - Solenoid valve turned off
+2024-07-25 11:12:06,220 - INFO - Readings: Temp=33.7°C, Humidity=36.9%, Soil Moisture=39.6%
+2024-07-25 11:12:07,233 - INFO - Solenoid valve turned off
+2024-07-25 11:12:07,233 - INFO - Readings: Temp=21.6°C, Humidity=46.8%, Soil Moisture=61.1%
+2024-07-25 11:12:08,235 - INFO - Solenoid valve turned off
+2024-07-25 11:12:08,236 - INFO - Readings: Temp=19.0°C, Humidity=33.7%, Soil Moisture=39.2%
+2024-07-25 11:12:09,285 - INFO - Solenoid valve turned off
+2024-07-25 11:12:09,285 - INFO - Readings: Temp=24.0°C, Humidity=79.5%, Soil Moisture=42.0%
+2024-07-25 11:12:10,287 - INFO - Solenoid valve turned on
+2024-07-25 11:12:10,287 - INFO - Readings: Temp=28.4°C, Humidity=47.1%, Soil Moisture=5.7%
+2024-07-25 11:12:11,290 - INFO - Solenoid valve turned off
+2024-07-25 11:12:11,290 - INFO - Readings: Temp=15.5°C, Humidity=82.3%, Soil Moisture=58.0%
+2024-07-25 11:12:12,293 - INFO - Solenoid valve turned off
+2024-07-25 11:12:12,294 - INFO - Readings: Temp=30.1°C, Humidity=59.0%, Soil Moisture=60.9%
+2024-07-25 11:12:13,297 - INFO - Solenoid valve turned off
+2024-07-25 11:12:13,297 - INFO - Readings: Temp=15.4°C, Humidity=35.2%, Soil Moisture=33.9%
+2024-07-25 11:12:14,300 - INFO - Solenoid valve turned off
+2024-07-25 11:12:14,300 - INFO - Readings: Temp=19.4°C, Humidity=45.5%, Soil Moisture=70.2%
+2024-07-25 11:12:15,311 - INFO - Solenoid valve turned off
+2024-07-25 11:12:15,311 - INFO - Readings: Temp=20.4°C, Humidity=55.0%, Soil Moisture=35.6%
+2024-07-25 11:12:16,313 - INFO - Solenoid valve turned on
+2024-07-25 11:12:16,314 - INFO - Readings: Temp=34.0°C, Humidity=46.7%, Soil Moisture=9.0%
+2024-07-25 11:12:17,318 - INFO - Solenoid valve turned off
+2024-07-25 11:12:17,320 - INFO - Readings: Temp=32.1°C, Humidity=47.1%, Soil Moisture=37.2%
+2024-07-25 11:12:18,326 - INFO - Solenoid valve turned off
+2024-07-25 11:12:18,326 - INFO - Readings: Temp=20.1°C, Humidity=30.9%, Soil Moisture=79.0%
+2024-07-25 11:12:19,329 - INFO - Solenoid valve turned on
+2024-07-25 11:12:19,329 - INFO - Readings: Temp=27.2°C, Humidity=53.0%, Soil Moisture=20.4%
+2024-07-25 11:12:20,333 - INFO - Solenoid valve turned off
+2024-07-25 11:12:20,333 - INFO - Readings: Temp=22.6°C, Humidity=41.6%, Soil Moisture=96.6%
+2024-07-25 11:12:21,336 - INFO - Solenoid valve turned on
+2024-07-25 11:12:21,336 - INFO - Readings: Temp=32.6°C, Humidity=40.1%, Soil Moisture=19.7%
+2024-07-25 11:12:22,338 - INFO - Solenoid valve turned on
+2024-07-25 11:12:22,338 - INFO - Readings: Temp=21.1°C, Humidity=73.8%, Soil Moisture=14.5%
+2024-07-25 11:12:23,341 - INFO - Solenoid valve turned on
+2024-07-25 11:12:23,342 - INFO - Readings: Temp=27.8°C, Humidity=57.7%, Soil Moisture=24.6%
+2024-07-25 11:12:24,345 - INFO - Solenoid valve turned off
+2024-07-25 11:12:24,345 - INFO - Readings: Temp=20.1°C, Humidity=54.6%, Soil Moisture=76.2%
+2024-07-25 11:12:25,397 - INFO - Solenoid valve turned off
+2024-07-25 11:12:25,397 - INFO - Readings: Temp=18.7°C, Humidity=32.9%, Soil Moisture=64.4%
+2024-07-25 11:12:26,399 - INFO - Solenoid valve turned off
+2024-07-25 11:12:26,400 - INFO - Readings: Temp=17.9°C, Humidity=75.1%, Soil Moisture=30.5%
+2024-07-25 11:12:27,402 - INFO - Solenoid valve turned off
+2024-07-25 11:12:27,403 - INFO - Readings: Temp=17.0°C, Humidity=34.9%, Soil Moisture=44.9%
+2024-07-25 11:12:28,405 - INFO - Solenoid valve turned off
+2024-07-25 11:12:28,406 - INFO - Readings: Temp=20.9°C, Humidity=61.1%, Soil Moisture=69.8%
+2024-07-25 11:12:29,411 - INFO - Solenoid valve turned off
+2024-07-25 11:12:29,412 - INFO - Readings: Temp=32.7°C, Humidity=86.0%, Soil Moisture=51.8%
+2024-07-25 11:12:30,414 - INFO - Solenoid valve turned off
+2024-07-25 11:12:30,414 - INFO - Readings: Temp=19.8°C, Humidity=45.6%, Soil Moisture=86.0%
+2024-07-25 11:12:31,417 - INFO - Solenoid valve turned off
+2024-07-25 11:12:31,417 - INFO - Readings: Temp=18.8°C, Humidity=67.8%, Soil Moisture=71.9%
+2024-07-25 11:12:32,423 - INFO - Solenoid valve turned off
+2024-07-25 11:12:32,423 - INFO - Readings: Temp=27.8°C, Humidity=38.7%, Soil Moisture=31.0%
+2024-07-25 11:12:33,427 - INFO - Solenoid valve turned off
+2024-07-25 11:12:33,428 - INFO - Readings: Temp=35.0°C, Humidity=56.3%, Soil Moisture=65.4%
+2024-07-25 11:12:34,430 - INFO - Solenoid valve turned on
+2024-07-25 11:12:34,430 - INFO - Readings: Temp=15.5°C, Humidity=89.4%, Soil Moisture=11.9%
+2024-07-25 11:12:35,434 - INFO - Solenoid valve turned off
+2024-07-25 11:12:35,434 - INFO - Readings: Temp=27.9°C, Humidity=36.6%, Soil Moisture=71.8%
+2024-07-25 11:12:36,438 - INFO - Solenoid valve turned off
+2024-07-25 11:12:36,438 - INFO - Readings: Temp=21.6°C, Humidity=43.1%, Soil Moisture=60.1%
+2024-07-25 11:12:37,441 - INFO - Solenoid valve turned off
+2024-07-25 11:12:37,441 - INFO - Readings: Temp=33.7°C, Humidity=41.6%, Soil Moisture=65.1%
+2024-07-25 11:12:38,444 - INFO - Solenoid valve turned off
+2024-07-25 11:12:38,444 - INFO - Readings: Temp=15.0°C, Humidity=83.8%, Soil Moisture=44.1%
+2024-07-25 11:12:39,447 - INFO - Solenoid valve turned on
+2024-07-25 11:12:39,447 - INFO - Readings: Temp=29.3°C, Humidity=71.6%, Soil Moisture=5.2%
+2024-07-25 11:12:40,451 - INFO - Solenoid valve turned on
+2024-07-25 11:12:40,451 - INFO - Readings: Temp=19.6°C, Humidity=44.8%, Soil Moisture=1.2%
+2024-07-25 11:12:41,454 - INFO - Solenoid valve turned off
+2024-07-25 11:12:41,454 - INFO - Readings: Temp=33.2°C, Humidity=75.2%, Soil Moisture=67.4%
+2024-07-25 11:12:42,458 - INFO - Solenoid valve turned off
+2024-07-25 11:12:42,459 - INFO - Readings: Temp=23.0°C, Humidity=81.4%, Soil Moisture=94.6%
+2024-07-25 11:12:43,462 - INFO - Solenoid valve turned off
+2024-07-25 11:12:43,463 - INFO - Readings: Temp=15.6°C, Humidity=78.7%, Soil Moisture=52.0%
+2024-07-25 11:12:44,465 - INFO - Solenoid valve turned on
+2024-07-25 11:12:44,466 - INFO - Readings: Temp=20.5°C, Humidity=59.0%, Soil Moisture=17.2%
+2024-07-25 11:12:45,468 - INFO - Solenoid valve turned off
+2024-07-25 11:12:45,468 - INFO - Readings: Temp=34.7°C, Humidity=66.4%, Soil Moisture=84.0%
+2024-07-25 11:12:46,471 - INFO - Solenoid valve turned on
+2024-07-25 11:12:46,471 - INFO - Readings: Temp=33.0°C, Humidity=69.8%, Soil Moisture=29.1%
+2024-07-25 11:12:47,474 - INFO - Solenoid valve turned off
+2024-07-25 11:12:47,474 - INFO - Readings: Temp=20.9°C, Humidity=33.0%, Soil Moisture=48.9%
+2024-07-25 11:12:48,477 - INFO - Solenoid valve turned off
+2024-07-25 11:12:48,477 - INFO - Readings: Temp=27.3°C, Humidity=49.2%, Soil Moisture=54.3%
+2024-07-25 11:12:49,480 - INFO - Solenoid valve turned off
+2024-07-25 11:12:49,480 - INFO - Readings: Temp=28.2°C, Humidity=70.5%, Soil Moisture=96.2%
+2024-07-25 11:12:50,483 - INFO - Solenoid valve turned on
+2024-07-25 11:12:50,483 - INFO - Readings: Temp=27.5°C, Humidity=78.9%, Soil Moisture=13.0%
+2024-07-25 11:12:51,486 - INFO - Solenoid valve turned off
+2024-07-25 11:12:51,486 - INFO - Readings: Temp=30.1°C, Humidity=55.1%, Soil Moisture=84.1%
+2024-07-25 11:12:52,492 - INFO - Solenoid valve turned on
+2024-07-25 11:12:52,493 - INFO - Readings: Temp=23.4°C, Humidity=48.7%, Soil Moisture=17.4%
+2024-07-25 11:12:53,496 - INFO - Solenoid valve turned off
+2024-07-25 11:12:53,496 - INFO - Readings: Temp=16.5°C, Humidity=48.8%, Soil Moisture=68.8%
+2024-07-25 11:12:54,498 - INFO - Solenoid valve turned on
+2024-07-25 11:12:54,498 - INFO - Readings: Temp=25.0°C, Humidity=87.2%, Soil Moisture=26.1%
+2024-07-25 11:12:55,501 - INFO - Solenoid valve turned off
+2024-07-25 11:12:55,501 - INFO - Readings: Temp=25.6°C, Humidity=54.6%, Soil Moisture=66.6%
+2024-07-25 11:12:56,506 - INFO - Solenoid valve turned off
+2024-07-25 11:12:56,510 - INFO - Readings: Temp=34.1°C, Humidity=47.8%, Soil Moisture=41.2%
+2024-07-25 11:12:57,512 - INFO - Solenoid valve turned on
+2024-07-25 11:12:57,513 - INFO - Readings: Temp=17.9°C, Humidity=89.3%, Soil Moisture=14.2%
+2024-07-25 11:12:58,517 - INFO - Solenoid valve turned off
+2024-07-25 11:12:58,517 - INFO - Readings: Temp=16.5°C, Humidity=60.3%, Soil Moisture=66.3%
+2024-07-25 11:12:59,519 - INFO - Solenoid valve turned on
+2024-07-25 11:12:59,519 - INFO - Readings: Temp=25.2°C, Humidity=69.1%, Soil Moisture=24.9%
+2024-07-25 11:13:00,522 - INFO - Solenoid valve turned off
+2024-07-25 11:13:00,522 - INFO - Readings: Temp=16.2°C, Humidity=78.4%, Soil Moisture=82.2%
+2024-07-25 11:13:01,524 - INFO - Solenoid valve turned off
+2024-07-25 11:13:01,524 - INFO - Readings: Temp=25.1°C, Humidity=51.7%, Soil Moisture=86.0%
+2024-07-25 11:13:02,528 - INFO - Solenoid valve turned off
+2024-07-25 11:13:02,529 - INFO - Readings: Temp=16.3°C, Humidity=81.8%, Soil Moisture=34.0%
+2024-07-25 11:13:03,531 - INFO - Solenoid valve turned off
+2024-07-25 11:13:03,531 - INFO - Readings: Temp=23.3°C, Humidity=85.6%, Soil Moisture=52.2%
+2024-07-25 11:13:04,534 - INFO - Solenoid valve turned off
+2024-07-25 11:13:04,534 - INFO - Readings: Temp=30.6°C, Humidity=30.2%, Soil Moisture=51.8%
+2024-07-25 11:13:05,537 - INFO - Solenoid valve turned off
+2024-07-25 11:13:05,546 - INFO - Readings: Temp=19.6°C, Humidity=45.9%, Soil Moisture=36.7%
+2024-07-25 11:13:06,548 - INFO - Solenoid valve turned off
+2024-07-25 11:13:06,548 - INFO - Readings: Temp=15.2°C, Humidity=78.2%, Soil Moisture=93.5%
+2024-07-25 11:13:07,551 - INFO - Solenoid valve turned off
+2024-07-25 11:13:07,551 - INFO - Readings: Temp=25.9°C, Humidity=31.0%, Soil Moisture=36.8%
+2024-07-25 11:13:08,553 - INFO - Solenoid valve turned on
+2024-07-25 11:13:08,553 - INFO - Readings: Temp=28.4°C, Humidity=30.2%, Soil Moisture=23.8%
+2024-07-25 11:13:09,556 - INFO - Solenoid valve turned off
+2024-07-25 11:13:09,557 - INFO - Readings: Temp=17.2°C, Humidity=46.4%, Soil Moisture=75.8%
+2024-07-25 11:13:10,560 - INFO - Solenoid valve turned on
+2024-07-25 11:13:10,560 - INFO - Readings: Temp=32.0°C, Humidity=37.6%, Soil Moisture=10.5%
+2024-07-25 11:13:11,563 - INFO - Solenoid valve turned off
+2024-07-25 11:13:11,563 - INFO - Readings: Temp=33.7°C, Humidity=46.1%, Soil Moisture=65.2%
+2024-07-25 11:13:12,566 - INFO - Solenoid valve turned on
+2024-07-25 11:13:12,566 - INFO - Readings: Temp=29.4°C, Humidity=89.4%, Soil Moisture=1.8%
+2024-07-25 11:13:13,569 - INFO - Solenoid valve turned off
+2024-07-25 11:13:13,569 - INFO - Readings: Temp=26.8°C, Humidity=55.4%, Soil Moisture=80.3%
+2024-07-25 11:13:14,572 - INFO - Solenoid valve turned off
+2024-07-25 11:13:14,573 - INFO - Readings: Temp=26.7°C, Humidity=57.8%, Soil Moisture=76.5%
+2024-07-25 11:13:15,577 - INFO - Solenoid valve turned on
+2024-07-25 11:13:15,577 - INFO - Readings: Temp=19.2°C, Humidity=78.9%, Soil Moisture=11.3%
+2024-07-25 11:13:16,581 - INFO - Solenoid valve turned off
+2024-07-25 11:13:16,581 - INFO - Readings: Temp=21.5°C, Humidity=45.3%, Soil Moisture=46.2%
+2024-07-25 11:13:17,584 - INFO - Solenoid valve turned off
+2024-07-25 11:13:17,584 - INFO - Readings: Temp=30.2°C, Humidity=77.0%, Soil Moisture=81.8%
+2024-07-25 11:13:18,587 - INFO - Solenoid valve turned on
+2024-07-25 11:13:18,587 - INFO - Readings: Temp=32.0°C, Humidity=89.4%, Soil Moisture=16.9%
+2024-07-25 11:13:19,592 - INFO - Solenoid valve turned on
+2024-07-25 11:13:19,593 - INFO - Readings: Temp=19.0°C, Humidity=50.8%, Soil Moisture=13.2%
+2024-07-25 11:13:20,606 - INFO - Solenoid valve turned off
+2024-07-25 11:13:20,606 - INFO - Readings: Temp=15.8°C, Humidity=86.6%, Soil Moisture=81.7%
+2024-07-25 11:13:21,612 - INFO - Solenoid valve turned off
+2024-07-25 11:13:21,612 - INFO - Readings: Temp=22.4°C, Humidity=39.8%, Soil Moisture=63.3%
+2024-07-25 11:13:22,615 - INFO - Solenoid valve turned off
+2024-07-25 11:13:22,615 - INFO - Readings: Temp=19.7°C, Humidity=40.6%, Soil Moisture=32.1%
+2024-07-25 11:13:23,617 - INFO - Solenoid valve turned off
+2024-07-25 11:13:23,617 - INFO - Readings: Temp=17.7°C, Humidity=47.5%, Soil Moisture=71.2%
+2024-07-25 11:13:24,620 - INFO - Solenoid valve turned off
+2024-07-25 11:13:24,620 - INFO - Readings: Temp=19.7°C, Humidity=48.1%, Soil Moisture=98.9%
+2024-07-25 11:13:25,630 - INFO - Solenoid valve turned off
+2024-07-25 11:13:25,630 - INFO - Readings: Temp=18.7°C, Humidity=86.5%, Soil Moisture=47.7%
+2024-07-25 11:13:26,632 - INFO - Solenoid valve turned off
+2024-07-25 11:13:26,632 - INFO - Readings: Temp=24.8°C, Humidity=80.6%, Soil Moisture=93.6%
+2024-07-25 11:13:27,635 - INFO - Solenoid valve turned on
+2024-07-25 11:13:27,636 - INFO - Readings: Temp=19.8°C, Humidity=48.2%, Soil Moisture=10.4%
+2024-07-25 11:13:28,639 - INFO - Solenoid valve turned off
+2024-07-25 11:13:28,640 - INFO - Readings: Temp=29.7°C, Humidity=84.8%, Soil Moisture=93.6%
+2024-07-25 11:13:29,644 - INFO - Solenoid valve turned off
+2024-07-25 11:13:29,644 - INFO - Readings: Temp=27.7°C, Humidity=72.5%, Soil Moisture=66.4%
+2024-07-25 11:13:30,656 - INFO - Solenoid valve turned off
+2024-07-25 11:13:30,657 - INFO - Readings: Temp=15.9°C, Humidity=57.5%, Soil Moisture=55.8%
+2024-07-25 11:13:31,661 - INFO - Solenoid valve turned off
+2024-07-25 11:13:31,661 - INFO - Readings: Temp=29.8°C, Humidity=59.4%, Soil Moisture=39.8%
+2024-07-25 11:13:32,665 - INFO - Solenoid valve turned off
+2024-07-25 11:13:32,665 - INFO - Readings: Temp=30.3°C, Humidity=78.2%, Soil Moisture=82.4%
+2024-07-25 11:13:33,668 - INFO - Solenoid valve turned on
+2024-07-25 11:13:33,669 - INFO - Readings: Temp=23.9°C, Humidity=42.3%, Soil Moisture=25.4%
+2024-07-25 11:13:34,673 - INFO - Solenoid valve turned off
+2024-07-25 11:13:34,673 - INFO - Readings: Temp=28.9°C, Humidity=73.9%, Soil Moisture=33.3%
+2024-07-25 11:13:35,685 - INFO - Solenoid valve turned off
+2024-07-25 11:13:35,686 - INFO - Readings: Temp=31.9°C, Humidity=83.2%, Soil Moisture=66.4%
+2024-07-25 11:13:36,689 - INFO - Solenoid valve turned off
+2024-07-25 11:13:36,690 - INFO - Readings: Temp=19.2°C, Humidity=86.7%, Soil Moisture=36.3%
+2024-07-25 11:13:37,694 - INFO - Solenoid valve turned on
+2024-07-25 11:13:37,694 - INFO - Readings: Temp=19.6°C, Humidity=41.5%, Soil Moisture=17.2%
+2024-07-25 11:13:38,698 - INFO - Solenoid valve turned on
+2024-07-25 11:13:38,698 - INFO - Readings: Temp=20.0°C, Humidity=39.7%, Soil Moisture=19.6%
+2024-07-25 11:13:39,701 - INFO - Solenoid valve turned off
+2024-07-25 11:13:39,702 - INFO - Readings: Temp=29.0°C, Humidity=86.8%, Soil Moisture=54.4%
+2024-07-25 11:13:40,705 - INFO - Solenoid valve turned off
+2024-07-25 11:13:40,705 - INFO - Readings: Temp=32.0°C, Humidity=87.1%, Soil Moisture=61.3%
+2024-07-25 11:13:41,709 - INFO - Solenoid valve turned off
+2024-07-25 11:13:41,710 - INFO - Readings: Temp=31.1°C, Humidity=54.9%, Soil Moisture=60.3%
+2024-07-25 11:13:42,713 - INFO - Solenoid valve turned off
+2024-07-25 11:13:42,713 - INFO - Readings: Temp=32.9°C, Humidity=58.5%, Soil Moisture=52.1%
+2024-07-25 11:13:43,716 - INFO - Solenoid valve turned on
+2024-07-25 11:13:43,717 - INFO - Readings: Temp=15.8°C, Humidity=68.4%, Soil Moisture=12.8%
+2024-07-25 11:13:44,720 - INFO - Solenoid valve turned off
+2024-07-25 11:13:44,720 - INFO - Readings: Temp=30.2°C, Humidity=36.1%, Soil Moisture=70.9%
+2024-07-25 11:13:45,722 - INFO - Solenoid valve turned off
+2024-07-25 11:13:45,723 - INFO - Readings: Temp=21.8°C, Humidity=71.5%, Soil Moisture=88.7%
+2024-07-25 11:13:46,725 - INFO - Solenoid valve turned off
+2024-07-25 11:13:46,725 - INFO - Readings: Temp=32.7°C, Humidity=75.5%, Soil Moisture=86.8%
+2024-07-25 11:13:47,735 - INFO - Solenoid valve turned off
+2024-07-25 11:13:47,735 - INFO - Readings: Temp=23.0°C, Humidity=59.8%, Soil Moisture=89.6%
+2024-07-25 11:13:48,737 - INFO - Solenoid valve turned off
+2024-07-25 11:13:48,738 - INFO - Readings: Temp=28.1°C, Humidity=38.8%, Soil Moisture=41.5%
+2024-07-25 11:13:49,745 - INFO - Solenoid valve turned off
+2024-07-25 11:13:49,746 - INFO - Readings: Temp=20.2°C, Humidity=70.9%, Soil Moisture=59.2%
+2024-07-25 11:13:50,750 - INFO - Solenoid valve turned off
+2024-07-25 11:13:50,750 - INFO - Readings: Temp=20.6°C, Humidity=53.6%, Soil Moisture=92.5%
+2024-07-25 11:13:51,753 - INFO - Solenoid valve turned on
+2024-07-25 11:13:51,753 - INFO - Readings: Temp=20.6°C, Humidity=60.7%, Soil Moisture=20.1%
+2024-07-25 11:13:52,756 - INFO - Solenoid valve turned on
+2024-07-25 11:13:52,757 - INFO - Readings: Temp=25.7°C, Humidity=40.5%, Soil Moisture=3.4%
+2024-07-25 11:13:53,760 - INFO - Solenoid valve turned on
+2024-07-25 11:13:53,760 - INFO - Readings: Temp=17.0°C, Humidity=36.5%, Soil Moisture=21.7%
+2024-07-25 11:13:54,763 - INFO - Solenoid valve turned off
+2024-07-25 11:13:54,763 - INFO - Readings: Temp=17.1°C, Humidity=62.4%, Soil Moisture=75.7%
+2024-07-25 11:13:55,766 - INFO - Solenoid valve turned off
+2024-07-25 11:13:55,767 - INFO - Readings: Temp=32.5°C, Humidity=60.0%, Soil Moisture=66.0%
+2024-07-25 11:13:56,770 - INFO - Solenoid valve turned off
+2024-07-25 11:13:56,770 - INFO - Readings: Temp=15.2°C, Humidity=54.2%, Soil Moisture=34.6%
+2024-07-25 11:13:57,772 - INFO - Solenoid valve turned off
+2024-07-25 11:13:57,772 - INFO - Readings: Temp=16.4°C, Humidity=85.6%, Soil Moisture=39.6%
+2024-07-25 11:13:58,775 - INFO - Solenoid valve turned on
+2024-07-25 11:13:58,775 - INFO - Readings: Temp=24.5°C, Humidity=32.0%, Soil Moisture=5.9%
+2024-07-25 11:13:59,778 - INFO - Solenoid valve turned off
+2024-07-25 11:13:59,778 - INFO - Readings: Temp=30.6°C, Humidity=48.1%, Soil Moisture=45.0%
+2024-07-25 11:14:00,782 - INFO - Solenoid valve turned on
+2024-07-25 11:14:00,782 - INFO - Readings: Temp=20.3°C, Humidity=37.5%, Soil Moisture=1.6%
+2024-07-25 11:14:01,785 - INFO - Solenoid valve turned on
+2024-07-25 11:14:01,785 - INFO - Readings: Temp=21.3°C, Humidity=38.3%, Soil Moisture=20.3%
+2024-07-25 11:14:02,789 - INFO - Solenoid valve turned off
+2024-07-25 11:14:02,789 - INFO - Readings: Temp=21.4°C, Humidity=41.3%, Soil Moisture=53.3%
+2024-07-25 11:14:03,792 - INFO - Solenoid valve turned off
+2024-07-25 11:14:03,792 - INFO - Readings: Temp=29.9°C, Humidity=79.6%, Soil Moisture=66.8%
+2024-07-25 11:14:04,805 - INFO - Solenoid valve turned off
+2024-07-25 11:14:04,805 - INFO - Readings: Temp=15.3°C, Humidity=40.4%, Soil Moisture=84.3%
+2024-07-25 11:14:05,808 - INFO - Solenoid valve turned off
+2024-07-25 11:14:05,808 - INFO - Readings: Temp=30.4°C, Humidity=43.3%, Soil Moisture=96.2%
+2024-07-25 11:14:06,811 - INFO - Solenoid valve turned off
+2024-07-25 11:14:06,811 - INFO - Readings: Temp=23.7°C, Humidity=50.3%, Soil Moisture=50.0%
+2024-07-25 11:14:07,813 - INFO - Solenoid valve turned off
+2024-07-25 11:14:07,814 - INFO - Readings: Temp=25.0°C, Humidity=58.4%, Soil Moisture=43.0%
+2024-07-25 11:14:08,816 - INFO - Solenoid valve turned off
+2024-07-25 11:14:08,816 - INFO - Readings: Temp=18.5°C, Humidity=56.2%, Soil Moisture=61.8%
+2024-07-25 11:14:09,818 - INFO - Solenoid valve turned off
+2024-07-25 11:14:09,818 - INFO - Readings: Temp=18.1°C, Humidity=88.2%, Soil Moisture=51.1%
+2024-07-25 11:14:10,821 - INFO - Solenoid valve turned on
+2024-07-25 11:14:10,821 - INFO - Readings: Temp=17.9°C, Humidity=85.7%, Soil Moisture=10.0%
+2024-07-25 11:14:11,826 - INFO - Solenoid valve turned off
+2024-07-25 11:14:11,827 - INFO - Readings: Temp=25.4°C, Humidity=49.9%, Soil Moisture=46.6%
+2024-07-25 11:14:12,830 - INFO - Solenoid valve turned on
+2024-07-25 11:14:12,830 - INFO - Readings: Temp=30.2°C, Humidity=44.6%, Soil Moisture=17.1%
+2024-07-25 11:14:13,833 - INFO - Solenoid valve turned off
+2024-07-25 11:14:13,833 - INFO - Readings: Temp=29.5°C, Humidity=53.5%, Soil Moisture=96.1%
+2024-07-25 11:14:14,835 - INFO - Solenoid valve turned off
+2024-07-25 11:14:14,835 - INFO - Readings: Temp=17.6°C, Humidity=58.1%, Soil Moisture=50.4%
+2024-07-25 11:14:15,839 - INFO - Solenoid valve turned on
+2024-07-25 11:14:15,839 - INFO - Readings: Temp=17.0°C, Humidity=32.7%, Soil Moisture=5.5%
+2024-07-25 11:14:16,842 - INFO - Solenoid valve turned on
+2024-07-25 11:14:16,843 - INFO - Readings: Temp=27.8°C, Humidity=62.7%, Soil Moisture=12.1%
+2024-07-25 11:14:17,846 - INFO - Solenoid valve turned off
+2024-07-25 11:14:17,846 - INFO - Readings: Temp=32.5°C, Humidity=35.6%, Soil Moisture=58.1%
+2024-07-25 11:14:18,850 - INFO - Solenoid valve turned on
+2024-07-25 11:14:18,851 - INFO - Readings: Temp=28.1°C, Humidity=39.7%, Soil Moisture=8.5%
+2024-07-25 11:14:19,854 - INFO - Solenoid valve turned on
+2024-07-25 11:14:19,854 - INFO - Readings: Temp=27.3°C, Humidity=57.0%, Soil Moisture=4.6%
+2024-07-25 11:14:20,865 - INFO - Solenoid valve turned off
+2024-07-25 11:14:20,865 - INFO - Readings: Temp=27.0°C, Humidity=39.8%, Soil Moisture=76.3%
+2024-07-25 11:14:21,868 - INFO - Solenoid valve turned off
+2024-07-25 11:14:21,868 - INFO - Readings: Temp=22.0°C, Humidity=64.3%, Soil Moisture=68.0%
+2024-07-25 11:14:22,871 - INFO - Solenoid valve turned off
+2024-07-25 11:14:22,871 - INFO - Readings: Temp=34.0°C, Humidity=33.1%, Soil Moisture=71.4%
+2024-07-25 11:14:23,873 - INFO - Solenoid valve turned off
+2024-07-25 11:14:23,873 - INFO - Readings: Temp=33.5°C, Humidity=48.5%, Soil Moisture=37.0%
+2024-07-25 11:14:24,876 - INFO - Solenoid valve turned off
+2024-07-25 11:14:24,876 - INFO - Readings: Temp=31.9°C, Humidity=84.2%, Soil Moisture=98.9%
+2024-07-25 11:14:25,890 - INFO - Solenoid valve turned off
+2024-07-25 11:14:25,891 - INFO - Readings: Temp=19.4°C, Humidity=59.4%, Soil Moisture=50.4%
+2024-07-25 11:14:26,893 - INFO - Solenoid valve turned on
+2024-07-25 11:14:26,893 - INFO - Readings: Temp=15.9°C, Humidity=74.9%, Soil Moisture=25.3%
+2024-07-25 11:14:27,896 - INFO - Solenoid valve turned off
+2024-07-25 11:14:27,896 - INFO - Readings: Temp=30.5°C, Humidity=31.8%, Soil Moisture=69.8%
+2024-07-25 11:14:28,900 - INFO - Solenoid valve turned on
+2024-07-25 11:14:28,900 - INFO - Readings: Temp=32.5°C, Humidity=89.9%, Soil Moisture=6.5%
+2024-07-25 11:14:29,903 - INFO - Solenoid valve turned off
+2024-07-25 11:14:29,904 - INFO - Readings: Temp=22.3°C, Humidity=40.9%, Soil Moisture=38.7%
+2024-07-25 11:14:30,918 - INFO - Solenoid valve turned off
+2024-07-25 11:14:30,918 - INFO - Readings: Temp=16.8°C, Humidity=87.6%, Soil Moisture=38.0%
+2024-07-25 11:14:31,921 - INFO - Solenoid valve turned on
+2024-07-25 11:14:31,921 - INFO - Readings: Temp=21.8°C, Humidity=84.4%, Soil Moisture=10.4%
+2024-07-25 11:14:32,925 - INFO - Solenoid valve turned on
+2024-07-25 11:14:32,925 - INFO - Readings: Temp=15.8°C, Humidity=46.0%, Soil Moisture=10.7%
+2024-07-25 11:14:33,929 - INFO - Solenoid valve turned off
+2024-07-25 11:14:33,929 - INFO - Readings: Temp=25.7°C, Humidity=80.8%, Soil Moisture=45.1%
+2024-07-25 11:14:34,932 - INFO - Solenoid valve turned off
+2024-07-25 11:14:34,932 - INFO - Readings: Temp=32.1°C, Humidity=45.7%, Soil Moisture=76.7%
+2024-07-25 11:14:35,944 - INFO - Solenoid valve turned off
+2024-07-25 11:14:35,944 - INFO - Readings: Temp=31.4°C, Humidity=74.2%, Soil Moisture=59.6%
+2024-07-25 11:14:36,992 - INFO - Solenoid valve turned on
+2024-07-25 11:14:36,992 - INFO - Readings: Temp=15.2°C, Humidity=47.1%, Soil Moisture=9.7%
+2024-07-25 11:14:37,995 - INFO - Solenoid valve turned off
+2024-07-25 11:14:37,995 - INFO - Readings: Temp=17.8°C, Humidity=76.7%, Soil Moisture=65.0%
+2024-07-25 11:14:38,997 - INFO - Solenoid valve turned off
+2024-07-25 11:14:38,997 - INFO - Readings: Temp=18.1°C, Humidity=80.9%, Soil Moisture=34.5%
+2024-07-25 11:14:39,999 - INFO - Solenoid valve turned off
+2024-07-25 11:14:40,000 - INFO - Readings: Temp=21.4°C, Humidity=86.8%, Soil Moisture=42.9%
+2024-07-25 11:14:41,004 - INFO - Solenoid valve turned on
+2024-07-25 11:14:41,004 - INFO - Readings: Temp=21.2°C, Humidity=88.2%, Soil Moisture=6.9%
+2024-07-25 11:14:42,006 - INFO - Solenoid valve turned on
+2024-07-25 11:14:42,006 - INFO - Readings: Temp=25.7°C, Humidity=61.2%, Soil Moisture=28.4%
+2024-07-25 11:14:43,009 - INFO - Solenoid valve turned on
+2024-07-25 11:14:43,009 - INFO - Readings: Temp=16.9°C, Humidity=88.8%, Soil Moisture=13.8%
+2024-07-25 11:14:44,011 - INFO - Solenoid valve turned off
+2024-07-25 11:14:44,011 - INFO - Readings: Temp=22.9°C, Humidity=55.4%, Soil Moisture=32.6%
+2024-07-25 11:14:45,014 - INFO - Solenoid valve turned on
+2024-07-25 11:14:45,014 - INFO - Readings: Temp=15.6°C, Humidity=88.1%, Soil Moisture=25.1%
+2024-07-25 11:14:46,017 - INFO - Solenoid valve turned off
+2024-07-25 11:14:46,025 - INFO - Readings: Temp=33.7°C, Humidity=80.3%, Soil Moisture=86.8%
+2024-07-25 11:14:47,029 - INFO - Solenoid valve turned off
+2024-07-25 11:14:47,030 - INFO - Readings: Temp=16.4°C, Humidity=61.2%, Soil Moisture=61.7%
+2024-07-25 11:14:48,033 - INFO - Solenoid valve turned on
+2024-07-25 11:14:48,033 - INFO - Readings: Temp=16.7°C, Humidity=34.3%, Soil Moisture=7.1%
+2024-07-25 11:14:49,037 - INFO - Solenoid valve turned off
+2024-07-25 11:14:49,037 - INFO - Readings: Temp=20.6°C, Humidity=43.2%, Soil Moisture=37.8%
+2024-07-25 11:14:50,040 - INFO - Solenoid valve turned on
+2024-07-25 11:14:50,040 - INFO - Readings: Temp=15.1°C, Humidity=38.2%, Soil Moisture=27.2%
+2024-07-25 11:14:51,044 - INFO - Solenoid valve turned off
+2024-07-25 11:14:51,044 - INFO - Readings: Temp=20.4°C, Humidity=54.5%, Soil Moisture=75.7%
+2024-07-25 11:14:52,048 - INFO - Solenoid valve turned off
+2024-07-25 11:14:52,048 - INFO - Readings: Temp=22.1°C, Humidity=34.4%, Soil Moisture=35.1%
+2024-07-25 11:14:53,097 - INFO - Solenoid valve turned off
+2024-07-25 11:14:53,098 - INFO - Readings: Temp=18.9°C, Humidity=36.3%, Soil Moisture=43.7%
+2024-07-25 11:14:54,101 - INFO - Solenoid valve turned on
+2024-07-25 11:14:54,101 - INFO - Readings: Temp=15.0°C, Humidity=66.4%, Soil Moisture=8.9%
+2024-07-25 11:14:55,105 - INFO - Solenoid valve turned off
+2024-07-25 11:14:55,105 - INFO - Readings: Temp=23.1°C, Humidity=77.6%, Soil Moisture=40.7%
+2024-07-25 11:14:56,108 - INFO - Solenoid valve turned on
+2024-07-25 11:14:56,108 - INFO - Readings: Temp=19.3°C, Humidity=63.4%, Soil Moisture=14.8%
+2024-07-25 11:14:57,112 - INFO - Solenoid valve turned on
+2024-07-25 11:14:57,112 - INFO - Readings: Temp=26.1°C, Humidity=65.0%, Soil Moisture=18.1%
+2024-07-25 11:14:58,114 - INFO - Solenoid valve turned off
+2024-07-25 11:14:58,115 - INFO - Readings: Temp=15.7°C, Humidity=46.4%, Soil Moisture=87.7%
+2024-07-25 11:14:59,117 - INFO - Solenoid valve turned off
+2024-07-25 11:14:59,117 - INFO - Readings: Temp=25.0°C, Humidity=76.4%, Soil Moisture=60.1%
+2024-07-25 11:15:00,119 - INFO - Solenoid valve turned off
+2024-07-25 11:15:00,119 - INFO - Readings: Temp=31.7°C, Humidity=37.8%, Soil Moisture=33.6%
+2024-07-25 11:15:01,122 - INFO - Solenoid valve turned off
+2024-07-25 11:15:01,122 - INFO - Readings: Temp=20.7°C, Humidity=42.9%, Soil Moisture=66.5%
+2024-07-25 11:15:02,124 - INFO - Solenoid valve turned on
+2024-07-25 11:15:02,124 - INFO - Readings: Temp=31.4°C, Humidity=85.8%, Soil Moisture=8.6%
+2024-07-25 11:15:03,126 - INFO - Solenoid valve turned off
+2024-07-25 11:15:03,127 - INFO - Readings: Temp=16.0°C, Humidity=80.7%, Soil Moisture=48.0%
+2024-07-25 11:15:04,129 - INFO - Solenoid valve turned off
+2024-07-25 11:15:04,129 - INFO - Readings: Temp=16.6°C, Humidity=39.8%, Soil Moisture=42.7%
+2024-07-25 11:15:05,133 - INFO - Solenoid valve turned off
+2024-07-25 11:15:05,140 - INFO - Readings: Temp=30.2°C, Humidity=53.1%, Soil Moisture=44.9%
+2024-07-25 11:15:06,144 - INFO - Solenoid valve turned on
+2024-07-25 11:15:06,145 - INFO - Readings: Temp=27.6°C, Humidity=78.1%, Soil Moisture=22.9%
+2024-07-25 11:15:07,147 - INFO - Solenoid valve turned off
+2024-07-25 11:15:07,147 - INFO - Readings: Temp=32.1°C, Humidity=64.9%, Soil Moisture=43.8%
+2024-07-25 11:15:08,151 - INFO - Solenoid valve turned off
+2024-07-25 11:15:08,151 - INFO - Readings: Temp=29.0°C, Humidity=67.3%, Soil Moisture=88.4%
+2024-07-25 11:15:09,155 - INFO - Solenoid valve turned on
+2024-07-25 11:15:09,155 - INFO - Readings: Temp=17.0°C, Humidity=86.3%, Soil Moisture=12.4%
+2024-07-25 11:15:10,158 - INFO - Solenoid valve turned on
+2024-07-25 11:15:10,158 - INFO - Readings: Temp=34.9°C, Humidity=61.0%, Soil Moisture=22.7%
+2024-07-25 11:15:11,161 - INFO - Solenoid valve turned on
+2024-07-25 11:15:11,162 - INFO - Readings: Temp=25.8°C, Humidity=78.3%, Soil Moisture=2.3%
+2024-07-25 11:15:12,164 - INFO - Solenoid valve turned off
+2024-07-25 11:15:12,164 - INFO - Readings: Temp=25.0°C, Humidity=52.4%, Soil Moisture=97.2%
+2024-07-25 11:15:13,166 - INFO - Solenoid valve turned on
+2024-07-25 11:15:13,167 - INFO - Readings: Temp=16.5°C, Humidity=65.7%, Soil Moisture=7.1%
+2024-07-25 11:15:14,169 - INFO - Solenoid valve turned off
+2024-07-25 11:15:14,169 - INFO - Readings: Temp=34.2°C, Humidity=31.4%, Soil Moisture=75.0%
+2024-07-25 11:15:15,171 - INFO - Solenoid valve turned on
+2024-07-25 11:15:15,171 - INFO - Readings: Temp=22.8°C, Humidity=75.7%, Soil Moisture=24.4%
+2024-07-25 11:15:16,175 - INFO - Solenoid valve turned on
+2024-07-25 11:15:16,175 - INFO - Readings: Temp=17.0°C, Humidity=38.9%, Soil Moisture=4.0%
+2024-07-25 11:15:17,178 - INFO - Solenoid valve turned on
+2024-07-25 11:15:17,178 - INFO - Readings: Temp=17.8°C, Humidity=61.2%, Soil Moisture=23.6%
+2024-07-25 11:15:18,182 - INFO - Solenoid valve turned off
+2024-07-25 11:15:18,182 - INFO - Readings: Temp=32.8°C, Humidity=33.5%, Soil Moisture=58.1%
+2024-07-25 11:15:19,185 - INFO - Solenoid valve turned on
+2024-07-25 11:15:19,185 - INFO - Readings: Temp=17.1°C, Humidity=69.4%, Soil Moisture=22.6%
+2024-07-25 11:15:20,188 - INFO - Solenoid valve turned off
+2024-07-25 11:15:20,189 - INFO - Readings: Temp=19.7°C, Humidity=80.5%, Soil Moisture=52.0%
+2024-07-25 11:15:21,191 - INFO - Solenoid valve turned off
+2024-07-25 11:15:21,191 - INFO - Readings: Temp=26.9°C, Humidity=74.9%, Soil Moisture=59.6%
+2024-07-25 11:15:22,193 - INFO - Solenoid valve turned off
+2024-07-25 11:15:22,193 - INFO - Readings: Temp=25.7°C, Humidity=36.2%, Soil Moisture=63.5%
+2024-07-25 11:15:23,196 - INFO - Solenoid valve turned off
+2024-07-25 11:15:23,196 - INFO - Readings: Temp=25.9°C, Humidity=87.8%, Soil Moisture=89.2%
+2024-07-25 11:15:24,198 - INFO - Solenoid valve turned on
+2024-07-25 11:15:24,198 - INFO - Readings: Temp=25.8°C, Humidity=31.9%, Soil Moisture=22.0%
+2024-07-25 11:15:25,201 - INFO - Solenoid valve turned off
+2024-07-25 11:15:25,201 - INFO - Readings: Temp=15.3°C, Humidity=65.1%, Soil Moisture=97.0%
+2024-07-25 11:15:26,250 - INFO - Solenoid valve turned off
+2024-07-25 11:15:26,251 - INFO - Readings: Temp=15.9°C, Humidity=77.4%, Soil Moisture=41.6%
+2024-07-25 11:15:27,254 - INFO - Solenoid valve turned off
+2024-07-25 11:15:27,254 - INFO - Readings: Temp=34.1°C, Humidity=43.9%, Soil Moisture=32.1%
+2024-07-25 11:15:28,258 - INFO - Solenoid valve turned on
+2024-07-25 11:15:28,258 - INFO - Readings: Temp=21.7°C, Humidity=52.2%, Soil Moisture=5.1%
+2024-07-25 11:15:29,261 - INFO - Solenoid valve turned on
+2024-07-25 11:15:29,262 - INFO - Readings: Temp=18.8°C, Humidity=52.1%, Soil Moisture=11.7%
+2024-07-25 11:15:30,265 - INFO - Solenoid valve turned off
+2024-07-25 11:15:30,265 - INFO - Readings: Temp=33.9°C, Humidity=55.2%, Soil Moisture=70.4%
+2024-07-25 11:15:31,268 - INFO - Solenoid valve turned on
+2024-07-25 11:15:31,268 - INFO - Readings: Temp=25.4°C, Humidity=44.2%, Soil Moisture=12.7%
+2024-07-25 11:15:32,270 - INFO - Solenoid valve turned on
+2024-07-25 11:15:32,270 - INFO - Readings: Temp=15.2°C, Humidity=63.0%, Soil Moisture=28.6%
+2024-07-25 11:15:33,273 - INFO - Solenoid valve turned on
+2024-07-25 11:15:33,273 - INFO - Readings: Temp=30.8°C, Humidity=63.6%, Soil Moisture=22.1%
+2024-07-25 11:15:34,276 - INFO - Solenoid valve turned off
+2024-07-25 11:15:34,276 - INFO - Readings: Temp=23.7°C, Humidity=68.1%, Soil Moisture=78.0%
+2024-07-25 11:15:35,279 - INFO - Solenoid valve turned off
+2024-07-25 11:15:35,279 - INFO - Readings: Temp=17.6°C, Humidity=36.3%, Soil Moisture=96.1%
+2024-07-25 11:15:36,282 - INFO - Solenoid valve turned off
+2024-07-25 11:15:36,282 - INFO - Readings: Temp=32.4°C, Humidity=78.8%, Soil Moisture=53.2%
+2024-07-25 11:15:37,284 - INFO - Solenoid valve turned off
+2024-07-25 11:15:37,284 - INFO - Readings: Temp=25.3°C, Humidity=52.7%, Soil Moisture=70.2%
+2024-07-25 11:15:38,287 - INFO - Solenoid valve turned on
+2024-07-25 11:15:38,287 - INFO - Readings: Temp=17.8°C, Humidity=54.0%, Soil Moisture=8.1%
+2024-07-25 11:15:39,289 - INFO - Solenoid valve turned on
+2024-07-25 11:15:39,289 - INFO - Readings: Temp=29.6°C, Humidity=49.4%, Soil Moisture=25.6%
+2024-07-25 11:15:40,291 - INFO - Solenoid valve turned on
+2024-07-25 11:15:40,292 - INFO - Readings: Temp=27.2°C, Humidity=68.8%, Soil Moisture=11.4%
+2024-07-25 11:15:41,294 - INFO - Solenoid valve turned on
+2024-07-25 11:15:41,295 - INFO - Readings: Temp=27.9°C, Humidity=77.1%, Soil Moisture=16.3%
+2024-07-25 11:15:42,299 - INFO - Solenoid valve turned off
+2024-07-25 11:15:42,299 - INFO - Readings: Temp=15.0°C, Humidity=31.7%, Soil Moisture=71.6%
+2024-07-25 11:15:43,302 - INFO - Solenoid valve turned off
+2024-07-25 11:15:43,302 - INFO - Readings: Temp=16.4°C, Humidity=75.3%, Soil Moisture=79.3%
+2024-07-25 11:15:44,308 - INFO - Solenoid valve turned off
+2024-07-25 11:15:44,308 - INFO - Readings: Temp=33.4°C, Humidity=37.3%, Soil Moisture=49.1%
+2024-07-25 11:15:45,317 - INFO - Solenoid valve turned off
+2024-07-25 11:15:45,317 - INFO - Readings: Temp=24.0°C, Humidity=55.5%, Soil Moisture=57.3%
+2024-07-25 11:15:46,319 - INFO - Solenoid valve turned off
+2024-07-25 11:15:46,320 - INFO - Readings: Temp=20.5°C, Humidity=85.1%, Soil Moisture=34.5%
+2024-07-25 11:15:47,322 - INFO - Solenoid valve turned off
+2024-07-25 11:15:47,322 - INFO - Readings: Temp=21.1°C, Humidity=48.7%, Soil Moisture=53.1%
+2024-07-25 11:15:48,326 - INFO - Solenoid valve turned on
+2024-07-25 11:15:48,326 - INFO - Readings: Temp=28.4°C, Humidity=37.6%, Soil Moisture=29.2%
+2024-07-25 11:15:49,330 - INFO - Solenoid valve turned off
+2024-07-25 11:15:49,330 - INFO - Readings: Temp=17.4°C, Humidity=80.6%, Soil Moisture=60.8%
+2024-07-25 11:15:50,333 - INFO - Solenoid valve turned on
+2024-07-25 11:15:50,333 - INFO - Readings: Temp=34.0°C, Humidity=71.7%, Soil Moisture=16.7%
+2024-07-25 11:15:51,336 - INFO - Solenoid valve turned on
+2024-07-25 11:15:51,336 - INFO - Readings: Temp=24.5°C, Humidity=83.5%, Soil Moisture=1.9%
+2024-07-25 11:15:52,339 - INFO - Solenoid valve turned off
+2024-07-25 11:15:52,340 - INFO - Readings: Temp=24.7°C, Humidity=49.2%, Soil Moisture=39.8%
+2024-07-25 11:15:53,342 - INFO - Solenoid valve turned off
+2024-07-25 11:15:53,343 - INFO - Readings: Temp=17.7°C, Humidity=87.6%, Soil Moisture=36.1%
+2024-07-25 11:15:54,345 - INFO - Solenoid valve turned off
+2024-07-25 11:15:54,345 - INFO - Readings: Temp=27.2°C, Humidity=58.1%, Soil Moisture=96.6%
+2024-07-25 11:15:55,357 - INFO - Solenoid valve turned on
+2024-07-25 11:15:55,357 - INFO - Readings: Temp=22.7°C, Humidity=58.8%, Soil Moisture=11.8%
+2024-07-25 11:15:56,361 - INFO - Solenoid valve turned off
+2024-07-25 11:15:56,361 - INFO - Readings: Temp=30.0°C, Humidity=65.8%, Soil Moisture=76.9%
+2024-07-25 11:15:57,364 - INFO - Solenoid valve turned off
+2024-07-25 11:15:57,364 - INFO - Readings: Temp=26.0°C, Humidity=74.0%, Soil Moisture=90.0%
+2024-07-25 11:15:58,367 - INFO - Solenoid valve turned off
+2024-07-25 11:15:58,368 - INFO - Readings: Temp=15.9°C, Humidity=73.0%, Soil Moisture=35.4%
+2024-07-25 11:15:59,371 - INFO - Solenoid valve turned off
+2024-07-25 11:15:59,371 - INFO - Readings: Temp=33.0°C, Humidity=61.2%, Soil Moisture=90.0%
+2024-07-25 11:16:00,382 - INFO - Solenoid valve turned off
+2024-07-25 11:16:00,383 - INFO - Readings: Temp=29.6°C, Humidity=33.7%, Soil Moisture=32.3%
+2024-07-25 11:16:01,385 - INFO - Solenoid valve turned off
+2024-07-25 11:16:01,389 - INFO - Readings: Temp=34.1°C, Humidity=31.4%, Soil Moisture=55.6%
+2024-07-25 11:16:02,392 - INFO - Solenoid valve turned off
+2024-07-25 11:16:02,392 - INFO - Readings: Temp=34.7°C, Humidity=62.6%, Soil Moisture=37.1%
+2024-07-25 11:16:03,394 - INFO - Solenoid valve turned off
+2024-07-25 11:16:03,394 - INFO - Readings: Temp=19.4°C, Humidity=63.4%, Soil Moisture=85.0%
+2024-07-25 11:16:04,397 - INFO - Solenoid valve turned off
+2024-07-25 11:16:04,398 - INFO - Readings: Temp=22.0°C, Humidity=54.9%, Soil Moisture=41.2%
+2024-07-25 11:16:05,409 - INFO - Solenoid valve turned on
+2024-07-25 11:16:05,409 - INFO - Readings: Temp=33.1°C, Humidity=77.1%, Soil Moisture=13.6%
+2024-07-25 11:16:06,411 - INFO - Solenoid valve turned off
+2024-07-25 11:16:06,411 - INFO - Readings: Temp=29.8°C, Humidity=74.4%, Soil Moisture=83.6%
+2024-07-25 11:16:07,414 - INFO - Solenoid valve turned off
+2024-07-25 11:16:07,414 - INFO - Readings: Temp=34.0°C, Humidity=67.5%, Soil Moisture=96.6%
+2024-07-25 11:16:08,417 - INFO - Solenoid valve turned on
+2024-07-25 11:16:08,417 - INFO - Readings: Temp=18.4°C, Humidity=56.8%, Soil Moisture=22.9%
+2024-07-25 11:16:09,420 - INFO - Solenoid valve turned off
+2024-07-25 11:16:09,420 - INFO - Readings: Temp=31.0°C, Humidity=34.6%, Soil Moisture=59.3%
+2024-07-25 11:16:10,428 - INFO - Solenoid valve turned off
+2024-07-25 11:16:10,429 - INFO - Readings: Temp=30.8°C, Humidity=89.4%, Soil Moisture=95.7%
+2024-07-25 11:16:11,433 - INFO - Solenoid valve turned on
+2024-07-25 11:16:11,433 - INFO - Readings: Temp=33.3°C, Humidity=62.8%, Soil Moisture=13.2%
+2024-07-25 11:16:12,436 - INFO - Solenoid valve turned off
+2024-07-25 11:16:12,436 - INFO - Readings: Temp=23.7°C, Humidity=58.7%, Soil Moisture=86.8%
+2024-07-25 11:16:13,438 - INFO - Solenoid valve turned off
+2024-07-25 11:16:13,439 - INFO - Readings: Temp=23.8°C, Humidity=50.9%, Soil Moisture=96.3%
+2024-07-25 11:16:14,443 - INFO - Solenoid valve turned off
+2024-07-25 11:16:14,444 - INFO - Readings: Temp=18.6°C, Humidity=42.8%, Soil Moisture=46.1%
+2024-07-25 11:16:15,497 - INFO - Solenoid valve turned off
+2024-07-25 11:16:15,497 - INFO - Readings: Temp=22.6°C, Humidity=41.2%, Soil Moisture=96.5%
+2024-07-25 11:16:16,500 - INFO - Solenoid valve turned off
+2024-07-25 11:16:16,500 - INFO - Readings: Temp=26.8°C, Humidity=63.2%, Soil Moisture=47.1%
+2024-07-25 11:16:17,503 - INFO - Solenoid valve turned off
+2024-07-25 11:16:17,503 - INFO - Readings: Temp=28.2°C, Humidity=71.9%, Soil Moisture=40.9%
+2024-07-25 11:16:18,506 - INFO - Solenoid valve turned off
+2024-07-25 11:16:18,506 - INFO - Readings: Temp=17.6°C, Humidity=40.9%, Soil Moisture=86.3%
+2024-07-25 11:16:19,510 - INFO - Solenoid valve turned off
+2024-07-25 11:16:19,510 - INFO - Readings: Temp=34.2°C, Humidity=37.4%, Soil Moisture=85.9%
+2024-07-25 11:16:20,514 - INFO - Solenoid valve turned on
+2024-07-25 11:16:20,514 - INFO - Readings: Temp=31.8°C, Humidity=57.1%, Soil Moisture=12.8%
+2024-07-25 11:16:21,525 - INFO - Solenoid valve turned off
+2024-07-25 11:16:21,526 - INFO - Readings: Temp=20.9°C, Humidity=66.9%, Soil Moisture=43.9%
+2024-07-25 11:16:22,529 - INFO - Solenoid valve turned on
+2024-07-25 11:16:22,529 - INFO - Readings: Temp=29.6°C, Humidity=52.2%, Soil Moisture=17.4%
+2024-07-25 11:16:23,532 - INFO - Solenoid valve turned off
+2024-07-25 11:16:23,532 - INFO - Readings: Temp=25.6°C, Humidity=62.2%, Soil Moisture=50.1%
+2024-07-25 11:16:24,535 - INFO - Solenoid valve turned on
+2024-07-25 11:16:24,535 - INFO - Readings: Temp=18.4°C, Humidity=63.4%, Soil Moisture=29.3%
+2024-07-25 11:16:25,540 - INFO - Solenoid valve turned on
+2024-07-25 11:16:25,540 - INFO - Readings: Temp=19.7°C, Humidity=68.8%, Soil Moisture=14.4%
+2024-07-25 11:16:26,543 - INFO - Solenoid valve turned on
+2024-07-25 11:16:26,549 - INFO - Readings: Temp=31.0°C, Humidity=54.2%, Soil Moisture=13.5%
+2024-07-25 11:16:27,559 - INFO - Solenoid valve turned off
+2024-07-25 11:16:27,560 - INFO - Readings: Temp=24.8°C, Humidity=45.8%, Soil Moisture=96.3%
+2024-07-25 11:16:28,564 - INFO - Solenoid valve turned off
+2024-07-25 11:16:28,564 - INFO - Readings: Temp=25.0°C, Humidity=37.0%, Soil Moisture=31.7%
+2024-07-25 11:16:29,568 - INFO - Solenoid valve turned on
+2024-07-25 11:16:29,568 - INFO - Readings: Temp=23.1°C, Humidity=33.2%, Soil Moisture=15.7%
+2024-07-25 11:16:30,571 - INFO - Solenoid valve turned off
+2024-07-25 11:16:30,571 - INFO - Readings: Temp=17.1°C, Humidity=87.0%, Soil Moisture=62.9%
+2024-07-25 11:16:31,574 - INFO - Solenoid valve turned off
+2024-07-25 11:16:31,574 - INFO - Readings: Temp=24.8°C, Humidity=85.9%, Soil Moisture=40.1%
+2024-07-25 11:16:32,578 - INFO - Solenoid valve turned off
+2024-07-25 11:16:32,578 - INFO - Readings: Temp=26.8°C, Humidity=43.6%, Soil Moisture=85.9%
+2024-07-25 11:16:33,581 - INFO - Solenoid valve turned off
+2024-07-25 11:16:33,581 - INFO - Readings: Temp=21.1°C, Humidity=33.4%, Soil Moisture=44.4%
+2024-07-25 11:16:34,584 - INFO - Solenoid valve turned off
+2024-07-25 11:16:34,584 - INFO - Readings: Temp=21.6°C, Humidity=31.7%, Soil Moisture=86.1%
+2024-07-25 11:16:35,587 - INFO - Solenoid valve turned on
+2024-07-25 11:16:35,587 - INFO - Readings: Temp=29.6°C, Humidity=65.4%, Soil Moisture=11.6%
+2024-07-25 11:16:36,590 - INFO - Solenoid valve turned off
+2024-07-25 11:16:36,591 - INFO - Readings: Temp=34.0°C, Humidity=48.4%, Soil Moisture=48.1%
+2024-07-25 11:16:37,595 - INFO - Solenoid valve turned off
+2024-07-25 11:16:37,595 - INFO - Readings: Temp=20.4°C, Humidity=62.4%, Soil Moisture=92.5%
+2024-07-25 11:16:38,598 - INFO - Solenoid valve turned off
+2024-07-25 11:16:38,598 - INFO - Readings: Temp=33.9°C, Humidity=59.5%, Soil Moisture=82.5%
+2024-07-25 11:16:39,613 - INFO - Solenoid valve turned off
+2024-07-25 11:16:39,613 - INFO - Readings: Temp=19.6°C, Humidity=46.3%, Soil Moisture=61.9%
+2024-07-25 11:16:40,616 - INFO - Solenoid valve turned off
+2024-07-25 11:16:40,616 - INFO - Readings: Temp=22.3°C, Humidity=37.0%, Soil Moisture=88.6%
+2024-07-25 11:16:41,619 - INFO - Solenoid valve turned off
+2024-07-25 11:16:41,619 - INFO - Readings: Temp=30.7°C, Humidity=52.6%, Soil Moisture=96.9%
+2024-07-25 11:16:42,623 - INFO - Solenoid valve turned on
+2024-07-25 11:16:42,623 - INFO - Readings: Temp=24.9°C, Humidity=75.0%, Soil Moisture=15.0%
+2024-07-25 11:16:43,627 - INFO - Solenoid valve turned on
+2024-07-25 11:16:43,627 - INFO - Readings: Temp=27.6°C, Humidity=66.4%, Soil Moisture=9.7%
+2024-07-25 11:16:44,631 - INFO - Solenoid valve turned on
+2024-07-25 11:16:44,631 - INFO - Readings: Temp=30.3°C, Humidity=60.6%, Soil Moisture=9.4%
+2024-07-25 11:16:45,634 - INFO - Solenoid valve turned off
+2024-07-25 11:16:45,634 - INFO - Readings: Temp=29.5°C, Humidity=35.9%, Soil Moisture=98.2%
+2024-07-25 11:16:46,636 - INFO - Solenoid valve turned on
+2024-07-25 11:16:46,636 - INFO - Readings: Temp=21.0°C, Humidity=65.5%, Soil Moisture=16.7%
+2024-07-25 11:16:47,639 - INFO - Solenoid valve turned off
+2024-07-25 11:16:47,639 - INFO - Readings: Temp=32.3°C, Humidity=61.2%, Soil Moisture=36.1%
+2024-07-25 11:16:48,644 - INFO - Solenoid valve turned off
+2024-07-25 11:16:48,645 - INFO - Readings: Temp=15.5°C, Humidity=71.1%, Soil Moisture=77.8%
+2024-07-25 11:16:49,648 - INFO - Solenoid valve turned off
+2024-07-25 11:16:49,648 - INFO - Readings: Temp=25.9°C, Humidity=32.3%, Soil Moisture=51.8%
+2024-07-25 11:16:50,651 - INFO - Solenoid valve turned off
+2024-07-25 11:16:50,651 - INFO - Readings: Temp=20.5°C, Humidity=46.2%, Soil Moisture=87.0%
+2024-07-25 11:16:51,655 - INFO - Solenoid valve turned on
+2024-07-25 11:16:51,655 - INFO - Readings: Temp=28.0°C, Humidity=54.7%, Soil Moisture=17.6%
+2024-07-25 11:16:52,660 - INFO - Solenoid valve turned on
+2024-07-25 11:16:52,660 - INFO - Readings: Temp=30.4°C, Humidity=50.7%, Soil Moisture=28.2%
+2024-07-25 11:16:53,664 - INFO - Solenoid valve turned off
+2024-07-25 11:16:53,664 - INFO - Readings: Temp=32.0°C, Humidity=30.4%, Soil Moisture=72.9%
+2024-07-25 11:16:54,667 - INFO - Solenoid valve turned off
+2024-07-25 11:16:54,667 - INFO - Readings: Temp=29.8°C, Humidity=52.9%, Soil Moisture=78.2%
+2024-07-25 11:16:55,670 - INFO - Solenoid valve turned off
+2024-07-25 11:16:55,670 - INFO - Readings: Temp=15.2°C, Humidity=35.7%, Soil Moisture=50.9%
+2024-07-25 11:16:56,673 - INFO - Solenoid valve turned off
+2024-07-25 11:16:56,673 - INFO - Readings: Temp=23.4°C, Humidity=44.5%, Soil Moisture=55.9%
+2024-07-25 11:16:57,677 - INFO - Solenoid valve turned off
+2024-07-25 11:16:57,678 - INFO - Readings: Temp=31.2°C, Humidity=64.8%, Soil Moisture=95.5%
+2024-07-25 11:16:58,682 - INFO - Solenoid valve turned off
+2024-07-25 11:16:58,682 - INFO - Readings: Temp=21.6°C, Humidity=51.4%, Soil Moisture=44.4%
+2024-07-25 11:16:59,684 - INFO - Solenoid valve turned off
+2024-07-25 11:16:59,685 - INFO - Readings: Temp=23.8°C, Humidity=78.6%, Soil Moisture=49.4%
+2024-07-25 11:17:00,697 - INFO - Solenoid valve turned off
+2024-07-25 11:17:00,697 - INFO - Readings: Temp=18.6°C, Humidity=46.5%, Soil Moisture=41.8%
+2024-07-25 11:17:01,701 - INFO - Solenoid valve turned on
+2024-07-25 11:17:01,701 - INFO - Readings: Temp=17.2°C, Humidity=60.6%, Soil Moisture=13.6%
+2024-07-25 11:17:02,704 - INFO - Solenoid valve turned off
+2024-07-25 11:17:02,704 - INFO - Readings: Temp=27.0°C, Humidity=40.8%, Soil Moisture=55.6%
+2024-07-25 11:17:03,707 - INFO - Solenoid valve turned off
+2024-07-25 11:17:03,708 - INFO - Readings: Temp=18.5°C, Humidity=90.0%, Soil Moisture=73.6%
+2024-07-25 11:17:04,757 - INFO - Solenoid valve turned on
+2024-07-25 11:17:04,758 - INFO - Readings: Temp=20.0°C, Humidity=88.5%, Soil Moisture=12.3%
+2024-07-25 11:17:05,761 - INFO - Solenoid valve turned off
+2024-07-25 11:17:05,762 - INFO - Readings: Temp=26.0°C, Humidity=75.8%, Soil Moisture=62.3%
+2024-07-25 11:17:06,766 - INFO - Solenoid valve turned on
+2024-07-25 11:17:06,766 - INFO - Readings: Temp=15.1°C, Humidity=89.6%, Soil Moisture=17.2%
+2024-07-25 11:17:07,770 - INFO - Solenoid valve turned on
+2024-07-25 11:17:07,770 - INFO - Readings: Temp=15.7°C, Humidity=57.2%, Soil Moisture=19.3%
+2024-07-25 11:17:08,773 - INFO - Solenoid valve turned off
+2024-07-25 11:17:08,774 - INFO - Readings: Temp=22.4°C, Humidity=32.5%, Soil Moisture=71.6%
+2024-07-25 11:17:09,778 - INFO - Solenoid valve turned off
+2024-07-25 11:17:09,778 - INFO - Readings: Temp=18.2°C, Humidity=72.4%, Soil Moisture=60.6%
+2024-07-25 11:17:10,782 - INFO - Solenoid valve turned on
+2024-07-25 11:17:10,782 - INFO - Readings: Temp=26.9°C, Humidity=82.7%, Soil Moisture=4.9%
+2024-07-25 11:17:11,786 - INFO - Solenoid valve turned off
+2024-07-25 11:17:11,786 - INFO - Readings: Temp=29.7°C, Humidity=80.4%, Soil Moisture=57.2%
+2024-07-25 11:17:12,792 - INFO - Solenoid valve turned on
+2024-07-25 11:17:12,792 - INFO - Readings: Temp=28.9°C, Humidity=47.3%, Soil Moisture=0.6%
+2024-07-25 11:17:13,796 - INFO - Solenoid valve turned on
+2024-07-25 11:17:13,797 - INFO - Readings: Temp=31.5°C, Humidity=38.6%, Soil Moisture=9.5%
+2024-07-25 11:17:14,800 - INFO - Solenoid valve turned on
+2024-07-25 11:17:14,800 - INFO - Readings: Temp=25.1°C, Humidity=70.1%, Soil Moisture=2.8%
+2024-07-25 11:17:15,803 - INFO - Solenoid valve turned on
+2024-07-25 11:17:15,803 - INFO - Readings: Temp=16.3°C, Humidity=88.8%, Soil Moisture=29.8%
+2024-07-25 11:17:16,806 - INFO - Solenoid valve turned off
+2024-07-25 11:17:16,806 - INFO - Readings: Temp=30.8°C, Humidity=37.1%, Soil Moisture=77.9%
+2024-07-25 11:17:17,810 - INFO - Solenoid valve turned off
+2024-07-25 11:17:17,810 - INFO - Readings: Temp=27.3°C, Humidity=58.1%, Soil Moisture=80.6%
+2024-07-25 11:17:18,820 - INFO - Solenoid valve turned off
+2024-07-25 11:17:18,820 - INFO - Readings: Temp=18.0°C, Humidity=45.5%, Soil Moisture=38.2%
+2024-07-25 11:17:19,824 - INFO - Solenoid valve turned off
+2024-07-25 11:17:19,824 - INFO - Readings: Temp=21.5°C, Humidity=88.4%, Soil Moisture=36.4%
+2024-07-25 11:17:20,828 - INFO - Solenoid valve turned off
+2024-07-25 11:17:20,828 - INFO - Readings: Temp=20.9°C, Humidity=86.5%, Soil Moisture=83.3%
+2024-07-25 11:17:21,831 - INFO - Solenoid valve turned off
+2024-07-25 11:17:21,831 - INFO - Readings: Temp=32.4°C, Humidity=47.7%, Soil Moisture=87.2%
+2024-07-25 11:17:22,835 - INFO - Solenoid valve turned off
+2024-07-25 11:17:22,835 - INFO - Readings: Temp=18.7°C, Humidity=59.7%, Soil Moisture=40.2%
+2024-07-25 11:17:23,848 - INFO - Solenoid valve turned off
+2024-07-25 11:17:23,848 - INFO - Readings: Temp=22.7°C, Humidity=34.3%, Soil Moisture=62.0%
+2024-07-25 11:17:24,851 - INFO - Solenoid valve turned on
+2024-07-25 11:17:24,851 - INFO - Readings: Temp=17.3°C, Humidity=79.4%, Soil Moisture=10.2%
+2024-07-25 11:17:25,855 - INFO - Solenoid valve turned off
+2024-07-25 11:17:25,855 - INFO - Readings: Temp=22.8°C, Humidity=65.1%, Soil Moisture=92.6%
+2024-07-25 11:17:26,859 - INFO - Solenoid valve turned off
+2024-07-25 11:17:26,859 - INFO - Readings: Temp=16.9°C, Humidity=68.5%, Soil Moisture=37.3%
+2024-07-25 11:17:27,863 - INFO - Solenoid valve turned off
+2024-07-25 11:17:27,864 - INFO - Readings: Temp=28.8°C, Humidity=44.7%, Soil Moisture=92.7%
+2024-07-25 11:17:28,878 - INFO - Solenoid valve turned off
+2024-07-25 11:17:28,878 - INFO - Readings: Temp=21.6°C, Humidity=35.1%, Soil Moisture=34.2%
+2024-07-25 11:17:29,882 - INFO - Solenoid valve turned off
+2024-07-25 11:17:29,882 - INFO - Readings: Temp=25.1°C, Humidity=43.7%, Soil Moisture=88.2%
+2024-07-25 11:17:30,886 - INFO - Solenoid valve turned on
+2024-07-25 11:17:30,886 - INFO - Readings: Temp=27.1°C, Humidity=37.5%, Soil Moisture=18.8%
+2024-07-25 11:17:31,890 - INFO - Solenoid valve turned off
+2024-07-25 11:17:31,890 - INFO - Readings: Temp=26.6°C, Humidity=38.3%, Soil Moisture=56.8%
+2024-07-25 11:17:32,895 - INFO - Solenoid valve turned off
+2024-07-25 11:17:32,895 - INFO - Readings: Temp=19.7°C, Humidity=53.3%, Soil Moisture=78.8%
+2024-07-25 11:17:33,907 - INFO - Solenoid valve turned off
+2024-07-25 11:17:33,907 - INFO - Readings: Temp=26.3°C, Humidity=87.1%, Soil Moisture=47.9%
+2024-07-25 11:17:34,911 - INFO - Solenoid valve turned on
+2024-07-25 11:17:34,912 - INFO - Readings: Temp=28.7°C, Humidity=35.4%, Soil Moisture=9.8%
+2024-07-25 11:17:35,915 - INFO - Solenoid valve turned off
+2024-07-25 11:17:35,916 - INFO - Readings: Temp=18.7°C, Humidity=56.8%, Soil Moisture=84.7%
+2024-07-25 11:17:36,919 - INFO - Solenoid valve turned off
+2024-07-25 11:17:36,919 - INFO - Readings: Temp=22.6°C, Humidity=65.1%, Soil Moisture=45.8%
+2024-07-25 11:17:37,921 - INFO - Solenoid valve turned off
+2024-07-25 11:17:37,922 - INFO - Readings: Temp=25.6°C, Humidity=75.5%, Soil Moisture=78.8%
+2024-07-25 11:17:38,933 - INFO - Solenoid valve turned off
+2024-07-25 11:17:38,934 - INFO - Readings: Temp=15.8°C, Humidity=62.8%, Soil Moisture=64.6%
+2024-07-25 11:17:39,938 - INFO - Solenoid valve turned off
+2024-07-25 11:17:39,938 - INFO - Readings: Temp=32.9°C, Humidity=74.6%, Soil Moisture=41.1%
+2024-07-25 11:17:40,942 - INFO - Solenoid valve turned on
+2024-07-25 11:17:40,942 - INFO - Readings: Temp=29.5°C, Humidity=83.4%, Soil Moisture=17.4%
+2024-07-25 11:17:41,946 - INFO - Solenoid valve turned on
+2024-07-25 11:17:41,946 - INFO - Readings: Temp=31.5°C, Humidity=89.7%, Soil Moisture=22.9%
+2024-07-25 11:17:42,949 - INFO - Solenoid valve turned off
+2024-07-25 11:17:42,949 - INFO - Readings: Temp=28.9°C, Humidity=73.7%, Soil Moisture=99.3%
+2024-07-25 11:17:43,953 - INFO - Solenoid valve turned off
+2024-07-25 11:17:43,953 - INFO - Readings: Temp=28.1°C, Humidity=37.2%, Soil Moisture=38.2%
+2024-07-25 11:17:44,957 - INFO - Solenoid valve turned off
+2024-07-25 11:17:44,957 - INFO - Readings: Temp=27.2°C, Humidity=68.5%, Soil Moisture=54.3%
+2024-07-25 11:17:45,971 - INFO - Solenoid valve turned off
+2024-07-25 11:17:45,971 - INFO - Readings: Temp=32.6°C, Humidity=55.2%, Soil Moisture=90.6%
+2024-07-25 11:17:46,975 - INFO - Solenoid valve turned on
+2024-07-25 11:17:46,975 - INFO - Readings: Temp=22.3°C, Humidity=54.2%, Soil Moisture=10.2%
+2024-07-25 11:17:47,978 - INFO - Solenoid valve turned off
+2024-07-25 11:17:47,978 - INFO - Readings: Temp=24.8°C, Humidity=54.9%, Soil Moisture=45.4%
+2024-07-25 11:17:48,980 - INFO - Solenoid valve turned off
+2024-07-25 11:17:48,980 - INFO - Readings: Temp=28.8°C, Humidity=53.2%, Soil Moisture=52.1%
+2024-07-25 11:17:49,983 - INFO - Solenoid valve turned off
+2024-07-25 11:17:49,983 - INFO - Readings: Temp=21.6°C, Humidity=88.8%, Soil Moisture=45.4%
+2024-07-25 11:17:50,994 - INFO - Solenoid valve turned on
+2024-07-25 11:17:50,994 - INFO - Readings: Temp=16.3°C, Humidity=54.8%, Soil Moisture=24.8%
+2024-07-25 11:17:51,996 - INFO - Solenoid valve turned off
+2024-07-25 11:17:51,996 - INFO - Readings: Temp=32.3°C, Humidity=38.8%, Soil Moisture=45.4%
+2024-07-25 11:17:52,999 - INFO - Solenoid valve turned off
+2024-07-25 11:17:52,999 - INFO - Readings: Temp=28.1°C, Humidity=72.7%, Soil Moisture=98.3%
+2024-07-25 11:17:54,016 - INFO - Solenoid valve turned on
+2024-07-25 11:17:54,016 - INFO - Readings: Temp=33.9°C, Humidity=34.3%, Soil Moisture=21.6%
+2024-07-25 11:17:55,020 - INFO - Solenoid valve turned off
+2024-07-25 11:17:55,020 - INFO - Readings: Temp=33.7°C, Humidity=42.2%, Soil Moisture=52.2%
+2024-07-25 11:17:56,032 - INFO - Solenoid valve turned off
+2024-07-25 11:17:56,032 - INFO - Readings: Temp=23.8°C, Humidity=56.8%, Soil Moisture=71.0%
+2024-07-25 11:17:57,035 - INFO - Solenoid valve turned off
+2024-07-25 11:17:57,035 - INFO - Readings: Temp=29.2°C, Humidity=41.1%, Soil Moisture=47.0%
+2024-07-25 11:17:58,039 - INFO - Solenoid valve turned off
+2024-07-25 11:17:58,039 - INFO - Readings: Temp=33.8°C, Humidity=67.9%, Soil Moisture=43.2%
+2024-07-25 11:17:59,043 - INFO - Solenoid valve turned on
+2024-07-25 11:17:59,044 - INFO - Readings: Temp=25.4°C, Humidity=81.3%, Soil Moisture=15.7%
+2024-07-25 11:18:00,047 - INFO - Solenoid valve turned on
+2024-07-25 11:18:00,048 - INFO - Readings: Temp=19.6°C, Humidity=74.4%, Soil Moisture=9.0%
+2024-07-25 11:18:01,060 - INFO - Solenoid valve turned on
+2024-07-25 11:18:01,060 - INFO - Readings: Temp=25.8°C, Humidity=81.1%, Soil Moisture=8.1%
+2024-07-25 11:18:02,063 - INFO - Solenoid valve turned on
+2024-07-25 11:18:02,063 - INFO - Readings: Temp=30.4°C, Humidity=61.5%, Soil Moisture=19.7%
+2024-07-25 11:18:03,067 - INFO - Solenoid valve turned off
+2024-07-25 11:18:03,067 - INFO - Readings: Temp=27.4°C, Humidity=84.5%, Soil Moisture=31.6%
+2024-07-25 11:18:04,070 - INFO - Solenoid valve turned on
+2024-07-25 11:18:04,070 - INFO - Readings: Temp=17.2°C, Humidity=58.2%, Soil Moisture=21.2%
+2024-07-25 11:18:05,074 - INFO - Solenoid valve turned off
+2024-07-25 11:18:05,074 - INFO - Readings: Temp=20.4°C, Humidity=72.4%, Soil Moisture=95.0%
+2024-07-25 11:18:06,087 - INFO - Solenoid valve turned on
+2024-07-25 11:18:06,088 - INFO - Readings: Temp=23.3°C, Humidity=60.5%, Soil Moisture=6.5%
+2024-07-25 11:18:07,091 - INFO - Solenoid valve turned off
+2024-07-25 11:18:07,099 - INFO - Readings: Temp=18.0°C, Humidity=42.4%, Soil Moisture=40.0%
+2024-07-25 11:18:08,111 - INFO - Solenoid valve turned on
+2024-07-25 11:18:08,117 - INFO - Readings: Temp=19.0°C, Humidity=36.5%, Soil Moisture=5.7%
+2024-07-25 11:18:09,120 - INFO - Solenoid valve turned on
+2024-07-25 11:18:09,121 - INFO - Readings: Temp=25.4°C, Humidity=70.8%, Soil Moisture=19.1%
+2024-07-25 11:18:10,123 - INFO - Solenoid valve turned off
+2024-07-25 11:18:10,124 - INFO - Readings: Temp=26.9°C, Humidity=88.3%, Soil Moisture=86.8%
+2024-07-25 11:18:11,128 - INFO - Solenoid valve turned off
+2024-07-25 11:18:11,131 - INFO - Readings: Temp=22.9°C, Humidity=70.3%, Soil Moisture=79.6%
+2024-07-25 11:18:12,135 - INFO - Solenoid valve turned off
+2024-07-25 11:18:12,136 - INFO - Readings: Temp=19.9°C, Humidity=47.8%, Soil Moisture=100.0%
+2024-07-25 11:18:13,138 - INFO - Solenoid valve turned on
+2024-07-25 11:18:13,138 - INFO - Readings: Temp=20.3°C, Humidity=87.2%, Soil Moisture=5.8%
+2024-07-25 11:18:14,141 - INFO - Solenoid valve turned off
+2024-07-25 11:18:14,142 - INFO - Readings: Temp=23.0°C, Humidity=77.3%, Soil Moisture=33.9%
+2024-07-25 11:18:15,145 - INFO - Solenoid valve turned off
+2024-07-25 11:18:15,146 - INFO - Readings: Temp=30.7°C, Humidity=42.2%, Soil Moisture=34.8%
+2024-07-25 11:18:16,148 - INFO - Solenoid valve turned on
+2024-07-25 11:18:16,148 - INFO - Readings: Temp=24.8°C, Humidity=89.2%, Soil Moisture=12.0%
+2024-07-25 11:18:17,152 - INFO - Solenoid valve turned off
+2024-07-25 11:18:17,152 - INFO - Readings: Temp=16.2°C, Humidity=51.8%, Soil Moisture=49.6%
+2024-07-25 11:18:18,157 - INFO - Solenoid valve turned on
+2024-07-25 11:18:18,158 - INFO - Readings: Temp=15.1°C, Humidity=47.2%, Soil Moisture=17.8%
+2024-07-25 11:18:19,161 - INFO - Solenoid valve turned off
+2024-07-25 11:18:19,162 - INFO - Readings: Temp=24.5°C, Humidity=65.7%, Soil Moisture=69.3%
+2024-07-25 11:18:20,164 - INFO - Solenoid valve turned off
+2024-07-25 11:18:20,164 - INFO - Readings: Temp=23.2°C, Humidity=33.6%, Soil Moisture=93.6%
+2024-07-25 11:18:21,167 - INFO - Solenoid valve turned off
+2024-07-25 11:18:21,167 - INFO - Readings: Temp=27.7°C, Humidity=34.5%, Soil Moisture=71.7%
+2024-07-25 11:18:22,169 - INFO - Solenoid valve turned off
+2024-07-25 11:18:22,169 - INFO - Readings: Temp=22.6°C, Humidity=46.5%, Soil Moisture=91.4%
+2024-07-25 11:18:23,172 - INFO - Solenoid valve turned off
+2024-07-25 11:18:23,172 - INFO - Readings: Temp=33.6°C, Humidity=58.9%, Soil Moisture=61.0%
+2024-07-25 11:18:24,176 - INFO - Solenoid valve turned off
+2024-07-25 11:18:24,176 - INFO - Readings: Temp=30.3°C, Humidity=34.3%, Soil Moisture=70.7%
+2024-07-25 11:18:25,180 - INFO - Solenoid valve turned off
+2024-07-25 11:18:25,180 - INFO - Readings: Temp=25.1°C, Humidity=43.2%, Soil Moisture=56.6%
+2024-07-25 11:18:26,182 - INFO - Solenoid valve turned off
+2024-07-25 11:18:26,182 - INFO - Readings: Temp=27.9°C, Humidity=54.7%, Soil Moisture=80.1%
+2024-07-25 11:18:27,185 - INFO - Solenoid valve turned off
+2024-07-25 11:18:27,185 - INFO - Readings: Temp=33.8°C, Humidity=64.7%, Soil Moisture=60.1%
+2024-07-25 11:18:28,188 - INFO - Solenoid valve turned off
+2024-07-25 11:18:28,189 - INFO - Readings: Temp=17.5°C, Humidity=48.6%, Soil Moisture=97.2%
+2024-07-25 11:18:29,192 - INFO - Solenoid valve turned off
+2024-07-25 11:18:29,192 - INFO - Readings: Temp=29.6°C, Humidity=32.6%, Soil Moisture=30.7%
+2024-07-25 11:18:30,195 - INFO - Solenoid valve turned on
+2024-07-25 11:18:30,196 - INFO - Readings: Temp=34.8°C, Humidity=61.3%, Soil Moisture=2.5%
+2024-07-25 11:18:31,199 - INFO - Solenoid valve turned off
+2024-07-25 11:18:31,200 - INFO - Readings: Temp=24.5°C, Humidity=31.8%, Soil Moisture=60.9%
+2024-07-25 11:18:32,203 - INFO - Solenoid valve turned off
+2024-07-25 11:18:32,203 - INFO - Readings: Temp=28.9°C, Humidity=69.2%, Soil Moisture=79.4%
+2024-07-25 11:18:33,206 - INFO - Solenoid valve turned on
+2024-07-25 11:18:33,206 - INFO - Readings: Temp=30.4°C, Humidity=86.0%, Soil Moisture=19.6%
+2024-07-25 11:18:34,211 - INFO - Solenoid valve turned on
+2024-07-25 11:18:34,211 - INFO - Readings: Temp=18.6°C, Humidity=86.7%, Soil Moisture=1.2%
+2024-07-25 11:18:35,215 - INFO - Solenoid valve turned off
+2024-07-25 11:18:35,215 - INFO - Readings: Temp=20.6°C, Humidity=34.3%, Soil Moisture=83.2%
+2024-07-25 11:18:36,219 - INFO - Solenoid valve turned off
+2024-07-25 11:18:36,219 - INFO - Readings: Temp=34.1°C, Humidity=46.7%, Soil Moisture=69.9%
+2024-07-25 11:18:37,222 - INFO - Solenoid valve turned on
+2024-07-25 11:18:37,222 - INFO - Readings: Temp=32.6°C, Humidity=67.3%, Soil Moisture=10.1%
+2024-07-25 11:18:38,230 - INFO - Solenoid valve turned off
+2024-07-25 11:18:38,230 - INFO - Readings: Temp=22.7°C, Humidity=68.4%, Soil Moisture=63.4%
+2024-07-25 11:18:39,235 - INFO - Solenoid valve turned on
+2024-07-25 11:18:39,235 - INFO - Readings: Temp=25.9°C, Humidity=46.1%, Soil Moisture=1.0%
+2024-07-25 11:18:40,240 - INFO - Solenoid valve turned off
+2024-07-25 11:18:40,241 - INFO - Readings: Temp=29.4°C, Humidity=89.5%, Soil Moisture=46.9%
+2024-07-25 11:18:41,244 - INFO - Solenoid valve turned on
+2024-07-25 11:18:41,245 - INFO - Readings: Temp=27.7°C, Humidity=78.3%, Soil Moisture=24.7%
+2024-07-25 11:18:42,250 - INFO - Solenoid valve turned off
+2024-07-25 11:18:42,251 - INFO - Readings: Temp=34.2°C, Humidity=55.2%, Soil Moisture=80.3%
+2024-07-25 11:18:43,261 - INFO - Solenoid valve turned off
+2024-07-25 11:18:43,261 - INFO - Readings: Temp=21.4°C, Humidity=51.6%, Soil Moisture=96.2%
+2024-07-25 11:18:44,264 - INFO - Solenoid valve turned off
+2024-07-25 11:18:44,264 - INFO - Readings: Temp=33.5°C, Humidity=47.8%, Soil Moisture=71.4%
+2024-07-25 11:18:45,277 - INFO - Solenoid valve turned off
+2024-07-25 11:18:45,277 - INFO - Readings: Temp=18.0°C, Humidity=59.8%, Soil Moisture=70.2%
+2024-07-25 11:18:46,280 - INFO - Solenoid valve turned off
+2024-07-25 11:18:46,280 - INFO - Readings: Temp=31.4°C, Humidity=75.0%, Soil Moisture=62.4%
+2024-07-25 11:18:47,284 - INFO - Solenoid valve turned off
+2024-07-25 11:18:47,285 - INFO - Readings: Temp=26.3°C, Humidity=83.5%, Soil Moisture=52.9%
+2024-07-25 11:18:48,288 - INFO - Solenoid valve turned on
+2024-07-25 11:18:48,288 - INFO - Readings: Temp=19.3°C, Humidity=81.3%, Soil Moisture=4.7%
+2024-07-25 11:18:49,293 - INFO - Solenoid valve turned off
+2024-07-25 11:18:49,293 - INFO - Readings: Temp=34.8°C, Humidity=51.7%, Soil Moisture=69.6%
+2024-07-25 11:18:50,297 - INFO - Solenoid valve turned off
+2024-07-25 11:18:50,297 - INFO - Readings: Temp=16.2°C, Humidity=80.1%, Soil Moisture=45.5%
+2024-07-25 11:18:51,301 - INFO - Solenoid valve turned off
+2024-07-25 11:18:51,301 - INFO - Readings: Temp=18.3°C, Humidity=46.8%, Soil Moisture=51.1%
+2024-07-25 11:18:52,304 - INFO - Solenoid valve turned off
+2024-07-25 11:18:52,305 - INFO - Readings: Temp=32.9°C, Humidity=46.8%, Soil Moisture=98.8%
+2024-07-25 11:18:53,309 - INFO - Solenoid valve turned off
+2024-07-25 11:18:53,309 - INFO - Readings: Temp=21.8°C, Humidity=71.4%, Soil Moisture=65.9%
+2024-07-25 11:18:54,313 - INFO - Solenoid valve turned off
+2024-07-25 11:18:54,313 - INFO - Readings: Temp=20.0°C, Humidity=61.0%, Soil Moisture=65.3%
+2024-07-25 11:18:55,323 - INFO - Solenoid valve turned off
+2024-07-25 11:18:55,323 - INFO - Readings: Temp=19.7°C, Humidity=45.1%, Soil Moisture=44.4%
+2024-07-25 11:18:56,327 - INFO - Solenoid valve turned on
+2024-07-25 11:18:56,328 - INFO - Readings: Temp=15.1°C, Humidity=32.5%, Soil Moisture=1.0%
+2024-07-25 11:18:57,332 - INFO - Solenoid valve turned on
+2024-07-25 11:18:57,332 - INFO - Readings: Temp=24.1°C, Humidity=61.9%, Soil Moisture=26.1%
+2024-07-25 11:18:58,335 - INFO - Solenoid valve turned off
+2024-07-25 11:18:58,335 - INFO - Readings: Temp=24.1°C, Humidity=88.5%, Soil Moisture=50.4%
+2024-07-25 11:18:59,389 - INFO - Solenoid valve turned off
+2024-07-25 11:18:59,389 - INFO - Readings: Temp=26.8°C, Humidity=74.6%, Soil Moisture=78.3%
+2024-07-25 11:19:00,403 - INFO - Solenoid valve turned on
+2024-07-25 11:19:00,403 - INFO - Readings: Temp=27.6°C, Humidity=36.8%, Soil Moisture=17.0%
+2024-07-25 11:19:01,406 - INFO - Solenoid valve turned on
+2024-07-25 11:19:01,407 - INFO - Readings: Temp=28.6°C, Humidity=84.7%, Soil Moisture=14.0%
+2024-07-25 11:19:02,410 - INFO - Solenoid valve turned off
+2024-07-25 11:19:02,411 - INFO - Readings: Temp=15.9°C, Humidity=48.1%, Soil Moisture=81.7%
+2024-07-25 11:19:03,414 - INFO - Solenoid valve turned off
+2024-07-25 11:19:03,414 - INFO - Readings: Temp=31.5°C, Humidity=85.3%, Soil Moisture=62.4%
+2024-07-25 11:19:04,416 - INFO - Solenoid valve turned off
+2024-07-25 11:19:04,416 - INFO - Readings: Temp=20.0°C, Humidity=89.3%, Soil Moisture=62.0%
+2024-07-25 11:19:05,430 - INFO - Solenoid valve turned off
+2024-07-25 11:19:05,430 - INFO - Readings: Temp=17.1°C, Humidity=30.3%, Soil Moisture=31.8%
+2024-07-25 11:19:06,434 - INFO - Solenoid valve turned on
+2024-07-25 11:19:06,434 - INFO - Readings: Temp=30.9°C, Humidity=61.2%, Soil Moisture=0.7%
+2024-07-25 11:19:07,437 - INFO - Solenoid valve turned off
+2024-07-25 11:19:07,437 - INFO - Readings: Temp=28.7°C, Humidity=86.0%, Soil Moisture=95.7%
+2024-07-25 11:19:08,441 - INFO - Solenoid valve turned off
+2024-07-25 11:19:08,441 - INFO - Readings: Temp=34.1°C, Humidity=31.6%, Soil Moisture=85.3%
+2024-07-25 11:19:09,445 - INFO - Solenoid valve turned off
+2024-07-25 11:19:09,445 - INFO - Readings: Temp=23.9°C, Humidity=38.0%, Soil Moisture=87.2%
+2024-07-25 11:19:10,449 - INFO - Solenoid valve turned off
+2024-07-25 11:19:10,450 - INFO - Readings: Temp=23.5°C, Humidity=57.2%, Soil Moisture=53.0%
+2024-07-25 11:19:11,459 - INFO - Solenoid valve turned off
+2024-07-25 11:19:11,460 - INFO - Readings: Temp=24.3°C, Humidity=45.2%, Soil Moisture=91.6%
+2024-07-25 11:19:12,468 - INFO - Solenoid valve turned on
+2024-07-25 11:19:12,468 - INFO - Readings: Temp=28.4°C, Humidity=36.8%, Soil Moisture=13.4%
+2024-07-25 11:19:13,471 - INFO - Solenoid valve turned on
+2024-07-25 11:19:13,471 - INFO - Readings: Temp=28.1°C, Humidity=33.6%, Soil Moisture=11.9%
+2024-07-25 11:19:14,474 - INFO - Solenoid valve turned off
+2024-07-25 11:19:14,474 - INFO - Readings: Temp=15.3°C, Humidity=65.6%, Soil Moisture=50.3%
+2024-07-25 11:19:15,524 - INFO - Solenoid valve turned off
+2024-07-25 11:19:15,524 - INFO - Readings: Temp=21.4°C, Humidity=62.7%, Soil Moisture=84.4%
+2024-07-25 11:19:16,527 - INFO - Solenoid valve turned off
+2024-07-25 11:19:16,527 - INFO - Readings: Temp=32.9°C, Humidity=41.2%, Soil Moisture=74.5%
+2024-07-25 11:19:17,530 - INFO - Solenoid valve turned off
+2024-07-25 11:19:17,542 - INFO - Readings: Temp=20.2°C, Humidity=47.2%, Soil Moisture=56.3%
+2024-07-25 11:19:18,545 - INFO - Solenoid valve turned off
+2024-07-25 11:19:18,545 - INFO - Readings: Temp=32.4°C, Humidity=35.9%, Soil Moisture=74.7%
+2024-07-25 11:19:19,548 - INFO - Solenoid valve turned off
+2024-07-25 11:19:19,549 - INFO - Readings: Temp=23.1°C, Humidity=31.5%, Soil Moisture=82.6%
+2024-07-25 11:19:20,552 - INFO - Solenoid valve turned off
+2024-07-25 11:19:20,552 - INFO - Readings: Temp=16.7°C, Humidity=89.5%, Soil Moisture=76.5%
+2024-07-25 11:19:21,556 - INFO - Solenoid valve turned off
+2024-07-25 11:19:21,556 - INFO - Readings: Temp=22.6°C, Humidity=32.9%, Soil Moisture=78.6%
+2024-07-25 11:19:22,560 - INFO - Solenoid valve turned on
+2024-07-25 11:19:22,560 - INFO - Readings: Temp=32.7°C, Humidity=35.2%, Soil Moisture=11.5%
+2024-07-25 11:19:23,563 - INFO - Solenoid valve turned off
+2024-07-25 11:19:23,563 - INFO - Readings: Temp=19.9°C, Humidity=76.9%, Soil Moisture=51.4%
+2024-07-25 11:19:24,566 - INFO - Solenoid valve turned off
+2024-07-25 11:19:24,567 - INFO - Readings: Temp=27.7°C, Humidity=81.5%, Soil Moisture=95.9%
+2024-07-25 11:19:25,570 - INFO - Solenoid valve turned off
+2024-07-25 11:19:25,570 - INFO - Readings: Temp=22.9°C, Humidity=63.9%, Soil Moisture=95.6%
+2024-07-25 11:19:26,574 - INFO - Solenoid valve turned off
+2024-07-25 11:19:26,574 - INFO - Readings: Temp=20.6°C, Humidity=56.5%, Soil Moisture=70.4%
+2024-07-25 11:19:27,587 - INFO - Solenoid valve turned off
+2024-07-25 11:19:27,587 - INFO - Readings: Temp=28.8°C, Humidity=32.0%, Soil Moisture=75.3%
+2024-07-25 11:19:28,591 - INFO - Solenoid valve turned off
+2024-07-25 11:19:28,592 - INFO - Readings: Temp=19.3°C, Humidity=71.7%, Soil Moisture=82.5%
+2024-07-25 11:19:29,595 - INFO - Solenoid valve turned off
+2024-07-25 11:19:29,595 - INFO - Readings: Temp=20.5°C, Humidity=37.0%, Soil Moisture=92.4%
+2024-07-25 11:19:30,598 - INFO - Solenoid valve turned off
+2024-07-25 11:19:30,598 - INFO - Readings: Temp=30.5°C, Humidity=83.6%, Soil Moisture=36.6%
+2024-07-25 11:19:31,647 - INFO - Solenoid valve turned on
+2024-07-25 11:19:31,647 - INFO - Readings: Temp=27.4°C, Humidity=30.4%, Soil Moisture=28.5%
+2024-07-25 11:19:32,659 - INFO - Solenoid valve turned off
+2024-07-25 11:19:32,659 - INFO - Readings: Temp=28.1°C, Humidity=53.3%, Soil Moisture=58.7%
+2024-07-25 11:19:33,661 - INFO - Solenoid valve turned off
+2024-07-25 11:19:33,661 - INFO - Readings: Temp=20.7°C, Humidity=63.1%, Soil Moisture=40.2%
+2024-07-25 11:19:34,664 - INFO - Solenoid valve turned off
+2024-07-25 11:19:34,664 - INFO - Readings: Temp=15.6°C, Humidity=65.9%, Soil Moisture=98.7%
+2024-07-25 11:19:35,666 - INFO - Solenoid valve turned on
+2024-07-25 11:19:35,666 - INFO - Readings: Temp=33.8°C, Humidity=31.2%, Soil Moisture=19.8%
+2024-07-25 11:19:36,670 - INFO - Solenoid valve turned on
+2024-07-25 11:19:36,670 - INFO - Readings: Temp=24.4°C, Humidity=72.5%, Soil Moisture=9.4%
+2024-07-25 11:19:37,674 - INFO - Solenoid valve turned off
+2024-07-25 11:19:37,674 - INFO - Readings: Temp=22.0°C, Humidity=32.0%, Soil Moisture=51.6%
+2024-07-25 11:19:38,677 - INFO - Solenoid valve turned off
+2024-07-25 11:19:38,678 - INFO - Readings: Temp=22.0°C, Humidity=54.7%, Soil Moisture=33.5%
+2024-07-25 11:19:39,681 - INFO - Solenoid valve turned on
+2024-07-25 11:19:39,681 - INFO - Readings: Temp=35.0°C, Humidity=77.9%, Soil Moisture=3.3%
+2024-07-25 11:19:40,684 - INFO - Solenoid valve turned off
+2024-07-25 11:19:40,684 - INFO - Readings: Temp=21.8°C, Humidity=72.8%, Soil Moisture=92.1%
+2024-07-25 11:19:41,687 - INFO - Solenoid valve turned off
+2024-07-25 11:19:41,687 - INFO - Readings: Temp=29.6°C, Humidity=82.7%, Soil Moisture=53.0%
+2024-07-25 11:19:42,690 - INFO - Solenoid valve turned off
+2024-07-25 11:19:42,690 - INFO - Readings: Temp=15.4°C, Humidity=59.2%, Soil Moisture=87.0%
+2024-07-25 11:19:43,694 - INFO - Solenoid valve turned off
+2024-07-25 11:19:43,694 - INFO - Readings: Temp=20.2°C, Humidity=31.4%, Soil Moisture=82.6%
+2024-07-25 11:19:44,697 - INFO - Solenoid valve turned off
+2024-07-25 11:19:44,697 - INFO - Readings: Temp=25.8°C, Humidity=34.7%, Soil Moisture=38.6%
+2024-07-25 11:19:45,700 - INFO - Solenoid valve turned off
+2024-07-25 11:19:45,700 - INFO - Readings: Temp=23.1°C, Humidity=66.4%, Soil Moisture=71.4%
+2024-07-25 11:19:46,702 - INFO - Solenoid valve turned off
+2024-07-25 11:19:46,702 - INFO - Readings: Temp=28.3°C, Humidity=41.4%, Soil Moisture=40.3%
+2024-07-25 11:19:47,765 - INFO - Solenoid valve turned on
+2024-07-25 11:19:47,769 - INFO - Readings: Temp=27.2°C, Humidity=51.4%, Soil Moisture=29.6%
+2024-07-25 11:19:48,772 - INFO - Solenoid valve turned on
+2024-07-25 11:19:48,772 - INFO - Readings: Temp=17.4°C, Humidity=66.7%, Soil Moisture=21.8%
+2024-07-25 11:19:49,776 - INFO - Solenoid valve turned off
+2024-07-25 11:19:49,777 - INFO - Readings: Temp=31.1°C, Humidity=85.6%, Soil Moisture=83.8%
+2024-07-25 11:19:50,781 - INFO - Solenoid valve turned on
+2024-07-25 11:19:50,781 - INFO - Readings: Temp=27.9°C, Humidity=75.3%, Soil Moisture=16.7%
+2024-07-25 11:19:51,794 - INFO - Solenoid valve turned on
+2024-07-25 11:19:51,794 - INFO - Readings: Temp=32.7°C, Humidity=50.6%, Soil Moisture=20.0%
+2024-07-25 11:19:52,798 - INFO - Solenoid valve turned off
+2024-07-25 11:19:52,798 - INFO - Readings: Temp=31.7°C, Humidity=57.6%, Soil Moisture=90.6%
+2024-07-25 11:19:53,801 - INFO - Solenoid valve turned on
+2024-07-25 11:19:53,801 - INFO - Readings: Temp=19.6°C, Humidity=54.5%, Soil Moisture=28.4%
+2024-07-25 11:19:54,804 - INFO - Solenoid valve turned off
+2024-07-25 11:19:54,805 - INFO - Readings: Temp=15.9°C, Humidity=42.1%, Soil Moisture=74.7%
+2024-07-25 11:19:55,809 - INFO - Solenoid valve turned off
+2024-07-25 11:19:55,809 - INFO - Readings: Temp=27.0°C, Humidity=69.0%, Soil Moisture=59.3%
+2024-07-25 11:19:56,820 - INFO - Solenoid valve turned off
+2024-07-25 11:19:56,820 - INFO - Readings: Temp=24.4°C, Humidity=65.3%, Soil Moisture=73.3%
+2024-07-25 11:19:57,824 - INFO - Solenoid valve turned off
+2024-07-25 11:19:57,824 - INFO - Readings: Temp=28.2°C, Humidity=40.3%, Soil Moisture=99.9%
+2024-07-25 11:19:58,827 - INFO - Solenoid valve turned on
+2024-07-25 11:19:58,827 - INFO - Readings: Temp=30.6°C, Humidity=69.7%, Soil Moisture=18.9%
+2024-07-25 11:19:59,830 - INFO - Solenoid valve turned off
+2024-07-25 11:19:59,831 - INFO - Readings: Temp=30.0°C, Humidity=33.7%, Soil Moisture=68.8%
+2024-07-25 11:20:00,834 - INFO - Solenoid valve turned off
+2024-07-25 11:20:00,834 - INFO - Readings: Temp=18.7°C, Humidity=57.6%, Soil Moisture=34.5%
+2024-07-25 11:20:01,845 - INFO - Solenoid valve turned off
+2024-07-25 11:20:01,845 - INFO - Readings: Temp=34.9°C, Humidity=86.1%, Soil Moisture=65.3%
+2024-07-25 11:20:02,849 - INFO - Solenoid valve turned off
+2024-07-25 11:20:02,849 - INFO - Readings: Temp=28.4°C, Humidity=66.1%, Soil Moisture=37.9%
+2024-07-25 11:20:03,899 - INFO - Solenoid valve turned off
+2024-07-25 11:20:03,899 - INFO - Readings: Temp=16.4°C, Humidity=71.9%, Soil Moisture=93.3%
+2024-07-25 11:20:04,902 - INFO - Solenoid valve turned off
+2024-07-25 11:20:04,903 - INFO - Readings: Temp=30.4°C, Humidity=51.7%, Soil Moisture=67.7%
+2024-07-25 11:20:05,906 - INFO - Solenoid valve turned off
+2024-07-25 11:20:05,906 - INFO - Readings: Temp=20.6°C, Humidity=42.9%, Soil Moisture=67.2%
+2024-07-25 11:20:06,919 - INFO - Solenoid valve turned off
+2024-07-25 11:20:06,920 - INFO - Readings: Temp=33.5°C, Humidity=41.3%, Soil Moisture=45.0%
+2024-07-25 11:20:07,922 - INFO - Solenoid valve turned off
+2024-07-25 11:20:07,923 - INFO - Readings: Temp=30.2°C, Humidity=60.2%, Soil Moisture=78.8%
+2024-07-25 11:20:08,925 - INFO - Solenoid valve turned off
+2024-07-25 11:20:08,925 - INFO - Readings: Temp=32.7°C, Humidity=41.4%, Soil Moisture=93.5%
+2024-07-25 11:20:09,928 - INFO - Solenoid valve turned on
+2024-07-25 11:20:09,928 - INFO - Readings: Temp=30.1°C, Humidity=80.5%, Soil Moisture=16.3%
+2024-07-25 11:20:10,931 - INFO - Solenoid valve turned on
+2024-07-25 11:20:10,931 - INFO - Readings: Temp=28.1°C, Humidity=76.2%, Soil Moisture=7.2%
+2024-07-25 11:20:11,944 - INFO - Solenoid valve turned off
+2024-07-25 11:20:11,944 - INFO - Readings: Temp=18.9°C, Humidity=35.4%, Soil Moisture=30.1%
+2024-07-25 11:20:12,948 - INFO - Solenoid valve turned off
+2024-07-25 11:20:12,948 - INFO - Readings: Temp=32.0°C, Humidity=83.4%, Soil Moisture=88.7%
+2024-07-25 11:20:13,951 - INFO - Solenoid valve turned on
+2024-07-25 11:20:13,951 - INFO - Readings: Temp=34.2°C, Humidity=78.0%, Soil Moisture=22.0%
+2024-07-25 11:20:14,954 - INFO - Solenoid valve turned off
+2024-07-25 11:20:14,954 - INFO - Readings: Temp=21.1°C, Humidity=89.3%, Soil Moisture=35.3%
+2024-07-25 11:20:15,957 - INFO - Solenoid valve turned off
+2024-07-25 11:20:15,957 - INFO - Readings: Temp=16.0°C, Humidity=36.2%, Soil Moisture=33.1%
+2024-07-25 11:20:16,960 - INFO - Solenoid valve turned off
+2024-07-25 11:20:16,960 - INFO - Readings: Temp=30.1°C, Humidity=73.9%, Soil Moisture=61.2%
+2024-07-25 11:20:17,962 - INFO - Solenoid valve turned off
+2024-07-25 11:20:17,962 - INFO - Readings: Temp=22.9°C, Humidity=32.3%, Soil Moisture=78.5%
+2024-07-25 11:20:18,965 - INFO - Solenoid valve turned off
+2024-07-25 11:20:18,966 - INFO - Readings: Temp=25.2°C, Humidity=39.4%, Soil Moisture=92.0%
+2024-07-25 11:20:20,015 - INFO - Solenoid valve turned off
+2024-07-25 11:20:20,016 - INFO - Readings: Temp=33.4°C, Humidity=31.2%, Soil Moisture=74.4%
+2024-07-25 11:20:21,019 - INFO - Solenoid valve turned on
+2024-07-25 11:20:21,019 - INFO - Readings: Temp=15.4°C, Humidity=86.9%, Soil Moisture=3.6%
+2024-07-25 11:20:22,021 - INFO - Solenoid valve turned off
+2024-07-25 11:20:22,022 - INFO - Readings: Temp=19.7°C, Humidity=68.0%, Soil Moisture=78.7%
+2024-07-25 11:20:23,026 - INFO - Solenoid valve turned off
+2024-07-25 11:20:23,027 - INFO - Readings: Temp=23.0°C, Humidity=50.7%, Soil Moisture=41.7%
+2024-07-25 11:20:24,030 - INFO - Solenoid valve turned on
+2024-07-25 11:20:24,030 - INFO - Readings: Temp=29.4°C, Humidity=85.4%, Soil Moisture=17.6%
+2024-07-25 11:20:25,033 - INFO - Solenoid valve turned off
+2024-07-25 11:20:25,033 - INFO - Readings: Temp=28.4°C, Humidity=53.8%, Soil Moisture=92.0%
+2024-07-25 11:20:26,044 - INFO - Solenoid valve turned off
+2024-07-25 11:20:26,046 - INFO - Readings: Temp=31.4°C, Humidity=67.5%, Soil Moisture=81.1%
+2024-07-25 11:20:27,049 - INFO - Solenoid valve turned off
+2024-07-25 11:20:27,049 - INFO - Readings: Temp=26.3°C, Humidity=58.5%, Soil Moisture=76.4%
+2024-07-25 11:20:28,052 - INFO - Solenoid valve turned off
+2024-07-25 11:20:28,052 - INFO - Readings: Temp=23.0°C, Humidity=55.1%, Soil Moisture=49.8%
+2024-07-25 11:20:29,054 - INFO - Solenoid valve turned on
+2024-07-25 11:20:29,054 - INFO - Readings: Temp=21.2°C, Humidity=44.4%, Soil Moisture=2.6%
+2024-07-25 11:20:30,058 - INFO - Solenoid valve turned off
+2024-07-25 11:20:30,058 - INFO - Readings: Temp=29.6°C, Humidity=68.3%, Soil Moisture=73.8%
+2024-07-25 11:20:31,072 - INFO - Solenoid valve turned off
+2024-07-25 11:20:31,072 - INFO - Readings: Temp=27.4°C, Humidity=63.3%, Soil Moisture=91.2%
+2024-07-25 11:20:32,075 - INFO - Solenoid valve turned on
+2024-07-25 11:20:32,075 - INFO - Readings: Temp=30.0°C, Humidity=57.2%, Soil Moisture=23.3%
+2024-07-25 11:20:33,077 - INFO - Solenoid valve turned off
+2024-07-25 11:20:33,078 - INFO - Readings: Temp=32.9°C, Humidity=68.8%, Soil Moisture=34.7%
+2024-07-25 11:20:34,081 - INFO - Solenoid valve turned off
+2024-07-25 11:20:34,081 - INFO - Readings: Temp=22.8°C, Humidity=42.3%, Soil Moisture=76.7%
+2024-07-25 11:20:35,090 - INFO - Solenoid valve turned off
+2024-07-25 11:20:35,091 - INFO - Readings: Temp=21.0°C, Humidity=52.7%, Soil Moisture=55.2%
+2024-07-25 11:20:36,171 - INFO - Solenoid valve turned off
+2024-07-25 11:20:36,171 - INFO - Readings: Temp=24.2°C, Humidity=83.7%, Soil Moisture=81.4%
+2024-07-25 11:20:37,175 - INFO - Solenoid valve turned off
+2024-07-25 11:20:37,175 - INFO - Readings: Temp=27.9°C, Humidity=88.3%, Soil Moisture=49.7%
+2024-07-25 11:20:38,178 - INFO - Solenoid valve turned off
+2024-07-25 11:20:38,178 - INFO - Readings: Temp=17.3°C, Humidity=62.4%, Soil Moisture=37.0%
+2024-07-25 11:20:39,190 - INFO - Solenoid valve turned off
+2024-07-25 11:20:39,190 - INFO - Readings: Temp=34.4°C, Humidity=47.3%, Soil Moisture=54.3%
+2024-07-25 11:20:40,270 - INFO - Solenoid valve turned off
+2024-07-25 11:20:40,270 - INFO - Readings: Temp=15.9°C, Humidity=67.9%, Soil Moisture=70.5%
+2024-07-25 11:20:41,273 - INFO - Solenoid valve turned off
+2024-07-25 11:20:41,273 - INFO - Readings: Temp=24.8°C, Humidity=62.9%, Soil Moisture=94.2%
+2024-07-25 11:20:42,276 - INFO - Solenoid valve turned off
+2024-07-25 11:20:42,277 - INFO - Readings: Temp=16.3°C, Humidity=60.5%, Soil Moisture=72.8%
+2024-07-25 11:20:43,279 - INFO - Solenoid valve turned off
+2024-07-25 11:20:43,280 - INFO - Readings: Temp=22.3°C, Humidity=74.4%, Soil Moisture=40.3%
+2024-07-25 11:20:44,283 - INFO - Solenoid valve turned on
+2024-07-25 11:20:44,283 - INFO - Readings: Temp=23.0°C, Humidity=42.0%, Soil Moisture=28.0%
+2024-07-25 11:20:45,285 - INFO - Solenoid valve turned on
+2024-07-25 11:20:45,285 - INFO - Readings: Temp=33.0°C, Humidity=85.8%, Soil Moisture=14.4%
+2024-07-25 11:20:46,297 - INFO - Solenoid valve turned on
+2024-07-25 11:20:46,297 - INFO - Readings: Temp=22.2°C, Humidity=35.5%, Soil Moisture=25.7%
+2024-07-25 11:20:47,300 - INFO - Solenoid valve turned off
+2024-07-25 11:20:47,300 - INFO - Readings: Temp=25.9°C, Humidity=47.2%, Soil Moisture=77.1%
+2024-07-25 11:20:48,302 - INFO - Solenoid valve turned off
+2024-07-25 11:20:48,302 - INFO - Readings: Temp=25.1°C, Humidity=47.2%, Soil Moisture=93.8%
+2024-07-25 11:20:49,305 - INFO - Solenoid valve turned off
+2024-07-25 11:20:49,305 - INFO - Readings: Temp=32.8°C, Humidity=53.5%, Soil Moisture=79.0%
+2024-07-25 11:20:50,311 - INFO - Solenoid valve turned on
+2024-07-25 11:20:50,312 - INFO - Readings: Temp=25.9°C, Humidity=87.3%, Soil Moisture=0.2%
+2024-07-25 11:20:51,315 - INFO - Solenoid valve turned on
+2024-07-25 11:20:51,316 - INFO - Readings: Temp=17.1°C, Humidity=70.1%, Soil Moisture=24.2%
+2024-07-25 11:20:52,319 - INFO - Solenoid valve turned off
+2024-07-25 11:20:52,319 - INFO - Readings: Temp=34.4°C, Humidity=33.1%, Soil Moisture=94.4%
+2024-07-25 11:20:53,323 - INFO - Solenoid valve turned off
+2024-07-25 11:20:53,323 - INFO - Readings: Temp=26.8°C, Humidity=36.0%, Soil Moisture=65.7%
+2024-07-25 11:20:53,414 - INFO - Program interrupted by user
+2024-07-25 11:20:53,421 - INFO - Program ended

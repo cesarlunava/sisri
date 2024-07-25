@@ -12,11 +12,11 @@ import cv2
 import logging
 from datetime import datetime, timedelta
 
-# Set up logging
+
 logging.basicConfig(filename='greenhouse_log.txt', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Sensor setup
+
 try:
     sensor = minimalmodbus.Instrument('/dev/ttyUSB0', 1)
     sensor.serial.bytesize = 8
@@ -140,7 +140,7 @@ try:
                 'image_path': image_path
             })
 
-            if len(data) % 100 == 0:  # Save data every 100 entries
+            if len(data) % 100 == 0:  
                 pd.DataFrame(data).to_csv('greenhouse_data.csv', index=False, mode='a', header=not pd.io.common.file_exists('greenhouse_data.csv'))
                 data = []
 
@@ -148,14 +148,14 @@ try:
         else:
             logging.warning("Failed to read one or more sensors")
 
-        time.sleep(60 - ((time.time() - start_time) % 60))  # Align to minute boundaries
+        time.sleep(60 - ((time.time() - start_time) % 60)) 
 
 except KeyboardInterrupt:
     logging.info("Program interrupted by user")
 except Exception as e:
     logging.error(f"An error occurred: {e}")
 finally:
-    if data:  # Save any remaining data
+    if data:  
         pd.DataFrame(data).to_csv('greenhouse_data.csv', index=False, mode='a', header=not pd.io.common.file_exists('greenhouse_data.csv'))
     GPIO.cleanup()
     logging.info("Program ended, GPIO cleaned up")
