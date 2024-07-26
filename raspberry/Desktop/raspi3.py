@@ -1,40 +1,26 @@
 import pandas as pd
 import numpy as np
-import board
-import busio
-import adafruit_bh1750
 import RPi.GPIO as GPIO
-import minimalmodbus
-import serial
 import time
 import Adafruit_DHT
 import cv2
 import logging
 from datetime import datetime, timedelta
+import random
+import Adafruit_MCP3008  # For reading analog values
 
-
+# Set up logging
 logging.basicConfig(filename='greenhouse_log.txt', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
-
-
-try:
-    sensor = minimalmodbus.Instrument('/dev/ttyUSB0', 1)
-    sensor.serial.bytesize = 8
-    sensor.serial.parity = serial.PARITY_NONE
-    sensor.serial.stopbits = 1
-    sensor.serial.timeout = 1
-
-    i2c = busio.I2C(board.SCL, board.SDA)
-    bh1750 = adafruit_bh1750.BH1750(i2c)
-except Exception as e:
-    logging.error(f"Error setting up sensors: {e}")
-    raise
 
 # GPIO setup
 FLOW_SENSOR_PIN = 16
 ANEMOMETER_PIN = 18
 RELAY_PIN = 17
 DHT_PIN = 4
+
+# LDR setup (assuming use of MCP3008 ADC)
+LDR_CHANNEL = 0  # The channel on the MCP3008 where the LDR is connected
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(ANEMOMETER_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -43,6 +29,9 @@ GPIO.setup(RELAY_PIN, GPIO.OUT)
 GPIO.output(RELAY_PIN, GPIO.LOW)
 
 DHT_SENSOR = Adafruit_DHT.DHT11
+
+# Initialize MCP3008
+mcp = Adafruit_MCP3008.MCP3008(clk=11, cs=8, miso=9, mosi=10)
 
 wind_count = 0
 flow_count = 0
@@ -63,17 +52,27 @@ GPIO.add_event_detect(FLOW_SENSOR_PIN, GPIO.FALLING, callback=flow_callback)
 num_days = 90
 pressure = 101325
 
-def read_sensor():
-    try:
-        ph = sensor.read_register(0, 1)
-        npk = sensor.read_registers(1, 3)
-        temperature = sensor.read_register(4, 1)
-        humidity = sensor.read_register(5, 1)
-        conductivity = sensor.read_register(6, 1)
-        return ph, npk, temperature, humidity, conductivity
-    except Exception as e:
-        logging.error(f"Error reading sensor: {e}")
-        return None, None, None, None, None
+# Sensor reading functions
+def read_dht11():
+    humidity, temperature = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
+    return temperature, humidity
+
+def read_light():
+    # Read the analog value from the MCP3008
+    value = mcp.read_adc(LDR_CHANNEL)
+    # Convert the 10-bit ADC value (0-1023) to a light percentage (0-100)
+    # You may need to adjust this conversion based on your specific LDR characteristics
+    light_percentage = (value / 1023) * 100
+    return light_percentage
+
+def read_soil_moisture():
+    return random.uniform(0, 100)  # Simulated percentage
+
+def read_ph():
+    return random.uniform(0, 14)
+
+def read_npk():
+    return [random.uniform(0, 100) for _ in range(3)]  # Simulated NPK values
 
 def control_valve(soil_moisture, threshold=30):
     if soil_moisture is not None and soil_moisture < threshold:
@@ -103,19 +102,22 @@ data = []
 
 try:
     while datetime.now() < end_time:
-        ph, npk, _, _, conductivity = read_sensor()
+        # Sensor readings
+        temperature, humidity = read_dht11()
+        light = read_light()
+        soil_moisture = read_soil_moisture()
+        ph = read_ph()
+        npk = read_npk()
 
-        solar_radiation = bh1750.lux / 3.6
-
+        # Wind speed and flow rate calculations
         wind_count = 0
         flow_count = 0
         time.sleep(max(wind_interval, flow_interval))
         wind_speed = (wind_count / wind_interval) * 2.4
         flow_rate = (flow_count / flow_interval) * 0.1
 
-        humidity, temperature = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
-
-        if all(v is not None for v in [humidity, temperature, solar_radiation, wind_speed]):
+        if all(v is not None for v in [temperature, humidity, light, wind_speed]):
+            solar_radiation = light * 10  # Approximate conversion, may need adjustment
             eto = calculate_eto(temperature, humidity, solar_radiation, wind_speed)
 
             with cv2.VideoCapture(0) as cap:
@@ -131,31 +133,37 @@ try:
                 'timestamp': datetime.now(),
                 'humidity': humidity,
                 'temperature': temperature,
+                'light': light,
                 'solar_radiation': solar_radiation,
                 'wind_speed': wind_speed,
-                'soil_moisture': conductivity,
+                'soil_moisture': soil_moisture,
                 'eto': eto,
                 'flow_rate': flow_rate,
                 'ph': ph,
+                'n': npk[0],
+                'p': npk[1],
+                'k': npk[2],
                 'image_path': image_path
             })
 
-            if len(data) % 100 == 0:  
+            if len(data) % 100 == 0:  # Save data every 100 entries
                 pd.DataFrame(data).to_csv('greenhouse_data.csv', index=False, mode='a', header=not pd.io.common.file_exists('greenhouse_data.csv'))
                 data = []
 
-            control_valve(conductivity)
+            control_valve(soil_moisture)
         else:
             logging.warning("Failed to read one or more sensors")
 
-        time.sleep(60 - ((time.time() - start_time) % 60)) 
+        time.sleep(60 - ((time.time() - start_time) % 60))  # Align to minute boundaries
 
 except KeyboardInterrupt:
     logging.info("Program interrupted by user")
 except Exception as e:
     logging.error(f"An error occurred: {e}")
 finally:
-    if data:  
+    if data:  # Save any remaining data
         pd.DataFrame(data).to_csv('greenhouse_data.csv', index=False, mode='a', header=not pd.io.common.file_exists('greenhouse_data.csv'))
     GPIO.cleanup()
     logging.info("Program ended, GPIO cleaned up")
+
+print("Monitoring completed. Check 'greenhouse_data.csv' for results and 'greenhouse_log.txt' for logs.")
