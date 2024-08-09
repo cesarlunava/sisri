@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sisri - ¿Qué debes de saber?</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -74,25 +75,21 @@
         .carousel-item p {
             color: #555;
         }
-    </style>
- <style>
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
             background-color: #2d462e; /* Color de fondo para las flechas */
-            border-radius: 10%; /* Opcional: para hacer el fondo circular */
+            border-radius: 50%; /* Fondo circular */
         }
-    
         .carousel-control-prev-icon::before,
         .carousel-control-next-icon::before {
             color: white; /* Color del icono dentro del círculo */
         }
-        
-        /* Cambiar el color cuando se pasa el mouse sobre las flechas */
         .carousel-control-prev:hover .carousel-control-prev-icon,
         .carousel-control-next:hover .carousel-control-next-icon {
             background-color: #495c4a; /* Color de fondo cuando se pasa el mouse */
         }
     </style>
+</head>
 <body>
     <header>
         <img src="images/logo sisri blanco (1).png" alt="Logo">
@@ -141,24 +138,13 @@
                 <li data-target="#glossaryCarousel" data-slide-to="13"></li>
             </ol>
             <div class="carousel-inner">
-            
                 <div class="carousel-item active">
                     <h3>Glosario</h3>
                 </div>
-            <a class="carousel-control-prev" href="#glossaryCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span> 
-            </a>
-            <a class="carousel-control-next" href="#glossaryCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>    
-            <div class="carousel-item active">
-                         <h5>MSE:</h5>
+                <div class="carousel-item">
+                    <h5>MSE:</h5>
                     <p>Min Square Root</p>
                 </div>
-            
-        </div>
                 <div class="carousel-item">
                     <h5>Estrés Hídrico:</h5>
                     <p>Demanda de agua es más alta que la cantidad disponible</p>
@@ -174,51 +160,47 @@
                 <div class="carousel-item">
                     <h5>Ciclos:</h5>
                     <p>Periodo de tiempo en el que se lleva a cabo el ciclo de crecimiento de algún cultivo en específico</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h5>Histograma:</h5>
-                        <p>Nos permite clasificar a tus lotes o parcelas en diferentes ambientes en base a la utilización de las imágenes satelitales</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h5>Correlación:</h5>
-                        <p>Cambian conjuntamente a una tasa constante</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h5>Humedad aire-Humedad suelo:</h5>
-                        <p>La humedad del aire es únicamente la cantidad de vapor de agua existente en el aire, mientras que la del suelo, es el agua filtrada que un sensor es capaz de captar.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h5>Radiación solar:</h5>
-                        <p>El flujo de energía que emite el sol.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h5>Fenología:</h5>
-                        <p>Relación de planta con su entorno</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h5>Pulsaciones:</h5>
-                        <p>Descripción sobre el sistema de pulsaciones.</p>
-                    </div>
                 </div>
-                <a class="carousel-control-prev" href="#glossaryCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-                <a class="carousel-control-next" href="#glossaryCarousel" role="button" data-slide="next">
-                </a>
+                <div class="carousel-item">
+                    <h5>Histograma:</h5>
+                    <p>Nos permite clasificar a tus lotes o parcelas en diferentes ambientes en base a la utilización de las imágenes satelitales</p>
+                </div>
+                <div class="carousel-item">
+                    <h5>Correlación:</h5>
+                    <p>Cambian conjuntamente a una tasa constante</p>
+                </div>
+                <div class="carousel-item">
+                    <h5>Humedad aire-Humedad suelo:</h5>
+                    <p>La humedad del aire es únicamente la cantidad de vapor de agua existente en el aire, mientras que la del suelo, es el agua filtrada que un sensor es capaz de captar.</p>
+                </div>
+                <div class="carousel-item">
+                    <h5>Radiación solar:</h5>
+                    <p>El flujo de energía que emite el sol.</p>
+                </div>
+                <div class="carousel-item">
+                    <h5>Fenología:</h5>
+                    <p>Relación de planta con su entorno</p>
+                </div>
+                <div class="carousel-item">
+                    <h5>Pulsaciones:</h5>
+                    <p>Descripción sobre el sistema de pulsaciones.</p>
+                </div>
             </div>
+            <a class="carousel-control-prev" href="#glossaryCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#glossaryCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </div>
-    </div>
-    </div>
-    </div>
     <footer>
-            <p>&copy; 2024 Sisri. Todos los derechos reservados.</p>
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
-    </html> 
-                <a class="carousel-control-prev" href="#glossaryCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="false
+        <p>&copy; 2024 Sisri. Todos los derechos reservados.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
