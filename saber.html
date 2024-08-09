@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sisri - ¿Qué debes de saber?</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -76,7 +75,24 @@
             color: #555;
         }
     </style>
-</head>
+ <style>
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #2d462e; /* Color de fondo para las flechas */
+            border-radius: 10%; /* Opcional: para hacer el fondo circular */
+        }
+    
+        .carousel-control-prev-icon::before,
+        .carousel-control-next-icon::before {
+            color: white; /* Color del icono dentro del círculo */
+        }
+        
+        /* Cambiar el color cuando se pasa el mouse sobre las flechas */
+        .carousel-control-prev:hover .carousel-control-prev-icon,
+        .carousel-control-next:hover .carousel-control-next-icon {
+            background-color: #495c4a; /* Color de fondo cuando se pasa el mouse */
+        }
+    </style>
 <body>
     <header>
         <img src="images/logo sisri blanco (1).png" alt="Logo">
@@ -128,18 +144,20 @@
             
                 <div class="carousel-item active">
                     <h3>Glosario</h3>
-                    <h5>MSE:</h5>
-                    <p>Min Square Root</p>
                 </div>
-            </div>
             <a class="carousel-control-prev" href="#glossaryCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
+                <span class="sr-only">Previous</span> 
             </a>
             <a class="carousel-control-next" href="#glossaryCarousel" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
-            </a>
+            </a>    
+            <div class="carousel-item active">
+                         <h5>MSE:</h5>
+                    <p>Min Square Root</p>
+                </div>
+            
         </div>
                 <div class="carousel-item">
                     <h5>Estrés Hídrico:</h5>
