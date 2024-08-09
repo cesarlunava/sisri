@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sisri - ¿Qué debes de saber?</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,19 +20,15 @@
             position: relative;
         }
         header img {
-            width: 160px; /* Adjust logo size */
+            width: 160px; /* Ajustar tamaño del logo */
             height: auto;
-            position: relative; /* Center the logo */
-            top: 0;
-            left: 0;
-            transform: none;
         }
         header .auth-links {
             position: absolute;
             right: 10px;
             top: 50%;
-            transform: translateY(-50%); /* Center vertically */
-            color:azure
+            transform: translateY(-50%); /* Centra verticalmente */
+            color: azure;
         }
         nav {
             display: flex;
@@ -41,7 +37,7 @@
             padding: 10px 0;
         }
         nav a {
-            color: white;
+            color: rgb(255, 255, 255);
             padding: 14px 20px;
             text-decoration: none;
             text-align: center;
@@ -52,22 +48,45 @@
         }
         .container {
             padding: 20px;
-            text-align: center;
         }
         .glosario {
             background-color: white;
-            padding: 30px;
+            padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border: 1px solid #2d462e; /* Borde para la caja del glosario */
         }
         footer {
             background-color: #2d462e;
             color: white;
             text-align: center;
             padding: 10px 0;
-            position: fixed;
+            position: sticky;
             bottom: 0;
             width: 100%;
+        }
+        .carousel-item {
+            text-align: center;
+            padding: 20px;
+        }
+        .carousel-item h5 {
+            color: #2d462e;
+        }
+        .carousel-item p {
+            color: #555;
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #2d462e; /* Color de fondo para las flechas */
+            border-radius: 50%; /* Fondo circular */
+        }
+        .carousel-control-prev-icon::before,
+        .carousel-control-next-icon::before {
+            color: white; /* Color del icono dentro del círculo */
+        }
+        .carousel-control-prev:hover .carousel-control-prev-icon,
+        .carousel-control-next:hover .carousel-control-next-icon {
+            background-color: #495c4a; /* Color de fondo cuando se pasa el mouse */
         }
     </style>
 </head>
@@ -75,8 +94,8 @@
     <header>
         <img src="images/logo sisri blanco (1).png" alt="Logo">
         <div class="auth-links">
-            <a href="#">Sign in</a>
-            <a href="#">Sign up</a>
+            <a href="login.html">Sign in</a>
+            <a href="signup.html">Sign up</a>
         </div>
     </header>
     <nav>
@@ -91,35 +110,97 @@
         <a href="tablero.html">Tablero</a>
     </nav>
     <div class="container">
-        <h2>¿Qué debes de saber?</h2>
-        <p>Nosotros escogimos el modelo algorítmico de desarrollo para la recopilación de los datos que tiene menor margen de error, siendo este; Lasso, con un MSE de 17.85 
-Información proporcionada con Machine Learning, una tecnología de “Deep note”. (Inteligencia artificial). </p> 
-        <p>A escala mundial, el 72% de todas las extracciones de agua dulce se destinan al sector agrario.</p> 
-        <p>57% del total de agua destinada al sector agrario es considerado desperdicio.</p>
-        <p>De acuerdo con datos de Aquastat, de 178 países analizados, México ocupó en 2020 el lugar número 139 en estrés hídrico con una cifra de 44.8%.</p>
-        <p>Al reducir la cantidad de agua utilizada en la agricultura, se disminuye la presión sobre los recursos hídricos locales y se conserva el entorno natural. (gob.mx) </p>
-        <p>Sistema de pulsaciones:
-            Eficiencia de riego: disminuye los costos de agua, energía, fertilizantes. Riego continuo. </p>
-        <h4>Sisri combate el desperdicio de agua suministrándola de manera óptima. Además, promueve la soberanía alimentaria, ayudando a que más personas tengan acceso a cultivos. </h4>
-   </div>
-   <div class="container">
-        <div class="glosario">
-             <h3>Glosario :</h3> 
-           <p>MSE= Min Square Root</p>
-            <h5>Estrés Hídrico:</h5> <p>Demanda de agua es más alta que la cantidad disponible</p>
-            <h5>IoT:</h5> <p>Internet de las cosas. Red colectiva de dispositivos conectados y la tecnología que facilita la comunicación entre los dispositivos y la nube, así como entre los propios dispositivos.</p>
-            <h5>Evapotranspiración:</h5> <p>Proceso en que el agua se evapora hacia la atmósfera a través de la transpiración de las hojas y tallos de los cultivos.</p> 
-            <h5>Ciclos:</h5> <p>Periodo de tiempo en el que se lleva a cabo el ciclo de crecimiento de algún cultivo en específico</p>
-            <h5>Histograma:</h5> <p>Nos permite clasificar a tus lotes o parcelas en diferentes ambientes en base a la utilización de las imágenes satelitales</p>
-            <h5>Correlación:</h5> <p>Cambian conjuntamente a una tasa constante</p>
-            <h5>Humedad aire-Humedad suelo:</h5> <p>humedad del aire es únicamente la cantidad de vapor de agua existente en el aire, mientras que la del suelo, es el agua filtrada que un sensor es capaz de captar. 
-            <h5>Radiación solar:</h5>
-            <h5>Fenología:</h5> <p>Relación de planta con su entorno </p>
-            <h5>Pulsaciones:</h5>
+        <h2 class="text-center">¿Qué debes de saber?</h2>
+        <p class="text-center">Nosotros escogimos el modelo algorítmico de desarrollo para la recopilación de los datos que tiene menor margen de error, siendo este; Lasso, con un MSE de 17.85. Información proporcionada con Machine Learning, una tecnología de “Deep note”. (Inteligencia artificial).</p>
+        <p class="text-center">A escala mundial, el 72% de todas las extracciones de agua dulce se destinan al sector agrario.</p>
+        <p class="text-center">57% del total de agua destinada al sector agrario es considerado desperdicio.</p>
+        <p class="text-center">De acuerdo con datos de Aquastat, de 178 países analizados, México ocupó en 2020 el lugar número 139 en estrés hídrico con una cifra de 44.8%.</p>
+        <p class="text-center">Al reducir la cantidad de agua utilizada en la agricultura, se disminuye la presión sobre los recursos hídricos locales y se conserva el entorno natural. (gob.mx)</p>
+        <p class="text-center">Sistema de pulsaciones: Eficiencia de riego: disminuye los costos de agua, energía, fertilizantes. Riego continuo.</p>
+        <h3 class="text-center">Sisri combate el desperdicio de agua suministrándola de manera óptima. Además, promueve la soberanía alimentaria, ayudando a que más personas tengan acceso a cultivos.</h3>
+    </div>
+    <div class="container">
+        <div id="glossaryCarousel" class="carousel slide glosario" data-ride="carousel" data-interval="2000">
+            <ol class="carousel-indicators">
+                <li data-target="#glossaryCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#glossaryCarousel" data-slide-to="1"></li>
+                <li data-target="#glossaryCarousel" data-slide-to="2"></li>
+                <li data-target="#glossaryCarousel" data-slide-to="3"></li>
+                <li data-target="#glossaryCarousel" data-slide-to="4"></li>
+                <li data-target="#glossaryCarousel" data-slide-to="5"></li>
+                <li data-target="#glossaryCarousel" data-slide-to="6"></li>
+                <li data-target="#glossaryCarousel" data-slide-to="7"></li>
+                <li data-target="#glossaryCarousel" data-slide-to="8"></li>
+                <li data-target="#glossaryCarousel" data-slide-to="9"></li>
+                <li data-target="#glossaryCarousel" data-slide-to="10"></li>
+                <li data-target="#glossaryCarousel" data-slide-to="11"></li>
+                <li data-target="#glossaryCarousel" data-slide-to="12"></li>
+                <li data-target="#glossaryCarousel" data-slide-to="13"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <h3>Glosario</h3>
+                </div>
+                <div class="carousel-item">
+                    <h5>MSE:</h5>
+                    <p>Min Square Root</p>
+                </div>
+                <div class="carousel-item">
+                    <h5>Estrés Hídrico:</h5>
+                    <p>Demanda de agua es más alta que la cantidad disponible</p>
+                </div>
+                <div class="carousel-item">
+                    <h5>IoT:</h5>
+                    <p>Internet de las cosas. Red colectiva de dispositivos conectados y la tecnología que facilita la comunicación entre los dispositivos y la nube, así como entre los propios dispositivos.</p>
+                </div>
+                <div class="carousel-item">
+                    <h5>Evapotranspiración:</h5>
+                    <p>Proceso en que el agua se evapora hacia la atmósfera a través de la transpiración de las hojas y tallos de los cultivos.</p>
+                </div>
+                <div class="carousel-item">
+                    <h5>Ciclos:</h5>
+                    <p>Periodo de tiempo en el que se lleva a cabo el ciclo de crecimiento de algún cultivo en específico</p>
+                </div>
+                <div class="carousel-item">
+                    <h5>Histograma:</h5>
+                    <p>Nos permite clasificar a tus lotes o parcelas en diferentes ambientes en base a la utilización de las imágenes satelitales</p>
+                </div>
+                <div class="carousel-item">
+                    <h5>Correlación:</h5>
+                    <p>Cambian conjuntamente a una tasa constante</p>
+                </div>
+                <div class="carousel-item">
+                    <h5>Humedad aire-Humedad suelo:</h5>
+                    <p>La humedad del aire es únicamente la cantidad de vapor de agua existente en el aire, mientras que la del suelo, es el agua filtrada que un sensor es capaz de captar.</p>
+                </div>
+                <div class="carousel-item">
+                    <h5>Radiación solar:</h5>
+                    <p>El flujo de energía que emite el sol.</p>
+                </div>
+                <div class="carousel-item">
+                    <h5>Fenología:</h5>
+                    <p>Relación de planta con su entorno</p>
+                </div>
+                <div class="carousel-item">
+                    <h5>Pulsaciones:</h5>
+                    <p>Descripción sobre el sistema de pulsaciones.</p>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#glossaryCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#glossaryCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </div>
     <footer>
         <p>&copy; 2024 Sisri. Todos los derechos reservados.</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
