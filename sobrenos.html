@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sisri - Sobre Nosotros</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #e8f5e9;
@@ -15,28 +17,29 @@
         header {
             background-color: #2d462e;
             color: white;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
             position: relative;
         }
         header img {
-            width: 160px; /* Adjust logo size */
+            width: 160px;
             height: auto;
-            position: relative; /* Center the logo */
-            top: 0;
-            left: 0;
-            transform: none;
         }
         header .auth-links {
             position: absolute;
             right: 10px;
             top: 50%;
-            transform: translateY(-50%); /* Center vertically */
+            transform: translateY(-50%);
+            color: white;
         }
         header .auth-links a {
             color: white;
-            margin-left: 10px;
+            margin-left: 15px;
             text-decoration: none;
+            font-weight: 600;
+        }
+        header .auth-links a:hover {
+            text-decoration: underline;
         }
         nav {
             display: flex;
@@ -49,22 +52,44 @@
             padding: 14px 20px;
             text-decoration: none;
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s;
         }
         nav a:hover {
             background-color: #66bb6a;
         }
         .container {
+            padding: 30px;
+        }
+        .content-section {
+            background-color: white;
             padding: 20px;
-            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #2d462e;
+        }
+        .content-section h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #2d462e;
+            margin-top: 0;
+        }
+        .content-section h3, .content-section h4 {
+            font-family: 'Roboto', sans-serif;
+            color: #2d462e;
+            font-weight: 700;
+        }
+        .content-section p {
+            color: #555;
+            line-height: 1.6;
         }
         footer {
             background-color: #2d462e;
             color: white;
             text-align: center;
-            padding: 10px 0;
-            position: sticky;
-            bottom: 0;
+            padding: 15px 0;
+            position: relative;
             width: 100%;
         }
     </style>
@@ -79,7 +104,7 @@
     </header>
     <nav>
         <a href="index.html">Inicio</a>
-        <a href="saber.html"> ¿Qué debes de saber?</a>
+        <a href="saber.html">¿Qué debes de saber?</a>
         <a href="sobrenos.html">Sobre Nosotros</a>
         <a href="servicios.html">Servicios</a>
         <a href="funcionam.html">Funcionamiento</a>
@@ -89,11 +114,10 @@
         <a href="tablero.html">Tablero</a>
     </nav>
     <div class="container">
-        <h2>Sobre Nosotros</h2>
-        <p>Somos un grupo de jóvenes estudiantes del Tecnológico de Monterrey, Campus Sonora Norte y presentamos a Sisri como un proyecto escolar en el evento Prepapps (Alianza entre IncMty y Tecnológico de Monterrey). Al ganar el primer lugar en el Prepapps local nos motivamos para darle seguimiento al proyecto siguiendo varios objetivos y metas. Queremos apoyar a nuestra comunidad, nuestro estado, Sonora y al país. Estamos comprometidos a impulsar la agricultura sostenible y ecología.
-        </p>
-    </div>
-    <div class="container">
+        <div class="content-section">
+            <h2>Sobre Nosotros</h2>
+            <p>Somos un grupo de jóvenes estudiantes del Tecnológico de Monterrey, Campus Sonora Norte, y presentamos a Sisri como un proyecto escolar en el evento Prepapps (Alianza entre IncMty y Tecnológico de Monterrey). Al ganar el primer lugar en el Prepapps local, nos motivamos para darle seguimiento al proyecto siguiendo varios objetivos y metas. Queremos apoyar a nuestra comunidad, nuestro estado, Sonora y al país. Estamos comprometidos a impulsar la agricultura sostenible y ecología.</p>
+        </div>
         <div class="content-section">
             <h2>¿Qué es Sisri?</h2>
             <p>Sisri es un sistema de riego innovador de pulsaciones, creado por jóvenes alumnos de Prepa Tec Campus Sonora Norte. Este sistema integral optimiza el uso del agua mediante inteligencia artificial, facilitando el acceso a cultivos y combatiendo el desperdicio de agua.</p>
@@ -129,14 +153,13 @@
         <div class="content-section">
             <h2>Invitación a patrocinios</h2>
             <p>Sisri invita a diferentes empresas a contribuir en el presupuesto para desarrollar y mejorar el sistema. Al colaborar con OASIS, un grupo estudiantil comprometido con la ecología, se obtendrán múltiples beneficios y se apoyará una iniciativa juvenil con una causa noble.</p>
-       
         </div>
-
-
-        </div>
-
+    </div>
     <footer>
         <p>&copy; 2024-2025 Sisri. Todos los derechos reservados.</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
