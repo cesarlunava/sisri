@@ -6,51 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sisri - Funcionamiento</title>
     <style>
-       body {
-            font-family: Arial, sans-serif;
+        body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e8f5e9;
+            background-color: #f4f9f4;
+            color: #333;
         }
         header {
             background-color: #2d462e;
-            color: white;
-            padding: 10px 0;
+            color: #fff;
+            padding: 15px 0;
             text-align: center;
             position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         header img {
-            width: 160px; /* Adjust logo size */
+            width: 150px;
             height: auto;
-            position: relative; /* Center the logo */
-            top: 0;
-            left: 0;
-            transform: none;
         }
         header .auth-links {
             position: absolute;
-            right: 10px;
+            right: 20px;
             top: 50%;
-            transform: translateY(-50%); /* Center vertically */
+            transform: translateY(-50%);
+            display: flex;
+            gap: 15px;
+        }
+        header .auth-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        header .auth-links a:hover {
+            color: #a5d6a7;
         }
         nav {
             display: flex;
             justify-content: center;
             background-color: #81a082;
             padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         nav a {
-            color: white;
-            padding: 14px 20px;
+            color: #fff;
+            padding: 12px 20px;
             text-decoration: none;
-            text-align: center;
             font-size: 1.1rem;
+            transition: background-color 0.3s, color 0.3s;
         }
         nav a:hover {
             background-color: #66bb6a;
+            color: #fff;
         }
         .container {
             padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
             text-align: center;
         }
         .video-container {
@@ -59,14 +72,34 @@
             align-items: center;
             margin-top: 20px;
         }
+        iframe {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
         footer {
             background-color: #2d462e;
-            color: white;
+            color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
             position: sticky;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .video-description {
+            margin-top: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .video-description h4 {
+            margin-top: 0;
+            color: #2d462e;
         }
     </style>
 </head>
@@ -80,7 +113,7 @@
     </header>
     <nav>
         <a href="index.html">Inicio</a>
-        <a href="saber.html"> ¿Qué debes de saber?</a>
+        <a href="saber.html">¿Qué debes de saber?</a>
         <a href="sobrenos.html">Sobre Nosotros</a>
         <a href="servicios.html">Servicios</a>
         <a href="funcionam.html">Funcionamiento</a>
@@ -95,17 +128,13 @@
         <div class="video-container">
             <iframe width="730" height="500" src="https://www.youtube.com/embed/pvUXHjyl-to" frameborder="0" allowfullscreen></iframe>
         </div>
+        <div class="video-description">
+            <h4>Este video explicativo proporciona más detalles sobre el funcionamiento técnico del modelo Sisri Bioma en un espacio designado de 5x5 metros</h4>
+            <p>El video incluye una versión 3D del modelo que está en campus Tec Son. Norte.</p>
+        </div>
     </div>
     <footer>
         <p>&copy; 2024 Sisri. Todos los derechos reservados.</p>
     </footer>
-    <div> <div class="container">
-        <h4>Este video explicativo proporciona más detalles sobre el funcionamiento técnico del modelo Sisri Bioma en un espacio designado de 5x5 metros</h4>
-        <p> El video incluye una versión 3d del modelo que está en campus Tec Son. Norte.</p>
-    
-
-        </div>
-
-
 </body>
 </html>
