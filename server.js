@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const axios = require('axios');
 
 const app = express();
 
 // Middleware para parsear datos del formulario
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json()); // Para trabajar con JSON
 
 // Servir archivos estáticos como HTML, CSS, y fuentes
 app.use(express.static(path.join(__dirname, 'public')));
@@ -53,6 +55,22 @@ app.post('/signup', (req, res) => {
 // Ruta del Dashboard (después de iniciar sesión)
 app.get('/dashboard', (req, res) => {
   res.send('<h1>Bienvenido al Dashboard</h1>');
+});
+
+// Ruta para interactuar con Python
+app.post('/procesar-con-python', (req, res) => {
+  const data = req.body;
+
+  // Hacer una solicitud POST a la API de Python
+  axios.post('http://localhost:5000/procesar', data)
+    .then(response => {
+      console.log('Respuesta de Python:', response.data);
+      res.send(response.data); // Devolver la respuesta al cliente
+    })
+    .catch(error => {
+      console.error('Error al interactuar con Python:', error);
+      res.status(500).send('Error al procesar los datos con Python');
+    });
 });
 
 // Iniciar el servidor en el puerto 3000
