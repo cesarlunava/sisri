@@ -25,11 +25,11 @@ app.post('/login', (req, res) => {
 
   // Aquí puedes validar los datos de inicio de sesión
   console.log('Nombre:', username);
-  console.log('Correo Electrónico:', email);
-  console.log('Contraseña:', password);
+  console.log('email:', email);
+  console.log('contraseña:', password);
 
   // Redirigir al usuario a una página diferente después de iniciar sesión
-  res.redirect('/dashboard');
+  res.redirect('/dashboard.html');
 });
 
 // Ruta para mostrar el formulario de registro
