@@ -1,4 +1,4 @@
-#!/home/SISRI/Documents/GitHub/sisri/.venv/bin/python3
+#!/Users/juangamez/Documents/GitHub/sisri/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
