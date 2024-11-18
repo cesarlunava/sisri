@@ -1,99 +1,393 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sisri - Servicios</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #e8f5e9;
-        }
-        header {
-            background-color: #2d462e;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            position: relative;
-        }
-        header img {
-            width: 160px; /* Adjust logo size */
-            height: auto;
-            position: relative; /* Center the logo */
-            top: 0;
-            left: 0;
-            transform: none;
-        }
-        header .auth-links {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%); /* Center vertically */
-        }
-        header .auth-links a {
-            color: white;
-            margin-left: 10px;
-            text-decoration: none;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #81a082;
-            padding: 10px 0;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-            font-size: 1.1rem;
-        }
-        nav a:hover {
-            background-color: #66bb6a;
-        }
-        .container {
-            padding: 20px;
-            text-align: center;
-        }
-        footer {
-            background-color: #2d462e;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: sticky;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sisri - Innovación en Agricultura Inteligente</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Iconos de Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e8f5e9;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      background-color: #2d462e;
+      color: white;
+      padding: 10px 0;
+      position: relative;
+      text-align: center;
+    }
+
+    header img {
+      width: 160px;
+      height: auto;
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+
+    header .auth-links {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    header .auth-links a {
+      color: white;
+      margin-left: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header .auth-links a:hover {
+      color: #66bb6a;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #81a082;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #66bb6a;
+      border-radius: 5px;
+    }
+
+    /* Carrusel */
+    .carousel-item img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      filter: brightness(0.9);
+      transition: filter 0.3s;
+    }
+
+    .carousel-item img:hover {
+      filter: brightness(1);
+    }
+
+    .carousel-indicators li {
+      background-color: #2d462e;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background-color: #81a082;
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero-section h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-section p {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+    }
+
+    .hero-section .btn {
+      background-color: #2d462e;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      border: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .hero-section .btn:hover {
+      background-color: #1f3222;
+      transform: scale(1.05);
+    }
+
+    /* Stats Section */
+    .stats-section {
+      background-color: #e8f5e9;
+      padding: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-section::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 100%;
+      height: 100%;
+      background: url('images/leaf-pattern.png') repeat;
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    .stats-section .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-box {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 50px 20px;
+      margin: 20px;
+      flex: 1 1 calc(25% - 40px);
+      max-width: calc(25% - 40px);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .stat-box:hover {
+      transform: translateY(-10px);
+    }
+
+    .stat-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(102, 187, 106, 0.2), transparent);
+      transform: skewX(-45deg);
+      transition: left 0.5s;
+    }
+
+    .stat-box:hover::before {
+      left: 100%;
+    }
+
+    .stat-box .icon {
+      font-size: 3rem;
+      color: #2d462e;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .stat-box h2 {
+      font-size: 3rem;
+      color: #2d462e;
+      margin-bottom: 10px;
+    }
+
+    .stat-box p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2d462e;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Responsividad */
+    @media (max-width: 992px) {
+      .stat-box {
+        flex: 1 1 calc(50% - 40px);
+        max-width: calc(50% - 40px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav a {
+        padding: 10px;
+        font-size: 1rem;
+      }
+
+      .stat-box {
+        margin: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-section p {
+        font-size: 1rem;
+      }
+
+      .stat-box {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="images/logo sisri blanco (1).png" alt="Logo">
-        <div class="auth-links">
-            <a href="login.html">Sign in</a>
-            <a href="signup.html">Sign up</a>
-        </div>
-    </header>
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="saber.html"> ¿Qué debes de saber?</a>
-        <a href="sobrenos.html">Sobre Nosotros</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="funcionam.html">Funcionamiento</a>
-        <a href="redc.html">Red de Comunicación</a>
-        <a href="contacto.html">Contacto</a>
-        <a href="modelo.html">Modelo</a>
-        <a href="tablero.html">Tablero</a>
-    </nav>
-    <div class="container">
-        <h2>Servicios</h2>
-        <p>Contenido de la página Servicios.</p>
+  <!-- Header -->
+  <header>
+    <img src="images/logo sisri blanco (1).png" alt="Logo">
+    <div class="auth-links">
+      <a href="login.html">Iniciar sesión</a>
+      <a href="signup.html">Regístrate</a>
     </div>
-    <footer>
-        <p>&copy; 2024 Sisri. Todos los derechos reservados.</p>
-    </footer>
+  </header>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="saber.html">¿Qué debes de saber?</a>
+    <a href="sobrenos.html">Sobre Nosotros</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="funcionam.html">Funcionamiento</a>
+    <a href="redc.html">Red de Comunicación</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="modelo.html">Modelo</a>
+    <a href="tablero.html">Tablero</a>
+  </nav>
+
+  <!-- Carrusel Section -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" style="background-color: #2d462e;"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1" style="background-color: #2d462e;"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2" style="background-color: #2d462e;"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/irrigation1.png" class="d-block w-100" alt="Irrigación 1">
+      </div>
+      <div class="carousel-item">
+        <img src="images/irrigation2.png" class="d-block w-100" alt="Irrigación 2">
+      </div>
+      <div class="carousel-item">
+        <img src="images/irrigation3.png" class="d-block w-100" alt="Irrigación 3">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: rgba(45, 70, 46, 0.5);"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: rgba(45, 70, 46, 0.5);"></span>
+      <span class="sr-only">Siguiente</span>
+    </a>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1>Innovación en Agricultura Inteligente</h1>
+    <p>Descubre el futuro del riego eficiente con Sisri</p>
+    <a href="saber.html" class="btn">Descubre más</a>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="stats-section">
+    <div class="container">
+      <div class="stat-box">
+        <div class="icon">
+          <i class="fas fa-tint"></i>
+        </div>
+        <h2 class="counter" data-target="58">0</h2>
+        <p>Ahorro de agua</p>
+      </div>
+      <div class="stat-box">
+        <div class="icon">
+          <i class="fas fa-seedling"></i>
+        </div>
+        <h2 class="counter" data-target="60">0</h2>
+        <p>Ciclo de cultivo más rápido</p>
+      </div>
+      <div class="stat-box">
+        <div class="icon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <h2 class="counter" data-target="90">0</h2>
+        <p>Eficacia en la red neuronal</p>
+      </div>
+      <div class="stat-box">
+        <div class="icon">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <h2 class="counter" data-target="0">0</h2>
+        <p>Desperdicio de energía</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Sisri. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <!-- Contador Animado -->
+  <script>
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+
+        const speed = 200; // Velocidad de la animación
+        const increment = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      updateCount();
+    });
+  </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
