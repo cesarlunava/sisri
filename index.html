@@ -271,7 +271,11 @@
     </style>
 </head>
 <body>
-
+  <script>
+app.get('/healthcheck', (req, res) => {
+    res.send('OK');
+  });
+  </script>
     <!-- Header -->
     <header>
         <div class="container">
