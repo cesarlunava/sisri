@@ -1,7 +1,6 @@
 {
     "build": {
-      "builder": "NIXPACKS",
-      "buildCommand": "echo building!"
+      "builder": "NIXPACKS"
       },
     "deploy": {
       "startCommand": "echo starting!",
