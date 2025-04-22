@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Blue Basin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo general */
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fb;
+        }
+
+        h1, h2, h3 {
+            color: #003366;
+        }
+
+        p {
+            color: #333;
+        }
+
+        button {
+            background-color: #00aaff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #004080;
+        }
+
+        /* Estilo del menú lateral */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #003366;
+            padding-top: 20px;
+            transition: 0.3s;
+            color: white;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #00aaff;
+        }
+
+        /* Contenido principal */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #003366;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .data-cards {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .data-card {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            width: 22%;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .riego {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .riego button {
+            background-color: #00aaff;
+            border-radius: 5px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        form button {
+            margin-top: 10px;
+        }
+
+        #map {
+            background-color: #eaeaea;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar (menú lateral) -->
+    <div id="sidebar" class="sidebar">
+        <h2>Blue Basin</h2>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#configuracion">Configuración de Datos</a></li>
+            <li><a href="#satelital">Análisis Satelital</a></li>
+            <li><a href="#datos">Datos de Riego</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <!-- Barra de navegación superior -->
+        <div class="navbar">
+            <button id="toggleSidebar" class="sidebar-toggle">☰</button>
+            <h1>Dashboard Blue Basin</h1>
+        </div>
+
+        <!-- Sección de datos principales -->
+        <section id="datos">
+            <h2>Variables del Sistema</h2>
+            <div class="data-cards">
+                <div class="data-card">
+                    <h3>Temperatura</h3>
+                    <p id="temp">24°C</p>
+                </div>
+                <div class="data-card">
+                    <h3>Humedad del Suelo</h3>
+                    <p id="humedad-suelo">33%</p>
+                </div>
+                <div class="data-card">
+                    <h3>Radiación Solar</h3>
+                    <p id="radiacion-solar">200 W/m²</p>
+                </div>
+                <div class="data-card">
+                    <h3>Velocidad del Viento</h3>
+                    <p id="viento">3 m/s</p>
+                </div>
+            </div>
+
+            <!-- Botón de Riego -->
+            <div class="riego">
+                <h3>Control de Riego</h3>
+                <button id="toggleRiego" class="btn-riego">Encender Riego</button>
+            </div>
+        </section>
+
+        <!-- Análisis Satelital -->
+        <section id="satelital">
+            <h2>Análisis Satelital</h2>
+            <p>Ubicación: Hermosillo, Sonora</p>
+            <div id="map" style="width: 100%; height: 300px;"></div> <!-- Aquí iría el mapa -->
+        </section>
+
+        <!-- Sección de Configuración -->
+        <section id="configuracion">
+            <h2>Configuración de Datos</h2>
+            <form id="configForm">
+                <label for="tempInput">Temperatura (°C):</label>
+                <input type="number" id="tempInput" name="temp" placeholder="Ej. 24">
+                <label for="humedadInput">Humedad del Suelo (%):</label>
+                <input type="number" id="humedadInput" name="humedad" placeholder="Ej. 33">
+                <label for="radiacionInput">Radiación Solar (W/m²):</label>
+                <input type="number" id="radiacionInput" name="radiacion" placeholder="Ej. 200">
+                <label for="vientoInput">Velocidad del Viento (m/s):</label>
+                <input type="number" id="vientoInput" name="viento" placeholder="Ej. 3">
+                <button type="submit" class="btn-submit">Actualizar Datos</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        // Función para controlar el riego
+        document.getElementById('toggleRiego').addEventListener('click', function () {
+            const btnRiego = document.getElementById('toggleRiego');
+            if (btnRiego.textContent === 'Encender Riego') {
+                btnRiego.textContent = 'Apagar Riego';
+                btnRiego.style.backgroundColor = '#ff4c4c'; // Color rojo cuando se apaga
+            } else {
+                btnRiego.textContent = 'Encender Riego';
+                btnRiego.style.backgroundColor = '#00aaff'; // Color azul cuando se enciende
+            }
+        });
+
+        // Función para actualizar los datos de configuración
+        document.getElementById('configForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            document.getElementById('temp').textContent = `${document.getElementById('tempInput').value}°C`;
+            document.getElementById('humedad-suelo').textContent = `${document.getElementById('humedadInput').value}%`;
+            document.getElementById('radiacion-solar').textContent = `${document.getElementById('radiacionInput').value} W/m²`;
+            document.getElementById('viento').textContent = `${document.getElementById('vientoInput').value} m/s`;
+        });
+    </script>
+</body>
+</html>
