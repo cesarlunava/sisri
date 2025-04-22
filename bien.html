@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Agrícola</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex h-screen bg-gray-100">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-green-900 text-white p-4 space-y-4">
+    <h1 class="text-2xl font-bold mb-6">Menu</h1>
+    <nav class="space-y-2">
+      <button onclick="showTab('main')" class="block w-full text-left">Main View</button>
+      <button onclick="showTab('tech')" class="block w-full text-left">Technical</button>
+      <button onclick="showTab('correlation')" class="block w-full text-left">Variable Correlation</button>
+      <button onclick="showTab('main2')" class="block w-full text-left">Main View 2</button>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="flex-1 flex flex-col">
+    <!-- Top Navigation -->
+    <div class="flex justify-between bg-white p-4 border-b">
+      <div class="flex gap-4">
+        <button class="text-sm">Dashboard View</button>
+        <button class="text-sm">Menu</button>
+        <button class="text-sm">Main Page</button>
+        <button class="text-sm">Chat</button>
+        <button class="text-sm">History</button>
+        <button onclick="showTab('profile')" class="text-sm">Your Profile</button>
+      </div>
+    </div>
+
+    <!-- Control Panel -->
+    <div class="p-4 flex items-center gap-4">
+      <label class="flex items-center space-x-2">
+        <input type="checkbox" id="pilotMode" checked onchange="togglePilotMode()">
+        <span>Modo Piloto</span>
+      </label>
+      <button id="irrigationBtn" onclick="toggleIrrigation()" class="bg-green-600 text-white px-4 py-2 rounded">Encender Riego</button>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="main" class="grid grid-cols-2 gap-4 p-4">
+      <div class="bg-white rounded p-4 shadow">
+        <h2 class="text-xl font-semibold mb-2">Mapa Interactivo</h2>
+        <div class="bg-gray-200 h-64 flex items-center justify-center rounded">[Mapa con parcelas + NDVI]</div>
+      </div>
+      <div class="bg-white rounded p-4 shadow space-y-2">
+        <div>NDVI: <strong>0.78</strong></div>
+        <div>Humedad: <strong>34%</strong></div>
+        <div>Temperatura: <strong>29°C</strong></div>
+        <div>Evapotranspiración: <strong>5.3 mm</strong></div>
+        <div>Evaporación: <strong>3.1 mm</strong></div>
+        <div>Cantidad de Verde: <strong>Alta</strong></div>
+        <div>Análisis Predictivo: <em>Se espera incremento de humedad en 2 días</em></div>
+      </div>
+    </div>
+
+    <!-- Profile -->
+    <div id="profile" class="hidden p-4">
+      <h2 class="text-2xl font-bold mb-4">Your Profile</h2>
+      <div class="bg-white p-4 rounded shadow space-y-2">
+        <div>Nombre del Cultivo: <strong>Maíz</strong></div>
+        <div>Tamaño: <strong>25 ha</strong></div>
+        <div>Ubicación: <strong>Sonora, México</strong></div>
+        <div>Coordenadas: <strong>29.0725° N, 110.9559° W</strong></div>
+        <div>Sistema Hidráulico Disponible: <strong>Goteo Automatizado</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let pilotMode = true;
+    let irrigationOn = false;
+
+    function togglePilotMode() {
+      pilotMode = document.getElementById("pilotMode").checked;
+      document.getElementById("irrigationBtn").disabled = !pilotMode;
+    }
+
+    function toggleIrrigation() {
+      if (!pilotMode) return;
+      irrigationOn = !irrigationOn;
+      document.getElementById("irrigationBtn").innerText = irrigationOn ? "Apagar Riego" : "Encender Riego";
+    }
+
+    function showTab(tab) {
+      const tabs = ["main", "tech", "correlation", "main2", "profile"];
+      tabs.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) element.classList.add("hidden");
+      });
+      const target = document.getElementById(tab);
+      if (target) target.classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
