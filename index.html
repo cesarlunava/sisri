@@ -3,13 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EVERY DROP COUNTS - SISRI</title>
-
-  <!-- Fonts & Bootstrap -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
+  <title>SISRI - Blue Basin Co.</title>
   <style>
     * {
       margin: 0;
@@ -18,136 +12,166 @@
     }
 
     body, html {
-      height: 100%;
-      font-family: 'Orbitron', sans-serif;
-      background-color: #0a0a0a;
-      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
       scroll-behavior: smooth;
-      overflow-x: hidden;
+      color: #0a0a0a;
     }
 
-    /* HERO SECTION */
-    .hero {
-      height: 100vh;
+    nav {
+      position: fixed;
       width: 100%;
-      position: relative;
+      top: 0;
+      left: 0;
+      background: rgba(255,255,255,0.9);
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      background: #000;
+      padding: 1rem 3rem;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #004080;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
       overflow: hidden;
     }
 
     .hero video {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
       object-fit: cover;
-      z-index: 0;
-      opacity: 0.2;
-      filter: brightness(1.1) contrast(1.2);
+      z-index: -1;
     }
 
     .hero-text {
-      position: relative;
-      z-index: 2;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
-      font-size: 3rem;
-      color: #00fff7;
-      text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
-      animation: fadeInText 2s ease forwards;
+      color: white;
+      animation: fadeIn 2s ease forwards;
       opacity: 0;
     }
 
-    @keyframes fadeInText {
-      to { opacity: 1; }
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
     }
 
-    .scroll-down {
-      position: absolute;
-      bottom: 30px;
+    .hero-text p {
       font-size: 1.5rem;
-      animation: bounce 2s infinite;
-      color: #00ffe1;
-      z-index: 2;
     }
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(10px); }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
 
-    /* SECTION: PROBLEM */
-    .section-problem {
-      min-height: 100vh;
-      background: linear-gradient(to bottom, #0a0a0a 20%, #1a1a1a 100%);
+    .section {
+      padding: 5rem 10vw;
+      background: #f4f7fb;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #003366;
+    }
+
+    .cards {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 4rem 2rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-around;
     }
 
-    .section-problem h2 {
-      font-size: 2.8rem;
-      color: #ff4f81;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 10px #ff4f81;
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      width: 300px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .section-problem p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      color: #d0d0d0;
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
     }
 
-    .btn-tech {
-      margin-top: 30px;
-      background: linear-gradient(135deg, #00ffe1, #00bfff);
-      color: #000;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 40px;
-      font-size: 1rem;
-      text-transform: uppercase;
-      box-shadow: 0 0 10px #00ffe1, 0 0 20px #00bfff;
-      transition: all 0.3s ease;
+    footer {
+      padding: 2rem;
+      background: #001a33;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
     }
 
-    .btn-tech:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #00ffe1, 0 0 30px #00bfff;
+    footer a {
+      color: white;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+  <nav>
+    <div><strong>SISRI.APP</strong></div>
+    <div>
+      <a href="#nosotros">Nosotros</a>
+      <a href="productos.html">Productos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
 
-  <!-- HERO SECTION -->
   <section class="hero">
-    <video autoplay muted loop playsinline preload="auto">
-      <source src="imagenes/gota.mov" type="video/quicktime" />
-      <source src="imagenes/gota.mp4" type="video/mp4" />
-      Tu navegador no soporta video.
-    </video>
+    <video autoplay muted loop playsinline src="imagenes/gota.mov"></video>
     <div class="hero-text">
       <h1>EVERY DROP COUNTS</h1>
-    </div>
-    <div class="scroll-down">
-      ↓
+      <p>Blue Basin Co.</p>
     </div>
   </section>
 
-  <!-- PROBLEM SECTION -->
-  <section class="section-problem" id="soluciones">
-    <h2>UNA CRISIS INVISIBLE</h2>
-    <p>
-      El 70% del agua dulce se destina al sector agrícola. Sin embargo, gran parte se desperdicia por sistemas ineficientes. SISRI nace para revertir esta realidad, optimizando cada gota con inteligencia artificial.
-    </p>
-    <a href="#soluciones" class="btn-tech">Conoce nuestra solución</a>
+  <section class="section" id="nosotros">
+    <h2>Enfocados en usuarios</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Agricultor</h3>
+        <p>Visualiza el rendimiento de tu cultivo en tiempo real.</p>
+      </div>
+      <div class="card">
+        <h3>Ingeniero de Riego</h3>
+        <p>Monitorea los sensores y ajusta el sistema con precisión.</p>
+      </div>
+      <div class="card">
+        <h3>Analista</h3>
+        <p>Accede a reportes con variables ambientales y proyecciones.</p>
+      </div>
+    </div>
   </section>
 
+  <footer>
+    <div>© 2025 BLUE BASIN CO.</div>
+    <div><a href="#">Licencias</a></div>
+  </footer>
 </body>
 </html>
 
