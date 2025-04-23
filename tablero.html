@@ -6,13 +6,14 @@
     <title>Tablero de Control - Sisri</title>
     <style>
        body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e8f5e9;
+            background-color: #f8f9fa;
+            color: #212529;
         }
         header {
-            background-color: #2d462e;
+            background-color: #0f1d3d;
             color: white;
             padding: 10px 0;
             text-align: center;
@@ -35,7 +36,7 @@
         nav {
             display: flex;
             justify-content: center;
-            background-color: #81a082;
+            background-color: #2e5885;
             padding: 10px 0;
         }
         nav a {
@@ -44,9 +45,12 @@
             text-decoration: none;
             text-align: center;
             font-size: 1.1rem;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
         }
         nav a:hover {
-            background-color: #66bb6a;
+            background-color: #81baa2;
+            color: #0f1d3d;
         }
         .container {
             padding: 20px;
@@ -75,6 +79,9 @@
         }
         .card h2 {
             margin-bottom: 20px;
+            color: #2e5885;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 700;
         }
         .kpi {
             background-color: #f1f8e9;
@@ -93,10 +100,14 @@
         .kpi h3 {
             margin: 0;
             font-size: 1.2em;
+            color: #2e5885;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 700;
         }
         .kpi p {
             margin: 5px 0;
             font-size: 1em;
+            color: #666;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -126,14 +137,33 @@
         }
         .cesium-container {
             width: 100%;
+            min-width: 350px;
             height: 400px;
+            min-height: 300px;
             margin: 0 auto 20px auto;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background: #e7eef2; /* subtle blue background for debug */
+            display: block;
+        }
+        #heatmap {
+            width: 100% !important;
+            min-width: 350px;
+            height: 400px !important;
+            min-height: 300px;
+        }
+        footer {
+            background-color: #0f1d3d;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
         }
     </style>
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.117/Build/Cesium/Cesium.js"></script>
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.117/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -193,10 +223,6 @@
                 <canvas id="windSpeedChart"></canvas>
             </div>
             <div class="card">
-                <h2>Imagen del Invernadero</h2>
-                <img src="images/imagen de invernadero.jpeg" alt="Imagen del Invernadero">
-            </div>
-            <div class="card">
                 <h2>Registro de Riego</h2>
                 <table>
                     <tr>
@@ -240,6 +266,10 @@
                 <h2>Mapa 3D del Terreno</h2>
                 <div id="cesiumContainer" class="cesium-container"></div>
             </div>
+            <div class="card">
+                <h2>Heatmap de Correlaciones</h2>
+                <div id="heatmap"></div>
+            </div>
         </div>
     </div>
     <footer>
@@ -247,162 +277,271 @@
     </footer>
 
     <script>
-        // Cesium 3D Map Initialization
-        Cesium.Ion.defaultAccessToken = '';
-        var viewer = new Cesium.Viewer('cesiumContainer', {
-            terrainProvider: Cesium.createWorldTerrain(),
-            baseLayerPicker: true,
-            timeline: false,
-            animation: false
-        });
-        // Optional: Fly to a default location (e.g., Mexico)
-        viewer.camera.flyTo({
-            destination: Cesium.Cartesian3.fromDegrees(-102.5528, 23.6345, 1500000)
-        });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        // Datos de ejemplo (dummies) basados en el archivo CSV
-        const data = {
-            humidity: [64.98, 88.03, 79.28, 73.95, 56.24, 80.12],
-            temperature: [21.79, 30.70, 31.41, 28.42, 31.56, 29.87],
-            solar_radiation: [186.26, 154.65, 267.32, 260.74, 174.71, 200.54],
-            wind_speed: [4.05, 4.05, 4.34, 4.57, 2.56, 3.45],
-            soil_moisture: [0.22, 0.29, 0.24, 0.26, 0.38, 0.35],
-            eto: [4.85, 2.78, 5.13, 5.56, 8.38, 6.12],
-            irrigation: [0, 5, 10, 10, 5, 15]
-        };
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- CESIUM 3D MAP ---
+            try {
+                Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjZGQxYjk3Ny02NGM1LTQ3Y2UtYTc1Ni0xYWRjNWY3Njg2MzgiLCJpZCI6Mjk2NTk3LCJpYXQiOjE3NDU0MjMyNDF9.oADV-3ikMvLsMG0oh-6DgYH72Rz5bS44il8PKyuX4gw';
+                var viewer = new Cesium.Viewer('cesiumContainer', {
+                    imageryProvider: new Cesium.IonImageryProvider({ assetId: 2 }), // Bing Maps Aerial imagery
+                    baseLayerPicker: true,
+                    timeline: false,
+                    animation: false,
+                    shouldAnimate: true,
+                    sceneMode: Cesium.SceneMode.SCENE3D
+                });
+                if (Cesium.CesiumTerrainProvider && Cesium.IonResource) {
+                    viewer.terrainProvider = new Cesium.CesiumTerrainProvider({
+                        url: Cesium.IonResource.fromAssetId(1)
+                    });
+                }
+                viewer.scene.globe.enableLighting = true;
+                viewer.scene.requestRenderMode = true;
+                viewer.scene.maximumRenderTimeChange = Infinity;
+                viewer.camera.flyTo({
+                    destination: Cesium.Cartesian3.fromDegrees(-102.5528, 23.6345, 1500000)
+                });
+                setTimeout(function(){
+                    viewer.resize();
+                    viewer.scene.requestRender();
+                }, 700);
 
-        // Actualizar KPIs
-        document.getElementById('temp_kpi').innerText = `${data.temperature[data.temperature.length - 1]}°C`;
-        document.getElementById('humidity_kpi').innerText = `${data.humidity[data.humidity.length - 1]}%`;
-        document.getElementById('soil_kpi').innerText = `${data.soil_moisture[data.soil_moisture.length - 1]}%`;
-        document.getElementById('eto_kpi').innerText = `${data.eto[data.eto.length - 1]} mm`;
+                // --- Polygon Drawing Tool ---
+                var handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+                var activeShapePoints = [];
+                var activeShape;
+                var floatingPoint;
+                var polygons = [];
 
-        // Gráfica de Variables Climáticas
-        var ctx = document.getElementById('climateChart').getContext('2d');
-        var climateChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
-                datasets: [{
-                    label: 'Temperatura (°C)',
-                    data: data.temperature,
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                }, {
-                    label: 'Humedad Relativa (%)',
-                    data: data.humidity,
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
+                function drawShape(positionData) {
+                    return viewer.entities.add({
+                        polygon: {
+                            hierarchy: positionData,
+                            material: Cesium.Color.YELLOW.withAlpha(0.5)
+                        }
+                    });
+                }
+
+                handler.setInputAction(function (event) {
+                    var earthPosition = viewer.scene.pickPosition(event.position);
+                    if (Cesium.defined(earthPosition)) {
+                        if (activeShapePoints.length === 0) {
+                            floatingPoint = viewer.entities.add({
+                                position: earthPosition,
+                                point: {
+                                    pixelSize: 5,
+                                    color: Cesium.Color.RED,
+                                    outlineColor: Cesium.Color.WHITE,
+                                    outlineWidth: 2
+                                }
+                            });
+                            activeShapePoints.push(earthPosition);
+                            var dynamicPositions = new Cesium.CallbackProperty(function () {
+                                return new Cesium.PolygonHierarchy(activeShapePoints);
+                            }, false);
+                            activeShape = drawShape(dynamicPositions);
+                        }
+                        activeShapePoints.push(earthPosition);
+                        viewer.entities.add({
+                            position: earthPosition,
+                            point: {
+                                pixelSize: 5,
+                                color: Cesium.Color.RED,
+                                outlineColor: Cesium.Color.WHITE,
+                                outlineWidth: 2
+                            }
+                        });
+                    }
+                }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+                handler.setInputAction(function (event) {
+                    if (activeShapePoints.length > 2) {
+                        drawShape(activeShapePoints);
+                        viewer.entities.remove(activeShape);
+                        viewer.entities.remove(floatingPoint);
+                        polygons.push(activeShapePoints.slice());
+                        activeShape = undefined;
+                        activeShapePoints = [];
+                    }
+                }, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
+
+            } catch (err) {
+                document.getElementById('cesiumContainer').innerHTML =
+                  '<div style="color:red;padding:20px;">Error inicializando Cesium: ' + err + '</div>';
+                console.error('Cesium init error:', err);
+            }
+
+            // Datos de ejemplo (dummies) basados en el archivo CSV
+            const data = {
+                humidity: [64.98, 88.03, 79.28, 73.95, 56.24, 80.12],
+                temperature: [21.79, 30.70, 31.41, 28.42, 31.56, 29.87],
+                solar_radiation: [186.26, 154.65, 267.32, 260.74, 174.71, 200.54],
+                wind_speed: [4.05, 4.05, 4.34, 4.57, 2.56, 3.45],
+                soil_moisture: [0.22, 0.29, 0.24, 0.26, 0.38, 0.35],
+                eto: [4.85, 2.78, 5.13, 5.56, 8.38, 6.12],
+                irrigation: [0, 5, 10, 10, 5, 15]
+            };
+
+            // Actualizar KPIs
+            document.getElementById('temp_kpi').innerText = `${data.temperature[data.temperature.length - 1]}°C`;
+            document.getElementById('humidity_kpi').innerText = `${data.humidity[data.humidity.length - 1]}%`;
+            document.getElementById('soil_kpi').innerText = `${data.soil_moisture[data.soil_moisture.length - 1]}%`;
+            document.getElementById('eto_kpi').innerText = `${data.eto[data.eto.length - 1]} mm`;
+
+            // Gráfica de Variables Climáticas
+            var ctx = document.getElementById('climateChart').getContext('2d');
+            var climateChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+                    datasets: [{
+                        label: 'Temperatura (°C)',
+                        data: data.temperature,
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }, {
+                        label: 'Humedad Relativa (%)',
+                        data: data.humidity,
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
-        });
+            });
 
-        // Gráfica de Humedad del Suelo
-        var ctx2 = document.getElementById('soilMoistureChart').getContext('2d');
-        var soilMoistureChart = new Chart(ctx2, {
-            type: 'bar',
-            data: {
-                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
-                datasets: [{
-                    label: 'Humedad del Suelo (%)',
-                    data: data.soil_moisture,
-                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                    borderColor: 'rgba(153, 102, 255, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
+            // Gráfica de Humedad del Suelo
+            var ctx2 = document.getElementById('soilMoistureChart').getContext('2d');
+            var soilMoistureChart = new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+                    datasets: [{
+                        label: 'Humedad del Suelo (%)',
+                        data: data.soil_moisture,
+                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
-        });
+            });
 
-        // Gráfica de Evapotranspiración
-        var ctx3 = document.getElementById('evapotranspirationChart').getContext('2d');
-        var evapotranspirationChart = new Chart(ctx3, {
-            type: 'line',
-            data: {
-                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
-                datasets: [{
-                    label: 'Evapotranspiración (mm)',
-                    data: data.eto,
-                    borderColor: 'rgba(255, 206, 86, 1)',
-                    borderWidth: 1
-                }, {
-                    label: 'Precipitación (mm)',
-                    data: data.irrigation,
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
+            // Gráfica de Evapotranspiración
+            var ctx3 = document.getElementById('evapotranspirationChart').getContext('2d');
+            var evapotranspirationChart = new Chart(ctx3, {
+                type: 'line',
+                data: {
+                    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+                    datasets: [{
+                        label: 'Evapotranspiración (mm)',
+                        data: data.eto,
+                        borderColor: 'rgba(255, 206, 86, 1)',
+                        borderWidth: 1
+                    }, {
+                        label: 'Precipitación (mm)',
+                        data: data.irrigation,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
-        });
+            });
 
-        // Gráfica de Radiación Solar
-        var ctx4 = document.getElementById('solarRadiationChart').getContext('2d');
-        var solarRadiationChart = new Chart(ctx4, {
-            type: 'line',
-            data: {
-                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
-                datasets: [{
-                    label: 'Radiación Solar (W/m²)',
-                    data: data.solar_radiation,
-                    borderColor: 'rgba(255, 159, 64, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
+            // Gráfica de Radiación Solar
+            var ctx4 = document.getElementById('solarRadiationChart').getContext('2d');
+            var solarRadiationChart = new Chart(ctx4, {
+                type: 'line',
+                data: {
+                    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+                    datasets: [{
+                        label: 'Radiación Solar (W/m²)',
+                        data: data.solar_radiation,
+                        borderColor: 'rgba(255, 159, 64, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
-        });
+            });
 
-        // Gráfica de Velocidad del Viento
-        var ctx5 = document.getElementById('windSpeedChart').getContext('2d');
-        var windSpeedChart = new Chart(ctx5, {
-            type: 'line',
-            data: {
-                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
-                datasets: [{
-                    label: 'Velocidad del Viento (m/s)',
-                    data: data.wind_speed,
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
+            // Gráfica de Velocidad del Viento
+            var ctx5 = document.getElementById('windSpeedChart').getContext('2d');
+            var windSpeedChart = new Chart(ctx5, {
+                type: 'line',
+                data: {
+                    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+                    datasets: [{
+                        label: 'Velocidad del Viento (m/s)',
+                        data: data.wind_speed,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
+            });
+
+            // --- HEATMAP PLOTLY ---
+            const heatmapVars = ['Temp', 'Humedad', 'Radiación', 'Viento', 'Suelo', 'ET', 'Riego'];
+            const corrMatrix = [
+                [1.0,  0.7,  0.5,  0.2,  0.3,  0.6, -0.1],
+                [0.7,  1.0,  0.4,  0.1,  0.4,  0.5, -0.2],
+                [0.5,  0.4,  1.0,  0.3,  0.2,  0.7,  0.0],
+                [0.2,  0.1,  0.3,  1.0,  0.1,  0.2,  0.1],
+                [0.3,  0.4,  0.2,  0.1,  1.0,  0.3,  0.2],
+                [0.6,  0.5,  0.7,  0.2,  0.3,  1.0,  0.1],
+                [-0.1, -0.2, 0.0,  0.1,  0.2,  0.1,  1.0]
+            ];
+            Plotly.newPlot('heatmap', [{
+                z: corrMatrix,
+                x: heatmapVars,
+                y: heatmapVars,
+                type: 'heatmap',
+                colorscale: 'YlGnBu',
+                zmin: -1,
+                zmax: 1,
+                colorbar: { title: 'Correlación' },
+                showscale: true
+            }], {
+                margin: { t: 60, l: 80, r: 30, b: 70 },
+                title: { text: 'Correlación entre variables ambientales', font: { size: 18 }, xref: 'container', x: 0.5 },
+                xaxis: { side: 'bottom', tickangle: -45, automargin: true, title: '' },
+                yaxis: { autorange: 'reversed', automargin: true, title: '' },
+                width: document.getElementById('heatmap').offsetWidth,
+                height: 400
+            }, {responsive: true});
         });
     </script>
 </body>
