@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Historial de Riego - Blue Basin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Estilos Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- FullCalendar -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f9fc;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 2rem;
+    }
+    .chart-container {
+      margin-top: 2rem;
+    }
+    #calendar {
+      max-width: 600px;
+      margin: auto;
+    }
+    table {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th {
+      background-color: #003366;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Historial de Riego</h1>
+
+  <!-- Tabla de Riegos -->
+  <div class="container mb-5">
+    <h4>Resumen de Actividad</h4>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Día</th>
+          <th>Agua Usada (L)</th>
+          <th>Humedad (%)</th>
+          <th>Temperatura (°C)</th>
+          <th>Notas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2025-04-15</td><td>120</td><td>43</td><td>30</td><td>Riego completo</td></tr>
+        <tr><td>2025-04-17</td><td>90</td><td>38</td><td>29</td><td>Humedad baja</td></tr>
+        <tr><td>2025-04-19</td><td>150</td><td>50</td><td>28</td><td>Riego automático</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Calendario de Riegos -->
+  <div class="container mb-5">
+    <h4 class="text-center">Calendario de Riegos</h4>
+    <div id="calendar"></div>
+  </div>
+
+  <!-- Gráfica Comparativa -->
+  <div class="container chart-container">
+    <h4 class="text-center">Comparativa de Variables Ambientales</h4>
+    <canvas id="comparativaChart"></canvas>
+  </div>
+
+  <!-- Línea del Tiempo -->
+  <div class="container chart-container">
+    <h4 class="text-center mt-5">Línea del Tiempo: Agua vs Humedad</h4>
+    <canvas id="timelineChart"></canvas>
+  </div>
+
+  <script>
+    // FullCalendar
+    document.addEventListener('DOMContentLoaded', function () {
+      const calendarEl = document.getElementById('calendar');
+      const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        locale: 'es',
+        height: 400,
+        events: [
+          { title: 'Riego', start: '2025-04-15', color: '#0077cc' },
+          { title: 'Riego', start: '2025-04-17', color: '#0077cc' },
+          { title: 'Riego', start: '2025-04-19', color: '#0077cc' },
+        ]
+      });
+      calendar.render();
+    });
+
+    // Chart.js - Comparativa
+    const comparativaCtx = document.getElementById('comparativaChart').getContext('2d');
+    new Chart(comparativaCtx, {
+      type: 'line',
+      data: {
+        labels: ['Abr 15', 'Abr 17', 'Abr 19'],
+        datasets: [
+          {
+            label: 'Humedad (%)',
+            data: [43, 38, 50],
+            borderColor: '#00b894',
+            backgroundColor: 'rgba(0,184,148,0.2)',
+            tension: 0.3
+          },
+          {
+            label: 'Temperatura (°C)',
+            data: [30, 29, 28],
+            borderColor: '#d63031',
+            backgroundColor: 'rgba(214,48,49,0.2)',
+            tension: 0.3
+          }
+        ]
+      },
+      options: {
+        responsive: true
+      }
+    });
+
+    // Chart.js - Línea del tiempo de agua vs humedad
+    const timelineCtx = document.getElementById('timelineChart').getContext('2d');
+    new Chart(timelineCtx, {
+      type: 'bar',
+      data: {
+        labels: ['2025-04-15', '2025-04-17', '2025-04-19'],
+        datasets: [
+          {
+            label: 'Litros de Agua',
+            data: [120, 90, 150],
+            backgroundColor: '#3498db'
+          },
+          {
+            label: 'Humedad (%)',
+            data: [43, 38, 50],
+            backgroundColor: '#2ecc71'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: { stacked: false },
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
