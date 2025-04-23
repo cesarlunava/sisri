@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@3.5.2/dist/maplibre-gl.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js/dist/Chart.min.css" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -40,18 +41,22 @@
             margin-bottom: 2rem;
         }
         #sisri-demo-map3d { display: none; }
+        .small-widget {
+            min-height: 180px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-radius: 12px;
+        }
     </style>
 </head>
 <body>
 
     <!-- Contenido Principal -->
-    <div class="container">
+    <div class="container d-flex flex-column align-items-center justify-content-center" style="min-height: 100vh;">
       <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
         <a href="index.html" class="btn btn-outline-secondary">Inicio</a>
         <a href="análisis.html" class="btn btn-outline-secondary">Análisis Satelital</a>
         <a href="#" class="btn btn-outline-secondary">Visualización</a>
         <a href="historial.html" class="btn btn-outline-secondary">Historial</a>
-        <a href="predicciones.html" class="btn btn-outline-secondary">Análisis Predictivo</a>
       </div>
       <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
         <a href="tablero.html" class="btn btn-auth btn-signin">Tablero</a>
@@ -61,12 +66,38 @@
         <a href="funcionam.html" class="btn btn-auth">Funcionamiento</a>
         <a href="sobrenos.html" class="btn btn-auth">Sobre Nosotros</a>
       </div>
-      <div class="mb-4 d-flex justify-content-end">
+      <div class="mb-4 d-flex justify-content-end" style="width: 100%; max-width: 1000px;">
         <button id="toggle3d" class="btn btn-outline-primary">Cambiar a 3D</button>
+        <button id="togglePred" class="btn btn-warning ms-3">Análisis Predictivo</button>
+        <button id="toggleHist" class="btn btn-info ms-3">Historial de Riego</button>
       </div>
-      <div id="sisri-demo-map" style="width:100%;height:60vh;margin-bottom:2rem;"></div>
-      <div id="sisri-demo-map3d" style="width:100%;height:60vh;display:none;margin-bottom:2rem;"></div>
-      <div class="variables-panel mb-4" id="sisriVariablesPanel">
+      <!-- Widgets/Charts Row -->
+      <div class="row justify-content-center mb-4" style="max-width:1000px; margin:0 auto;">
+        <div class="col-12 col-md-4 mb-3">
+          <div class="card small-widget">
+            <div class="card-body">
+              <canvas id="chart1" height="120"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <div class="card small-widget">
+            <div class="card-body">
+              <canvas id="chart2" height="120"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <div class="card small-widget">
+            <div class="card-body">
+              <canvas id="chart3" height="120"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sisri-demo-map" style="width:100%;max-width:1000px;height:60vh;margin:0 auto 2rem auto;"></div>
+      <div id="sisri-demo-map3d" style="width:100%;max-width:1000px;height:60vh;display:none;margin:0 auto 2rem auto;"></div>
+      <div class="variables-panel mb-4" id="sisriVariablesPanel" style="width:100%;max-width:1000px;">
         <h4>Variables Ambientales de la Zona Seleccionada</h4>
         <div class="table-responsive">
           <table class="table table-striped" id="variablesTable">
@@ -82,11 +113,73 @@
           </table>
         </div>
       </div>
+      <!-- Widgets/Charts Row: HISTORIAL DE RIEGO -->
+      <div class="row justify-content-center mb-4" style="max-width:1000px; margin:0 auto;">
+        <div class="col-12 col-md-4 mb-3">
+          <div class="card small-widget">
+            <div class="card-body">
+              <canvas id="histChart1" height="120"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <div class="card small-widget">
+            <div class="card-body">
+              <canvas id="histChart2" height="120"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <div class="card small-widget">
+            <div class="card-body">
+              <canvas id="histChart3" height="120"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Calendario de recomendaciones de riego -->
+      <div class="card mb-4" style="max-width:1000px;margin:0 auto;">
+        <div class="card-body">
+          <h5 class="card-title mb-3">Recomendaciones de Riego (Próximas 3 Semanas)</h5>
+          <div class="table-responsive">
+            <table class="table table-bordered text-center align-middle" id="riegoCalendar">
+              <thead class="table-light">
+                <tr>
+                  <th>Día</th>
+                  <th>Hora Recomendada</th>
+                  <th>Duración (min)</th>
+                  <th>Predicción Temp. (°C)</th>
+                  <th>Predicción Humedad (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Aquí se llenan las filas con JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Detalle de Riego -->
+      <div class="modal fade" id="detalleRiegoModal" tabindex="-1" aria-labelledby="detalleRiegoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="detalleRiegoLabel">Detalle de Riego</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="detalleRiegoBody">
+              <!-- Aquí va el detalle -->
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@3.5.2/dist/maplibre-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       // 2D MAPA (Leaflet con satélite y dibujo de polígonos)
       var satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -111,6 +204,7 @@
         }
       });
       demoMap.addControl(demoDrawControl);
+      var lastPolygonCenter = null;
       // Polygon drawing for 3D map
       var drawnPolygon3D = null;
       function addPolygonTo3DMap(latlngs) {
@@ -128,6 +222,10 @@
         var latlngs = layer.getLatLngs()[0].map(function(latlng) {
           return [latlng.lng, latlng.lat]; // MapLibre uses [lng,lat]
         });
+        // Calcular centroide del polígono
+        var sumLat = 0, sumLng = 0;
+        latlngs.forEach(function(coord) { sumLng += coord[0]; sumLat += coord[1]; });
+        lastPolygonCenter = [sumLng/latlngs.length, sumLat/latlngs.length];
         var variables = getDemoVariablesForPolygon(latlngs);
         var tbody = document.querySelector('#variablesTable tbody');
         tbody.innerHTML = '';
@@ -145,6 +243,28 @@
         if (map3dLoaded && document.getElementById('sisri-demo-map3d').style.display === 'block') {
           addPolygonTo3DMap(latlngs);
         }
+        // Activar predicción automáticamente
+        if (!predMode) {
+          setPredictionMode(true);
+          var predBtn = document.getElementById('togglePred');
+          predBtn.textContent = 'Valores Actuales';
+          predBtn.classList.add('btn-success');
+          predBtn.classList.remove('btn-warning');
+        }
+        // Activar historial automáticamente
+        if (!histMode) {
+          setHistMode(true);
+          var histBtn = document.getElementById('toggleHist');
+          histBtn.textContent = 'Valores Actuales';
+          histBtn.classList.add('btn-dark');
+          histBtn.classList.remove('btn-info');
+          // Desactiva predicción visualmente
+          var predBtn = document.getElementById('togglePred');
+          predBtn.classList.remove('btn-success');
+          predBtn.classList.add('btn-warning');
+          predBtn.textContent = 'Análisis Predictivo';
+          predMode = false;
+        }
       });
 
       // 3D MAPA (MapLibre GL JS)
@@ -161,14 +281,16 @@
           if (!map3dLoaded) {
             map3d = new maplibregl.Map({
               container: 'sisri-demo-map3d',
-              style: 'https://api.maptiler.com/maps/hybrid/style.json?key=cI5UpDE37iWXyDXV4rVN', // KEY INCLUIDA
-              center: [-99.1332, 19.4326],
+              style: 'https://api.maptiler.com/maps/hybrid/style.json?key=cI5UpDE37iWXyDXV4rVN',
+              center: lastPolygonCenter ? lastPolygonCenter : [-99.1332, 19.4326],
               zoom: 14,
               pitch: 60,
               bearing: -17.6,
               antialias: true
             });
             map3dLoaded = true;
+          } else if (lastPolygonCenter) {
+            map3d.jumpTo({center: lastPolygonCenter});
           }
         } else {
           map2d.style.display = 'block';
@@ -194,6 +316,215 @@
           'Evapotranspiración': (3 + Math.random()*2).toFixed(2) + ' mm/día'
         };
       }
+
+      // Chart.js widgets
+      let predMode = false;
+      let histMode = false;
+      let predLabels = Array.from({length: 21}, (_, i) => `Día ${i+1}`);
+      let histLabels = Array.from({length: 21}, (_, i) => `Día ${i+1}`);
+      let normalLabels = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
+      function setPredictionMode(isPred) {
+        predMode = isPred;
+        if (isPred) {
+          chart1.data.labels = predLabels;
+          chart1.data.datasets[0].label = 'Predicción Temperatura';
+          chart1.data.datasets[0].data = Array.from({length: 21}, () => (22 + Math.random()*5).toFixed(1));
+          chart1.options.plugins.title = {display:true, text:'Predicción Temperatura 3 Semanas'};
+
+          chart2.data.labels = predLabels;
+          chart2.data.datasets[0].label = 'Predicción Humedad';
+          chart2.data.datasets[0].data = Array.from({length: 21}, () => (55 + Math.random()*10).toFixed(0));
+          chart2.options.plugins.title = {display:true, text:'Predicción Humedad 3 Semanas'};
+
+          chart3.data.labels = predLabels;
+          chart3.data.datasets[0].label = 'Predicción Radiación';
+          chart3.data.datasets[0].data = Array.from({length: 21}, () => (750 + Math.random()*120).toFixed(0));
+          chart3.options.plugins.title = {display:true, text:'Predicción Radiación 3 Semanas'};
+        } else {
+          chart1.data.labels = normalLabels;
+          chart1.data.datasets[0].label = 'Temperatura';
+          chart1.data.datasets[0].data = [22, 21, 23, 25, 24, 23, 22];
+          chart1.options.plugins.title = {display:false};
+
+          chart2.data.labels = normalLabels;
+          chart2.data.datasets[0].label = 'Humedad';
+          chart2.data.datasets[0].data = [60, 62, 61, 59, 60, 62, 63];
+          chart2.options.plugins.title = {display:false};
+
+          chart3.data.labels = normalLabels;
+          chart3.data.datasets[0].label = 'Radiación';
+          chart3.data.datasets[0].data = [800, 820, 780, 790, 810, 830, 800];
+          chart3.options.plugins.title = {display:false};
+        }
+        chart1.update(); chart2.update(); chart3.update();
+      }
+      function setHistMode(isHist) {
+        histMode = isHist;
+        if (isHist) {
+          chart1.data.labels = histLabels;
+          chart1.data.datasets[0].label = 'Historial Temp.';
+          chart1.data.datasets[0].data = Array.from({length: 21}, () => (21 + Math.random()*3).toFixed(1));
+          chart1.options.plugins.title = {display:true, text:'Historial Temperatura 3 Semanas'};
+
+          chart2.data.labels = histLabels;
+          chart2.data.datasets[0].label = 'Historial Humedad';
+          chart2.data.datasets[0].data = Array.from({length: 21}, () => (58 + Math.random()*7).toFixed(0));
+          chart2.options.plugins.title = {display:true, text:'Historial Humedad 3 Semanas'};
+
+          chart3.data.labels = histLabels;
+          chart3.data.datasets[0].label = 'Historial Riego';
+          chart3.data.datasets[0].data = Array.from({length: 21}, () => (Math.random() > 0.7 ? (2 + Math.random()*3).toFixed(1) : 0));
+          chart3.options.plugins.title = {display:true, text:'Historial de Riego 3 Semanas'};
+        } else {
+          setPredictionMode(predMode); // Vuelve al modo actual o predicción
+        }
+        chart1.update(); chart2.update(); chart3.update();
+      }
+      document.getElementById('togglePred').addEventListener('click', function() {
+        setPredictionMode(!predMode);
+        this.textContent = predMode ? 'Valores Actuales' : 'Análisis Predictivo';
+        this.classList.toggle('btn-success', predMode);
+        this.classList.toggle('btn-warning', !predMode);
+        // Si se activa predicción, desactiva historial visualmente
+        if (predMode) {
+          document.getElementById('toggleHist').classList.remove('btn-dark');
+          document.getElementById('toggleHist').classList.add('btn-info');
+          document.getElementById('toggleHist').textContent = 'Historial de Riego';
+          histMode = false;
+        }
+      });
+      document.getElementById('toggleHist').addEventListener('click', function() {
+        setHistMode(!histMode);
+        this.textContent = histMode ? 'Valores Actuales' : 'Historial de Riego';
+        this.classList.toggle('btn-dark', histMode);
+        this.classList.toggle('btn-info', !histMode);
+        // Si se activa historial, desactiva predicción visualmente
+        if (histMode) {
+          document.getElementById('togglePred').classList.remove('btn-success');
+          document.getElementById('togglePred').classList.add('btn-warning');
+          document.getElementById('togglePred').textContent = 'Análisis Predictivo';
+          predMode = false;
+        }
+      });
+      const chart1 = new Chart(document.getElementById('chart1').getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: normalLabels,
+          datasets: [{
+            label: 'Temperatura',
+            data: [22, 21, 23, 25, 24, 23, 22],
+            borderColor: '#ff9800',
+            fill: false,
+            tension: 0.4
+          }]
+        },
+        options: { plugins: { legend: { display: false }, title: {display:false} }, scales: { y: { beginAtZero: true } } }
+      });
+      const chart2 = new Chart(document.getElementById('chart2').getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: normalLabels,
+          datasets: [{
+            label: 'Humedad',
+            data: [60, 62, 61, 59, 60, 62, 63],
+            borderColor: '#2196f3',
+            fill: false,
+            tension: 0.4
+          }]
+        },
+        options: { plugins: { legend: { display: false }, title: {display:false} }, scales: { y: { beginAtZero: true } } }
+      });
+      const chart3 = new Chart(document.getElementById('chart3').getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: normalLabels,
+          datasets: [{
+            label: 'Radiación',
+            data: [800, 820, 780, 790, 810, 830, 800],
+            borderColor: '#43a047',
+            fill: false,
+            tension: 0.4
+          }]
+        },
+        options: { plugins: { legend: { display: false }, title: {display:false} }, scales: { y: { beginAtZero: true } } }
+      });
+      // HISTORIAL DE RIEGO widgets abajo del mapa
+      const histChart1 = new Chart(document.getElementById('histChart1').getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: Array.from({length: 21}, (_, i) => `Día ${i+1}`),
+          datasets: [{
+            label: 'Riego aplicado (mm)',
+            data: Array.from({length: 21}, () => (Math.random() > 0.7 ? (2 + Math.random()*3).toFixed(1) : 0)),
+            backgroundColor: '#1976d2'
+          }]
+        },
+        options: { plugins: { legend: { display: false }, title: {display:true, text:'Historial de Riego (3 Semanas)'} }, scales: { y: { beginAtZero: true } } }
+      });
+      const histChart2 = new Chart(document.getElementById('histChart2').getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: Array.from({length: 21}, (_, i) => `Día ${i+1}`),
+          datasets: [{
+            label: 'Humedad del Suelo (%)',
+            data: Array.from({length: 21}, () => (55 + Math.random()*15).toFixed(0)),
+            borderColor: '#43a047',
+            fill: false,
+            tension: 0.4
+          }]
+        },
+        options: { plugins: { legend: { display: false }, title: {display:true, text:'Humedad del Suelo (3 Semanas)'} }, scales: { y: { beginAtZero: true } } }
+      });
+      const histChart3 = new Chart(document.getElementById('histChart3').getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: Array.from({length: 21}, (_, i) => `Día ${i+1}`),
+          datasets: [{
+            label: 'Temperatura Media (°C)',
+            data: Array.from({length: 21}, () => (19 + Math.random()*6).toFixed(1)),
+            borderColor: '#ff9800',
+            fill: false,
+            tension: 0.4
+          }]
+        },
+        options: { plugins: { legend: { display: false }, title: {display:true, text:'Temperatura Media (3 Semanas)'} }, scales: { y: { beginAtZero: true } } }
+      });
+      // Generar recomendaciones de riego (simuladas)
+      function generarRecomendacionesRiego() {
+        const tbody = document.querySelector('#riegoCalendar tbody');
+        tbody.innerHTML = '';
+        for (let i=0; i<21; i++) {
+          const dia = `Día ${i+1}`;
+          const hora = `${8 + Math.floor(Math.random()*6)}:00`;
+          const duracion = 20 + Math.floor(Math.random()*25);
+          const temp = (20 + Math.random()*8).toFixed(1);
+          const hum = (50 + Math.random()*20).toFixed(0);
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td><button class='btn btn-link detalle-dia' data-dia='${i+1}'>${dia}</button></td><td>${hora}</td><td>${duracion}</td><td>${temp}</td><td>${hum}</td>`;
+          tbody.appendChild(tr);
+        }
+      }
+      generarRecomendacionesRiego();
+      // Modal detalle al hacer click en un día
+      document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('detalle-dia')) {
+          const dia = e.target.getAttribute('data-dia');
+          // Simula detalle
+          const hora = `${8 + Math.floor(Math.random()*6)}:00`;
+          const duracion = 20 + Math.floor(Math.random()*25);
+          const predTemp = (20 + Math.random()*8).toFixed(1);
+          const predHum = (50 + Math.random()*20).toFixed(0);
+          document.getElementById('detalleRiegoBody').innerHTML = `
+            <b>Día:</b> ${dia}<br>
+            <b>Hora Recomendada:</b> ${hora}<br>
+            <b>Duración de Riego:</b> ${duracion} minutos<br>
+            <b>Predicción Temperatura:</b> ${predTemp} °C<br>
+            <b>Predicción Humedad:</b> ${predHum} %<br>
+            <b>Notas:</b> Riegue preferentemente en la mañana para minimizar evaporación.`;
+          var myModal = new bootstrap.Modal(document.getElementById('detalleRiegoModal'));
+          myModal.show();
+        }
+      });
     </script>
 
 </body>
