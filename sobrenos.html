@@ -90,7 +90,14 @@
       background-color: var(--accent-color);
       transition: width 0.3s ease;
     }
-    
+    .content-section {
+  margin-top: 60px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
     .nav-link:hover::after {
       width: 100%;
     }
@@ -123,6 +130,14 @@
     
     }
     
+    .team-photo {
+  width: 100%;
+  height: 300px; /* o la altura que tengan tus tarjetas "200+ casos" */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
     /* Tarjetas */
     .feature-card {
       background: white;
@@ -310,11 +325,17 @@
       </div>
     </div>
   </nav>
+  <header style="background: linear-gradient(to right, #0f1d3d, #2e5885);">
+    <div class="container text-white">
+      <h1 class="display-4 animate__animated animate__fadeInDown">Nuestro Equipo</h1>
+      <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Comprometido con el medio ambiente</p>
+    </div>
+  </header>
+  
     <div class="container">
         <div class="content-section">
             <h2>Sobre Nosotros</h2>
-            <p>Nosotros estamos comprometidos a impulsar la agricultura sostenible. Y deseamos solucionar los desperdicios extremos de agua, y servicios de la industria agrícola</p>
-        </div>
+            <p>Estamos comprometidos con impulsar una agricultura más sostenible, resolviendo el desperdicio excesivo de agua y mejorando los servicios en la industria agrícola.</p>
         <div class="content-section">
             <h2>¿Qué es Sisri?</h2>
             <p>Sisri es un sistema de riego innovador de pulsaciones, creado por jóvenes alumnos de Prepa Tec Campus Sonora Norte. Este sistema integral optimiza el uso del agua mediante inteligencia artificial, facilitando el acceso a cultivos y combatiendo el desperdicio de agua.</p>
@@ -339,60 +360,21 @@
             <p>Sisri se enfoca en cultivos de sombra y permite al agricultor gestionar el riego de manera 100% automática. Este sistema es más asequible y proporciona más datos que otros sistemas de riego en el mercado, implementando machine learning para mejorar el rendimiento.</p>
         </div>
         <div class="content-section">
-            <h2>Objetivos de Desarrollo Sostenible</h2>
-            <div class="sdg-imagenes">
-                <img src="images/sdg2.png" alt="SDG 2">
-                <p>Hambre cero</p>
-            </div>
-            <div class="sdg-imagenes">
-                <img src="images/sdg3.jpeg" alt="SDG 3">
-                <p>Salud y bienestar</p>
-            </div>
-            <div class="sdg-imagenes">
-                <img src="images/sdg8.png" alt="SDG 8">
-                <p>Trabajo decente y crecimiento económico</p>
-            </div>
-            <div class="sdg-imagenes">
-                <img src="images/sdg11.png" alt="SDG 11">
-                <p>Ciudades y comunidades sostenibles</p>
-            </div>
-            <div class="sdg-imagenes">
-                <img src="images/sdg12.png" alt="SDG 12">
-                <p>Producción y consumo responsables</p>
-            </div>
-            <div class="sdg-imagenes">
-                <img src="images/sdg3.png" alt="SDG 13">
-                <p>Acción por el clima</p>
-            </div>
-        </div>
-        <div class="content-section">
             <h2>Invitación a patrocinios</h2>
             <p>Sisri invita a diferentes empresas a contribuir en el presupuesto para desarrollar y mejorar el sistema. Al colaborar con OASIS, un grupo estudiantil comprometido con la ecología, se obtendrán múltiples beneficios y se apoyará una iniciativa juvenil con una causa noble.</p>
         </div>
     </div>
     <!-- Nuestro Equipo -->
-<div class="container my-5">
-    <h2 class="text-center mb-5 section-title">Nuestro Equipo</h2>
-    <div class="row g-4 align-items-stretch">
-      <!-- Foto 1 -->
-      <div class="col-md-4 d-flex flex-column align-items-stretch">
-        <div class="card feature-card text-center p-0 border-0 shadow-sm h-100">
-          <img src="images/alec.jpg" class="img-fluid" style="aspect-ratio: 1; object-fit: cover;" alt="Miembro del equipo 1">
-        </div>
+    <div class="col-md-4 mb-4">
+        <img src="images/alec.jpg" alt="Alec" class="team-photo">
       </div>
-      <!-- Foto 2 -->
-      <div class="col-md-4 d-flex flex-column align-items-stretch">
-        <div class="card feature-card text-center p-0 border-0 shadow-sm h-100">
-          <img src="images/cesarc.jpg" class="img-fluid" style="aspect-ratio: 1; object-fit: cover;" alt="Miembro del equipo 2">
-        </div>
+      <div class="col-md-4 mb-4">
+        <img src="images/lunac.jpg" alt="Lunac" class="team-photo">
       </div>
-      <!-- Foto 3 -->
-      <div class="col-md-4 d-flex flex-column align-items-stretch">
-        <div class="card feature-card text-center p-0 border-0 shadow-sm h-100">
-          <img src="images/lunac.jpg" class="img-fluid" style="aspect-ratio: 1; object-fit: cover;" alt="Miembro del equipo 3">
-        </div>
+      <div class="col-md-4 mb-4">
+        <img src="images/cesarc.jpg" alt="Cesarc" class="team-photo">
       </div>
-    </div>
+      
   
     <div class="row g-4 mt-4">
       <!-- Cuadro 1 -->
@@ -418,6 +400,34 @@
       </div>
     </div>
   </div>
+  <!-- SDG Carousel -->
+   
+<div class="container my-5">
+    <h3 class="text-center mb-4">Contribuimos a los Objetivos de Desarrollo Sostenible</h3>
+    <div id="sdgCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner text-center">
+        <div class="carousel-item active">
+          <img src="images/sdg2.png" class="d-block mx-auto" alt="ODS 1" style="max-height: 100px;">
+        </div>
+        <div class="carousel-item">
+          <img src="images/sdg3.jpeg" class="d-block mx-auto" alt="ODS 2" style="max-height: 100px;">
+        </div>
+        <div class="carousel-item">
+          <img src="images/sdg3.png" class="d-block mx-auto" alt="ODS 6" style="max-height: 100px;">
+        </div>
+        <!-- Agrega más .carousel-item según necesites -->
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#sdgCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#sdgCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+  
   <footer class="footer">
     <div class="container">
       <div class="row">
