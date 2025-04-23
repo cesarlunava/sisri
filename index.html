@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SISRI - Blue Basin Co.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -12,9 +13,10 @@
     }
 
     body, html {
-      font-family: 'Orbitron', sans-serif; /* Fuente más tecnológica */
+      font-family: 'Open Sans', sans-serif;
       scroll-behavior: smooth;
       color: #0a0a0a;
+      background: #f4f7fb;
     }
 
     nav {
@@ -41,12 +43,13 @@
       text-decoration: none;
       color: #004080;
       font-weight: bold;
-      transition: color 0.3s;
+      transition: color 0.3s, transform 0.3s;
       text-transform: uppercase;
     }
 
     nav a:hover {
       color: #00aaff;
+      transform: translateY(-2px);
     }
 
     .hero {
@@ -79,10 +82,12 @@
     .hero-text h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
+      letter-spacing: 2px;
     }
 
     .hero-text p {
       font-size: 1.5rem;
+      font-weight: 600;
     }
 
     @keyframes fadeIn {
@@ -93,7 +98,8 @@
 
     .section {
       padding: 5rem 10vw;
-      background: #f4f7fb;
+      background: #ffffff;
+      text-align: center;
     }
 
     .section h2 {
@@ -106,7 +112,8 @@
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
-      justify-content: space-around;
+      justify-content: center;
+      margin-top: 2rem;
     }
 
     .card {
@@ -114,7 +121,7 @@
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       padding: 2rem;
-      width: 300px;
+      width: 280px;
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
@@ -123,42 +130,29 @@
       box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
     }
 
-    footer {
-      padding: 2rem;
-      background: #001a33;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: white;
-      text-decoration: underline;
-    }
-
-    .map-container {
-      height: 400px;
-      width: 100%;
-      border-radius: 10px;
-      overflow: hidden;
-      background-color: #eee;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
     }
 
     .footer {
-      background-color: #0a0a0a;
+      background-color: #001a33;
       color: #d1d1d1;
       padding: 4rem 1rem 2rem;
+      text-align: center;
     }
 
     .footer h5 {
       color: #ffffff;
       font-weight: 600;
+      margin-bottom: 1rem;
     }
 
     .footer a {
       color: #a0c8d0;
       text-decoration: none;
+      transition: color 0.3s;
     }
 
     .footer a:hover {
@@ -168,6 +162,53 @@
     .footer hr {
       border-top: 1px solid #555;
       margin-top: 2rem;
+    }
+
+    .map-container {
+      height: 300px;
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #eee;
+      transition: transform 0.3s;
+    }
+
+    .map-container:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-form {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .contact-form button {
+      background-color: #004080;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #00aaff;
     }
 
   </style>
@@ -182,7 +223,7 @@
     <a href="sobrenos.html">Sobre Nosotros</a>
     <a href="servicios.html">Servicios</a>
     <a href="funcionam.html">Funcionamiento</a>
-    <a href="dassh.html">demo</a>
+    <a href="dassh.html">Contacto</a>
     <a href="modelo.html">Modelo</a>
   </div>
 </nav>
@@ -216,37 +257,38 @@
 </section>
 
 <!-- Contacto Section -->
-<div class="container my-5">
+<section class="container my-5">
   <div class="row justify-content-between align-items-start">
     <div class="col-md-6">
-      <h2 class="mb-4">Contáctanos</h2>
-      <form>
-        <div class="mb-3">
-          <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" />
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Correo electrónico</label>
-          <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" />
-        </div>
-        <div class="mb-3">
-          <label for="mensaje" class="form-label">Mensaje</label>
-          <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-dark">Enviar</button>
-      </form>
+      <div class="contact-form">
+        <h2>Contáctanos</h2>
+        <form>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" />
+          </div>
+          <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark">Enviar</button>
+        </form>
+      </div>
     </div>
 
     <div class="col-md-5">
       <h4 class="mb-3">Ubicación</h4>
       <div class="map-container">
-        <!-- Puedes reemplazar este iframe con uno personalizado -->
         <iframe src="https://maps.google.com/maps?q=Hermosillo%20Sonora&t=&z=14&ie=UTF8&iwloc=&output=embed" 
                 width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- Footer -->
 <footer class="footer mt-5">
