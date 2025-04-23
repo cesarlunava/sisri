@@ -195,6 +195,24 @@
     .map-container:hover {
       transform: scale(1.05);
     }
+
+    .descarga-btn {
+      margin-top: 1rem;
+      background-color: #004080;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .descarga-btn:hover {
+      background-color: #00aaff;
+    }
   </style>
 </head>
 <body>
@@ -258,14 +276,15 @@
 <section class="container text-center my-5">
   <div id="carouselText" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
+      <div class="carousel-item">
         <h2>“En Sonora, cada gota de agua es oro.”</h2>
       </div>
       <div class="carousel-item">
         <h2>“La agricultura del futuro es regenerativa y eficiente.”</h2>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item active">
         <h2>“SISRI: innovación que protege nuestros cultivos y recursos.”</h2>
+        <a href="docs/Whitepaper_SISRI_BlueBasin.pdf" class="descarga-btn" download>Descargar Whitepaper</a>
       </div>
     </div>
   </div>
