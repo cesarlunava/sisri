@@ -124,7 +124,16 @@
             width: auto;
             cursor: pointer;
         }
+        .cesium-container {
+            width: 100%;
+            height: 400px;
+            margin: 0 auto 20px auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
     </style>
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.117/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.117/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -227,12 +236,30 @@
                     <input type="submit" value="Enviar">
                 </form>
             </div>
+            <div class="card">
+                <h2>Mapa 3D del Terreno</h2>
+                <div id="cesiumContainer" class="cesium-container"></div>
+            </div>
         </div>
     </div>
     <footer>
         <p>&copy; 2024 Sisri. Todos los derechos reservados.</p>
     </footer>
 
+    <script>
+        // Cesium 3D Map Initialization
+        Cesium.Ion.defaultAccessToken = '';
+        var viewer = new Cesium.Viewer('cesiumContainer', {
+            terrainProvider: Cesium.createWorldTerrain(),
+            baseLayerPicker: true,
+            timeline: false,
+            animation: false
+        });
+        // Optional: Fly to a default location (e.g., Mexico)
+        viewer.camera.flyTo({
+            destination: Cesium.Cartesian3.fromDegrees(-102.5528, 23.6345, 1500000)
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         // Datos de ejemplo (dummies) basados en el archivo CSV
