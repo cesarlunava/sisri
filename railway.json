@@ -1,12 +1,11 @@
 {
-    "build": {
-      "builder": "NIXPACKS",
-      "buildCommand": "echo building!"
-      },
-    "deploy": {
-      "startCommand": "echo starting!",
-      "healthcheckPath": "/healthcheck",
-      "healthcheckTimeout": 100,
-      "restartPolicyType": "never"
-      }
-  } 
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "startCommand": "npx serve .",
+    "healthcheckPath": "/index.html",
+    "healthcheckTimeout": 100,
+    "restartPolicyType": "never"
+  }
+}

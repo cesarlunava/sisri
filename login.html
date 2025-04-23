@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #e8f5e9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,7 +19,7 @@
         .login-container {
             background: #fff;
             padding: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             width: 100%;
@@ -34,44 +34,55 @@
         }
         h2 {
             margin-bottom: 20px;
+            color: #2e5885;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 700;
         }
         label {
             display: block;
             margin-bottom: 5px;
+            color: #2e5885;
         }
         input {
             width: 100%;
             padding: 8px;
             margin-bottom: 15px;
-            border: 1px solid #ccc;
+            border: 1px solid #2e5885;
             border-radius: 4px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         button {
             width: 100%;
             padding: 10px;
-            background-color: #08e308;
+            background-color: #2e5885;
             color: #fff;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-weight: 600;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.1rem;
+            transition: background-color 0.3s, color 0.3s;
         }
         button:hover {
-            background-color: #08e308;
+            background-color: #81baa2;
+            color: #0f1d3d;
         }
         .auth-links {
             text-align: center;
             margin-top: 10px;
         }
         .auth-links a {
-            color: #08e308;
+            color: #2e5885;
             text-decoration: none;
+            font-weight: 500;
         }
         .back-to-home {
             margin-bottom: 20px;
             text-align: center;
         }
         .back-to-home a {
-            color: #08e308;
+            color: #2e5885;
             text-decoration: none;
             font-size: 1rem;
         }
@@ -96,7 +107,7 @@
             <label for="password">Contraseña</label>
             <input type="password" id="password" name="password" required>
             
-            <button type="submit"><a href="index.html">Iniciar sesión</a></button>
+            <button type="submit">Iniciar sesión</button>
         </form>
         <div class="auth-links">
             <p> <a href="signup.html">Registrate aquí</a></p>
