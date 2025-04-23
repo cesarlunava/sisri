@@ -53,6 +53,11 @@
       gap: 20px;
       justify-content: space-around;
     }
+    html {
+    scroll-behavior: smooth;
+        }
+    </style>
+
     .card {
       background-color: #f8f9fa;
       border-radius: 10px;
@@ -67,11 +72,37 @@
   </style>
 </head>
 <body>
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+        <div class="container">
+          <!-- Logo -->
+          <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="images/logo.png" alt="Blue Basin" width="40" height="40" class="me-2" />
+            <span class="fw-light">Blue Basin</span>
+          </a>
+      
+          <!-- Botón hamburguesa -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <!-- Enlaces -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="sobrenos.html">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="funcionam.html">Funcionamiento</a></li>
+                <li class="nav-item"><a class="nav-link" href="dassh.html">Demo</a></li>
+                <li class="nav-item"><a class="nav-link" href="modelo.html">Modelo</a></li>
+                <li class="nav-item"><a class="nav-link" href="tablero.html">Tablero</a></li>
+              </ul>
+          </div>
+        </div>
+      </nav>
   <!-- Header -->
   <header>
-    <video autoplay muted loop>
-      <source src="gota.mp4" type="video/mp4" />
+    <video autoplay muted loop aria-hidden="true" title="Video de fondo">
+      <source src="images/gota.mp4" type="video/mp4" />
       Tu navegador no soporta video HTML5.
     </video>
     <div>
