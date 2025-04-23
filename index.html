@@ -607,23 +607,93 @@
     </div>
   </section>
 
-  <!-- Demo -->
-  <section id="demo" class="bg-white">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-5 mb-lg-0 animate-on-scroll">
-          <h2 class="section-title">Sistema de Demostración</h2>
-          <p class="lead">Experimenta el poder de nuestro tablero de control inteligente.</p>
-          <p>Nuestra demo interactiva te permite explorar las capacidades de Blue Basin SISRI con datos reales de campos agrícolas.</p>
-          <p>Visualiza patrones de riego, humedad del suelo, predicciones meteorológicas y recomendaciones de fertilización en tiempo real.</p>
-          <a href="dassh.html" class="btn btn-success mt-3">Probar Demo</a>
-        </div>
-        <div class="col-lg-6 animate-on-scroll">
-          <img src="images/irrigation1.png" alt="Demo del tablero" class="img-fluid rounded shadow" />
+  <!-- DEMO SISRI MAPA 3D -->
+  <section id="demo" class="my-5">
+    <div class="container-fluid py-3">
+      <h2 class="text-center mb-4">Demo: Selección de Áreas y Variables Ambientales</h2>
+      <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+        <a href="tablero.html" class="btn btn-auth btn-signin">Tablero</a>
+        <a href="dassh.html" class="btn btn-auth btn-signup">Demo Dashboard</a>
+        <a href="modelo.html" class="btn btn-auth">Modelo</a>
+        <a href="servicios.html" class="btn btn-auth">Servicios</a>
+        <a href="funcionam.html" class="btn btn-auth">Funcionamiento</a>
+        <a href="sobrenos.html" class="btn btn-auth">Sobre Nosotros</a>
+      </div>
+      <div id="sisri-demo-map" style="width:100vw;max-width:100%;height:80vh;margin-bottom:2rem;"></div>
+      <div class="variables-panel" id="sisriVariablesPanel">
+        <h4>Variables Ambientales de la Zona Seleccionada</h4>
+        <div id="sisriVariablesContent">
+          <em>Selecciona un área en el mapa para ver los datos ambientales.</em>
         </div>
       </div>
     </div>
   </section>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+  <style>
+    .variables-panel {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    #sisri-demo-map .leaflet-container {
+      background: #eaf6ff;
+    }
+  </style>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+  <script>
+    // Inicializar el mapa
+    var demoMap = L.map('sisri-demo-map').setView([19.4326, -99.1332], 14); // CDMX por defecto
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 22,
+      attribution: ' OpenStreetMap contributors'
+    }).addTo(demoMap);
+    var demoDrawnItems = new L.FeatureGroup();
+    demoMap.addLayer(demoDrawnItems);
+    var demoDrawControl = new L.Control.Draw({
+      edit: { featureGroup: demoDrawnItems },
+      draw: {
+        polygon: true,
+        marker: false,
+        polyline: false,
+        circle: false,
+        rectangle: false,
+        circlemarker: false
+      }
+    });
+    demoMap.addControl(demoDrawControl);
+    function getDemoVariablesForPolygon(latlngs) {
+      // Aquí deberías hacer una petición AJAX a tu backend con las coordenadas
+      // Por ahora, devolvemos datos simulados
+      return {
+        'Temperatura promedio': (20 + Math.random()*8).toFixed(1) + ' °C',
+        'Humedad relativa': (40 + Math.random()*40).toFixed(0) + ' %',
+        'Humedad del suelo': (10 + Math.random()*30).toFixed(0) + ' %',
+        'Radiación solar': (500 + Math.random()*300).toFixed(0) + ' W/m²',
+        'Velocidad del viento': (2 + Math.random()*4).toFixed(1) + ' m/s',
+        'Evapotranspiración': (3 + Math.random()*2).toFixed(2) + ' mm/día'
+      };
+    }
+    demoMap.on(L.Draw.Event.CREATED, function (event) {
+      demoDrawnItems.clearLayers();
+      var layer = event.layer;
+      demoDrawnItems.addLayer(layer);
+      var latlngs = layer.getLatLngs()[0].map(function(latlng) {
+        return [latlng.lat, latlng.lng];
+      });
+      var variables = getDemoVariablesForPolygon(latlngs);
+      var html = '<ul class="list-group">';
+      for (var key in variables) {
+        html += '<li class="list-group-item d-flex justify-content-between align-items-center">' + key + '<span class="badge bg-primary rounded-pill">' + variables[key] + '</span></li>';
+      }
+      html += '</ul>';
+      document.getElementById('sisriVariablesContent').innerHTML = html;
+    });
+  </script>
 
   <!-- Contacto -->
   <section id="contact" class="bg-light">
