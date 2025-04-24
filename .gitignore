@@ -1,2 +1,26 @@
-node_modules
-node_modules
+node_modules/
+.venv/
+__pycache__/
+.DS_Store
+*.pyc
+*.pyo
+*.log
+*.sqlite3
+*.db
+*.env
+.env*
+# Exclude build/dev artifacts
+/build/
+/dist/
+/.next/
+/.cache/
+/deploy/
+# Exclude Raspberry Pi and sensor data folders
+raspberry/
+# Exclude VSCode and editor folders
+.vscode/
+.idea/
+# Exclude test and temp files
+*.tmp
+*.swp
+*.bak
