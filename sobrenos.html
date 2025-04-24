@@ -129,74 +129,38 @@
       color: white;
     
     }
-    
-    .team-photo {
-  width: 100%;
-  height: 300px; /* o la altura que tengan tus tarjetas "200+ casos" */
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
 
-    /* Tarjetas */
-    .feature-card {
-      background: rgb(132, 195, 220);
-      border-radius: 5px;
-      padding: 30px;
-      height: 100%;
-      transition: all 0.3s ease;
-      border: none;
-      overflow: hidden;
-      position: relative;
+.feature-card {
+  background: rgb(132, 195, 220);
+  border-radius: 0; /* Eliminamos los bordes circulares */
+  padding: 0; /* Eliminamos el padding extra */
+  height: 100%;
+  transition: all 0.3s ease;
+  border: none;
+  overflow: hidden;
+  position: relative;
   width: 100%; /* El cuadro tomará el 100% del ancho de su contenedor */
-  padding-bottom: 100%; /* El padding-bottom hace que el alto sea igual al ancho */
+  padding-bottom: 100%; /* Aseguramos que el alto sea igual al ancho */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
-    }
-    
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 0;
-      background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
-      transition: height 0.3s ease;
-    }
-    
-    .feature-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    }
-    
-    .feature-card:hover::before {
-      height: 100%;
-    }
-    
-    .feature-card .card-icon {
-      font-size: 2.5rem;
-      color: var(--accent-color);
-      margin-bottom: 20px;
-    }
-    
-    .feature-card .card-title {
-      font-weight: 600;
-      color: var(--primary-color);
-      margin-bottom: 15px;
-    }
-    .row > .col-md-4 {
-  display: flex;
+  align-items: center;
+  margin: 0; /* Eliminamos el espacio entre los cuadros */
 }
-.row > .col-md-4 > .feature-card {
-  flex: 1;
+
+.feature-card img {
+  width: 100%; /* Aseguramos que las imágenes ocupen todo el ancho de la tarjeta */
+  height: 100%; /* Y que también tengan la misma altura */
+  object-fit: cover; /* Asegura que la imagen cubra el área del cuadrado */
 }
-    
-    .feature-card .card-text {
-      color: #131313;
-    }
+
+.row.g-0 {
+  margin: 0; /* Eliminamos márgenes adicionales entre las columnas */
+}
+
+.feature-card h3, .feature-card p {
+  margin: 0; /* Eliminamos márgenes internos en el texto */
+}
 
     /* Stats */
     .stat-item {
@@ -342,54 +306,46 @@
       <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Comprometido con el medio ambiente</p>
     </div>
   </header>
-  <section class="content-section">
-    <div class="container">
-      <!-- Primera fila -->
-      <div class="row g-0 mb-4 text-center">
-        <div class="col-md-4">
-          <div class="feature-card">
-            <h3>Alec</h3>
-            <p>Un equipo comprometido</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="feature-card">
-            <h3>Desde febrero 2024</h3>
-            <p>Hemos estado puliendo las alternativas</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="feature-card">
-            <h3>Con valores y pilares</h3>
-            <p>Confiados con la solución</p>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Segunda fila -->
-      <div class="row text-center">
-        <div class="col-md-4">
-          <div class="feature-card">
-            <h3>Blue Basin</h3>
-            <p>Es un paso a la agricultura del futuro</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="feature-card">
-            <h3>Y con su ayuda</h3>
-            <p>Podemos llegar a mas agricultores</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="feature-card">
-            <h3>Logrando sentar parametros sostenibles</h3>
-            <p>En la agricultura</p>
-          </div>
-        </div>
+  <!-- Primera fila -->
+<div class="row g-0 mb-4 text-center">
+    <div class="col-md-4">
+      <div class="feature-card">
+        <img src="images/alec.jpg" alt="Alec" />
       </div>
     </div>
-  </section>
+    <div class="col-md-4">
+      <div class="feature-card">
+        <img src="images/foto2.jpg" alt="Foto 2" />
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="feature-card">
+        <h3>Con valores y pilares</h3>
+        <p>Confiados con la solución</p>
+      </div>
+    </div>
+  </div>
   
+  <!-- Segunda fila -->
+  <div class="row g-0 text-center">
+    <div class="col-md-4">
+      <div class="feature-card">
+        <h3>Blue Basin</h3>
+        <p>Es un paso a la agricultura del futuro</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="feature-card">
+        <img src="images/foto3.jpg" alt="Foto 3" />
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="feature-card">
+        <h3>Logrando sentar parametros sostenibles</h3>
+        <p>En la agricultura</p>
+      </div>
+    </div>
+  </div>  
   
     <div class="container">
         <div class="content-section">
@@ -423,19 +379,7 @@
             <p>Sisri invita a diferentes empresas a contribuir en el presupuesto para desarrollar y mejorar el sistema. Al colaborar con OASIS, un grupo estudiantil comprometido con la ecología, se obtendrán múltiples beneficios y se apoyará una iniciativa juvenil con una causa noble.</p>
         </div>
     </div>
-    <!-- Nuestro Equipo -->
-    <div class="col-md-4 mb-4">
-        <img src="images/alec.jpg" alt="Alec" class="team-photo">
-      </div>
-      <div class="col-md-4 mb-4">
-        <img src="images/lunac.jpg" alt="Lunac" class="team-photo">
-      </div>
-      <div class="col-md-4 mb-4">
-        <img src="images/cesarc.jpg" alt="Cesarc" class="team-photo">
-      </div>
-      
-  
-    <div class="row g-4 mt-4">
+   
       <!-- Cuadro 1 -->
       <div class="col-md-4">
         <div class="p-4 h-100 d-flex flex-column justify-content-center" style="background-color: var(--accent-color); color: white;">
