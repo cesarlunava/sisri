@@ -20,18 +20,18 @@
         color: #e0e6ed;
       }
       .sidebar {
-        width: 90px;
-        background: linear-gradient(180deg, #0f1d3d 0%, #2e5885 100%);
+        width: 180px;
+        background: #1a2236;
+        color: #fff;
+        min-height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 100;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 24px 0 0 0;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.08);
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        z-index: 1100;
+        padding-top: 32px;
       }
       .sidebar-header {
         margin-bottom: 20px;
@@ -91,7 +91,7 @@
         color: #81baa2;
       }
       .dashboard-main {
-        margin-left: 90px;
+        margin-left: 180px;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -118,18 +118,6 @@
         font-size: 1.1rem;
         font-weight: 500;
       }
-      .dashboard-weather-status {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        background: #24304a;
-        border-radius: 16px;
-        padding: 12px 20px;
-        color: #fff;
-        font-size: 1.2rem;
-        font-weight: 500;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.09);
-      }
       .dashboard-actions {
         display: flex;
         align-items: center;
@@ -138,6 +126,7 @@
       }
       .dashboard-widgets-row {
         display: flex;
+        flex-wrap: wrap;
         gap: 24px;
         margin: 24px 40px 0 40px;
       }
@@ -150,8 +139,9 @@
         background: #232b3e;
         border-radius: 20px;
         padding: 24px;
-        flex: 1;
-        min-width: 0;
+        flex: 1 1 220px;
+        min-width: 220px;
+        max-width: 350px;
         box-shadow: 0 2px 12px rgba(0,0,0,0.11);
         color: #e0e6ed;
         display: flex;
@@ -174,20 +164,14 @@
         max-width: 260px;
       }
       .widget-map {
-        min-width: 0;
-        max-width: 100%;
-        width: 100%;
-        height: 500px;
+        min-width: unset;
+        max-width: unset;
+        width: 1200px !important;
+        height: 500px !important;
+        flex: unset !important;
+        align-items: stretch !important;
+        justify-content: stretch !important;
         position: relative;
-        background: #232b3e;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.11);
-        color: #e0e6ed;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: stretch;
       }
       .widget-history {
         min-width: 220px;
@@ -240,10 +224,10 @@
       }
       @media (max-width: 800px) {
         .sidebar {
-          width: 60px;
+          width: 100px;
         }
         .dashboard-main {
-          margin-left: 60px;
+          margin-left: 100px;
         }
         .dashboard-header, .dashboard-widgets-row, .dashboard-row {
           margin-left: 8px;
@@ -253,14 +237,41 @@
         }
       }
       #sisri-demo-map, #sisri-demo-map3d {
-        width: 100%;
+        width: 1200px !important;
         height: 500px !important;
         max-width: 100%;
         border-radius: 12px;
-        background: #222;
+        background: transparent !important;
         z-index: 1;
         display: block;
         position: static;
+      }
+      #sisri-demo-map .leaflet-container {
+        background: #eaf6ff !important;
+      }
+      /* Modal para análisis predictivo */
+      .modal-predictivo {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0; top: 0; width: 100vw; height: 100vh;
+        background: rgba(20,30,40,0.55);
+        align-items: center;
+        justify-content: center;
+      }
+      .modal-predictivo.active {
+        display: flex;
+      }
+      .modal-predictivo .widget-predictivo {
+        box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+        min-width: 340px;
+        max-width: 400px;
+        max-height: 90vh;
+        overflow-y: auto;
+        background: #232b3e;
+        border-radius: 22px;
+        padding: 32px 24px 24px 24px;
+        position: relative;
       }
     </style>
 </head>
@@ -270,12 +281,16 @@
       <img src="images/logo sisri blanco (1).png" alt="Logo Sisri" class="sidebar-logo">
     </div>
     <nav class="sidebar-nav">
-      <a href="dassh.html" class="sidebar-link active"><span class="icon-dashboard"></span> Dashboard</a>
+      <a href="index.html" class="sidebar-link active">
+        <span class="sidebar-icon"><i class="fas fa-home"></i></span>
+        <span class="sidebar-label">Inicio</span>
+      </a>
+      <a href="dassh.html" class="sidebar-link">
+        <span class="icon-dashboard"></span> Dashboard
+      </a>
       <a href="#historialRiego" class="sidebar-link"><span class="icon-history"></span> Historial</a>
       <a href="#mapa" class="sidebar-link"><span class="icon-map"></span> Mapas</a>
       <a href="#recomendaciones" class="sidebar-link"><span class="icon-tips"></span> Recomendaciones</a>
-      <a href="tablero.html" class="sidebar-link"><span class="icon-tablero"></span> Tablero</a>
-      <a href="index.html" class="sidebar-link"><span class="icon-exit"></span> Salir</a>
     </nav>
     <div class="sidebar-user">
       <img src="images/user_avatar.png" alt="Usuario" class="sidebar-avatar">
@@ -294,10 +309,17 @@
         <button id="togglePred" class="btn btn-warning ms-2">Análisis Predictivo</button>
         <button id="toggleHist" class="btn btn-info ms-2">Historial de Riego</button>
       </div>
-      <div class="dashboard-weather-status">
-        <span class="weather-icon sun-cloud"></span>
-        <span class="weather-temp">23°C</span>
-        <span class="weather-desc">Nublado parcial</span>
+      <div class="widget widget-forecast" id="widget-forecast">
+        <div class="widget-title">Tiempo real</div>
+        <div class="widget-weather-status" id="weather-status">
+          <i class="fas fa-cloud-sun"></i>
+          <span id="weather-description">Selecciona una zona</span>
+        </div>
+        <div class="widget-weather-details">
+          <div><span class="weather-label">Temperatura:</span> <span id="weather-temp">--</span>°C</div>
+          <div><span class="weather-label">Humedad:</span> <span id="weather-humidity">--</span>%</div>
+          <div><span class="weather-label">Viento:</span> <span id="weather-wind">--</span> km/h</div>
+        </div>
       </div>
     </header>
     <section class="dashboard-widgets-row">
@@ -317,16 +339,14 @@
         <div class="widget-title">Viento</div>
         <canvas id="chartWind" height="80"></canvas>
       </div>
-    </section>
-    <section class="dashboard-row">
-      <div class="widget widget-forecast">
+      <div class="widget widget-highlight">
         <div class="widget-title">Pronóstico 7 días</div>
         <div id="forecastList"></div>
       </div>
       <div class="widget widget-map" id="mapa">
         <div class="widget-title">Mapa de Condiciones</div>
-        <div id="sisri-demo-map" style="display:block; width:100%; height:100%; border-radius:12px; overflow:hidden; background:#222; z-index:1; position:absolute; top:0; left:0;"></div>
-        <div id="sisri-demo-map3d" style="display:none; width:100%; height:100%; border-radius:12px; overflow:hidden; background:#222; z-index:1; position:absolute; top:0; left:0;"></div>
+        <div id="sisri-demo-map" style="width:1200px;height:500px;"></div>
+        <div id="sisri-demo-map3d" style="width:1200px;height:500px;display:none;"></div>
       </div>
     </section>
     <section class="dashboard-row">
@@ -355,6 +375,18 @@
       </div>
     </section>
   </main>
+
+  <!-- Modal para Análisis Predictivo -->
+  <div class="modal-predictivo" id="modal-predictivo">
+    <div class="widget widget-predictivo">
+      <div class="widget-title">Análisis Predictivo</div>
+      <div id="predictivo-content">
+        <p>Selecciona una zona para ver el análisis predicho de humedad, temperatura y riego para los próximos días.</p>
+        <div id="predictivo-result"></div>
+      </div>
+      <button id="closePredictivo" class="btn btn-sm btn-outline-danger" style="margin-top:12px;">Cerrar</button>
+    </div>
+  </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
@@ -474,233 +506,254 @@
       }
     }
 
-    // MAPA 2D (Leaflet) con todas sus capacidades: selección de zona, edición y borrado
-    var satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-    });
-    var demoMap = L.map('sisri-demo-map', {
-      center: [19.4326, -99.1332],
-      zoom: 14,
-      layers: [satelliteLayer]
-    });
-    // Grupo para polígonos dibujados
-    var demoDrawnItems = new L.FeatureGroup();
-    demoMap.addLayer(demoDrawnItems);
-    // Control de dibujo completo
-    var demoDrawControl = new L.Control.Draw({
-      edit: {
-        featureGroup: demoDrawnItems,
-        edit: true,
-        remove: true
-      },
-      draw: {
-        polygon: true,
-        marker: true,
-        polyline: false,
-        circle: false,
-        rectangle: true,
-        circlemarker: false
-      }
-    });
-    demoMap.addControl(demoDrawControl);
-    // Al crear zona
-    demoMap.on(L.Draw.Event.CREATED, function (event) {
-      demoDrawnItems.clearLayers();
-      var layer = event.layer;
-      demoDrawnItems.addLayer(layer);
-      if (polygon2dLayer) polygon2dLayer.remove();
-      polygon2dLayer = layer;
-      if (layer instanceof L.Polygon) {
-        selectedZoneCoords = layer.getLatLngs()[0].map(function(latlng) {
-          return [latlng.lng, latlng.lat];
+    // Actualiza el widget de clima con datos en tiempo real de la zona seleccionada
+    function updateWeatherWidget(data) {
+      document.getElementById('weather-description').textContent = data.description || 'Tiempo real';
+      document.getElementById('weather-temp').textContent = data.temp ?? '--';
+      document.getElementById('weather-humidity').textContent = data.humidity ?? '--';
+      document.getElementById('weather-wind').textContent = data.wind ?? '--';
+    }
+
+    // --- MAPA 2D (Leaflet) con todas sus capacidades: selección de zona, edición y borrado
+    document.addEventListener('DOMContentLoaded', function() {
+      var satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+      });
+      var demoMap = L.map('sisri-demo-map', {
+        center: [19.4326, -99.1332],
+        zoom: 14,
+        layers: [satelliteLayer]
+      });
+      // Grupo para polígonos dibujados
+      var demoDrawnItems = new L.FeatureGroup();
+      demoMap.addLayer(demoDrawnItems);
+      // Control de dibujo completo
+      var demoDrawControl = new L.Control.Draw({
+        edit: {
+          featureGroup: demoDrawnItems,
+          edit: true,
+          remove: true
+        },
+        draw: {
+          polygon: true,
+          marker: true,
+          polyline: false,
+          circle: false,
+          rectangle: true,
+          circlemarker: false
+        }
+      });
+      demoMap.addControl(demoDrawControl);
+      // Al crear zona
+      demoMap.on(L.Draw.Event.CREATED, function (event) {
+        demoDrawnItems.clearLayers();
+        var layer = event.layer;
+        demoDrawnItems.addLayer(layer);
+        if (polygon2dLayer) polygon2dLayer.remove();
+        polygon2dLayer = layer;
+        if (layer instanceof L.Polygon) {
+          selectedZoneCoords = layer.getLatLngs()[0].map(function(latlng) {
+            return [latlng.lng, latlng.lat];
+          });
+          // Center for 3D
+          let lats = layer.getLatLngs()[0].map(ll => ll.lat);
+          let lngs = layer.getLatLngs()[0].map(ll => ll.lng);
+          selectedZoneCenter = [lngs.reduce((a,b)=>a+b,0)/lngs.length, lats.reduce((a,b)=>a+b,0)/lats.length];
+        } else {
+          selectedZoneCoords = null;
+          selectedZoneCenter = null;
+        }
+        showZoneWidgets(selectedZoneCoords);
+        updateWeatherWidget({ description: 'Despejado', temp: 27, humidity: 55, wind: 12 });
+        drawPolygonOn3D();
+      });
+      // Al editar zona
+      demoMap.on(L.Draw.Event.EDITED, function (event) {
+        var layers = event.layers;
+        layers.eachLayer(function(layer) {
+          var coords = null;
+          if (layer instanceof L.Polygon) {
+            coords = layer.getLatLngs()[0].map(function(latlng) {
+              return [latlng.lng, latlng.lat];
+            });
+          } else if (layer instanceof L.Marker) {
+            coords = [layer.getLatLng().lng, layer.getLatLng().lat];
+          } else if (layer instanceof L.Rectangle) {
+            coords = layer.getLatLngs()[0].map(function(latlng) {
+              return [latlng.lng, latlng.lat];
+            });
+          }
+          alert('Zona editada: ' + JSON.stringify(coords));
         });
-        // Center for 3D
-        let lats = layer.getLatLngs()[0].map(ll => ll.lat);
-        let lngs = layer.getLatLngs()[0].map(ll => ll.lng);
-        selectedZoneCenter = [lngs.reduce((a,b)=>a+b,0)/lngs.length, lats.reduce((a,b)=>a+b,0)/lats.length];
-      } else {
+      });
+      // Al borrar zona
+      demoMap.on(L.Draw.Event.DELETED, function (event) {
         selectedZoneCoords = null;
         selectedZoneCenter = null;
-      }
-      showZoneWidgets(selectedZoneCoords);
-      drawPolygonOn3D();
-    });
-    // Al editar zona
-    demoMap.on(L.Draw.Event.EDITED, function (event) {
-      var layers = event.layers;
-      layers.eachLayer(function(layer) {
-        var coords = null;
-        if (layer instanceof L.Polygon) {
-          coords = layer.getLatLngs()[0].map(function(latlng) {
-            return [latlng.lng, latlng.lat];
-          });
-        } else if (layer instanceof L.Marker) {
-          coords = [layer.getLatLng().lng, layer.getLatLng().lat];
-        } else if (layer instanceof L.Rectangle) {
-          coords = layer.getLatLngs()[0].map(function(latlng) {
-            return [latlng.lng, latlng.lat];
-          });
-        }
-        alert('Zona editada: ' + JSON.stringify(coords));
+        polygon2dLayer = null;
+        if (map3d && map3d.getLayer('zone-polygon')) { map3d.removeLayer('zone-polygon'); map3d.removeSource('zone-polygon'); }
+        hideZoneWidgets();
       });
-    });
-    // Al borrar zona
-    demoMap.on(L.Draw.Event.DELETED, function (event) {
-      selectedZoneCoords = null;
-      selectedZoneCenter = null;
-      polygon2dLayer = null;
-      if (map3d && map3d.getLayer('zone-polygon')) { map3d.removeLayer('zone-polygon'); map3d.removeSource('zone-polygon'); }
-      hideZoneWidgets();
-    });
-    // Pronóstico 7 días (simulado)
-    const forecastList = document.getElementById('forecastList');
-    // Historial de Riego
-    new Chart(document.getElementById('histChart1').getContext('2d'), {
-      type: 'bar',
-      data: {
-        labels: Array.from({length: 21}, (_, i) => `Día ${i+1}`),
-        datasets: [{
-          label: 'Riego aplicado (mm)',
-          data: Array.from({length: 21}, () => (Math.random() > 0.7 ? (2 + Math.random()*3).toFixed(1) : 0)),
-          backgroundColor: '#1976d2'
-        }]
-      },
-      options: { plugins: { legend: { display: false }, title: {display:true, text:'Historial de Riego (3 Semanas)'} }, scales: { y: { beginAtZero: true } } }
-    });
-    new Chart(document.getElementById('histChart2').getContext('2d'), {
-      type: 'line',
-      data: {
-        labels: Array.from({length: 21}, (_, i) => `Día ${i+1}`),
-        datasets: [{
-          label: 'Humedad del Suelo (%)',
-          data: Array.from({length: 21}, () => (55 + Math.random()*15).toFixed(0)),
-          borderColor: '#43a047',
-          fill: false,
-          tension: 0.4
-        }]
-      },
-      options: { plugins: { legend: { display: false }, title: {display:true, text:'Humedad del Suelo (3 Semanas)'} }, scales: { y: { beginAtZero: true } } }
-    });
-    new Chart(document.getElementById('histChart3').getContext('2d'), {
-      type: 'line',
-      data: {
-        labels: Array.from({length: 21}, (_, i) => `Día ${i+1}`),
-        datasets: [{
-          label: 'Temperatura Media (°C)',
-          data: Array.from({length: 21}, () => (19 + Math.random()*6).toFixed(1)),
-          borderColor: '#ff9800',
-          fill: false,
-          tension: 0.4
-        }]
-      },
-      options: { plugins: { legend: { display: false }, title: {display:true, text:'Temperatura Media (3 Semanas)'} }, scales: { y: { beginAtZero: true } } }
-    });
-    // Calendario de Riego
-    const tbody = document.querySelector('#riegoCalendar tbody');
-    tbody.innerHTML = '';
-    for (let i=0; i<7; i++) {
-      const dia = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'][i];
-      const hora = `${8 + Math.floor(Math.random()*6)}:00`;
-      const duracion = 20 + Math.floor(Math.random()*25);
-      const temp = (20 + Math.random()*8).toFixed(1);
-      const hum = (50 + Math.random()*20).toFixed(0);
-      const tr = document.createElement('tr');
-      tr.innerHTML = `<td>${dia}</td><td>${hora}</td><td>${duracion}</td><td>${temp}</td><td>${hum}</td>`;
-      tbody.appendChild(tr);
-    }
-    // MAPA 3D
-    function drawPolygonOn3D() {
-      if (!map3d || !selectedZoneCoords) return;
-      // Remove previous
-      if (polygon3dLayer) { map3d.removeLayer('zone-polygon'); map3d.removeSource('zone-polygon'); polygon3dLayer = null; }
-      map3d.addSource('zone-polygon', {
-        'type': 'geojson',
-        'data': {
-          'type': 'Feature',
-          'geometry': {
-            'type': 'Polygon',
-            'coordinates': [selectedZoneCoords]
+      // Pronóstico 7 días (simulado)
+      const forecastList = document.getElementById('forecastList');
+      // Historial de Riego
+      new Chart(document.getElementById('histChart1').getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: Array.from({length: 21}, (_, i) => `Día ${i+1}`),
+          datasets: [{
+            label: 'Riego aplicado (mm)',
+            data: Array.from({length: 21}, () => (Math.random() > 0.7 ? (2 + Math.random()*3).toFixed(1) : 0)),
+            backgroundColor: '#1976d2'
+          }]
+        },
+        options: { plugins: { legend: { display: false } }, title: {display:true, text:'Historial de Riego (3 Semanas)'} , scales: { y: { beginAtZero: true } } }
+      });
+      new Chart(document.getElementById('histChart2').getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: Array.from({length: 21}, (_, i) => `Día ${i+1}`),
+          datasets: [{
+            label: 'Humedad del Suelo (%)',
+            data: Array.from({length: 21}, () => (55 + Math.random()*15).toFixed(0)),
+            borderColor: '#43a047',
+            fill: false,
+            tension: 0.4
+          }]
+        },
+        options: { plugins: { legend: { display: false } }, title: {display:true, text:'Humedad del Suelo (3 Semanas)'} , scales: { y: { beginAtZero: true } } }
+      });
+      new Chart(document.getElementById('histChart3').getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: Array.from({length: 21}, (_, i) => `Día ${i+1}`),
+          datasets: [{
+            label: 'Temperatura Media (°C)',
+            data: Array.from({length: 21}, () => (19 + Math.random()*6).toFixed(1)),
+            borderColor: '#ff9800',
+            fill: false,
+            tension: 0.4
+          }]
+        },
+        options: { plugins: { legend: { display: false } }, title: {display:true, text:'Temperatura Media (3 Semanas)'} , scales: { y: { beginAtZero: true } } }
+      });
+      // Calendario de Riego
+      const tbody = document.querySelector('#riegoCalendar tbody');
+      tbody.innerHTML = '';
+      for (let i=0; i<7; i++) {
+        const dia = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'][i];
+        const hora = `${8 + Math.floor(Math.random()*6)}:00`;
+        const duracion = 20 + Math.floor(Math.random()*25);
+        const temp = (20 + Math.random()*8).toFixed(1);
+        const hum = (50 + Math.random()*20).toFixed(0);
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${dia}</td><td>${hora}</td><td>${duracion}</td><td>${temp}</td><td>${hum}</td>`;
+        tbody.appendChild(tr);
+      }
+      // MAPA 3D
+      function drawPolygonOn3D() {
+        if (!map3d || !selectedZoneCoords) return;
+        // Remove previous
+        if (polygon3dLayer) { map3d.removeLayer('zone-polygon'); map3d.removeSource('zone-polygon'); polygon3dLayer = null; }
+        map3d.addSource('zone-polygon', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Polygon',
+              'coordinates': [selectedZoneCoords]
+            }
           }
-        }
-      });
-      map3d.addLayer({
-        'id': 'zone-polygon',
-        'type': 'fill',
-        'source': 'zone-polygon',
-        'layout': {},
-        'paint': {
-          'fill-color': '#3388ff',
-          'fill-opacity': 0.3
-        }
-      });
-      polygon3dLayer = true;
-      // Center map
-      if (selectedZoneCenter) map3d.flyTo({center: selectedZoneCenter, zoom: 14});
-    }
-    // BOTÓN 3D/2D
-    let is3D = false;
-    let map2dDiv = document.getElementById('sisri-demo-map');
-    let map3dDiv = document.getElementById('sisri-demo-map3d');
-    let map3d = null;
-    // Ensure both map divs always have the correct size and visibility
-    function syncMapDivSizes() {
-      map2dDiv.style.width = '100%';
-      map2dDiv.style.height = '100%';
-      if (map3dDiv) {
-        map3dDiv.style.width = '100%';
-        map3dDiv.style.height = '100%';
+        });
+        map3d.addLayer({
+          'id': 'zone-polygon',
+          'type': 'fill',
+          'source': 'zone-polygon',
+          'layout': {},
+          'paint': {
+            'fill-color': '#3388ff',
+            'fill-opacity': 0.3
+          }
+        });
+        polygon3dLayer = true;
+        // Center map
+        if (selectedZoneCenter) map3d.flyTo({center: selectedZoneCenter, zoom: 14});
       }
-    }
-    window.addEventListener('resize', syncMapDivSizes);
-    syncMapDivSizes();
-    document.getElementById('toggle3d').addEventListener('click', function() {
-      is3D = !is3D;
+      // BOTÓN 3D/2D
+      let is3D = false;
+      let map2dDiv = document.getElementById('sisri-demo-map');
+      let map3dDiv = document.getElementById('sisri-demo-map3d');
+      let map3d = null;
+      // Ensure both map divs always have the correct size and visibility
+      function syncMapDivSizes() {
+        map2dDiv.style.width = '1200px';
+        map2dDiv.style.height = '500px';
+        map2dDiv.style.position = 'relative';
+        if (map3dDiv) {
+          map3dDiv.style.width = '1200px';
+          map3dDiv.style.height = '500px';
+          map3dDiv.style.position = 'absolute';
+          map3dDiv.style.left = '0';
+          map3dDiv.style.top = '0';
+          map3dDiv.parentNode.style.position = 'relative';
+        }
+      }
+      window.addEventListener('resize', syncMapDivSizes);
       syncMapDivSizes();
-      if (is3D) {
-        map2dDiv.style.display = 'none';
-        if (!map3dDiv) {
-          map3dDiv = document.createElement('div');
-          map3dDiv.id = 'sisri-demo-map3d';
-          map3dDiv.style.height = map2dDiv.offsetHeight ? map2dDiv.offsetHeight + 'px' : '380px';
-          map3dDiv.style.width = map2dDiv.offsetWidth ? map2dDiv.offsetWidth + 'px' : '100%';
-          map3dDiv.style.minHeight = '380px';
-          map3dDiv.style.minWidth = '600px';
-          map3dDiv.style.maxWidth = '1000px';
-          map3dDiv.style.borderRadius = '12px';
-          map3dDiv.style.overflow = 'hidden';
-          map3dDiv.style.background = '#222';
-          map3dDiv.style.zIndex = '1';
-          map3dDiv.style.position = 'relative';
-          map3dDiv.style.display = 'block';
-          map2dDiv.parentNode.appendChild(map3dDiv);
-        } else {
-          map3dDiv.style.display = 'block';
-          map3dDiv.style.height = map2dDiv.offsetHeight ? map2dDiv.offsetHeight + 'px' : '380px';
-          map3dDiv.style.width = map2dDiv.offsetWidth ? map2dDiv.offsetWidth + 'px' : '100%';
-        }
-        if (!map3d) {
-          setTimeout(function() {
-            map3d = new maplibregl.Map({
-              container: 'sisri-demo-map3d',
-              style: 'https://api.maptiler.com/maps/hybrid/style.json?key=cI5UpDE37iWXyDXV4rVN',
-              center: selectedZoneCenter || [ -99.1332, 19.4326 ],
-              zoom: 14,
-              pitch: 60,
-              bearing: -17.6,
-              antialias: true
-            });
-            map3d.on('load', drawPolygonOn3D);
-          }, 100);
-        } else {
-          map3d.resize();
-          drawPolygonOn3D();
-        }
-        this.textContent = 'Vista 2D';
-      } else {
-        if (map3dDiv) map3dDiv.style.display = 'none';
-        map2dDiv.style.display = 'block';
+      document.getElementById('toggle3d').addEventListener('click', function() {
+        is3D = !is3D;
         syncMapDivSizes();
-        this.textContent = 'Vista 3D/2D';
+        if (is3D) {
+          map2dDiv.style.display = 'none';
+          map3dDiv.style.display = 'block';
+          map3dDiv.style.position = 'absolute';
+          map3dDiv.style.left = '0';
+          map3dDiv.style.top = '0';
+          map3dDiv.parentNode.style.position = 'relative';
+          if (!map3d) {
+            setTimeout(function() {
+              map3d = new maplibregl.Map({
+                container: 'sisri-demo-map3d',
+                style: 'https://api.maptiler.com/maps/hybrid/style.json?key=cI5UpDE37iWXyDXV4rVN',
+                center: selectedZoneCenter || [ -99.1332, 19.4326 ],
+                zoom: 14,
+                pitch: 60,
+                bearing: -17.6,
+                antialias: true
+              });
+              map3d.on('load', drawPolygonOn3D);
+            }, 100);
+          } else {
+            map3d.resize();
+            drawPolygonOn3D();
+          }
+          this.textContent = 'Vista 2D';
+        } else {
+          map3dDiv.style.display = 'none';
+          map2dDiv.style.display = 'block';
+          syncMapDivSizes();
+          this.textContent = 'Vista 3D/2D';
+        }
+      });
+      // --- Botones de acciones: arreglar Historial de Riego y Análisis Predictivo ---
+      document.getElementById('toggleHist').addEventListener('click', function() {
+        document.getElementById('historialRiego').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+      document.getElementById('togglePred').addEventListener('click', function() {
+        document.getElementById('modal-predictivo').classList.add('active');
+        mostrarAnalisisPredictivo();
+      });
+      document.getElementById('closePredictivo').addEventListener('click', function() {
+        document.getElementById('modal-predictivo').classList.remove('active');
+      });
+
+      // Función para mostrar análisis predictivo simulado
+      function mostrarAnalisisPredictivo() {
+        var zona = selectedZoneCoords ? 'Zona seleccionada' : 'Sin zona seleccionada';
+        var dias = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
+        var pred = dias.map(d => `<div style='margin-bottom:4px;'>
+          <b>${d}:</b> Humedad: ${60+Math.round(Math.random()*10)}%, Temp: ${20+Math.round(Math.random()*6)}°C, Riego: ${Math.round(Math.random()*5)}mm</div>`).join('');
+        document.getElementById('predictivo-result').innerHTML = `<p><b>${zona}</b></p>${pred}`;
       }
     });
   </script>
