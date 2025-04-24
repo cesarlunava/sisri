@@ -97,6 +97,17 @@
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
+@media (max-width: 576px) {
+  .feature-card {
+    padding-bottom: 80%; /* Menos altura en móviles */
+  }
+}
+@media (max-width: 768px) {
+  header {
+    min-height: 70vh;
+  }
+}
+
 
     .nav-link:hover::after {
       width: 100%;
@@ -130,36 +141,46 @@
     
     }
 
-.feature-card {
-  background: rgb(132, 195, 220);
-  border-radius: 0; /* Eliminamos los bordes circulares */
-  padding: 0; /* Eliminamos el padding extra */
-  height: 100%;
-  transition: all 0.3s ease;
+    .feature-card {
+  background-color: #ADD8E6; /* azul clarito */
+  width: 100%;
+  padding-bottom: 100%; /* Alto igual al ancho → cuadrado */
+  position: relative; /* Necesario para posicionar contenido interno */
+  margin: 0;
   border: none;
+  border-radius: 0;
   overflow: hidden;
-  position: relative;
-  width: 100%; /* El cuadro tomará el 100% del ancho de su contenedor */
-  padding-bottom: 100%; /* Aseguramos que el alto sea igual al ancho */
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.feature-card-content {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0; /* Eliminamos el espacio entre los cuadros */
+  padding: 0.5rem;
 }
 
 .feature-card img {
-  width: 100%; /* Aseguramos que las imágenes ocupen todo el ancho de la tarjeta */
-  height: 100%; /* Y que también tengan la misma altura */
-  object-fit: cover; /* Asegura que la imagen cubra el área del cuadrado */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
+.feature-card h3,
+.feature-card p {
+  margin: 0;
+}
+
+.row,
 .row.g-0 {
-  margin: 0; /* Eliminamos márgenes adicionales entre las columnas */
-}
-
-.feature-card h3, .feature-card p {
-  margin: 0; /* Eliminamos márgenes internos en el texto */
+  margin: 0 !important;
+  gap: 0 !important;
 }
 
     /* Stats */
@@ -310,7 +331,7 @@
 <div class="row g-0 mb-4 text-center">
     <div class="col-md-4">
       <div class="feature-card">
-        <img src="images/alec.jpg" alt="Alec" />
+        <img src="images/alec.jpg" alt="Alejandra Yanez"/>
       </div>
     </div>
     <div class="col-md-4">
@@ -321,7 +342,7 @@
     </div>
     <div class="col-md-4">
       <div class="feature-card">
-        <img src="images/lunac.jpg" alt="Foto 2" />
+        <img src="images/lunac.jpg" alt="César Luna" />
       </div>
     </div>
   </div>
@@ -336,7 +357,7 @@
     </div>
     <div class="col-md-4">
       <div class="feature-card">
-        <img src="images/lunac.jpg" alt="Foto 3" />
+        <img src="images/cesarc.jpg" alt="César Castillo" />
       </div>
     </div>
     <div class="col-md-4">
@@ -490,4 +511,18 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+<script>
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+  
+    elements.forEach(el => observer.observe(el));
+  </script>
+  
 </html>
