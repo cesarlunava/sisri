@@ -367,7 +367,7 @@
       <div class="widget widget-calendar">
         <div class="widget-title">Calendario de Riego</div>
         <div class="table-responsive">
-          <table class="table table-dark table-striped" id="riegoCalendar">
+          <table class="table table-dark table-striped" id="riegoCalendar" style="opacity: 0.2;">
             <thead><tr><th>Día</th><th>Hora</th><th>Duración</th><th>Temp</th><th>Humedad</th></tr></thead>
             <tbody></tbody>
           </table>
@@ -474,6 +474,7 @@
       document.getElementById('histChart2').style.opacity = 0.2;
       document.getElementById('histChart3').style.opacity = 0.2;
       document.querySelector('#riegoCalendar tbody').innerHTML = '';
+      document.getElementById('riegoCalendar').style.opacity = 0.2;
     }
     hideZoneWidgets();
 
@@ -483,10 +484,25 @@
       const dias = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
       const icons = ['☀️','🌤️','🌦️','🌧️','⛅','🌤️','☀️'];
       document.getElementById('forecastList').innerHTML = dias.map((d,i) => `<div style='display:flex;align-items:center;gap:8px;margin-bottom:4px;'><span>${icons[i]}</span><span>${d}</span><span>${20+Math.round(Math.random()*7)}°C</span></div>`).join('');
-      chartHumidity.data.datasets[0].data = [60, 62, 61, 59, 60, 62, 63].map(x => x + Math.round(Math.random()*3));
-      chartRadiation.data.datasets[0].data = [800, 820, 780, 790, 810, 830, 800].map(x => x + Math.round(Math.random()*20));
-      chartTemperature.data.datasets[0].data = [22, 21, 23, 25, 24, 23, 22].map(x => x + Math.round(Math.random()*2));
-      chartWind.data.datasets[0].data = [5, 7, 6, 8, 5, 6, 7].map(x => x + Math.round(Math.random()*2));
+      // --- Valores coherentes con la zona ---
+      let lat = null, lng = null;
+      if (selectedZoneCenter) {
+        [lng, lat] = selectedZoneCenter;
+      }
+      let esSonora = lat !== null && lat > 26 && lat < 32 && lng > -115 && lng < -108;
+      let esCDMX = lat !== null && lat > 19 && lat < 20 && lng > -110 && lng < -98;
+      let baseHum, baseTemp, baseRad, baseWind;
+      if (esSonora) {
+        baseHum = 25; baseTemp = 34; baseRad = 900; baseWind = 15;
+      } else if (esCDMX) {
+        baseHum = 60; baseTemp = 22; baseRad = 800; baseWind = 7;
+      } else {
+        baseHum = 45; baseTemp = 28; baseRad = 820; baseWind = 10;
+      }
+      chartHumidity.data.datasets[0].data = dias.map(() => baseHum + Math.round(Math.random()*7));
+      chartRadiation.data.datasets[0].data = dias.map(() => baseRad + Math.round(Math.random()*30));
+      chartTemperature.data.datasets[0].data = dias.map(() => baseTemp + Math.round(Math.random()*3));
+      chartWind.data.datasets[0].data = dias.map(() => baseWind + Math.round(Math.random()*3));
       chartHumidity.update(); chartRadiation.update(); chartTemperature.update(); chartWind.update();
       document.getElementById('histChart1').style.opacity = 1;
       document.getElementById('histChart2').style.opacity = 1;
@@ -497,13 +513,25 @@
       for (let i=0; i<7; i++) {
         const dia = dias[i];
         const hora = `${8 + Math.floor(Math.random()*6)}:00`;
-        const duracion = 20 + Math.floor(Math.random()*25);
-        const temp = (20 + Math.random()*8).toFixed(1);
-        const hum = (50 + Math.random()*20).toFixed(0);
+        let duracion, temp, hum;
+        if (esSonora) {
+          duracion = 35 + Math.floor(Math.random()*10); // riego más largo
+          temp = (34 + Math.random()*4).toFixed(1);
+          hum = (25 + Math.random()*8).toFixed(0);
+        } else if (esCDMX) {
+          duracion = 18 + Math.floor(Math.random()*6);
+          temp = (22 + Math.random()*3).toFixed(1);
+          hum = (60 + Math.random()*6).toFixed(0);
+        } else {
+          duracion = 25 + Math.floor(Math.random()*8);
+          temp = (28 + Math.random()*3).toFixed(1);
+          hum = (45 + Math.random()*7).toFixed(0);
+        }
         const tr = document.createElement('tr');
         tr.innerHTML = `<td>${dia}</td><td>${hora}</td><td>${duracion}</td><td>${temp}</td><td>${hum}</td>`;
         tbody.appendChild(tr);
       }
+      document.getElementById('riegoCalendar').style.opacity = 1;
     }
 
     // Actualiza el widget de clima con datos en tiempo real de la zona seleccionada
@@ -740,6 +768,10 @@
         document.getElementById('historialRiego').scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
       document.getElementById('togglePred').addEventListener('click', function() {
+        if (!selectedZoneCoords) {
+          alert('Selecciona primero una zona en el mapa para ver el análisis predictivo.');
+          return;
+        }
         document.getElementById('modal-predictivo').classList.add('active');
         mostrarAnalisisPredictivo();
       });
@@ -749,11 +781,55 @@
 
       // Función para mostrar análisis predictivo simulado
       function mostrarAnalisisPredictivo() {
-        var zona = selectedZoneCoords ? 'Zona seleccionada' : 'Sin zona seleccionada';
+        if (!selectedZoneCoords || !selectedZoneCenter) {
+          document.getElementById('predictivo-result').innerHTML = '<p><b>Selecciona una zona en el mapa.</b></p>';
+          return;
+        }
+        // Determinar valores simulados según la lat/lon del centro
+        const [lng, lat] = selectedZoneCenter;
+        let zona = 'Zona seleccionada';
+        // Ejemplo: si está cerca de CDMX
+        let esCDMX = lat > 19 && lat < 20 && lng > -110 && lng < -98;
+        // Sonora: lat 26-32, lng -115 a -108
+        let esSonora = lat > 26 && lat < 32 && lng > -115 && lng < -108;
+        let baseHum, baseTemp, baseRiego;
+        if (esSonora) {
+          zona = 'Sonora';
+          baseHum = 25 + Math.round(Math.random()*8); // seco
+          baseTemp = 32 + Math.round(Math.random()*6); // muy caluroso
+          baseRiego = 8 + Math.round(Math.random()*2); // riego alto
+        } else if (esCDMX) {
+          zona = 'CDMX';
+          baseHum = 60;
+          baseTemp = 22;
+          baseRiego = 3;
+        } else {
+          baseHum = 45;
+          baseTemp = 28;
+          baseRiego = 6;
+        }
         var dias = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
-        var pred = dias.map(d => `<div style='margin-bottom:4px;'>
-          <b>${d}:</b> Humedad: ${60+Math.round(Math.random()*10)}%, Temp: ${20+Math.round(Math.random()*6)}°C, Riego: ${Math.round(Math.random()*5)}mm</div>`).join('');
-        document.getElementById('predictivo-result').innerHTML = `<p><b>${zona}</b></p>${pred}`;
+        var pred = dias.map(d => `<div style='margin-bottom:4px;'><b>${d}:</b> Humedad: ${baseHum+Math.round(Math.random()*5)}%, Temp: ${baseTemp+Math.round(Math.random()*4)}°C, Riego: ${baseRiego+Math.round(Math.random()*2)}mm</div>`).join('');
+        // --- Calendario predictivo de riego ---
+        let calRows = dias.map((d,i) => {
+          let hora, duracion, temp, hum;
+          hora = `${8 + Math.floor(Math.random()*6)}:00`;
+          if (esSonora) {
+            duracion = 35 + Math.floor(Math.random()*10);
+            temp = (baseTemp + Math.random()*3).toFixed(1);
+            hum = (baseHum + Math.random()*4).toFixed(0);
+          } else if (esCDMX) {
+            duracion = 18 + Math.floor(Math.random()*6);
+            temp = (baseTemp + Math.random()*2).toFixed(1);
+            hum = (baseHum + Math.random()*3).toFixed(0);
+          } else {
+            duracion = 25 + Math.floor(Math.random()*8);
+            temp = (baseTemp + Math.random()*2).toFixed(1);
+            hum = (baseHum + Math.random()*3).toFixed(0);
+          }
+          return `<tr><td>${d}</td><td>${hora}</td><td>${duracion}</td><td>${temp}</td><td>${hum}</td></tr>`;
+        }).join('');
+        document.getElementById('predictivo-result').innerHTML = `<p><b>${zona}</b></p>${pred}<div style='margin-top:16px'><b>Calendario Predictivo de Riego</b><br><table class='table table-dark table-striped' style='margin-top:6px'><thead><tr><th>Día</th><th>Hora</th><th>Duración</th><th>Temp</th><th>Humedad</th></tr></thead><tbody>${calRows}</tbody></table></div>`;
       }
     });
   </script>
