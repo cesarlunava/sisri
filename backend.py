@@ -1,6 +1,7 @@
 import ee
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
+import os
 
 # Initialize Earth Engine with your credentials
 try:
@@ -9,8 +10,20 @@ except Exception as e:
     ee.Authenticate()
     ee.Initialize(project='theta-totem-457716-c5')
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='.')
 CORS(app)
+
+@app.route('/')
+def serve_index():
+    return send_from_directory('.', 'index.html')
+
+@app.route('/<path:path>')
+def serve_static(path):
+    return send_from_directory('.', path)
+
+@app.route('/data/greenhouse_data.json')
+def serve_greenhouse_data():
+    return send_from_directory('data', 'greenhouse_data.json')
 
 @app.route('/extract_variables', methods=['POST'])
 def extract_variables():
@@ -44,4 +57,4 @@ def extract_variables():
     })
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)

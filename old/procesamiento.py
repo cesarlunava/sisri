@@ -1,10 +1,41 @@
+import json
+import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
 import plotly.figure_factory as ff
 
-# Cargar los datos
-df = pd.read_csv('cucumber_greenhouse_data_penman-2.csv')
+# Cargar datos del JSON
+with open('data/greenhouse_data.json', 'r') as f:
+    data = json.load(f)
+
+# Crear DataFrame con las variables
+df = pd.DataFrame({
+    'humidity': data['variables']['humidity'],
+    'temperature': data['variables']['temperature'],
+    'solar_radiation': data['variables']['solar_radiation'],
+    'wind_speed': data['variables']['wind_speed'],
+    'soil_moisture': data['variables']['soil_moisture'],
+    'eto': data['variables']['eto'],
+    'irrigation': data['variables']['irrigation']
+})
+
+# Calcular matriz de correlación
+correlation_matrix = df.corr().values.tolist()
+
+# Actualizar el JSON con las correlaciones reales
+data['correlations'] = {
+    "labels": ["Humedad", "Temperatura", "Radiación", "Viento", "Humedad Suelo", "ETo", "Riego"],
+    "matrix": correlation_matrix
+}
+
+# Guardar el JSON actualizado
+with open('data/greenhouse_data.json', 'w') as f:
+    json.dump(data, f, indent=4)
+
+print("Matriz de correlación actualizada:")
+for row in correlation_matrix:
+    print([round(x, 2) for x in row])
 
 # Generar gráficos
 # 1. Histogramas de las variables ambientales
@@ -13,12 +44,11 @@ for column in ['humidity', 'temperature', 'solar_radiation', 'wind_speed']:
     histograms.append(px.histogram(df, x=column, title=f'Histograma de {column.capitalize()}'))
 
 # 2. Mapa de calor de correlación
-correlation_matrix = df.corr()
 heatmap = ff.create_annotated_heatmap(
-    z=correlation_matrix.values,
-    x=list(correlation_matrix.columns),
-    y=list(correlation_matrix.index),
-    annotation_text=correlation_matrix.round(2).values,
+    z=correlation_matrix,
+    x=["Humedad", "Temperatura", "Radiación", "Viento", "Humedad Suelo", "ETo", "Riego"],
+    y=["Humedad", "Temperatura", "Radiación", "Viento", "Humedad Suelo", "ETo", "Riego"],
+    annotation_text=np.round(correlation_matrix, 2),
     showscale=True
 )
 heatmap.update_layout(title='Mapa de Calor de Correlación')
