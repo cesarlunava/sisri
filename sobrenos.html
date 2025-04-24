@@ -140,15 +140,20 @@
 
     /* Tarjetas */
     .feature-card {
-      background: white;
-      border-radius: 12px;
+      background: rgb(132, 195, 220);
+      border-radius: 5px;
       padding: 30px;
       height: 100%;
       transition: all 0.3s ease;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
       border: none;
       overflow: hidden;
       position: relative;
+  width: 100%; /* El cuadro tomará el 100% del ancho de su contenedor */
+  padding-bottom: 100%; /* El padding-bottom hace que el alto sea igual al ancho */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
     }
     
     .feature-card::before {
@@ -190,7 +195,7 @@
 }
     
     .feature-card .card-text {
-      color: #666;
+      color: #131313;
     }
 
     /* Stats */
@@ -312,7 +317,7 @@
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="images/logo sisri blanco (1).png" width="40" height="40" class="me-2" />
-        <img src="images/bblogo.png" width="60" height="60" class="me-2" />
+        <img src="images/bblogo.png" width="80" height="70" class="me-2" />
         
         <span>Blue Basin</span>
       </a>
@@ -344,41 +349,41 @@
         <div class="col-md-4">
           <div class="feature-card">
             <h3>Alec</h3>
-            <p>Descripción breve de Alec.</p>
+            <p>Un equipo comprometido</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="feature-card">
-            <h3>Descripción</h3>
-            <p>Texto explicativo o informativo general.</p>
+            <h3>Desde febrero 2024</h3>
+            <p>Hemos estado puliendo las alternativas</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="feature-card">
-            <h3>Lunac</h3>
-            <p>Descripción breve de Lunac.</p>
+            <h3>Con valores y pilares</h3>
+            <p>Confiados con la solución</p>
           </div>
         </div>
       </div>
   
       <!-- Segunda fila -->
-      <div class="row g-0 mb-4 text-center">
+      <div class="row text-center">
         <div class="col-md-4">
           <div class="feature-card">
-            <h3>Descripción</h3>
-            <p>Texto informativo adicional.</p>
+            <h3>Blue Basin</h3>
+            <p>Es un paso a la agricultura del futuro</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="feature-card">
-            <h3>Cesarc</h3>
-            <p>Descripción breve de Cesarc.</p>
+            <h3>Y con su ayuda</h3>
+            <p>Podemos llegar a mas agricultores</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="feature-card">
-            <h3>Descripción</h3>
-            <p>Otra sección explicativa o detalle relevante.</p>
+            <h3>Logrando sentar parametros sostenibles</h3>
+            <p>En la agricultura</p>
           </div>
         </div>
       </div>
