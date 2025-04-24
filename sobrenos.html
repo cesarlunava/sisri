@@ -105,25 +105,24 @@
 </head>
 <body>
 
-  <!-- NAVBAR ORIGINAL -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Mi Galería</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" style="color:white;"></span>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="images/logo sisri blanco (1).png" width="40" height="40" class="me-2" />
+        <img src="images/bblogo.png" width="60" height="60" class="me-2" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Galería</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="sobrenos.html">Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="tecnologia.html">Tecnología</a></li>
+          <li class="nav-item"><a class="nav-link" href="solucion.html">Solución</a></li>
+          <li class="nav-item"><a class="nav-link" href="dassh.html">Demo</a></li>
+          <li class="nav-item ms-lg-3"><a class="btn btn-outline-light" href="tablero.html">Tablero</a></li>
         </ul>
       </div>
     </div>
@@ -138,20 +137,73 @@
   <!-- GALERÍA -->
   <div class="gallery-container">
     <div class="gallery-item"><img src="imagenes/foto1.jpg" alt=""></div>
-    <div class="gallery-item"><img src="imagenes/foto2.jpg" alt=""></div>
+    <div class="gallery-item"><img src="images/alec.jpg" alt=""></div>
     <div class="gallery-item"><img src="imagenes/foto3.jpg" alt=""></div>
-    <div class="gallery-item"><img src="imagenes/foto4.jpg" alt=""></div>
+    <div class="gallery-item"><img src="images/lunac.jpg" alt=""></div>
     <div class="gallery-item"><img src="imagenes/foto5.jpg" alt=""></div>
     <div class="gallery-item"><img src="imagenes/foto6.jpg" alt=""></div>
     <div class="gallery-item"><img src="imagenes/foto7.jpg" alt=""></div>
-    <div class="gallery-item"><img src="imagenes/foto8.jpg" alt=""></div>
+    <div class="gallery-item"><img src="images/cesarc.jpg" alt=""></div>
     <div class="gallery-item"><img src="imagenes/foto9.jpg" alt=""></div>
     <div class="gallery-item"><img src="imagenes/foto10.jpg" alt=""></div>
   </div>
 
   <!-- FOOTER -->
-  <footer class="footer text-center">
-    <p>© 2025 Mi Galería. Todos los derechos reservados.</p>
+ <!-- Footer -->
+ <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <a href="#" class="footer-logo d-flex align-items-center">
+            <img src="images/logo sisri blanco (1).png" alt="Blue Basin" width="40" height="40" class="me-2" />
+            Blue Basin
+          </a>
+          <p class="footer-about">Solución integral de riego inteligente que optimiza agua, fertilizantes y energía mediante IA para una agricultura sostenible.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
+          <div class="footer-links">
+            <h5>Enlaces</h5>
+            <ul>
+              <li><a href="#home">Inicio</a></li>
+              <li><a href="#about">Sobre Nosotros</a></li>
+              <li><a href="#technology">Tecnología</a></li>
+              <li><a href="#solutions">Soluciones</a></li>
+              <li><a href="#demo">Demo</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-links">
+            <h5>Productos</h5>
+            <ul>
+              <li><a href="servicios.html">Servicios</a></li>
+              <li><a href="funcionam.html">Funcionamiento</a></li>
+              <li><a href="dassh.html">Demo</a></li>
+              <li><a href="modelo.html">Modelo</a></li>
+              <li><a href="tablero.html">Tablero</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-contact">
+            <h5>Contacto</h5>
+            <p><i class="fas fa-map-marker-alt"></i> Hermosillo, Sonora, México</p>
+            <p><i class="fas fa-phone"></i> +52 662 123 4567</p>
+            <p><i class="fas fa-envelope"></i> contacto@bluebasin.ai</p>
+            <p><i class="fas fa-clock"></i> Lunes-Viernes: 9:00 - 18:00</p>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p> 2025 Blue Basin Co. Todos los derechos reservados.</p>
+      </div>
+    </div>
   </footer>
 
   <!-- BOOTSTRAP JS -->
