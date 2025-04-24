@@ -1,4 +1,12 @@
-<style>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
     :root {
       --primary-color: #0f1d3d;
       --secondary-color: #2e5885;
@@ -6,78 +14,80 @@
       --light-color: #f8f9fa;
       --dark-color: #212529;
     }
-  
+
     html {
       scroll-behavior: smooth;
     }
-  
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--light-color);
       color: var(--dark-color);
       line-height: 1.6;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
-  
+
     h2, h3, h4, h5, h6 {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: var(--secondary-color);
       font-weight: 700;
     }
-  
+
     .navbar {
       background-color: var(--secondary-color);
     }
-  
+
     .navbar-brand {
       font-weight: 600;
       font-size: 1.5rem;
       color: #fff;
     }
-  
+
     .nav-link {
       color: #fff;
       font-weight: 500;
     }
-  
+
     .nav-link:hover, .nav-link.active {
       color: var(--accent-color);
     }
-  
+
     header {
       background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
       color: white;
       padding: 100px 0;
       text-align: center;
     }
-  
+
     header h1 {
       font-size: 3rem;
       font-weight: 700;
     }
-  
+
     header p {
       font-size: 1.25rem;
     }
-  
-    /* Galería de cuadros */
+
     .gallery-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
       margin: 0;
       padding: 0;
     }
-  
+
     .gallery-item {
       flex: 0 0 20%; /* 5 columnas */
-      aspect-ratio: 1 / 1; /* cuadros perfectos */
+      aspect-ratio: 1 / 1; /* cuadros cuadrados */
       margin: 0;
       padding: 0;
       position: relative;
       overflow: hidden;
     }
-  
+
     .gallery-item img {
       position: absolute;
       top: 0; left: 0;
@@ -85,133 +95,66 @@
       height: 100%;
       object-fit: cover;
     }
-  
-    /* Footer */
+
     .footer {
       background-color: var(--primary-color);
       color: white;
       padding: 60px 0 30px;
     }
   </style>
+</head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="images/logo sisri blanco (1).png" width="40" height="40" class="me-2" />
-        <img src="images/bblogo.png" width="80" height="70" class="me-2" />
-        <span>Blue Basin</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+
+  <!-- NAVBAR ORIGINAL -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Mi Galería</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="color:white;"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="sobrenos.html">Sobre Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="tecnologia.html">Tecnología</a></li>
-          <li class="nav-item"><a class="nav-link" href="solucion.html">Solución</a></li>
-          <li class="nav-item"><a class="nav-link" href="dassh.html">Demo</a></li>
-          <li class="nav-item ms-lg-3"><a class="btn btn-outline-light" href="tablero.html">Tablero</a></li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Galería</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
-  
-  <!-- Header ajustado -->
-  <header class="py-5">
-    <div class="container text-white text-center">
-      <h1 class="display-5">Nuestro Equipo</h1>
-      <p class="lead">Comprometido con el medio ambiente</p>
-    </div>
-  </header>
-  
-  <!-- Cuadrados en dos filas -->
-  <div class="container py-5">
-    <div class="row g-0">
-      <!-- Fila 1 -->
-      <div class="col-2">
-        <div class="feature-card" style="background-color: #61a5dc;">
-          <div class="feature-card-content">
-            <h3>Innovación</h3>
-            <p>Diseño de soluciones sustentables</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="feature-card">
-          <div class="feature-card-content">
-            <img src="images/alec.jpg" alt="Miembro 1" />
-          </div>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="feature-card" style="background-color: #0d9553;">
-          <div class="feature-card-content">
-            <h3>Innovación</h3>
-            <p>Diseño de soluciones sustentables</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="feature-card">
-          <div class="feature-card-content">
-            <img src="images/lunac.jpg" alt="Miembro 1" />
-          </div>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="feature-card" style="background-color: #0f336c;">
-          <div class="feature-card-content">
-            <h3>Innovación</h3>
-            <p>Diseño de soluciones sustentables</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row g-0">
-      <!-- Fila 2 -->
-      <div class="col-2">
-        <div class="feature-card" style="background-color: #0f336c;">
-          <div class="feature-card-content">
-            <h3>Innovación</h3>
-            <p>Diseño de soluciones sustentables</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="feature-card" style="background-color: #3b9d64;">
-          <div class="feature-card-content"> 
-            <h3>Innovación</h3> 
-            <p>Diseño de soluciones sustentables</p> 
-        </div> 
-        </div> 
-    </div> 
-    <div class="col-2"> 
-        <div class="feature-card">
-            <div class="feature-card-content">
-              <img src="images/cesarc.jpg" alt="Miembro 1" />
-            </div>
-          </div>
-</div> 
-    <div class="col-2"> <div class="feature-card" style="background-color: #4c799f;"> 
-        <div class="feature-card-content"> 
-            <h3>Innovación</h3> 
-            <p>Diseño de soluciones sustentables</p> 
-        </div> 
-    </div>
-     </div> 
-     <div class="col-2"> 
-        <div class="feature-card" style="background-color: #355d82;"> 
-            <div class="feature-card-content"> 
-                <h3>Innovación</h3> 
-                <p>Diseño de soluciones sustentables</p> 
-            </div> 
-        </div> 
-</div> 
-</div>
 
-        </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-     </body>
-         </html> 
+  <!-- HEADER OPCIONAL -->
+  <header>
+    <h1>Galería de Fotos</h1>
+    <p>Imágenes colocadas en una grilla perfecta.</p>
+  </header>
+
+  <!-- GALERÍA -->
+  <div class="gallery-container">
+    <div class="gallery-item"><img src="imagenes/foto1.jpg" alt=""></div>
+    <div class="gallery-item"><img src="imagenes/foto2.jpg" alt=""></div>
+    <div class="gallery-item"><img src="imagenes/foto3.jpg" alt=""></div>
+    <div class="gallery-item"><img src="imagenes/foto4.jpg" alt=""></div>
+    <div class="gallery-item"><img src="imagenes/foto5.jpg" alt=""></div>
+    <div class="gallery-item"><img src="imagenes/foto6.jpg" alt=""></div>
+    <div class="gallery-item"><img src="imagenes/foto7.jpg" alt=""></div>
+    <div class="gallery-item"><img src="imagenes/foto8.jpg" alt=""></div>
+    <div class="gallery-item"><img src="imagenes/foto9.jpg" alt=""></div>
+    <div class="gallery-item"><img src="imagenes/foto10.jpg" alt=""></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer text-center">
+    <p>© 2025 Mi Galería. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- BOOTSTRAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
