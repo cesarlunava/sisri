@@ -14,6 +14,9 @@
       --accent-color: #81baa2;
       --light-color: #f8f9fa;
       --dark-color: #212529;
+      --gradient-dark: linear-gradient(135deg, #0f1d3d 0%, #2e5885 100%);
+      --gradient-accent: linear-gradient(135deg, #2e5885 0%, #81baa2 100%);
+      --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     }
     
     html {
@@ -30,23 +33,31 @@
 
     h2, h3, h4, h5, h6 {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #2e5885;
+      color: var(--secondary-color);
       font-weight: 700;
     }
     
     .section-title {
-      color: #2e5885;
+      color: var(--secondary-color);
       font-weight: 700;
+      position: relative;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
     }
     
-    .card h3 {
-      color: #2e5885;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-weight: 700;
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 4px;
+      width: 60px;
+      background: var(--gradient-accent);
+      border-radius: 2px;
     }
     
     .navbar {
-      background-color: #2e5885 !important;
+      background-color: var(--primary-color) !important;
       transition: all 0.3s ease;
       padding: 15px 0;
     }
@@ -70,7 +81,7 @@
     }
     
     .nav-link:hover, .nav-link.active {
-      color: #81baa2 !important;
+      color: var(--accent-color) !important;
     }
     
     .nav-link {
@@ -99,189 +110,240 @@
       width: 100%;
     }
 
-    .btn {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-weight: 500;
-    }
-    
-    /* Asegura que los formularios y footer también usen la fuente */
-    input, textarea, button, .footer, .footer * {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    /* Main content */
+    .main-content {
+      padding: 120px 0 60px;
     }
 
-    /* Hero section */
-    header {
-      position: relative;
-      height: 100vh;
-      min-height: 600px;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+    /* Tech page specific styles */
+    .page-header {
+      background: var(--gradient-dark);
       color: white;
-    
+      padding: 6rem 0 3rem;
+      margin-bottom: 3rem;
+      border-radius: 0 0 3rem 3rem;
     }
-    
-    /* Tarjetas */
-    .feature-card {
+
+    /* Video carousel */
+    .video-carousel {
+      margin: 3rem 0;
+    }
+
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .video-card {
       background: white;
-      border-radius: 12px;
-      padding: 30px;
-      height: 100%;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      border: none;
+      border-radius: 20px;
       overflow: hidden;
-      position: relative;
+      box-shadow: var(--box-shadow);
+      transition: all 0.3s ease;
     }
-    
-    .feature-card::before {
+
+    .video-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 20px;
+      border: none;
+    }
+
+    /* Infographic grid */
+    .infographic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .tech-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--box-shadow);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      border: none;
+    }
+
+    .tech-card::before {
       content: '';
       position: absolute;
-      top: 0;
+      width: 0;
+      height: 4px;
+      bottom: 0;
       left: 0;
-      width: 4px;
-      height: 0;
-      background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
-      transition: height 0.3s ease;
-    }
-    
-    .feature-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    }
-    
-    .feature-card:hover::before {
-      height: 100%;
-    }
-    
-    .feature-card .card-icon {
-      font-size: 2.5rem;
-      color: var(--accent-color);
-      margin-bottom: 20px;
-    }
-    
-    .feature-card .card-title {
-      font-weight: 600;
-      color: var(--primary-color);
-      margin-bottom: 15px;
-    }
-    
-    .feature-card .card-text {
-      color: #666;
+      background: var(--gradient-accent);
+      transition: width 0.4s ease;
     }
 
-    /* Stats */
-    .stat-item {
-      text-align: center;
-      padding: 30px;
+    .tech-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     }
-    
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 700;
+
+    .tech-card:hover::before {
+      width: 100%;
+    }
+
+    .tech-card i {
+      font-size: 2.5rem;
       color: var(--accent-color);
-      margin-bottom: 10px;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
     }
-    
-    .stat-label {
-      font-size: 1.1rem;
+
+    .tech-card:hover i {
+      transform: scale(1.2);
+      color: var(--secondary-color);
+    }
+
+    .tech-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--secondary-color);
+    }
+
+    .tech-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: var(--gradient-dark);
       color: white;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      padding: 3rem;
+      border-radius: 20px;
+      margin: 3rem 0;
+      position: relative;
+    }
+
+    .testimonials::before {
+      content: '\201C';
+      font-family: Georgia, serif;
+      position: absolute;
+      top: -20px;
+      left: 20px;
+      font-size: 8rem;
+      color: rgba(255, 255, 255, 0.1);
+      line-height: 1;
+    }
+
+    .testimonials h3 {
+      color: white;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .testimonials h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      height: 3px;
+      width: 100%;
+      background: var(--accent-color);
+      border-radius: 2px;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .testimonial-card p {
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-card .author {
+      font-weight: 600;
+      font-style: italic;
+      color: var(--accent-color);
+    }
+
+    .testimonial-card::before {
+      content: '\201D';
+      font-family: Georgia, serif;
+      position: absolute;
+      bottom: -40px;
+      right: 20px;
+      font-size: 6rem;
+      color: rgba(255, 255, 255, 0.1);
+      z-index: 0;
     }
 
     /* Footer */
-    .footer {
-      background-color: var(--primary-color);
+    footer {
+      background: var(--primary-color);
       color: white;
-      padding: 60px 0 30px;
-    }
-    
-    .footer-logo {
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 20px;
-      display: inline-block;
-    }
-    
-    .footer-about {
-      margin-bottom: 20px;
-    }
-    
-    .footer-links h5, .footer-contact h5 {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      position: relative;
-      padding-bottom: 10px;
-    }
-    
-    .footer-links h5::after, .footer-contact h5::after {
-      content: '';
-      position: absolute;
-      width: 50px;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: var(--accent-color);
-    }
-    
-    .footer-links ul {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .footer-links li {
-      margin-bottom: 10px;
-    }
-    
-    .footer-links a {
-      color: #ddd;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    }
-    
-    .footer-links a:hover {
-      color: var(--accent-color);
-      padding-left: 5px;
-    }
-    
-    .social-links a {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      background-color: rgba(255,255,255,0.1);
-      color: white;
-      border-radius: 50%;
+      padding: 1.5rem 0;
       text-align: center;
-      line-height: 40px;
-      margin-right: 10px;
-      transition: all 0.3s ease;
-    }
-    
-    .social-links a:hover {
-      background-color: var(--accent-color);
-      transform: translateY(-3px);
-    }
-    
-    .copyright {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 20px;
-      margin-top: 40px;
-      text-align: center;
+      border-radius: 20px 20px 0 0;
+      margin-top: 3rem;
     }
 
-    /* Animaciones */
-    .animate-on-scroll {
+    /* Animation classes */
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .slide-up {
       opacity: 0;
       transform: translateY(30px);
       transition: all 0.6s ease;
     }
-    
-    .animate-on-scroll.animated {
+
+    .slide-up.animated {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .video-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .infographic-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .page-header {
+        padding: 5rem 0 2rem;
+      }
+      
+      .testimonials {
+        padding: 2rem;
+      }
     }
   </style>
 </head>
@@ -292,7 +354,6 @@
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="images/logo sisri blanco (1).png" width="40" height="40" class="me-2" />
         <img src="images/bblogo.png" width="60" height="60" class="me-2" />
-        
         <span>Blue Basin</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -300,9 +361,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="sobrenos.html">Sobre Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="tecnologia.html">Tecnología</a></li>
+          <li class="nav-item"><a class="nav-link active" href="tecnologia.html">Tecnología</a></li>
           <li class="nav-item"><a class="nav-link" href="solucion.html">Solución</a></li>
           <li class="nav-item"><a class="nav-link" href="dassh.html">Demo</a></li>
           <li class="nav-item ms-lg-3"><a class="btn btn-outline-light" href="tablero.html">Tablero</a></li>
@@ -310,52 +371,128 @@
       </div>
     </div>
   </nav>
-    <div class="container">
-        <h2>Funcionamiento del Sistema Inteligente de Riego - Sisri</h2>
 
-        <div class="carousel">
-            <iframe src="https://www.youtube.com/embed/g-pEWq0LBRI" frameborder="0" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/3OD-z-xVX_E" frameborder="0" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/Cmhbbf0BeTk" frameborder="0" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/pvUXHjyl-to" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="infographic-grid">
-            <div class="card">
-                <h3>1. Sensores IoT</h3>
-                <p>Capturan datos del suelo, humedad, temperatura, pH y otros indicadores en tiempo real para una toma de decisiones inteligente.</p>
-            </div>
-            <div class="card">
-                <h3>2. Plataforma de Datos</h3>
-                <p>Recopila y analiza datos de campo, generando mapas interactivos del terreno y alertas automatizadas.</p>
-            </div>
-            <div class="card">
-                <h3>3. Inteligencia Artificial</h3>
-                <p>Predice necesidades hídricas y genera planes de riego personalizados para cada cultivo, zona y temporada.</p>
-            </div>
-            <div class="card">
-                <h3>4. Automatización de Válvulas</h3>
-                <p>Activa o desactiva el riego automáticamente según los parámetros óptimos detectados por el sistema.</p>
-            </div>
-            <div class="card">
-                <h3>5. App Móvil y Tablero</h3>
-                <p>Monitorea tu sistema desde cualquier lugar con nuestra app y plataforma de control visual intuitivo.</p>
-            </div>
-            <div class="card">
-                <h3>6. Ahorro y Sustentabilidad</h3>
-                <p>Reduce el uso de agua hasta un 40%, mejora los rendimientos agrícolas y promueve prácticas regenerativas.</p>
-            </div>
-        </div>
-
-        <div class="testimonios">
-            <h3>Testimonios</h3>
-            <p>“Antes regábamos con calendario, ahora el sistema nos dice cuándo, cómo y cuánto. Hemos ahorrado agua y mejorado la cosecha.” - Luis R., Agricultor</p>
-            <p>“Instalamos Sisri en una hectárea piloto. El rendimiento subió un 25% sin aumentar fertilizante.” - Carla T., Ingeniera Agrónoma</p>
-        </div>
+  <!-- Header -->
+  <div class="page-header">
+    <div class="container text-center">
+      <h1 class="display-4 mb-4">Funcionamiento del Sistema Inteligente de Riego</h1>
+      <p class="lead">Descubre cómo Sisri revoluciona el riego agrícola con tecnología avanzada</p>
     </div>
+  </div>
 
-    <footer>
-        <p>&copy; 2024 Sisri. Todos los derechos reservados.</p>
-    </footer>
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="container">
+      
+      <!-- Video Showcase -->
+      <section class="video-carousel">
+        <h2 class="section-title text-center mb-4">Videos Demostrativos</h2>
+        <div class="video-container">
+          <div class="video-card">
+            <iframe class="video-frame" src="https://www.youtube.com/embed/g-pEWq0LBRI" allowfullscreen></iframe>
+          </div>
+          <div class="video-card">
+            <iframe class="video-frame" src="https://www.youtube.com/embed/3OD-z-xVX_E" allowfullscreen></iframe>
+          </div>
+          <div class="video-card">
+            <iframe class="video-frame" src="https://www.youtube.com/embed/Cmhbbf0BeTk" allowfullscreen></iframe>
+          </div>
+          <div class="video-card">
+            <iframe class="video-frame" src="https://www.youtube.com/embed/pvUXHjyl-to" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology Process -->
+      <section>
+        <h2 class="section-title text-center">Nuestro Proceso Tecnológico</h2>
+        <div class="infographic-grid">
+          <div class="tech-card slide-up">
+            <i class="fas fa-microchip"></i>
+            <h3>1. Sensores IoT</h3>
+            <p>Capturan datos del suelo, humedad, temperatura, pH y otros indicadores en tiempo real para una toma de decisiones inteligente.</p>
+          </div>
+          <div class="tech-card slide-up">
+            <i class="fas fa-database"></i>
+            <h3>2. Plataforma de Datos</h3>
+            <p>Recopila y analiza datos de campo, generando mapas interactivos del terreno y alertas automatizadas.</p>
+          </div>
+          <div class="tech-card slide-up">
+            <i class="fas fa-brain"></i>
+            <h3>3. Inteligencia Artificial</h3>
+            <p>Predice necesidades hídricas y genera planes de riego personalizados para cada cultivo, zona y temporada.</p>
+          </div>
+          <div class="tech-card slide-up">
+            <i class="fas fa-faucet"></i>
+            <h3>4. Automatización de Válvulas</h3>
+            <p>Activa o desactiva el riego automáticamente según los parámetros óptimos detectados por el sistema.</p>
+          </div>
+          <div class="tech-card slide-up">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>5. App Móvil y Tablero</h3>
+            <p>Monitorea tu sistema desde cualquier lugar con nuestra app y plataforma de control visual intuitivo.</p>
+          </div>
+          <div class="tech-card slide-up">
+            <i class="fas fa-seedling"></i>
+            <h3>6. Ahorro y Sustentabilidad</h3>
+            <p>Reduce el uso de agua hasta un 40%, mejora los rendimientos agrícolas y promueve prácticas regenerativas.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="testimonials">
+        <h3>Testimonios de Clientes</h3>
+        <div class="testimonial-card">
+          <p>"Antes regábamos con calendario, ahora el sistema nos dice cuándo, cómo y cuánto. Hemos ahorrado agua y mejorado la cosecha."</p>
+          <p class="author">- Luis R., Agricultor</p>
+        </div>
+        <div class="testimonial-card">
+          <p>"Instalamos Sisri en una hectárea piloto. El rendimiento subió un 25% sin aumentar fertilizante."</p>
+          <p class="author">- Carla T., Ingeniera Agrónoma</p>
+        </div>
+      </section>
+      
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Sisri - Blue Basin. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const slideElements = document.querySelectorAll('.slide-up');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {threshold: 0.1});
+      
+      slideElements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
 </body>
 </html>
