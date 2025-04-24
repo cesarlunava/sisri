@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galería</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blue Basin - Smart Irrigation Solutions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
       --primary-color: #0f1d3d;
@@ -21,81 +22,123 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--light-color);
-      color: var(--dark-color);
+      background-color: #f8f9fa;
+      color: #212529;
       line-height: 1.6;
       overflow-x: hidden;
-      margin: 0;
-      padding: 0;
     }
 
     h2, h3, h4, h5, h6 {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--secondary-color);
+      color: #2e5885;
       font-weight: 700;
     }
 
     .navbar {
-      background-color: var(--secondary-color);
+      background-color: #2e5885 !important;
+      transition: all 0.3s ease;
+      padding: 15px 0;
+    }
+
+    .navbar.scrolled {
+      padding: 10px 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     .navbar-brand {
       font-weight: 600;
       font-size: 1.5rem;
-      color: #fff;
+      color: #fff !important;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    .nav-link {
-      color: #fff;
-      font-weight: 500;
+    .nav-link, .navbar-brand {
+      color: #fff !important;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 600;
     }
 
     .nav-link:hover, .nav-link.active {
-      color: var(--accent-color);
+      color: #81baa2 !important;
+    }
+
+    .content-section {
+      margin-top: 60px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     }
 
     header {
-      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-      color: white;
-      padding: 100px 0;
+      position: relative;
+      min-height: 300px;
+      background: linear-gradient(to right, #0f1d3d, #2e5885);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      color: white;
     }
 
     header h1 {
       font-size: 3rem;
       font-weight: 700;
+      animation: fadeIn 2s ease-in-out;
     }
 
     header p {
       font-size: 1.25rem;
+      animation: fadeInUp 2s ease-in-out;
     }
 
-    .gallery-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
+    .feature-card {
+      background-color: #ADD8E6; /* azul clarito */
+      width: 100%;
+      padding-bottom: 100%; /* Alto igual al ancho → cuadrado */
+      position: relative; /* Necesario para posicionar contenido interno */
       margin: 0;
-      padding: 0;
-    }
-
-    .gallery-item {
-      flex: 0 0 20%; /* 5 columnas */
-      aspect-ratio: 1 / 1; /* cuadros cuadrados */
-      margin: 0;
-      padding: 0;
-      position: relative;
+      border: none;
+      border-radius: 0;
       overflow: hidden;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
     }
 
-    .gallery-item img {
+    .feature-card-content {
       position: absolute;
       top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      color: white;
+    }
+
+    .feature-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
+    .row.g-0 {
+      margin: 0 !important;
+      gap: 0 !important;
+    }
+
+    .feature-card h3, .feature-card p {
+      margin: 0;
+    }
+
+    .col-2 {
+      flex: 1 1 19%;
+      padding: 10px;
+    }
+
+    /* Footer */
     .footer {
       background-color: var(--primary-color);
       color: white;
@@ -104,13 +147,13 @@
   </style>
 </head>
 <body>
-
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="images/logo sisri blanco (1).png" width="40" height="40" class="me-2" />
-        <img src="images/bblogo.png" width="60" height="60" class="me-2" />
+        <img src="images/bblogo.png" width="80" height="70" class="me-2" />
+        <span>Blue Basin</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -127,86 +170,76 @@
       </div>
     </div>
   </nav>
-
-  <!-- HEADER OPCIONAL -->
-  <header>
-    <h1>Galería de Fotos</h1>
-    <p>Imágenes colocadas en una grilla perfecta.</p>
+  
+  <!-- Header ajustado -->
+  <header class="py-5">
+    <div class="container text-white text-center">
+      <h1 class="display-5">Nuestro Equipo</h1>
+      <p class="lead">Comprometido con el medio ambiente</p>
+    </div>
   </header>
-
-  <!-- GALERÍA -->
-  <div class="gallery-container">
-    <div class="gallery-item"><img src="imagenes/foto1.jpg" alt=""></div>
-    <div class="gallery-item"><img src="images/alec.jpg" alt=""></div>
-    <div class="gallery-item"><img src="imagenes/foto3.jpg" alt=""></div>
-    <div class="gallery-item"><img src="images/lunac.jpg" alt=""></div>
-    <div class="gallery-item"><img src="imagenes/foto5.jpg" alt=""></div>
-    <div class="gallery-item"><img src="imagenes/foto6.jpg" alt=""></div>
-    <div class="gallery-item"><img src="imagenes/foto7.jpg" alt=""></div>
-    <div class="gallery-item"><img src="images/cesarc.jpg" alt=""></div>
-    <div class="gallery-item"><img src="imagenes/foto9.jpg" alt=""></div>
-    <div class="gallery-item"><img src="imagenes/foto10.jpg" alt=""></div>
-  </div>
-
-  <!-- FOOTER -->
- <!-- Footer -->
- <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-5 mb-lg-0">
-          <a href="#" class="footer-logo d-flex align-items-center">
-            <img src="images/logo sisri blanco (1).png" alt="Blue Basin" width="40" height="40" class="me-2" />
-            Blue Basin
-          </a>
-          <p class="footer-about">Solución integral de riego inteligente que optimiza agua, fertilizantes y energía mediante IA para una agricultura sostenible.</p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
-          <div class="footer-links">
-            <h5>Enlaces</h5>
-            <ul>
-              <li><a href="#home">Inicio</a></li>
-              <li><a href="#about">Sobre Nosotros</a></li>
-              <li><a href="#technology">Tecnología</a></li>
-              <li><a href="#solutions">Soluciones</a></li>
-              <li><a href="#demo">Demo</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="footer-links">
-            <h5>Productos</h5>
-            <ul>
-              <li><a href="servicios.html">Servicios</a></li>
-              <li><a href="funcionam.html">Funcionamiento</a></li>
-              <li><a href="dassh.html">Demo</a></li>
-              <li><a href="modelo.html">Modelo</a></li>
-              <li><a href="tablero.html">Tablero</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="footer-contact">
-            <h5>Contacto</h5>
-            <p><i class="fas fa-map-marker-alt"></i> Hermosillo, Sonora, México</p>
-            <p><i class="fas fa-phone"></i> +52 662 123 4567</p>
-            <p><i class="fas fa-envelope"></i> contacto@bluebasin.ai</p>
-            <p><i class="fas fa-clock"></i> Lunes-Viernes: 9:00 - 18:00</p>
+  
+  <!-- Cuadrados en dos filas -->
+  <div class="container py-5">
+    <div class="row g-0">
+      <!-- Fila 1 -->
+      <div class="col-2">
+        <div class="feature-card" style="background-color: #61a5dc;">
+          <div class="feature-card-content">
+            <h3>Innovación</h3>
+            <p>Diseño de soluciones sustentables</p>
           </div>
         </div>
       </div>
-      <div class="copyright">
-        <p> 2025 Blue Basin Co. Todos los derechos reservados.</p>
+      <div class="col-2">
+        <div class="feature-card">
+          <div class="feature-card-content">
+            <img src="images/alec.jpg" alt="Miembro 1" />
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="feature-card" style="background-color: #0d9553;">
+          <div class="feature-card-content">
+            <h3>Innovación</h3>
+            <p>Diseño de soluciones sustentables</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="feature-card">
+          <div class="feature-card-content">
+            <img src="images/lunac.jpg" alt="Miembro 1" />
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="feature-card" style="background-color: #0f336c;">
+          <div class="feature-card-content">
+            <h3>Innovación</h3>
+            <p>Diseño de soluciones sustentables</p>
+          </div>
+        </div>
       </div>
     </div>
-  </footer>
+    
+    <div class="row g-0">
+      <!-- Fila 2 -->
+      <div class="col-2">
+        <div class="feature-card" style="background-color: #0f336c;">
+          <div class="feature-card-content">
+            <h3>Innovación</h3>
+            <p>Diseño de soluciones sustentables</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="feature-card" style="background-color: #3b9d64;">
+          <div class="feature-card-content"> <h3>Innovación</h3> <p>Diseño de soluciones sustentables</p> </div> 
+        </div> </div> <div class="col-2"> <div class="feature-card" style="background-color: #0f1d3d;"> <div class="feature-card-content"> <h3>Innovación</h3> <p>Diseño de soluciones sustentables</p> </div>
+    </div> </div> <div class="col-2"> <div class="feature-card" style="background-color: #4c799f;"> <div class="feature-card-content"> <h3>Innovación</h3> <p>Diseño de soluciones sustentables</p> </div> </div> </div> <div class="col-2"> <div class="feature-card" style="background-color: #355d82;"> <div class="feature-card-content"> <h3>Innovación</h3> <p>Diseño de soluciones sustentables</p> </div> </div> </div> 
+</div>
 
-  <!-- BOOTSTRAP JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+        </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     </body>
+         </html> 
