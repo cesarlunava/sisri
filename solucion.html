@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blue Basin - Smart Irrigation Solutions</title>
+  <title>Blue Basin - Servicios de Riego Inteligente</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -37,14 +37,23 @@
     .section-title {
       color: #2e5885;
       font-weight: 700;
+      position: relative;
+      margin-bottom: 50px;
+      text-align: center;
     }
     
-    .card h3 {
-      color: #2e5885;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-weight: 700;
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 3px;
+      background-color: var(--accent-color);
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
     }
     
+    /* Navbar - MANTENIENDO EL ORIGINAL */
     .navbar {
       background-color: #2e5885 !important;
       transition: all 0.3s ease;
@@ -103,93 +112,245 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-weight: 500;
     }
+
+    /* Header Services */
+    .services-header {
+      background: linear-gradient(rgba(15, 29, 61, 0.85), rgba(46, 88, 133, 0.85)), url('/api/placeholder/1920/600');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 150px 0 100px;
+      margin-bottom: 70px;
+      position: relative;
+    }
     
-    /* Asegura que los formularios y footer también usen la fuente */
-    input, textarea, button, .footer, .footer * {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    .services-header h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: white;
+    }
+    
+    .services-header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    
+    .wave-divider {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
     }
 
-    /* Hero section */
-    header {
+    .wave-divider svg {
       position: relative;
-      height: 100vh;
-      min-height: 600px;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-    
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 60px;
     }
-    
-    /* Tarjetas */
-    .feature-card {
+
+    .wave-divider .shape-fill {
+      fill: #FFFFFF;
+    }
+
+    /* Services Cards */
+    .services-container {
+      padding: 60px 0;
+    }
+
+    .service-card {
       background: white;
       border-radius: 12px;
-      padding: 30px;
-      height: 100%;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      border: none;
       overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
       position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
     
-    .feature-card::before {
-      content: '';
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .service-card:before {
+      content: "";
       position: absolute;
+      z-index: -1;
       top: 0;
       left: 0;
-      width: 4px;
-      height: 0;
-      background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
-      transition: height 0.3s ease;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      transform: scaleY(0);
+      transform-origin: 50% 100%;
+      transition: transform 0.5s ease;
     }
     
-    .feature-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    .service-card:hover:before {
+      transform: scaleY(1);
     }
     
-    .feature-card:hover::before {
-      height: 100%;
+    .service-card:hover .card-body h3,
+    .service-card:hover .card-body p {
+      color: white;
     }
     
-    .feature-card .card-icon {
-      font-size: 2.5rem;
+    .service-icon {
+      background-color: rgba(129, 186, 162, 0.1);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      transition: all 0.3s ease;
+    }
+    
+    .service-card:hover .service-icon {
+      background-color: white;
+    }
+    
+    .service-icon i {
+      font-size: 2rem;
       color: var(--accent-color);
+    }
+    
+    .card-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .card-body {
+      padding: 30px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card-body h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      color: var(--secondary-color);
+    }
+    
+    .card-body p {
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      flex-grow: 1;
+    }
+    
+    .btn-service {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      align-self: flex-start;
+    }
+    
+    .btn-service:hover {
+      background-color: var(--primary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Why Choose Us Section */
+    .why-choose-us {
+      background-color: #f9f9f9;
+      padding: 80px 0;
+      position: relative;
+      margin-top: 70px;
+    }
+    
+    .why-choose-item {
+      display: flex;
+      margin-bottom: 30px;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .why-choose-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .why-choose-icon {
+      background-color: rgba(129, 186, 162, 0.1);
+      min-width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+    
+    .why-choose-icon i {
+      font-size: 1.5rem;
+      color: var(--accent-color);
+    }
+    
+    .why-choose-content h4 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      padding: 80px 0;
+      color: white;
+      text-align: center;
+    }
+    
+    .cta-section h2 {
+      color: white;
       margin-bottom: 20px;
     }
     
-    .feature-card .card-title {
-      font-weight: 600;
-      color: var(--primary-color);
-      margin-bottom: 15px;
-    }
-    
-    .feature-card .card-text {
-      color: #666;
-    }
-
-    /* Stats */
-    .stat-item {
-      text-align: center;
-      padding: 30px;
-    }
-    
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--accent-color);
-      margin-bottom: 10px;
-    }
-    
-    .stat-label {
+    .cta-section p {
+      max-width: 700px;
+      margin: 0 auto 30px;
       font-size: 1.1rem;
+    }
+    
+    .btn-cta {
+      background-color: var(--accent-color);
       color: white;
-      text-transform: uppercase;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
       letter-spacing: 1px;
+      transition: all 0.3s ease;
+      border: 2px solid var(--accent-color);
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .btn-cta:hover {
+      background-color: transparent;
+      color: white;
     }
 
     /* Footer */
@@ -215,6 +376,7 @@
       margin-bottom: 20px;
       position: relative;
       padding-bottom: 10px;
+      color: white;
     }
     
     .footer-links h5::after, .footer-contact h5::after {
@@ -286,13 +448,12 @@
   </style>
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Navbar - MANTENIENDO EL ORIGINAL -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="images/logo sisri blanco (1).png" width="40" height="40" class="me-2" />
-        <img src="images/bblogo.png" width="60" height="60" class="me-2" />
-        
+        <img src="/api/placeholder/40/40" alt="Logo Sisri" class="me-2" />
+        <img src="/api/placeholder/60/60" alt="Logo Blue Basin" class="me-2" />
         <span>Blue Basin</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -311,33 +472,262 @@
     </div>
   </nav>
 
-    <div class="container">
-        <h2>Servicios de Sisri</h2>
-        <p>Estamos en una fase previa al lanzamiento al mercado. Sisri se encuentra en una etapa de validación y optimización para ofrecer el mejor rendimiento en el manejo inteligente de recursos en la agricultura.</p>
-        
-        <div class="service-card">
-            <h3>Optimización de Riego</h3>
-            <p>Utilizamos tecnología avanzada de sensores para ajustar el riego en tiempo real, asegurando que cada planta reciba la cantidad adecuada de agua y nutrientes.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>Análisis Predictivo</h3>
-            <p>Gracias a la inteligencia artificial, Sisri predice las necesidades de los cultivos, optimizando el uso de agua y energía, reduciendo costos y mejorando el rendimiento.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>Monitoreo Remoto</h3>
-            <p>A través de nuestra plataforma, puedes monitorear y controlar el sistema de riego desde cualquier dispositivo, permitiendo la gestión eficiente desde cualquier lugar.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>Gestión Sostenible</h3>
-            <p>Sisri promueve la sostenibilidad mediante la reducción del uso de agua y fertilizantes, contribuyendo a una agricultura más eficiente y respetuosa con el medio ambiente.</p>
-        </div>
+  <!-- Header Services -->
+  <header class="services-header">
+    <div class="container text-center">
+      <h1 class="animate__animated animate__fadeInDown">Servicios de Sisri</h1>
+      <p class="animate__animated animate__fadeInUp animate__delay-1s">
+        Innovamos en la gestión de recursos hídricos con soluciones inteligentes para maximizar 
+        la eficiencia y sostenibilidad en la agricultura moderna.
+      </p>
+      <div class="wave-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+      </div>
     </div>
+  </header>
 
-    <footer>
-        <p>&copy; 2024 Sisri. Todos los derechos reservados.</p>
-    </footer>
+  <!-- Services Section -->
+  <section class="services-container">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Nuestras Soluciones Innovadoras</h2>
+      <p class="text-center mb-5 animate-on-scroll">
+        Estamos en una fase previa al lanzamiento al mercado. Sisri se encuentra en una etapa de validación y optimización 
+        para ofrecer el mejor rendimiento en el manejo inteligente de recursos en la agricultura.
+      </p>
+      
+      <div class="row">
+        <!-- Service Card 1 -->
+        <div class="col-lg-6 col-md-6 mb-4 animate-on-scroll">
+          <div class="service-card">
+            <div class="card-image" style="background-image: url('/api/placeholder/600/400');"></div>
+            <div class="card-body">
+              <div class="service-icon">
+                <i class="fas fa-tint"></i>
+              </div>
+              <h3>Optimización de Riego</h3>
+              <p>Utilizamos tecnología avanzada de sensores para ajustar el riego en tiempo real, asegurando que cada planta reciba la cantidad adecuada de agua y nutrientes.</p>
+              <a href="#" class="btn-service">Más información</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Service Card 2 -->
+        <div class="col-lg-6 col-md-6 mb-4 animate-on-scroll">
+          <div class="service-card">
+            <div class="card-image" style="background-image: url('/api/placeholder/600/400');"></div>
+            <div class="card-body">
+              <div class="service-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Análisis Predictivo</h3>
+              <p>Gracias a la inteligencia artificial, Sisri predice las necesidades de los cultivos, optimizando el uso de agua y energía, reduciendo costos y mejorando el rendimiento.</p>
+              <a href="#" class="btn-service">Más información</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Service Card 3 -->
+        <div class="col-lg-6 col-md-6 mb-4 animate-on-scroll">
+          <div class="service-card">
+            <div class="card-image" style="background-image: url('/api/placeholder/600/400');"></div>
+            <div class="card-body">
+              <div class="service-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3>Monitoreo Remoto</h3>
+              <p>A través de nuestra plataforma, puedes monitorear y controlar el sistema de riego desde cualquier dispositivo, permitiendo la gestión eficiente desde cualquier lugar.</p>
+              <a href="#" class="btn-service">Más información</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Service Card 4 -->
+        <div class="col-lg-6 col-md-6 mb-4 animate-on-scroll">
+          <div class="service-card">
+            <div class="card-image" style="background-image: url('/api/placeholder/600/400');"></div>
+            <div class="card-body">
+              <div class="service-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <h3>Gestión Sostenible</h3>
+              <p>Sisri promueve la sostenibilidad mediante la reducción del uso de agua y fertilizantes, contribuyendo a una agricultura más eficiente y respetuosa con el medio ambiente.</p>
+              <a href="#" class="btn-service">Más información</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-us">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">¿Por qué elegir Sisri?</h2>
+      
+      <div class="row">
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="why-choose-item">
+            <div class="why-choose-icon">
+              <i class="fas fa-water"></i>
+            </div>
+            <div class="why-choose-content">
+              <h4>Ahorro de Agua</h4>
+              <p>Reducción de hasta un 40% en el consumo de agua gracias a nuestros sistemas de precisión.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="why-choose-item">
+            <div class="why-choose-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <div class="why-choose-content">
+              <h4>Eficiencia Energética</h4>
+              <p>Optimización del consumo eléctrico mediante programación inteligente de bombas y sistemas.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="why-choose-item">
+            <div class="why-choose-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <div class="why-choose-content">
+              <h4>Mayor Rendimiento</h4>
+              <p>Incremento en la productividad de los cultivos gracias a la irrigación de precisión.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="why-choose-item">
+            <div class="why-choose-icon">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <div class="why-choose-content">
+              <h4>Acceso en la Nube</h4>
+              <p>Control total de tu sistema desde cualquier lugar y en cualquier momento.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="why-choose-item">
+            <div class="why-choose-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <div class="why-choose-content">
+              <h4>Fácil Instalación</h4>
+              <p>Implementación rápida y sencilla compatibles con sistemas de riego existentes.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="why-choose-item">
+            <div class="why-choose-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <div class="why-choose-content">
+              <h4>Soporte Técnico</h4>
+              <p>Asistencia especializada para garantizar el óptimo funcionamiento de su sistema.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="animate-on-scroll">¿Listo para revolucionar tu sistema de riego?</h2>
+      <p class="animate-on-scroll">
+        Únete a nuestra fase beta y sé de los primeros en experimentar el futuro de la agricultura sostenible.
+      </p>
+      <a href="#" class="btn-cta animate-on-scroll">Solicitar Demostración</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-about">
+            <a class="footer-logo text-white text-decoration-none">Blue Basin</a>
+            <p>Transformando la agricultura a través de tecnologías inteligentes y sostenibles para un futuro más verde.</p>
+          </div>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-links">
+            <h5>Enlaces Rápidos</h5>
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="sobrenos.html">Sobre Nosotros</a></li>
+              <li><a href="tecnologia.html">Tecnología</a></li>
+              <li><a href="servicios.html">Servicios</a></li>
+              <li><a href="dassh.html">Demo</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-5 col-md-6">
+          <div class="footer-contact">
+            <h5>Contáctanos</h5>
+            <p><i class="fas fa-map-marker-alt me-2"></i> Av. Principal 123, Monterrey, México</p>
+            <p><i class="fas fa-phone me-2"></i> +52 (81) 1234-5678</p>
+            <p><i class="fas fa-envelope me-2"></i> info@bluebasin.com</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2024 Blue Basin. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const animateElements = document.querySelectorAll('.animate-on-scroll');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      animateElements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
 </body>
 </html>
