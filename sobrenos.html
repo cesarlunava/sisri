@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blue Basin - Smart Irrigation Solutions</title>
+  <title data-i18n="Blue Basin - Smart Irrigation Solutions">Blue Basin - Smart Irrigation Solutions</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -541,12 +541,21 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="sobrenos.html">Sobre Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="tecnologia.html">Tecnología</a></li>
-          <li class="nav-item"><a class="nav-link" href="solucion.html">Solución</a></li>
-          <li class="nav-item"><a class="nav-link" href="dassh.html">Demo</a></li>
-          <li class="nav-item ms-lg-3"><a class="btn btn-outline-light" href="tablero.html">Tablero</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html" data-i18n="Inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="sobrenos.html" data-i18n="Sobre Nosotros">Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="tecnologia.html" data-i18n="Tecnología">Tecnología</a></li>
+          <li class="nav-item"><a class="nav-link" href="solucion.html" data-i18n="Soluciones">Soluciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="dassh.html" data-i18n="Demo">Demo</a></li>
+          <li class="nav-item ms-lg-3"><a class="btn btn-outline-light" href="tablero.html" data-i18n="Tablero">Tablero</a></li>
+        </ul>
+      </div>
+      <div class="dropdown ms-3" id="language-selector" style="display:inline-block;">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span id="selected-lang">ES</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item lang-option" href="#" data-lang="es">Español</a></li>
+          <li><a class="dropdown-item lang-option" href="#" data-lang="en">English</a></li>
         </ul>
       </div>
     </div>
@@ -555,11 +564,11 @@
   <!-- Enhanced Header -->
   <header class="py-5">
     <div class="container text-white text-center">
-      <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Nuestro Equipo</h1>
-      <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Innovando en soluciones sostenibles para el futuro de la agricultura</p>
+      <h1 class="display-4 fw-bold animate__animated animate__fadeInDown" data-i18n="Nuestro Equipo">Nuestro Equipo</h1>
+      <p class="lead animate__animated animate__fadeInUp animate__delay-1s" data-i18n="Innovando en soluciones sostenibles para el futuro de la agricultura">Innovando en soluciones sostenibles para el futuro de la agricultura</p>
       <div class="header-buttons animate__animated animate__fadeInUp animate__delay-2s">
-        <a href="sobrenos.html" class="btn btn-light">Conócenos</a>
-        <a href="contacto.html" class="btn btn-outline-light">Contactar</a>
+        <a href="sobrenos.html" class="btn btn-light" data-i18n="Conócenos">Conócenos</a>
+        <a href="contacto.html" class="btn btn-outline-light" data-i18n="Contactar">Contactar</a>
       </div>
     </div>
   </header>
@@ -570,8 +579,8 @@
       <!-- Fila 1 -->
       <div class="feature-card" style="background-color: #61a5dc;">
         <div class="feature-card-content">
-          <h3>Innovación</h3>
-          <p>Diseño de soluciones sustentables</p>
+          <h3 data-i18n="Innovación">Innovación</h3>
+          <p data-i18n="Diseño de soluciones sustentables">Diseño de soluciones sustentables</p>
         </div>
       </div>
       <div class="feature-card">
@@ -581,8 +590,8 @@
       </div>
       <div class="feature-card" style="background-color: #26b7c7;">
         <div class="feature-card-content">
-          <h3>Compromiso</h3>
-          <p>Con el campo mexicano</p>
+          <h3 data-i18n="Compromiso">Compromiso</h3>
+          <p data-i18n="Con el campo mexicano">Con el campo mexicano</p>
         </div>
       </div>
       <div class="feature-card">
@@ -592,8 +601,8 @@
       </div>
       <div class="feature-card" style="background-color: #0f336c;">
         <div class="feature-card-content">
-          <h3>Sostenibilidad</h3>
-          <p>Cuidando recursos naturales</p>
+          <h3 data-i18n="Sostenibilidad">Sostenibilidad</h3>
+          <p data-i18n="Cuidando recursos naturales">Cuidando recursos naturales</p>
         </div>
       </div>
       <!-- Fila 2 -->
@@ -604,26 +613,26 @@
       </div>
       <div class="feature-card" style="background-color: #58d68d;">
         <div class="feature-card-content">
-          <h3>Tecnología</h3>
-          <p>De vanguardia</p>
+          <h3 data-i18n="Tecnología">Tecnología</h3>
+          <p data-i18n="De vanguardia">De vanguardia</p>
         </div>
       </div>
       <div class="feature-card" style="background-color: #0f336c;">
         <div class="feature-card-content">
-          <h3>Agricultura</h3>
-          <p>Regenerativa</p>
+          <h3 data-i18n="Agricultura">Agricultura</h3>
+          <p data-i18n="Regenerativa">Regenerativa</p>
         </div>
       </div>
       <div class="feature-card" style="background-color: #5dade2;">
         <div class="feature-card-content">
-          <h3>Eficiencia</h3>
-          <p>Optimización de recursos</p>
+          <h3 data-i18n="Eficiencia">Eficiencia</h3>
+          <p data-i18n="Optimización de recursos">Optimización de recursos</p>
         </div>
       </div>
       <div class="feature-card" style="background-color: #195780;">
         <div class="feature-card-content">
-          <h3>Innovación</h3>
-          <p>Soluciones de futuro</p>
+          <h3 data-i18n="Innovación">Innovación</h3>
+          <p data-i18n="Soluciones de futuro">Soluciones de futuro</p>
         </div>
       </div>
     </div>
@@ -632,26 +641,26 @@
   <!-- Secciones de contenido -->
   <div class="container">
     <div class="content-section animate-on-scroll">
-      <h2>Sobre Nosotros</h2>
-      <p>Estamos comprometidos con impulsar una agricultura más sostenible, resolviendo el desperdicio excesivo de agua y mejorando los servicios en la industria agrícola.</p>
+      <h2 data-i18n="Sobre Nosotros">Sobre Nosotros</h2>
+      <p data-i18n="Estamos comprometidos con impulsar una agricultura más sostenible, resolviendo el desperdicio excesivo de agua y mejorando los servicios en la industria agrícola.">Estamos comprometidos con impulsar una agricultura más sostenible, resolviendo el desperdicio excesivo de agua y mejorando los servicios en la industria agrícola.</p>
     </div>
     
     <div class="content-section animate-on-scroll">
-      <h2>¿Qué es Sisri?</h2>
-      <p>Sisri es un sistema de riego innovador de pulsaciones, creado por jóvenes alumnos de Prepa Tec Campus Sonora Norte. Este sistema integral optimiza el uso del agua mediante inteligencia artificial, facilitando el acceso a cultivos y combatiendo el desperdicio de agua.</p>
+      <h2 data-i18n="¿Qué es Sisri?">¿Qué es Sisri?</h2>
+      <p data-i18n="Sisri es un sistema de riego innovador de pulsaciones, creado por jóvenes alumnos de Prepa Tec Campus Sonora Norte. Este sistema integral optimiza el uso del agua mediante inteligencia artificial, facilitando el acceso a cultivos y combatiendo el desperdicio de agua.">Sisri es un sistema de riego innovador de pulsaciones, creado por jóvenes alumnos de Prepa Tec Campus Sonora Norte. Este sistema integral optimiza el uso del agua mediante inteligencia artificial, facilitando el acceso a cultivos y combatiendo el desperdicio de agua.</p>
     </div>
     
     <div class="content-section animate-on-scroll">
-      <h2>¿De dónde nació la iniciativa?</h2>
-      <p>El 69% del agua en México va destinada a la agricultura, y el 57% de este total es considerado desperdicio. Sisri combate el desperdicio de agua suministrándola de manera óptima. Además, promueve la soberanía alimentaria, ayudando a que más personas tengan acceso a cultivos.</p>
+      <h2 data-i18n="¿De dónde nació la iniciativa?">¿De dónde nació la iniciativa?</h2>
+      <p data-i18n="El 69% del agua en México va destinada a la agricultura, y el 57% de este total es considerado desperdicio. Sisri combate el desperdicio de agua suministrándola de manera óptima. Además, promueve la soberanía alimentaria, ayudando a que más personas tengan acceso a cultivos.">El 69% del agua en México va destinada a la agricultura, y el 57% de este total es considerado desperdicio. Sisri combate el desperdicio de agua suministrándola de manera óptima. Además, promueve la soberanía alimentaria, ayudando a que más personas tengan acceso a cultivos.</p>
     </div>
     
     <div class="content-section animate-on-scroll">
-      <h2>Visión y Misión</h2>
-      <h3>Visión</h3>
-      <p>Nuestra visión es crear impacto en la sociedad desde tres enfoques: socioambiental, económico y médico. Queremos reducir el desperdicio de agua, fomentar el autoconsumo, crear nuevas fuentes de ingresos, mejorar el bienestar físico y mitigar el cambio climático.</p>
-      <h3>Misión</h3>
-      <p>Nosotros, jóvenes participantes en Prepapps, buscamos captar la atención de posibles inversionistas para llevar nuestro prototipo a una escala mayor. Queremos aprovechar esta oportunidad para ayudar a otras personas con nuestra idea innovadora.</p>
+      <h2 data-i18n="Visión y Misión">Visión y Misión</h2>
+      <h3 data-i18n="Visión">Visión</h3>
+      <p data-i18n="Nuestra visión es crear impacto en la sociedad desde tres enfoques: socioambiental, económico y médico. Queremos reducir el desperdicio de agua, fomentar el autoconsumo, crear nuevas fuentes de ingresos, mejorar el bienestar físico y mitigar el cambio climático.">Nuestra visión es crear impacto en la sociedad desde tres enfoques: socioambiental, económico y médico. Queremos reducir el desperdicio de agua, fomentar el autoconsumo, crear nuevas fuentes de ingresos, mejorar el bienestar físico y mitigar el cambio climático.</p>
+      <h3 data-i18n="Misión">Misión</h3>
+      <p data-i18n="Nosotros, jóvenes participantes en Prepapps, buscamos captar la atención de posibles inversionistas para llevar nuestro prototipo a una escala mayor. Queremos aprovechar esta oportunidad para ayudar a otras personas con nuestra idea innovadora.">Nosotros, jóvenes participantes en Prepapps, buscamos captar la atención de posibles inversionistas para llevar nuestro prototipo a una escala mayor. Queremos aprovechar esta oportunidad para ayudar a otras personas con nuestra idea innovadora.</p>
     </div>
   </div>
   
@@ -662,22 +671,22 @@
         <div class="col-md-4">
           <div class="stat-item">
             <div class="stat-number">+200</div>
-            <div class="stat-label">Casos</div>
-            <p>Demostramos compromiso, pasión y eficiencia en cada solución desarrollada.</p>
+            <div class="stat-label" data-i18n="Casos">Casos</div>
+            <p data-i18n="Demostramos compromiso, pasión y eficiencia en cada solución desarrollada.">Demostramos compromiso, pasión y eficiencia en cada solución desarrollada.</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="stat-item">
             <div class="stat-number">+100</div>
-            <div class="stat-label">Clientes</div>
-            <p>Brindamos soluciones personalizadas y soporte dedicado a cada colaborador.</p>
+            <div class="stat-label" data-i18n="Clientes">Clientes</div>
+            <p data-i18n="Brindamos soluciones personalizadas y soporte dedicado a cada colaborador.">Brindamos soluciones personalizadas y soporte dedicado a cada colaborador.</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="stat-item">
             <div class="stat-number">110%</div>
-            <div class="stat-label">Compromiso</div>
-            <p>Vamos más allá con un compromiso real por el impacto positivo del proyecto.</p>
+            <div class="stat-label" data-i18n="Compromiso">Compromiso</div>
+            <p data-i18n="Vamos más allá con un compromiso real por el impacto positivo del proyecto.">Vamos más allá con un compromiso real por el impacto positivo del proyecto.</p>
           </div>
         </div>
       </div>
@@ -687,32 +696,32 @@
   <!-- Enhanced SDG Carousel -->
   <div class="sdg-section">
     <div class="container">
-      <h3 class="text-center mb-5">Contribuimos a los Objetivos de Desarrollo Sostenible</h3>
+      <h3 class="text-center mb-5" data-i18n="Contribuimos a los Objetivos de Desarrollo Sostenible">Contribuimos a los Objetivos de Desarrollo Sostenible</h3>
       <div id="sdgCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner text-center">
           <div class="carousel-item active">
             <img src="images/sdg2.png" class="d-block mx-auto" alt="ODS 1" style="max-height: 120px;">
-            <h4 class="mt-3">Hambre Cero</h4>
-            <p class="mx-auto" style="max-width: 700px">Mejoramos la productividad agrícola para combatir el hambre.</p>
+            <h4 class="mt-3" data-i18n="Hambre Cero">Hambre Cero</h4>
+            <p class="mx-auto" style="max-width: 700px" data-i18n="Mejoramos la productividad agrícola para combatir el hambre.">Mejoramos la productividad agrícola para combatir el hambre.</p>
           </div>
           <div class="carousel-item">
             <img src="images/sdg3.jpeg" class="d-block mx-auto" alt="ODS 2" style="max-height: 120px;">
-            <h4 class="mt-3">Salud y Bienestar</h4>
-            <p class="mx-auto" style="max-width: 700px">Promovemos alimentos sanos y producción sustentable.</p>
+            <h4 class="mt-3" data-i18n="Salud y Bienestar">Salud y Bienestar</h4>
+            <p class="mx-auto" style="max-width: 700px" data-i18n="Promovemos alimentos sanos y producción sustentable.">Promovemos alimentos sanos y producción sustentable.</p>
           </div>
           <div class="carousel-item">
             <img src="images/sdg3.png" class="d-block mx-auto" alt="ODS 6" style="max-height: 120px;">
-            <h4 class="mt-3">Agua Limpia y Saneamiento</h4>
-            <p class="mx-auto" style="max-width: 700px">Optimizamos el uso del agua para un futuro sostenible.</p>
+            <h4 class="mt-3" data-i18n="Agua Limpia y Saneamiento">Agua Limpia y Saneamiento</h4>
+            <p class="mx-auto" style="max-width: 700px" data-i18n="Optimizamos el uso del agua para un futuro sostenible.">Optimizamos el uso del agua para un futuro sostenible.</p>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#sdgCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Anterior</span>
+          <span class="visually-hidden" data-i18n="Anterior">Anterior</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#sdgCarousel" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Siguiente</span>
+          <span class="visually-hidden" data-i18n="Siguiente">Siguiente</span>
         </button>
       </div>
     </div>
@@ -727,7 +736,7 @@
             <img src="images/logo sisri blanco (1).png" alt="Blue Basin" width="40" height="40" class="me-2" />
             Blue Basin
           </a>
-          <p class="footer-about">Solución integral de riego inteligente que optimiza agua, fertilizantes y energía mediante IA para una agricultura sostenible.</p>
+          <p class="footer-about" data-i18n="Solución integral de riego inteligente que optimiza agua, fertilizantes y energía mediante IA para una agricultura sostenible.">Solución integral de riego inteligente que optimiza agua, fertilizantes y energía mediante IA para una agricultura sostenible.</p>
           <div class="social-links">
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -737,31 +746,31 @@
         </div>
         <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
           <div class="footer-links">
-            <h5>Enlaces</h5>
+            <h5 data-i18n="Enlaces">Enlaces</h5>
             <ul>
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="sobrenos.html">Sobre Nosotros</a></li>
-              <li><a href="tecnologia.html">Tecnología</a></li>
-              <li><a href="solucion.html">Soluciones</a></li>
-              <li><a href="dassh.html">Demo</a></li>
+              <li><a href="index.html" data-i18n="Inicio">Inicio</a></li>
+              <li><a href="sobrenos.html" data-i18n="Sobre Nosotros">Sobre Nosotros</a></li>
+              <li><a href="tecnologia.html" data-i18n="Tecnología">Tecnología</a></li>
+              <li><a href="solucion.html" data-i18n="Soluciones">Soluciones</a></li>
+              <li><a href="dassh.html" data-i18n="Demo">Demo</a></li>
             </ul>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
           <div class="footer-links">
-            <h5>Productos</h5>
+            <h5 data-i18n="Productos">Productos</h5>
             <ul>
-              <li><a href="servicios.html">Servicios</a></li>
-              <li><a href="funcionam.html">Funcionamiento</a></li>
-              <li><a href="dassh.html">Demo</a></li>
-              <li><a href="modelo.html">Modelo</a></li>
-              <li><a href="tablero.html">Tablero</a></li>
+              <li><a href="servicios.html" data-i18n="Servicios">Servicios</a></li>
+              <li><a href="funcionam.html" data-i18n="Funcionamiento">Funcionamiento</a></li>
+              <li><a href="dassh.html" data-i18n="Demo">Demo</a></li>
+              <li><a href="modelo.html" data-i18n="Modelo">Modelo</a></li>
+              <li><a href="tablero.html" data-i18n="Tablero">Tablero</a></li>
             </ul>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <div class="footer-contact">
-            <h5>Contacto</h5>
+            <h5 data-i18n="Contacto">Contacto</h5>
             <p><i class="fas fa-map-marker-alt"></i> Hermosillo, Sonora, México</p>
             <p><i class="fas fa-phone"></i> +52 662 123 4567</p>
             <p><i class="fas fa-envelope"></i> contacto@bluebasin.ai</p>
@@ -770,13 +779,195 @@
         </div>
       </div>
       <div class="copyright">
-        <p>© 2025 Blue Basin Co. Todos los derechos reservados.</p>
+        <p data-i18n="Todos los derechos reservados.">Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+    // --- Language selector with persistence ---
+    const translations = {
+      es: {
+        'Inicio': 'Inicio',
+        'Sobre Nosotros': 'Sobre Nosotros',
+        'Tecnología': 'Tecnología',
+        'Soluciones': 'Soluciones',
+        'Demo': 'Demo',
+        'Servicios': 'Servicios',
+        'Funcionamiento': 'Funcionamiento',
+        'Modelo': 'Modelo',
+        'Tablero': 'Tablero',
+        'Productos': 'Productos',
+        'Contacto': 'Contacto',
+        'Enlaces': 'Enlaces',
+        'Lunes-Viernes: 9:00 - 18:00': 'Lunes-Viernes: 9:00 - 18:00',
+        'Todos los derechos reservados.': 'Todos los derechos reservados.',
+        'Sign In': 'Iniciar Sesión',
+        'Sign Up': 'Registrarse',
+        'Blue Basin - Smart Irrigation Solutions': 'Blue Basin - Soluciones Inteligentes de Riego',
+        'Video de fondo': 'Video de fondo',
+        'Tu navegador no soporta video HTML5.': 'Tu navegador no soporta video HTML5.',
+        'Nuestro Equipo': 'Nuestro Equipo',
+        'Innovando en soluciones sostenibles para el futuro de la agricultura': 'Innovando en soluciones sostenibles para el futuro de la agricultura',
+        'Conócenos': 'Conócenos',
+        'Contactar': 'Contactar',
+        'Nuestra Misión': 'Nuestra Misión',
+        'Nuestra Visión': 'Nuestra Visión',
+        'Nuestro Equipo': 'Nuestro Equipo',
+        'Conoce a los fundadores y al equipo detrás de Sisri.': 'Conoce a los fundadores y al equipo detrás de Sisri.',
+        'Estamos comprometidos con impulsar una agricultura más sostenible, resolviendo el desperdicio excesivo de agua y mejorando los servicios en la industria agrícola.': 'Estamos comprometidos con impulsar una agricultura más sostenible, resolviendo el desperdicio excesivo de agua y mejorando los servicios en la industria agrícola.',
+        'Sisri es un sistema de riego innovador de pulsaciones, creado por jóvenes alumnos de Prepa Tec Campus Sonora Norte. Este sistema integral optimiza el uso del agua mediante inteligencia artificial, facilitando el acceso a cultivos y combatiendo el desperdicio de agua.': 'Sisri es un sistema de riego innovador de pulsaciones, creado por jóvenes alumnos de Prepa Tec Campus Sonora Norte. Este sistema integral optimiza el uso del agua mediante inteligencia artificial, facilitando el acceso a cultivos y combatiendo el desperdicio de agua.',
+        'El 69% del agua en México va destinada a la agricultura, y el 57% de este total es considerado desperdicio. Sisri combate el desperdicio de agua suministrándola de manera óptima. Además, promueve la soberanía alimentaria, ayudando a que más personas tengan acceso a cultivos.': 'El 69% del agua en México va destinada a la agricultura, y el 57% de este total es considerado desperdicio. Sisri combate el desperdicio de agua suministrándola de manera óptima. Además, promueve la soberanía alimentaria, ayudando a que más personas tengan acceso a cultivos.',
+        'Nuestra visión es crear impacto en la sociedad desde tres enfoques: socioambiental, económico y médico. Queremos reducir el desperdicio de agua, fomentar el autoconsumo, crear nuevas fuentes de ingresos, mejorar el bienestar físico y mitigar el cambio climático.': 'Nuestra visión es crear impacto en la sociedad desde tres enfoques: socioambiental, económico y médico. Queremos reducir el desperdicio de agua, fomentar el autoconsumo, crear nuevas fuentes de ingresos, mejorar el bienestar físico y mitigar el cambio climático.',
+        'Nosotros, jóvenes participantes en Prepapps, buscamos captar la atención de posibles inversionistas para llevar nuestro prototipo a una escala mayor. Queremos aprovechar esta oportunidad para ayudar a otras personas con nuestra idea innovadora.': 'Nosotros, jóvenes participantes en Prepapps, buscamos captar la atención de posibles inversionistas para llevar nuestro prototipo a una escala mayor. Queremos aprovechar esta oportunidad para ayudar a otras personas con nuestra idea innovadora.',
+        'Casos': 'Casos',
+        'Demostramos compromiso, pasión y eficiencia en cada solución desarrollada.': 'Demostramos compromiso, pasión y eficiencia en cada solución desarrollada.',
+        'Clientes': 'Clientes',
+        'Brindamos soluciones personalizadas y soporte dedicado a cada colaborador.': 'Brindamos soluciones personalizadas y soporte dedicado a cada colaborador.',
+        'Vamos más allá con un compromiso real por el impacto positivo del proyecto.': 'Vamos más allá con un compromiso real por el impacto positivo del proyecto.',
+        'Contribuimos a los Objetivos de Desarrollo Sostenible': 'Contribuimos a los Objetivos de Desarrollo Sostenible',
+        'Hambre Cero': 'Hambre Cero',
+        'Mejoramos la productividad agrícola para combatir el hambre.': 'Mejoramos la productividad agrícola para combatir el hambre.',
+        'Salud y Bienestar': 'Salud y Bienestar',
+        'Promovemos alimentos sanos y producción sustentable.': 'Promovemos alimentos sanos y producción sustentable.',
+        'Agua Limpia y Saneamiento': 'Agua Limpia y Saneamiento',
+        'Optimizamos el uso del agua para un futuro sostenible.': 'Optimizamos el uso del agua para un futuro sostenible.',
+        'Anterior': 'Anterior',
+        'Siguiente': 'Siguiente',
+        'Solución integral de riego inteligente que optimiza agua, fertilizantes y energía mediante IA para una agricultura sostenible.': 'Solución integral de riego inteligente que optimiza agua, fertilizantes y energía mediante IA para una agricultura sostenible.',
+        'Hermosillo, Sonora, México': 'Hermosillo, Sonora, México',
+        '+52 662 123 4567': '+52 662 123 4567',
+        'contacto@bluebasin.ai': 'contacto@bluebasin.ai',
+        'Lunes-Viernes: 9:00 - 18:00': 'Lunes-Viernes: 9:00 - 18:00',
+        'Sostenibilidad': 'Sostenibilidad',
+        'Cuidando recursos naturales': 'Cuidando recursos naturales',
+        'Tecnología': 'Tecnología',
+        'De vanguardia': 'De vanguardia',
+        'Agricultura': 'Agricultura',
+        'Regenerativa': 'Regenerativa',
+        'Eficiencia': 'Eficiencia',
+        'Optimización de recursos': 'Optimización de recursos',
+        'Soluciones de futuro': 'Soluciones de futuro',
+        '¿Qué es Sisri?': '¿Qué es Sisri?',
+        '¿De dónde nació la iniciativa?': '¿De dónde nació la iniciativa?',
+        'Visión y Misión': 'Visión y Misión',
+        'Visión': 'Visión',
+        'Nuestra visión es crear impacto en la sociedad desde tres enfoques: socioambiental, económico y médico. Queremos reducir el desperdicio de agua, fomentar el autoconsumo, crear nuevas fuentes de ingresos, mejorar el bienestar físico y mitigar el cambio climático.': 'Nuestra visión es crear impacto en la sociedad desde tres enfoques: socioambiental, económico y médico. Queremos reducir el desperdicio de agua, fomentar el autoconsumo, crear nuevas fuentes de ingresos, mejorar el bienestar físico y mitigar el cambio climático.',
+        'Misión': 'Misión',
+        'Nosotros, jóvenes participantes en Prepapps, buscamos captar la atención de posibles inversionistas para llevar nuestro prototipo a una escala mayor. Queremos aprovechar esta oportunidad para ayudar a otras personas con nuestra idea innovadora.': 'Nosotros, jóvenes participantes en Prepapps, buscamos captar la atención de posibles inversionistas para llevar nuestro prototipo a una escala mayor. Queremos aprovechar esta oportunidad para ayudar a otras personas con nuestra idea innovadora.',
+        'Casos': 'Casos',
+        'Demostramos compromiso, pasión y eficiencia en cada solución desarrollada.': 'Demostramos compromiso, pasión y eficiencia en cada solución desarrollada.',
+        'Clientes': 'Clientes',
+        'Brindamos soluciones personalizadas y soporte dedicado a cada colaborador.': 'Brindamos soluciones personalizadas y soporte dedicado a cada colaborador.',
+        'Vamos más allá con un compromiso real por el impacto positivo del proyecto.': 'Vamos más allá con un compromiso real por el impacto positivo del proyecto.',
+        'Contribuimos a los Objetivos de Desarrollo Sostenible': 'Contribuimos a los Objetivos de Desarrollo Sostenible',
+        'Hambre Cero': 'Hambre Cero',
+        'Mejoramos la productividad agrícola para combatir el hambre.': 'Mejoramos la productividad agrícola para combatir el hambre.',
+        'Salud y Bienestar': 'Salud y Bienestar',
+        'Promovemos alimentos sanos y producción sustentable.': 'Promovemos alimentos sanos y producción sustentable.',
+        'Agua Limpia y Saneamiento': 'Agua Limpia y Saneamiento',
+        'Optimizamos el uso del agua para un futuro sostenible.': 'Optimizamos el uso del agua para un futuro sostenible.',
+        'Anterior': 'Anterior',
+        'Siguiente': 'Siguiente',
+        'Solución integral de riego inteligente que optimiza agua, fertilizantes y energía mediante IA para una agricultura sostenible.': 'Solución integral de riego inteligente que optimiza agua, fertilizantes y energía mediante IA para una agricultura sostenible.',
+        'Hermosillo, Sonora, México': 'Hermosillo, Sonora, México',
+        '+52 662 123 4567': '+52 662 123 4567',
+        'contacto@bluebasin.ai': 'contacto@bluebasin.ai',
+        'Lunes-Viernes: 9:00 - 18:00': 'Lunes-Viernes: 9:00 - 18:00',
+      },
+      en: {
+        'Nuestro Equipo': 'Our Team',
+        'Innovando en soluciones sostenibles para el futuro de la agricultura': 'Innovating in sustainable solutions for the future of agriculture',
+        'Innovación': 'Innovation',
+        'Diseño de soluciones sustentables': 'Sustainable solution design',
+        'Compromiso': 'Commitment',
+        'Con el campo mexicano': 'With Mexican agriculture',
+        'Sostenibilidad': 'Sustainability',
+        'Cuidando recursos naturales': 'Caring for natural resources',
+        'Tecnología': 'Technology',
+        'De vanguardia': 'Cutting-edge',
+        'Agricultura': 'Agriculture',
+        'Regenerativa': 'Regenerative',
+        'Eficiencia': 'Efficiency',
+        'Optimización de recursos': 'Resource optimization',
+        'Soluciones de futuro': 'Future solutions',
+        'Sobre Nosotros': 'About Us',
+        'Estamos comprometidos con impulsar una agricultura más sostenible, resolviendo el desperdicio excesivo de agua y mejorando los servicios en la industria agrícola.': 'We are committed to promoting more sustainable agriculture, solving excessive water waste, and improving services in the agricultural industry.',
+        '¿Qué es Sisri?': 'What is Sisri?',
+        'Sisri es un sistema de riego innovador de pulsaciones, creado por jóvenes alumnos de Prepa Tec Campus Sonora Norte. Este sistema integral optimiza el uso del agua mediante inteligencia artificial, facilitando el acceso a cultivos y combatiendo el desperdicio de agua.': 'Sisri is an innovative pulse irrigation system, created by young students from Prepa Tec Campus Sonora Norte. This comprehensive system optimizes water use through artificial intelligence, facilitating access to crops and combating water waste.',
+        '¿De dónde nació la iniciativa?': 'Where did the initiative come from?',
+        'El 69% del agua en México va destinada a la agricultura, y el 57% de este total es considerado desperdicio. Sisri combate el desperdicio de agua suministrándola de manera óptima. Además, promueve la soberanía alimentaria, ayudando a que más personas tengan acceso a cultivos.': '69% of the water in Mexico is destined for agriculture, and 57% of this total is considered waste. Sisri combats water waste by supplying it optimally. In addition, it promotes food sovereignty, helping more people gain access to crops.',
+        'Visión y Misión': 'Vision and Mission',
+        'Visión': 'Vision',
+        'Nuestra visión es crear impacto en la sociedad desde tres enfoques: socioambiental, económico y médico. Queremos reducir el desperdicio de agua, fomentar el autoconsumo, crear nuevas fuentes de ingresos, mejorar el bienestar físico y mitigar el cambio climático.': 'Our vision is to create impact in society from three approaches: socio-environmental, economic, and medical. We want to reduce water waste, promote self-consumption, create new sources of income, improve physical well-being, and mitigate climate change.',
+        'Misión': 'Mission',
+        'Nosotros, jóvenes participantes en Prepapps, buscamos captar la atención de posibles inversionistas para llevar nuestro prototipo a una escala mayor. Queremos aprovechar esta oportunidad para ayudar a otras personas con nuestra idea innovadora.': 'We, young participants in Prepapps, seek to capture the attention of potential investors to take our prototype to a larger scale. We want to take this opportunity to help others with our innovative idea.',
+        'Casos': 'Cases',
+        'Demostramos compromiso, pasión y eficiencia en cada solución desarrollada.': 'We demonstrate commitment, passion, and efficiency in every solution developed.',
+        'Clientes': 'Clients',
+        'Brindamos soluciones personalizadas y soporte dedicado a cada colaborador.': 'We provide personalized solutions and dedicated support to every collaborator.',
+        'Vamos más allá con un compromiso real por el impacto positivo del proyecto.': 'We go further with a real commitment to the positive impact of the project.',
+        'Contribuimos a los Objetivos de Desarrollo Sostenible': 'We contribute to the Sustainable Development Goals',
+        'Hambre Cero': 'Zero Hunger',
+        'Mejoramos la productividad agrícola para combatir el hambre.': 'We improve agricultural productivity to combat hunger.',
+        'Salud y Bienestar': 'Health and Well-being',
+        'Promovemos alimentos sanos y producción sustentable.': 'We promote healthy food and sustainable production.',
+        'Agua Limpia y Saneamiento': 'Clean Water and Sanitation',
+        'Optimizamos el uso del agua para un futuro sostenible.': 'We optimize water use for a sustainable future.',
+        'Anterior': 'Previous',
+        'Siguiente': 'Next',
+        'Solución integral de riego inteligente que optimiza agua, fertilizantes y energía mediante IA para una agricultura sostenible.': 'Integral smart irrigation solution that optimizes water, fertilizers, and energy through AI for sustainable agriculture.',
+        'Hermosillo, Sonora, México': 'Hermosillo, Sonora, Mexico',
+        '+52 662 123 4567': '+52 662 123 4567',
+        'contacto@bluebasin.ai': 'contact@bluebasin.ai',
+        'Lunes-Viernes: 9:00 - 18:00': 'Mon-Fri: 9:00am - 6:00pm',
+        'Todos los derechos reservados.': 'All rights reserved.',
+        'Enlaces': 'Links',
+        'Inicio': 'Home',
+        'Sobre Nosotros': 'About Us',
+        'Tecnología': 'Technology',
+        'Soluciones': 'Solutions',
+        'Demo': 'Demo',
+        'Productos': 'Products',
+        'Servicios': 'Services',
+        'Funcionamiento': 'How it works',
+        'Modelo': 'Model',
+        'Tablero': 'Dashboard',
+        'Contacto': 'Contact',
+        'Hermosillo, Sonora, México': 'Hermosillo, Sonora, Mexico',
+        '+52 662 123 4567': '+52 662 123 4567',
+        'contacto@bluebasin.ai': 'contact@bluebasin.ai',
+        'Lunes-Viernes: 9:00 - 18:00': 'Mon-Fri: 9:00am - 6:00pm',
+      },
+    };
+    function translatePage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      document.title = translations[lang]['Blue Basin - Smart Irrigation Solutions'];
+      document.getElementById('selected-lang').textContent = lang === 'es' ? 'ES' : 'EN';
+    }
+    function setLang(lang) {
+      localStorage.setItem('sisri_lang', lang);
+      translatePage(lang);
+    }
+    function getLang() {
+      return localStorage.getItem('sisri_lang') || 'es';
+    }
+    document.querySelectorAll('.lang-option').forEach(opt => {
+      opt.addEventListener('click', function(e) {
+        e.preventDefault();
+        const lang = this.getAttribute('data-lang');
+        setLang(lang);
+      });
+    });
+    // Inicializar con idioma guardado
+    setLang(getLang());
+    // --- Fin language selector ---
     // Animación al desplazarse
     const elements = document.querySelectorAll('.animate-on-scroll');
     const observer = new IntersectionObserver(entries => {
