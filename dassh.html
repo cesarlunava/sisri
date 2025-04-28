@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Blue Basin</title>
+    <title data-i18n="Blue Basin - Smart Irrigation Solutions">Panel de Control SISRI</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -283,25 +283,34 @@
     <nav class="sidebar-nav">
       <a href="index.html" class="sidebar-link active">
         <span class="sidebar-icon"><i class="fas fa-home"></i></span>
-        <span class="sidebar-label">Inicio</span>
+        <span class="sidebar-label" data-i18n="Inicio">Inicio</span>
       </a>
       <a href="dassh.html" class="sidebar-link">
-        <span class="icon-dashboard"></span> Dashboard
+        <span class="icon-dashboard"></span> <span data-i18n="Tablero">Dashboard</span>
       </a>
-      <a href="#historialRiego" class="sidebar-link"><span class="icon-history"></span> Historial</a>
-      <a href="#mapa" class="sidebar-link"><span class="icon-map"></span> Mapas</a>
-      <a href="#recomendaciones" class="sidebar-link"><span class="icon-tips"></span> Recomendaciones</a>
+      <a href="#historialRiego" class="sidebar-link"><span class="icon-history"></span> <span data-i18n="Historial de Riego">Historial</span></a>
+      <a href="#mapa" class="sidebar-link"><span class="icon-map"></span> <span data-i18n="Mapas">Mapas</span></a>
+      <a href="#recomendaciones" class="sidebar-link"><span class="icon-tips"></span> <span data-i18n="Recomendaciones">Recomendaciones</span></a>
     </nav>
     <div class="sidebar-user">
       <img src="images/user_avatar.png" alt="Usuario" class="sidebar-avatar">
       <span class="sidebar-username">¡Hola, Cesar!</span>
       <span class="sidebar-role">Productor Premium</span>
     </div>
+    <div class="dropdown ms-3" id="language-selector" style="display:inline-block;">
+      <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <span id="selected-lang">ES</span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item lang-option" href="#" data-lang="es">Español</a></li>
+        <li><a class="dropdown-item lang-option" href="#" data-lang="en">English</a></li>
+      </ul>
+    </div>
   </aside>
   <main class="dashboard-main">
     <header class="dashboard-header">
       <div>
-        <h2 class="dashboard-title">Panel de Control SISRI</h2>
+        <h2 class="dashboard-title" data-i18n="Panel de Control SISRI">Panel de Control SISRI</h2>
         <span class="dashboard-date">Miércoles, 23 Abril 2025</span>
       </div>
       <div class="dashboard-actions">
@@ -310,65 +319,65 @@
         <button id="toggleHist" class="btn btn-info ms-2">Historial de Riego</button>
       </div>
       <div class="widget widget-forecast" id="widget-forecast">
-        <div class="widget-title">Tiempo real</div>
+        <div class="widget-title" data-i18n="Tiempo real">Tiempo real</div>
         <div class="widget-weather-status" id="weather-status">
           <i class="fas fa-cloud-sun"></i>
           <span id="weather-description">Selecciona una zona</span>
         </div>
         <div class="widget-weather-details">
-          <div><span class="weather-label">Temperatura:</span> <span id="weather-temp">--</span>°C</div>
-          <div><span class="weather-label">Humedad:</span> <span id="weather-humidity">--</span>%</div>
-          <div><span class="weather-label">Viento:</span> <span id="weather-wind">--</span> km/h</div>
+          <div><span class="weather-label" data-i18n="Temperatura">Temperatura:</span> <span id="weather-temp">--</span>°C</div>
+          <div><span class="weather-label" data-i18n="Humedad">Humedad:</span> <span id="weather-humidity">--</span>%</div>
+          <div><span class="weather-label" data-i18n="Viento">Viento:</span> <span id="weather-wind">--</span> km/h</div>
         </div>
       </div>
     </header>
     <section class="dashboard-widgets-row">
       <div class="widget widget-highlight">
-        <div class="widget-title">Humedad Relativa</div>
+        <div class="widget-title" data-i18n="Humedad Relativa">Humedad Relativa</div>
         <canvas id="chartHumidity" height="80"></canvas>
       </div>
       <div class="widget widget-highlight">
-        <div class="widget-title">Radiación Solar</div>
+        <div class="widget-title" data-i18n="Radiación Solar">Radiación Solar</div>
         <canvas id="chartRadiation" height="80"></canvas>
       </div>
       <div class="widget widget-highlight">
-        <div class="widget-title">Temperatura</div>
+        <div class="widget-title" data-i18n="Temperatura">Temperatura</div>
         <canvas id="chartTemperature" height="80"></canvas>
       </div>
       <div class="widget widget-highlight">
-        <div class="widget-title">Viento</div>
+        <div class="widget-title" data-i18n="Viento">Viento</div>
         <canvas id="chartWind" height="80"></canvas>
       </div>
       <div class="widget widget-highlight">
-        <div class="widget-title">Pronóstico 7 días</div>
+        <div class="widget-title" data-i18n="Pronóstico 7 días">Pronóstico 7 días</div>
         <div id="forecastList"></div>
       </div>
       <div class="widget widget-map" id="mapa">
-        <div class="widget-title">Mapa de Condiciones</div>
+        <div class="widget-title" data-i18n="Mapa de Condiciones">Mapa de Condiciones</div>
         <div id="sisri-demo-map" style="width:1200px;height:500px;"></div>
         <div id="sisri-demo-map3d" style="width:1200px;height:500px;display:none;"></div>
       </div>
     </section>
     <section class="dashboard-row">
       <div class="widget widget-history" id="historialRiego">
-        <div class="widget-title">Historial de Riego</div>
+        <div class="widget-title" data-i18n="Historial de Riego">Historial de Riego</div>
         <canvas id="histChart1" height="120"></canvas>
       </div>
       <div class="widget widget-history">
-        <div class="widget-title">Humedad del Suelo (3 Semanas)</div>
+        <div class="widget-title" data-i18n="Humedad del Suelo (3 Semanas)">Humedad del Suelo (3 Semanas)</div>
         <canvas id="histChart2" height="120"></canvas>
       </div>
       <div class="widget widget-history">
-        <div class="widget-title">Temperatura Media (3 Semanas)</div>
+        <div class="widget-title" data-i18n="Temperatura Media (3 Semanas)">Temperatura Media (3 Semanas)</div>
         <canvas id="histChart3" height="120"></canvas>
       </div>
     </section>
     <section class="dashboard-row" id="recomendaciones">
       <div class="widget widget-calendar">
-        <div class="widget-title">Calendario de Riego</div>
+        <div class="widget-title" data-i18n="Calendario de Riego">Calendario de Riego</div>
         <div class="table-responsive">
           <table class="table table-dark table-striped" id="riegoCalendar" style="opacity: 0.2;">
-            <thead><tr><th>Día</th><th>Hora</th><th>Duración</th><th>Temp</th><th>Humedad</th></tr></thead>
+            <thead><tr><th data-i18n="Día">Día</th><th data-i18n="Hora">Hora</th><th data-i18n="Duración">Duración</th><th data-i18n="Temp">Temp</th><th data-i18n="Humedad">Humedad</th></tr></thead>
             <tbody></tbody>
           </table>
         </div>
@@ -379,12 +388,12 @@
   <!-- Modal para Análisis Predictivo -->
   <div class="modal-predictivo" id="modal-predictivo">
     <div class="widget widget-predictivo">
-      <div class="widget-title">Análisis Predictivo</div>
+      <div class="widget-title" data-i18n="Análisis Predictivo">Análisis Predictivo</div>
       <div id="predictivo-content">
-        <p>Selecciona una zona para ver el análisis predicho de humedad, temperatura y riego para los próximos días.</p>
+        <p data-i18n="Selecciona una zona para ver el análisis predicho de humedad, temperatura y riego para los próximos días.">Selecciona una zona para ver el análisis predicho de humedad, temperatura y riego para los próximos días.</p>
         <div id="predictivo-result"></div>
       </div>
-      <button id="closePredictivo" class="btn btn-sm btn-outline-danger" style="margin-top:12px;">Cerrar</button>
+      <button id="closePredictivo" class="btn btn-sm btn-outline-danger" style="margin-top:12px;" data-i18n="Cerrar">Cerrar</button>
     </div>
   </div>
 
@@ -832,6 +841,140 @@
         document.getElementById('predictivo-result').innerHTML = `<p><b>${zona}</b></p>${pred}<div style='margin-top:16px'><b>Calendario Predictivo de Riego</b><br><table class='table table-dark table-striped' style='margin-top:6px'><thead><tr><th>Día</th><th>Hora</th><th>Duración</th><th>Temp</th><th>Humedad</th></tr></thead><tbody>${calRows}</tbody></table></div>`;
       }
     });
+  </script>
+  <script>
+    // --- Language selector with persistence ---
+    const translations = {
+      es: {
+        'Inicio': 'Inicio',
+        'Sobre Nosotros': 'Sobre Nosotros',
+        'Tecnología': 'Tecnología',
+        'Soluciones': 'Soluciones',
+        'Demo': 'Demo',
+        'Servicios': 'Servicios',
+        'Funcionamiento': 'Funcionamiento',
+        'Modelo': 'Modelo',
+        'Tablero': 'Tablero',
+        'Productos': 'Productos',
+        'Contacto': 'Contacto',
+        'Enlaces': 'Enlaces',
+        'Lunes-Viernes: 9:00 - 18:00': 'Lunes-Viernes: 9:00 - 18:00',
+        'Todos los derechos reservados.': 'Todos los derechos reservados.',
+        'Sign In': 'Iniciar Sesión',
+        'Sign Up': 'Registrarse',
+        'Blue Basin - Smart Irrigation Solutions': 'Blue Basin - Soluciones Inteligentes de Riego',
+        'Video de fondo': 'Video de fondo',
+        'Tu navegador no soporta video HTML5.': 'Tu navegador no soporta video HTML5.',
+        'Panel de Control SISRI': 'Panel de Control SISRI',
+        'Tiempo real': 'Tiempo real',
+        'Humedad Relativa': 'Humedad Relativa',
+        'Radiación Solar': 'Radiación Solar',
+        'Temperatura': 'Temperatura',
+        'Viento': 'Viento',
+        'Pronóstico 7 días': 'Pronóstico 7 días',
+        'Mapa de Condiciones': 'Mapa de Condiciones',
+        'Historial de Riego': 'Historial de Riego',
+        'Humedad del Suelo (3 Semanas)': 'Humedad del Suelo (3 Semanas)',
+        'Temperatura Media (3 Semanas)': 'Temperatura Media (3 Semanas)',
+        'Calendario de Riego': 'Calendario de Riego',
+        'Día': 'Día',
+        'Hora': 'Hora',
+        'Duración': 'Duración',
+        'Temp': 'Temp',
+        'Humedad': 'Humedad',
+        'Análisis Predictivo': 'Análisis Predictivo',
+        'Cerrar': 'Cerrar',
+        'Selecciona una zona para ver el análisis predicho de humedad, temperatura y riego para los próximos días.': 'Selecciona una zona para ver el análisis predicho de humedad, temperatura y riego para los próximos días.',
+      },
+      en: {
+        'Demo': 'Demo',
+        'Tablero': 'Dashboard',
+        'Inicio': 'Home',
+        'Sobre Nosotros': 'About Us',
+        'Tecnología': 'Technology',
+        'Soluciones': 'Solutions',
+        'Servicios': 'Services',
+        'Funcionamiento': 'How it works',
+        'Modelo': 'Model',
+        'Productos': 'Products',
+        'Contacto': 'Contact',
+        'Enlaces': 'Links',
+        'Lunes-Viernes: 9:00 - 18:00': 'Mon-Fri: 9:00am - 6:00pm',
+        'Todos los derechos reservados.': 'All rights reserved.',
+        'Sign In': 'Sign In',
+        'Sign Up': 'Sign Up',
+        'Blue Basin - Smart Irrigation Solutions': 'Blue Basin - Smart Irrigation Solutions',
+        'Video de fondo': 'Background video',
+        'Tu navegador no soporta video HTML5.': 'Your browser does not support HTML5 video.',
+        'Solicitar Demo': 'Request Demo',
+        'Más información': 'More information',
+        'Hermosillo, Sonora, México': 'Hermosillo, Sonora, Mexico',
+        '+52 662 123 4567': '+52 662 123 4567',
+        'contacto@bluebasin.ai': 'contacto@bluebasin.ai',
+        'Panel de Control SISRI': 'SISRI Dashboard',
+        'Tiempo real': 'Real Time',
+        'Humedad Relativa': 'Relative Humidity',
+        'Radiación Solar': 'Solar Radiation',
+        'Temperatura': 'Temperature',
+        'Viento': 'Wind',
+        'Pronóstico 7 días': '7-Day Forecast',
+        'Mapa de Condiciones': 'Conditions Map',
+        'Historial de Riego': 'Irrigation History',
+        'Humedad del Suelo (3 Semanas)': 'Soil Humidity (3 Weeks)',
+        'Temperatura Media (3 Semanas)': 'Average Temperature (3 Weeks)',
+        'Calendario de Riego': 'Irrigation Calendar',
+        'Día': 'Day',
+        'Hora': 'Hour',
+        'Duración': 'Duration',
+        'Temp': 'Temp',
+        'Humedad': 'Humidity',
+        'Análisis Predictivo': 'Predictive Analysis',
+        'Cerrar': 'Close',
+        'Selecciona una zona para ver el análisis predicho de humedad, temperatura y riego para los próximos días.': 'Select a zone to see the predicted analysis of humidity, temperature and irrigation for the next days.',
+        'Temperatura': 'Temperature',
+        'Humedad': 'Humidity',
+        'Viento': 'Wind',
+        'Historial de Riego': 'Irrigation History',
+        'Humedad del Suelo (3 Semanas)': 'Soil Humidity (3 Weeks)',
+        'Temperatura Media (3 Semanas)': 'Average Temperature (3 Weeks)',
+        'Calendario de Riego': 'Irrigation Calendar',
+        'Día': 'Day',
+        'Hora': 'Hour',
+        'Duración': 'Duration',
+        'Temp': 'Temp',
+        'Humedad': 'Humidity',
+        'Análisis Predictivo': 'Predictive Analysis',
+        'Cerrar': 'Close',
+        'Selecciona una zona para ver el análisis predicho de humedad, temperatura y riego para los próximos días.': 'Select a zone to see the predicted analysis of humidity, temperature and irrigation for the next days.',
+      },
+    };
+    function translatePage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      document.title = translations[lang]['Blue Basin - Smart Irrigation Solutions'];
+      document.getElementById('selected-lang').textContent = lang === 'es' ? 'ES' : 'EN';
+    }
+    function setLang(lang) {
+      localStorage.setItem('sisri_lang', lang);
+      translatePage(lang);
+    }
+    function getLang() {
+      return localStorage.getItem('sisri_lang') || 'es';
+    }
+    document.querySelectorAll('.lang-option').forEach(opt => {
+      opt.addEventListener('click', function(e) {
+        e.preventDefault();
+        const lang = this.getAttribute('data-lang');
+        setLang(lang);
+      });
+    });
+    // Inicializar con idioma guardado
+    setLang(getLang());
+    // --- Fin language selector ---
   </script>
 
 </body>

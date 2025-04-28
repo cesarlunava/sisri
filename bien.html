@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Agrícola</title>
+  <title data-i18n="Blue Basin - Smart Irrigation Solutions">Dashboard Agrícola</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="flex h-screen bg-gray-100">
   <!-- Sidebar -->
   <aside class="w-64 bg-green-900 text-white p-4 space-y-4">
-    <h1 class="text-2xl font-bold mb-6">Menu</h1>
+    <h1 class="text-2xl font-bold mb-6" data-i18n="Menu">Menu</h1>
     <nav class="space-y-2">
-      <button onclick="showTab('main')" class="block w-full text-left">Main View</button>
-      <button onclick="showTab('tech')" class="block w-full text-left">Technical</button>
-      <button onclick="showTab('correlation')" class="block w-full text-left">Variable Correlation</button>
-      <button onclick="showTab('main2')" class="block w-full text-left">Main View 2</button>
+      <button onclick="showTab('main')" class="block w-full text-left" data-i18n="Main View">Main View</button>
+      <button onclick="showTab('tech')" class="block w-full text-left" data-i18n="Technical">Technical</button>
+      <button onclick="showTab('correlation')" class="block w-full text-left" data-i18n="Variable Correlation">Variable Correlation</button>
+      <button onclick="showTab('main2')" class="block w-full text-left" data-i18n="Main View 2">Main View 2</button>
     </nav>
   </aside>
 
@@ -23,12 +24,21 @@
     <!-- Top Navigation -->
     <div class="flex justify-between bg-white p-4 border-b">
       <div class="flex gap-4">
-        <button class="text-sm">Dashboard View</button>
-        <button class="text-sm">Menu</button>
-        <button class="text-sm">Main Page</button>
-        <button class="text-sm">Chat</button>
-        <button class="text-sm">History</button>
-        <button onclick="showTab('profile')" class="text-sm">Your Profile</button>
+        <button class="text-sm" data-i18n="Dashboard View">Dashboard View</button>
+        <button class="text-sm" data-i18n="Menu">Menu</button>
+        <button class="text-sm" data-i18n="Main Page">Main Page</button>
+        <button class="text-sm" data-i18n="Chat">Chat</button>
+        <button class="text-sm" data-i18n="History">History</button>
+        <button onclick="showTab('profile')" class="text-sm" data-i18n="Your Profile">Your Profile</button>
+        <div class="dropdown ms-3" id="language-selector" style="display:inline-block;">
+          <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span id="selected-lang">ES</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item lang-option" href="#" data-lang="es">Español</a></li>
+            <li><a class="dropdown-item lang-option" href="#" data-lang="en">English</a></li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -36,41 +46,42 @@
     <div class="p-4 flex items-center gap-4">
       <label class="flex items-center space-x-2">
         <input type="checkbox" id="pilotMode" checked onchange="togglePilotMode()">
-        <span>Modo Piloto</span>
+        <span data-i18n="Modo Piloto">Modo Piloto</span>
       </label>
-      <button id="irrigationBtn" onclick="toggleIrrigation()" class="bg-green-600 text-white px-4 py-2 rounded">Encender Riego</button>
+      <button id="irrigationBtn" onclick="toggleIrrigation()" class="bg-green-600 text-white px-4 py-2 rounded" data-i18n="Encender Riego">Encender Riego</button>
     </div>
 
     <!-- Main Dashboard -->
     <div id="main" class="grid grid-cols-2 gap-4 p-4">
       <div class="bg-white rounded p-4 shadow">
-        <h2 class="text-xl font-semibold mb-2">Mapa Interactivo</h2>
+        <h2 class="text-xl font-semibold mb-2" data-i18n="Mapa Interactivo">Mapa Interactivo</h2>
         <div class="bg-gray-200 h-64 flex items-center justify-center rounded">[Mapa con parcelas + NDVI]</div>
       </div>
       <div class="bg-white rounded p-4 shadow space-y-2">
-        <div>NDVI: <strong>0.78</strong></div>
-        <div>Humedad: <strong>34%</strong></div>
-        <div>Temperatura: <strong>29°C</strong></div>
-        <div>Evapotranspiración: <strong>5.3 mm</strong></div>
-        <div>Evaporación: <strong>3.1 mm</strong></div>
-        <div>Cantidad de Verde: <strong>Alta</strong></div>
-        <div>Análisis Predictivo: <em>Se espera incremento de humedad en 2 días</em></div>
+        <div data-i18n="NDVI">NDVI: <strong>0.78</strong></div>
+        <div data-i18n="Humedad">Humedad: <strong>34%</strong></div>
+        <div data-i18n="Temperatura">Temperatura: <strong>29°C</strong></div>
+        <div data-i18n="Evapotranspiración">Evapotranspiración: <strong>5.3 mm</strong></div>
+        <div data-i18n="Evaporación">Evaporación: <strong>3.1 mm</strong></div>
+        <div data-i18n="Cantidad de Verde">Cantidad de Verde: <strong>Alta</strong></div>
+        <div data-i18n="Análisis Predictivo">Análisis Predictivo: <em>Se espera incremento de humedad en 2 días</em></div>
       </div>
     </div>
 
     <!-- Profile -->
     <div id="profile" class="hidden p-4">
-      <h2 class="text-2xl font-bold mb-4">Your Profile</h2>
+      <h2 class="text-2xl font-bold mb-4" data-i18n="Your Profile">Your Profile</h2>
       <div class="bg-white p-4 rounded shadow space-y-2">
-        <div>Nombre del Cultivo: <strong>Maíz</strong></div>
-        <div>Tamaño: <strong>25 ha</strong></div>
-        <div>Ubicación: <strong>Sonora, México</strong></div>
-        <div>Coordenadas: <strong>29.0725° N, 110.9559° W</strong></div>
-        <div>Sistema Hidráulico Disponible: <strong>Goteo Automatizado</strong></div>
+        <div data-i18n="Nombre del Cultivo">Nombre del Cultivo: <strong>Maíz</strong></div>
+        <div data-i18n="Tamaño">Tamaño: <strong>25 ha</strong></div>
+        <div data-i18n="Ubicación">Ubicación: <strong>Sonora, México</strong></div>
+        <div data-i18n="Coordenadas">Coordenadas: <strong>29.0725° N, 110.9559° W</strong></div>
+        <div data-i18n="Sistema Hidráulico Disponible">Sistema Hidráulico Disponible: <strong>Goteo Automatizado</strong></div>
       </div>
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     let pilotMode = true;
     let irrigationOn = false;
@@ -95,6 +106,95 @@
       const target = document.getElementById(tab);
       if (target) target.classList.remove("hidden");
     }
+
+    // --- Language selector with persistence ---
+    const translations = {
+      es: {
+        'Menu': 'Menu',
+        'Main View': 'Main View',
+        'Technical': 'Technical',
+        'Variable Correlation': 'Variable Correlation',
+        'Main View 2': 'Main View 2',
+        'Dashboard View': 'Dashboard View',
+        'Modo Piloto': 'Modo Piloto',
+        'Encender Riego': 'Encender Riego',
+        'Apagar Riego': 'Apagar Riego',
+        'Mapa Interactivo': 'Mapa Interactivo',
+        'NDVI': 'NDVI',
+        'Humedad': 'Humedad',
+        'Temperatura': 'Temperatura',
+        'Evapotranspiración': 'Evapotranspiración',
+        'Evaporación': 'Evaporación',
+        'Cantidad de Verde': 'Cantidad de Verde',
+        'Análisis Predictivo': 'Análisis Predictivo',
+        'Your Profile': 'Tu Perfil',
+        'Nombre del Cultivo': 'Nombre del Cultivo',
+        'Tamaño': 'Tamaño',
+        'Ubicación': 'Ubicación',
+        'Coordenadas': 'Coordenadas',
+        'Sistema Hidráulico Disponible': 'Sistema Hidráulico Disponible',
+        'Blue Basin - Smart Irrigation Solutions': 'Blue Basin - Soluciones Inteligentes de Riego',
+        'Main Page': 'Página Principal',
+        'Chat': 'Chat',
+        'History': 'Historial',
+      },
+      en: {
+        'Menu': 'Menu',
+        'Main View': 'Main View',
+        'Technical': 'Technical',
+        'Variable Correlation': 'Variable Correlation',
+        'Main View 2': 'Main View 2',
+        'Dashboard View': 'Dashboard View',
+        'Modo Piloto': 'Pilot Mode',
+        'Encender Riego': 'Turn On Irrigation',
+        'Apagar Riego': 'Turn Off Irrigation',
+        'Mapa Interactivo': 'Interactive Map',
+        'NDVI': 'NDVI',
+        'Humedad': 'Humidity',
+        'Temperatura': 'Temperature',
+        'Evapotranspiración': 'Evapotranspiration',
+        'Evaporación': 'Evaporation',
+        'Cantidad de Verde': 'Green Amount',
+        'Análisis Predictivo': 'Predictive Analysis',
+        'Your Profile': 'Your Profile',
+        'Nombre del Cultivo': 'Crop Name',
+        'Tamaño': 'Size',
+        'Ubicación': 'Location',
+        'Coordenadas': 'Coordinates',
+        'Sistema Hidráulico Disponible': 'Available Hydraulic System',
+        'Blue Basin - Smart Irrigation Solutions': 'Blue Basin - Smart Irrigation Solutions',
+        'Main Page': 'Main Page',
+        'Chat': 'Chat',
+        'History': 'History',
+      }
+    };
+    function translatePage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      document.title = translations[lang]['Blue Basin - Smart Irrigation Solutions'];
+      document.getElementById('selected-lang').textContent = lang === 'es' ? 'ES' : 'EN';
+    }
+    function setLang(lang) {
+      localStorage.setItem('sisri_lang', lang);
+      translatePage(lang);
+    }
+    function getLang() {
+      return localStorage.getItem('sisri_lang') || 'es';
+    }
+    document.querySelectorAll('.lang-option').forEach(opt => {
+      opt.addEventListener('click', function(e) {
+        e.preventDefault();
+        const lang = this.getAttribute('data-lang');
+        setLang(lang);
+      });
+    });
+    // Inicializar con idioma guardado
+    setLang(getLang());
+    // --- Fin language selector ---
   </script>
 </body>
 </html>

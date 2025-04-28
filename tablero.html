@@ -164,6 +164,82 @@
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.117/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
     <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // --- Language selector with persistence ---
+      const translations = {
+        es: {
+          'Inicio': 'Inicio',
+          'Sobre Nosotros': 'Sobre Nosotros',
+          'Tecnología': 'Tecnología',
+          'Soluciones': 'Soluciones',
+          'Demo': 'Demo',
+          'Servicios': 'Servicios',
+          'Funcionamiento': 'Funcionamiento',
+          'Modelo': 'Modelo',
+          'Tablero': 'Tablero',
+          'Productos': 'Productos',
+          'Contacto': 'Contacto',
+          'Enlaces': 'Enlaces',
+          'Lunes-Viernes: 9:00 - 18:00': 'Lunes-Viernes: 9:00 - 18:00',
+          'Todos los derechos reservados.': 'Todos los derechos reservados.',
+          'Sign In': 'Iniciar Sesión',
+          'Sign Up': 'Registrarse',
+          'Blue Basin - Smart Irrigation Solutions': 'Blue Basin - Soluciones Inteligentes de Riego',
+          'Video de fondo': 'Video de fondo',
+          'Tu navegador no soporta video HTML5.': 'Tu navegador no soporta video HTML5.'
+        },
+        en: {
+          'Inicio': 'Home',
+          'Sobre Nosotros': 'About Us',
+          'Tecnología': 'Technology',
+          'Soluciones': 'Solutions',
+          'Demo': 'Demo',
+          'Servicios': 'Services',
+          'Funcionamiento': 'How it works',
+          'Modelo': 'Model',
+          'Tablero': 'Dashboard',
+          'Productos': 'Products',
+          'Contacto': 'Contact',
+          'Enlaces': 'Links',
+          'Lunes-Viernes: 9:00 - 18:00': 'Mon-Fri: 9:00am - 6:00pm',
+          'Todos los derechos reservados.': 'All rights reserved.',
+          'Sign In': 'Sign In',
+          'Sign Up': 'Sign Up',
+          'Blue Basin - Smart Irrigation Solutions': 'Blue Basin - Smart Irrigation Solutions',
+          'Video de fondo': 'Background video',
+          'Tu navegador no soporta video HTML5.': 'Your browser does not support HTML5 video.'
+        }
+      };
+      function translatePage(lang) {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+          }
+        });
+        document.title = translations[lang]['Blue Basin - Smart Irrigation Solutions'];
+        const sel = document.getElementById('selected-lang');
+        if (sel) sel.textContent = lang === 'es' ? 'ES' : 'EN';
+      }
+      function setLang(lang) {
+        localStorage.setItem('sisri_lang', lang);
+        translatePage(lang);
+      }
+      function getLang() {
+        return localStorage.getItem('sisri_lang') || 'es';
+      }
+      document.querySelectorAll('.lang-option').forEach(opt => {
+        opt.addEventListener('click', function(e) {
+          e.preventDefault();
+          const lang = this.getAttribute('data-lang');
+          setLang(lang);
+        });
+      });
+      // Inicializar con idioma guardado
+      setLang(getLang());
+      // --- Fin language selector ---
+    </script>
 </head>
 <body>
     <header>

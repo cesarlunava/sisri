@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blue Basin - Servicios de Riego Inteligente</title>
+  <title data-i18n="Blue Basin - Smart Irrigation Solutions">Blue Basin - Smart Irrigation Solutions</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -461,13 +461,22 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="sobrenos.html">Sobre Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="tecnologia.html">Tecnología</a></li>
-          <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="dassh.html">Demo</a></li>
-          <li class="nav-item ms-lg-3"><a class="btn btn-outline-light" href="tablero.html">Tablero</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html" data-i18n="Inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="sobrenos.html" data-i18n="Sobre Nosotros">Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="tecnologia.html" data-i18n="Tecnología">Tecnología</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicios.html" data-i18n="Servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="dassh.html" data-i18n="Demo">Demo</a></li>
+          <li class="nav-item ms-lg-3"><a class="btn btn-outline-light" href="tablero.html" data-i18n="Tablero">Tablero</a></li>
         </ul>
+        <div class="dropdown ms-3" id="language-selector" style="display:inline-block;">
+          <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span id="selected-lang">ES</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item lang-option" href="#" data-lang="es">Español</a></li>
+            <li><a class="dropdown-item lang-option" href="#" data-lang="en">English</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>

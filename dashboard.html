@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Este usuario no existe</title>
+    <title data-i18n="Blue Basin - Smart Irrigation Solutions">Este usuario no existe</title>
 </head>
 <style>
     body {
@@ -25,10 +25,57 @@
     }
 </style>
 <body>
-     <h1>Usuario no encontrado</h1>
-    <p>Registrate aquí</p>
+    <header>
+        <div class="dropdown ms-3" id="language-selector" style="display:inline-block;">
+            <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span id="selected-lang">ES</span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item lang-option" href="#" data-lang="es">Español</a></li>
+                <li><a class="dropdown-item lang-option" href="#" data-lang="en">English</a></li>
+            </ul>
+        </div>
+    </header>
+    <h1 data-i18n="Usuario no encontrado">Usuario no encontrado</h1>
+    <p data-i18n="Registrate aquí">Registrate aquí</p>
     <div class="auth-links">
         <p> <a href="signup.html">Registrate aquí</a></p>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // --- Language selector ---
+        const translations = {
+            es: {
+                'Usuario no encontrado': 'Usuario no encontrado',
+                'Registrate aquí': 'Registrate aquí',
+                'Blue Basin - Smart Irrigation Solutions': 'Blue Basin - Soluciones Inteligentes de Riego'
+            },
+            en: {
+                'Usuario no encontrado': 'User not found',
+                'Registrate aquí': 'Sign up here',
+                'Blue Basin - Smart Irrigation Solutions': 'Blue Basin - Smart Irrigation Solutions'
+            }
+        };
+        function translatePage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.title = translations[lang]['Blue Basin - Smart Irrigation Solutions'];
+            document.getElementById('selected-lang').textContent = lang === 'es' ? 'ES' : 'EN';
+        }
+        document.querySelectorAll('.lang-option').forEach(opt => {
+            opt.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                translatePage(lang);
+            });
+        });
+        // Inicializar en español
+        translatePage('es');
+        // --- Fin language selector ---
+    </script>
 </body>
 </html>

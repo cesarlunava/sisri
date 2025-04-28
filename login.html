@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in - Sisri</title>
+    <title data-i18n="Blue Basin - Smart Irrigation Solutions">Blue Basin - Soluciones Inteligentes de Riego</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
@@ -123,7 +123,16 @@
         <div class="back-to-home">
             <a href="index.html">Volver a Inicio</a>
         </div>
-        <h2>Inicia sesión</h2>
+        <div class="dropdown ms-3" id="language-selector" style="display:inline-block;">
+          <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span id="selected-lang">ES</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item lang-option" href="#" data-lang="es">Español</a></li>
+            <li><a class="dropdown-item lang-option" href="#" data-lang="en">English</a></li>
+          </ul>
+        </div>
+        <h2 data-i18n="Sign In">Iniciar Sesión</h2>
         <form action="/login" method="post">
             <label for="Clave de Modelo">Clave de Modelo</label>
             <input type="text" id="Clave de Modelo" name="Clave de Modelo" required>
@@ -134,11 +143,86 @@
             <label for="password">Contraseña</label>
             <input type="password" id="password" name="password" required>
             
-            <button type="submit" class="btn-auth btn-signin">Iniciar sesión</button>
+            <button type="submit" class="btn-auth btn-signin" data-i18n="Sign In">Iniciar sesión</button>
         </form>
         <div class="auth-links">
-            <p> <a href="signup.html">Registrate aquí</a></p>
+            <p> <a href="signup.html" data-i18n="Sign Up">Registrate aquí</a></p>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // --- Language selector with persistence ---
+        const translations = {
+          es: {
+            'Inicio': 'Inicio',
+            'Sobre Nosotros': 'Sobre Nosotros',
+            'Tecnología': 'Tecnología',
+            'Soluciones': 'Soluciones',
+            'Demo': 'Demo',
+            'Servicios': 'Servicios',
+            'Funcionamiento': 'Funcionamiento',
+            'Modelo': 'Modelo',
+            'Tablero': 'Tablero',
+            'Productos': 'Productos',
+            'Contacto': 'Contacto',
+            'Enlaces': 'Enlaces',
+            'Lunes-Viernes: 9:00 - 18:00': 'Lunes-Viernes: 9:00 - 18:00',
+            'Todos los derechos reservados.': 'Todos los derechos reservados.',
+            'Sign In': 'Iniciar Sesión',
+            'Sign Up': 'Registrarse',
+            'Blue Basin - Smart Irrigation Solutions': 'Blue Basin - Soluciones Inteligentes de Riego',
+            'Video de fondo': 'Video de fondo',
+            'Tu navegador no soporta video HTML5.': 'Tu navegador no soporta video HTML5.'
+          },
+          en: {
+            'Inicio': 'Home',
+            'Sobre Nosotros': 'About Us',
+            'Tecnología': 'Technology',
+            'Soluciones': 'Solutions',
+            'Demo': 'Demo',
+            'Servicios': 'Services',
+            'Funcionamiento': 'How it works',
+            'Modelo': 'Model',
+            'Tablero': 'Dashboard',
+            'Productos': 'Products',
+            'Contacto': 'Contact',
+            'Enlaces': 'Links',
+            'Lunes-Viernes: 9:00 - 18:00': 'Mon-Fri: 9:00am - 6:00pm',
+            'Todos los derechos reservados.': 'All rights reserved.',
+            'Sign In': 'Sign In',
+            'Sign Up': 'Sign Up',
+            'Blue Basin - Smart Irrigation Solutions': 'Blue Basin - Smart Irrigation Solutions',
+            'Video de fondo': 'Background video',
+            'Tu navegador no soporta video HTML5.': 'Your browser does not support HTML5 video.'
+          }
+        };
+        function translatePage(lang) {
+          document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key]) {
+              el.innerHTML = translations[lang][key];
+            }
+          });
+          document.title = translations[lang]['Blue Basin - Smart Irrigation Solutions'];
+          document.getElementById('selected-lang').textContent = lang === 'es' ? 'ES' : 'EN';
+        }
+        function setLang(lang) {
+          localStorage.setItem('sisri_lang', lang);
+          translatePage(lang);
+        }
+        function getLang() {
+          return localStorage.getItem('sisri_lang') || 'es';
+        }
+        document.querySelectorAll('.lang-option').forEach(opt => {
+          opt.addEventListener('click', function(e) {
+            e.preventDefault();
+            const lang = this.getAttribute('data-lang');
+            setLang(lang);
+          });
+        });
+        // Inicializar con idioma guardado
+        setLang(getLang());
+        // --- Fin language selector ---
+    </script>
 </body>
 </html>

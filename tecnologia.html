@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blue Basin - Smart Irrigation Solutions</title>
+  <title data-i18n="Blue Basin - Smart Irrigation Solutions">Blue Basin - Smart Irrigation Solutions</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -361,12 +361,21 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="sobrenos.html">Sobre Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link active" href="tecnologia.html">Tecnología</a></li>
-          <li class="nav-item"><a class="nav-link" href="solucion.html">Solución</a></li>
-          <li class="nav-item"><a class="nav-link" href="dassh.html">Demo</a></li>
-          <li class="nav-item ms-lg-3"><a class="btn btn-outline-light" href="tablero.html">Tablero</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="Inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="sobrenos.html" data-i18n="Sobre Nosotros">Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link active" href="tecnologia.html" data-i18n="Tecnología">Tecnología</a></li>
+          <li class="nav-item"><a class="nav-link" href="solucion.html" data-i18n="Soluciones">Soluciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="dassh.html" data-i18n="Demo">Demo</a></li>
+          <li class="nav-item ms-lg-3"><a class="btn btn-outline-light" href="tablero.html" data-i18n="Tablero">Tablero</a></li>
+        </ul>
+      </div>
+      <div class="dropdown ms-3" id="language-selector" style="display:inline-block;">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span id="selected-lang">ES</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item lang-option" href="#" data-lang="es">Español</a></li>
+          <li><a class="dropdown-item lang-option" href="#" data-lang="en">English</a></li>
         </ul>
       </div>
     </div>
@@ -375,8 +384,8 @@
   <!-- Header -->
   <div class="page-header">
     <div class="container text-center">
-      <h1 class="display-4 mb-4">Funcionamiento del Sistema Inteligente de Riego</h1>
-      <p class="lead">Descubre cómo Sisri revoluciona el riego agrícola con tecnología avanzada</p>
+      <h1 class="display-4 mb-4" data-i18n="Funcionamiento">Funcionamiento del Sistema Inteligente de Riego</h1>
+      <p class="lead" data-i18n="Descubre cómo Sisri revoluciona el riego agrícola con tecnología avanzada">Descubre cómo Sisri revoluciona el riego agrícola con tecnología avanzada</p>
     </div>
   </div>
 
@@ -386,7 +395,7 @@
       
       <!-- Video Showcase -->
       <section class="video-carousel">
-        <h2 class="section-title text-center mb-4">Videos Demostrativos</h2>
+        <h2 class="section-title text-center mb-4" data-i18n="Videos Demostrativos">Videos Demostrativos</h2>
         <div class="video-container">
           <div class="video-card">
             <iframe class="video-frame" src="https://www.youtube.com/embed/g-pEWq0LBRI" allowfullscreen></iframe>
@@ -405,51 +414,51 @@
 
       <!-- Technology Process -->
       <section>
-        <h2 class="section-title text-center">Nuestro Proceso Tecnológico</h2>
+        <h2 class="section-title text-center" data-i18n="Nuestro Proceso Tecnológico">Nuestro Proceso Tecnológico</h2>
         <div class="infographic-grid">
           <div class="tech-card slide-up">
             <i class="fas fa-microchip"></i>
-            <h3>1. Sensores IoT</h3>
-            <p>Capturan datos del suelo, humedad, temperatura, pH y otros indicadores en tiempo real para una toma de decisiones inteligente.</p>
+            <h3 data-i18n="1. Sensores IoT">1. Sensores IoT</h3>
+            <p data-i18n="Capturan datos del suelo, humedad, temperatura, pH y otros indicadores en tiempo real para una toma de decisiones inteligente.">Capturan datos del suelo, humedad, temperatura, pH y otros indicadores en tiempo real para una toma de decisiones inteligente.</p>
           </div>
           <div class="tech-card slide-up">
             <i class="fas fa-database"></i>
-            <h3>2. Plataforma de Datos</h3>
-            <p>Recopila y analiza datos de campo, generando mapas interactivos del terreno y alertas automatizadas.</p>
+            <h3 data-i18n="2. Plataforma de Datos">2. Plataforma de Datos</h3>
+            <p data-i18n="Recopila y analiza datos de campo, generando mapas interactivos del terreno y alertas automatizadas.">Recopila y analiza datos de campo, generando mapas interactivos del terreno y alertas automatizadas.</p>
           </div>
           <div class="tech-card slide-up">
             <i class="fas fa-brain"></i>
-            <h3>3. Inteligencia Artificial</h3>
-            <p>Predice necesidades hídricas y genera planes de riego personalizados para cada cultivo, zona y temporada.</p>
+            <h3 data-i18n="3. Inteligencia Artificial">3. Inteligencia Artificial</h3>
+            <p data-i18n="Predice necesidades hídricas y genera planes de riego personalizados para cada cultivo, zona y temporada.">Predice necesidades hídricas y genera planes de riego personalizados para cada cultivo, zona y temporada.</p>
           </div>
           <div class="tech-card slide-up">
             <i class="fas fa-faucet"></i>
-            <h3>4. Automatización de Válvulas</h3>
-            <p>Activa o desactiva el riego automáticamente según los parámetros óptimos detectados por el sistema.</p>
+            <h3 data-i18n="4. Automatización de Válvulas">4. Automatización de Válvulas</h3>
+            <p data-i18n="Activa o desactiva el riego automáticamente según los parámetros óptimos detectados por el sistema.">Activa o desactiva el riego automáticamente según los parámetros óptimos detectados por el sistema.</p>
           </div>
           <div class="tech-card slide-up">
             <i class="fas fa-mobile-alt"></i>
-            <h3>5. App Móvil y Tablero</h3>
-            <p>Monitorea tu sistema desde cualquier lugar con nuestra app y plataforma de control visual intuitivo.</p>
+            <h3 data-i18n="5. App Móvil y Tablero">5. App Móvil y Tablero</h3>
+            <p data-i18n="Monitorea tu sistema desde cualquier lugar con nuestra app y plataforma de control visual intuitivo.">Monitorea tu sistema desde cualquier lugar con nuestra app y plataforma de control visual intuitivo.</p>
           </div>
           <div class="tech-card slide-up">
             <i class="fas fa-seedling"></i>
-            <h3>6. Ahorro y Sustentabilidad</h3>
-            <p>Reduce el uso de agua hasta un 40%, mejora los rendimientos agrícolas y promueve prácticas regenerativas.</p>
+            <h3 data-i18n="6. Ahorro y Sustentabilidad">6. Ahorro y Sustentabilidad</h3>
+            <p data-i18n="Reduce el uso de agua hasta un 40%, mejora los rendimientos agrícolas y promueve prácticas regenerativas.">Reduce el uso de agua hasta un 40%, mejora los rendimientos agrícolas y promueve prácticas regenerativas.</p>
           </div>
         </div>
       </section>
 
       <!-- Testimonials -->
       <section class="testimonials">
-        <h3>Testimonios de Clientes</h3>
+        <h3 data-i18n="Testimonios de Clientes">Testimonios de Clientes</h3>
         <div class="testimonial-card">
-          <p>"Antes regábamos con calendario, ahora el sistema nos dice cuándo, cómo y cuánto. Hemos ahorrado agua y mejorado la cosecha."</p>
-          <p class="author">- Luis R., Agricultor</p>
+          <p data-i18n="Antes regábamos con calendario, ahora el sistema nos dice cuándo, cómo y cuánto. Hemos ahorrado agua y mejorado la cosecha.">Antes regábamos con calendario, ahora el sistema nos dice cuándo, cómo y cuánto. Hemos ahorrado agua y mejorado la cosecha.</p>
+          <p class="author" data-i18n="- Luis R., Agricultor">- Luis R., Agricultor</p>
         </div>
         <div class="testimonial-card">
-          <p>"Instalamos Sisri en una hectárea piloto. El rendimiento subió un 25% sin aumentar fertilizante."</p>
-          <p class="author">- Carla T., Ingeniera Agrónoma</p>
+          <p data-i18n="Instalamos Sisri en una hectárea piloto. El rendimiento subió un 25% sin aumentar fertilizante.">Instalamos Sisri en una hectárea piloto. El rendimiento subió un 25% sin aumentar fertilizante.</p>
+          <p class="author" data-i18n="- Carla T., Ingeniera Agrónoma">- Carla T., Ingeniera Agrónoma</p>
         </div>
       </section>
       
@@ -459,7 +468,7 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2024 Sisri - Blue Basin. Todos los derechos reservados.</p>
+      <p data-i18n="Todos los derechos reservados.">&copy; 2024 Sisri - Blue Basin. Todos los derechos reservados.</p>
     </div>
   </footer>
 
@@ -493,6 +502,154 @@
         observer.observe(element);
       });
     });
+
+    // --- Language selector with persistence ---
+    const translations = {
+      es: {
+        'Inicio': 'Inicio',
+        'Sobre Nosotros': 'Sobre Nosotros',
+        'Tecnología': 'Tecnología',
+        'Soluciones': 'Soluciones',
+        'Demo': 'Demo',
+        'Servicios': 'Servicios',
+        'Funcionamiento': 'Funcionamiento',
+        'Modelo': 'Modelo',
+        'Tablero': 'Tablero',
+        'Productos': 'Productos',
+        'Contacto': 'Contacto',
+        'Enlaces': 'Enlaces',
+        'Lunes-Viernes: 9:00 - 18:00': 'Lunes-Viernes: 9:00 - 18:00',
+        'Todos los derechos reservados.': 'Todos los derechos reservados.',
+        'Sign In': 'Iniciar Sesión',
+        'Sign Up': 'Registrarse',
+        'Blue Basin - Smart Irrigation Solutions': 'Blue Basin - Soluciones Inteligentes de Riego',
+        'Video de fondo': 'Video de fondo',
+        'Tu navegador no soporta video HTML5.': 'Tu navegador no soporta video HTML5.',
+        'Funcionamiento': 'Funcionamiento',
+        'Descubre cómo Sisri revoluciona el riego agrícola con tecnología avanzada': 'Descubre cómo Sisri revoluciona el riego agrícola con tecnología avanzada',
+        'Videos Demostrativos': 'Videos Demostrativos',
+        'Nuestro Proceso Tecnológico': 'Nuestro Proceso Tecnológico',
+        '1. Sensores IoT': '1. Sensores IoT',
+        'Capturan datos del suelo, humedad, temperatura, pH y otros indicadores en tiempo real para una toma de decisiones inteligente.': 'Capturan datos del suelo, humedad, temperatura, pH y otros indicadores en tiempo real para una toma de decisiones inteligente.',
+        '2. Plataforma de Datos': '2. Plataforma de Datos',
+        'Recopila y analiza datos de campo, generando mapas interactivos del terreno y alertas automatizadas.': 'Recopila y analiza datos de campo, generando mapas interactivos del terreno y alertas automatizadas.',
+        '3. Inteligencia Artificial': '3. Inteligencia Artificial',
+        'Predice necesidades hídricas y genera planes de riego personalizados para cada cultivo, zona y temporada.': 'Predice necesidades hídricas y genera planes de riego personalizados para cada cultivo, zona y temporada.',
+        '4. Automatización de Válvulas': '4. Automatización de Válvulas',
+        'Activa o desactiva el riego automáticamente según los parámetros óptimos detectados por el sistema.': 'Activa o desactiva el riego automáticamente según los parámetros óptimos detectados por el sistema.',
+        '5. App Móvil y Tablero': '5. App Móvil y Tablero',
+        'Monitorea tu sistema desde cualquier lugar con nuestra app y plataforma de control visual intuitivo.': 'Monitorea tu sistema desde cualquier lugar con nuestra app y plataforma de control visual intuitivo.',
+        '6. Ahorro y Sustentabilidad': '6. Ahorro y Sustentabilidad',
+        'Reduce el uso de agua hasta un 40%, mejora los rendimientos agrícolas y promueve prácticas regenerativas.': 'Reduce el uso de agua hasta un 40%, mejora los rendimientos agrícolas y promueve prácticas regenerativas.',
+        'Testimonios de Clientes': 'Testimonios de Clientes',
+        'Antes regábamos con calendario, ahora el sistema nos dice cuándo, cómo y cuánto. Hemos ahorrado agua y mejorado la cosecha.': 'Antes regábamos con calendario, ahora el sistema nos dice cuándo, cómo y cuánto. Hemos ahorrado agua y mejorado la cosecha.',
+        '- Luis R., Agricultor': '- Luis R., Agricultor',
+        'Instalamos Sisri en una hectárea piloto. El rendimiento subió un 25% sin aumentar fertilizante.': 'Instalamos Sisri en una hectárea piloto. El rendimiento subió un 25% sin aumentar fertilizante.',
+        '- Carla T., Ingeniera Agrónoma': '- Carla T., Ingeniera Agrónoma',
+      },
+      en: {
+        'Inicio': 'Home',
+        'Sobre Nosotros': 'About Us',
+        'Tecnología': 'Technology',
+        'Soluciones': 'Solutions',
+        'Demo': 'Demo',
+        'Servicios': 'Services',
+        'Funcionamiento': 'How it works',
+        'Modelo': 'Model',
+        'Tablero': 'Dashboard',
+        'Productos': 'Products',
+        'Contacto': 'Contact',
+        'Enlaces': 'Links',
+        'Lunes-Viernes: 9:00 - 18:00': 'Mon-Fri: 9:00am - 6:00pm',
+        'Todos los derechos reservados.': 'All rights reserved.',
+        'Sign In': 'Sign In',
+        'Sign Up': 'Sign Up',
+        'Blue Basin - Smart Irrigation Solutions': 'Blue Basin - Smart Irrigation Solutions',
+        'Video de fondo': 'Background video',
+        'Tu navegador no soporta video HTML5.': 'Your browser does not support HTML5 video.',
+        'Tecnología de Riego Inteligente': 'Smart Irrigation Technology',
+        'Automatización': 'Automation',
+        'Monitoreo': 'Monitoring',
+        'Ahorro de Agua': 'Water Saving',
+        'Análisis de Datos': 'Data Analysis',
+        'Control Remoto': 'Remote Control',
+        'Panel de Control': 'Dashboard',
+        'Sensores': 'Sensors',
+        'Inteligencia Artificial': 'Artificial Intelligence',
+        'Optimización': 'Optimization',
+        'Eficiencia Energética': 'Energy Efficiency',
+        'Innovación': 'Innovation',
+        'Soluciones de futuro': 'Future solutions',
+        '¿Cómo funciona?': 'How does it work?',
+        'El sistema Sisri utiliza sensores avanzados y algoritmos de IA para optimizar el riego de cultivos, reduciendo el consumo de agua y mejorando la productividad agrícola.': 'The Sisri system uses advanced sensors and AI algorithms to optimize crop irrigation, reducing water consumption and improving agricultural productivity.',
+        'Ventajas': 'Advantages',
+        'Reducción de Costos': 'Cost Reduction',
+        'Mejora de Rendimiento': 'Yield Improvement',
+        'Sostenibilidad': 'Sustainability',
+        'Soporte Técnico': 'Technical Support',
+        'Preguntas Frecuentes': 'FAQ',
+        '¿Qué cultivos son compatibles con Sisri?': 'Which crops are compatible with Sisri?',
+        'Sisri es compatible con una amplia variedad de cultivos, desde hortalizas hasta frutales.': 'Sisri is compatible with a wide variety of crops, from vegetables to fruit trees.',
+        '¿Se puede instalar en sistemas existentes?': 'Can it be installed on existing systems?',
+        'Sí, Sisri puede integrarse con sistemas de riego ya instalados.': 'Yes, Sisri can be integrated with already installed irrigation systems.',
+        '¿Incluye soporte técnico?': 'Does it include technical support?',
+        'Sí, ofrecemos soporte técnico personalizado para cada cliente.': 'Yes, we offer personalized technical support for each client.',
+        'Contactar': 'Contact',
+        'Solicitar Demo': 'Request Demo',
+        'Más información': 'More information',
+        'Hermosillo, Sonora, México': 'Hermosillo, Sonora, Mexico',
+        '+52 662 123 4567': '+52 662 123 4567',
+        'contacto@bluebasin.ai': 'contacto@bluebasin.ai',
+        'Funcionamiento': 'How it works',
+        'Descubre cómo Sisri revoluciona el riego agrícola con tecnología avanzada': 'Discover how Sisri revolutionizes agricultural irrigation with advanced technology',
+        'Videos Demostrativos': 'Demo Videos',
+        'Nuestro Proceso Tecnológico': 'Our Technological Process',
+        '1. Sensores IoT': '1. IoT Sensors',
+        'Capturan datos del suelo, humedad, temperatura, pH y otros indicadores en tiempo real para una toma de decisiones inteligente.': 'Capture soil, humidity, temperature, pH, and other indicators in real time for smart decision-making.',
+        '2. Plataforma de Datos': '2. Data Platform',
+        'Recopila y analiza datos de campo, generando mapas interactivos del terreno y alertas automatizadas.': 'Collects and analyzes field data, generating interactive terrain maps and automated alerts.',
+        '3. Inteligencia Artificial': '3. Artificial Intelligence',
+        'Predice necesidades hídricas y genera planes de riego personalizados para cada cultivo, zona y temporada.': 'Predicts water needs and generates personalized irrigation plans for each crop, zone, and season.',
+        '4. Automatización de Válvulas': '4. Valve Automation',
+        'Activa o desactiva el riego automáticamente según los parámetros óptimos detectados por el sistema.': 'Automatically turns irrigation on or off according to optimal parameters detected by the system.',
+        '5. App Móvil y Tablero': '5. Mobile App & Dashboard',
+        'Monitorea tu sistema desde cualquier lugar con nuestra app y plataforma de control visual intuitivo.': 'Monitor your system from anywhere with our app and intuitive visual control platform.',
+        '6. Ahorro y Sustentabilidad': '6. Savings & Sustainability',
+        'Reduce el uso de agua hasta un 40%, mejora los rendimientos agrícolas y promueve prácticas regenerativas.': 'Reduces water use by up to 40%, improves agricultural yields, and promotes regenerative practices.',
+        'Testimonios de Clientes': 'Customer Testimonials',
+        'Antes regábamos con calendario, ahora el sistema nos dice cuándo, cómo y cuánto. Hemos ahorrado agua y mejorado la cosecha.': 'We used to irrigate by the calendar, now the system tells us when, how, and how much. We have saved water and improved the harvest.',
+        '- Luis R., Agricultor': '- Luis R., Farmer',
+        'Instalamos Sisri en una hectárea piloto. El rendimiento subió un 25% sin aumentar fertilizante.': 'We installed Sisri on a pilot hectare. Yield increased by 25% without increasing fertilizer.',
+        '- Carla T., Ingeniera Agrónoma': '- Carla T., Agronomist',
+      }
+    };
+    function translatePage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      document.title = translations[lang]['Blue Basin - Smart Irrigation Solutions'];
+      document.getElementById('selected-lang').textContent = lang === 'es' ? 'ES' : 'EN';
+    }
+    function setLang(lang) {
+      localStorage.setItem('sisri_lang', lang);
+      translatePage(lang);
+    }
+    function getLang() {
+      return localStorage.getItem('sisri_lang') || 'es';
+    }
+    document.querySelectorAll('.lang-option').forEach(opt => {
+      opt.addEventListener('click', function(e) {
+        e.preventDefault();
+        const lang = this.getAttribute('data-lang');
+        setLang(lang);
+      });
+    });
+    // Inicializar con idioma guardado
+    setLang(getLang());
+    // --- Fin language selector ---
   </script>
 </body>
 </html>

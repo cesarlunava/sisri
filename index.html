@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blue Basin - Smart Irrigation Solutions</title>
+  <title data-i18n="Blue Basin - Smart Irrigation Solutions">Blue Basin - Smart Irrigation Solutions</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -669,20 +669,29 @@
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="images/logo sisri blanco (1).png" width="40" height="40" class="me-2" alt="SISRI Logo" />
-        <img src="images/bblogo.png" width="60" height="60" class="me-2" alt="Blue Basin Logo" />
+        <img src="images/logo sisri blanco (1).png" width="40" height="40" class="me-2" />
+        <img src="images/bblogo.png" width="60" height="60" class="me-2" />
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="sobrenos.html">Sobre Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="tecnologia.html">Tecnología</a></li>
-          <li class="nav-item"><a class="nav-link" href="solucion.html">Solución</a></li>
-          <li class="nav-item"><a class="nav-link" href="dassh.html">Demo</a></li>
-          <li class="nav-item ms-lg-3"><a class="btn btn-outline-light" href="tablero.html">Tablero</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html" data-i18n="Inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="sobrenos.html" data-i18n="Sobre Nosotros">Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="tecnologia.html" data-i18n="Tecnología">Tecnología</a></li>
+          <li class="nav-item"><a class="nav-link" href="solucion.html" data-i18n="Soluciones">Soluciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="dassh.html" data-i18n="Demo">Demo</a></li>
+          <li class="nav-item ms-lg-3"><a class="btn btn-outline-light" href="tablero.html" data-i18n="Tablero">Tablero</a></li>
+        </ul>
+      </div>
+      <div class="dropdown ms-3" id="language-selector" style="display:inline-block;">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span id="selected-lang">ES</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item lang-option" href="#" data-lang="es">Español</a></li>
+          <li><a class="dropdown-item lang-option" href="#" data-lang="en">English</a></li>
         </ul>
       </div>
     </div>
@@ -690,17 +699,17 @@
 
   <!-- Header con video -->
   <header id="home">
-    <video autoplay muted loop aria-hidden="true" title="Video de fondo">
+    <video autoplay muted loop aria-hidden="true" title="Video de fondo" data-i18n="Video de fondo">
       <source src="images/gota.mp4" type="video/mp4" />
-      Tu navegador no soporta video HTML5.
+      <span data-i18n="Tu navegador no soporta video HTML5.">Tu navegador no soporta video HTML5.</span>
     </video>
     <div class="hero-content">
-      <h1 class="tagline animate__animated animate__fadeInUp">Every Drop Counts</h1>
-      <h1 class="company-name">Blue Basin Co</h1>
-      <p class="slogan">Transformando la agricultura con inteligencia y respeto por la tierra</p>
+      <h1 class="tagline animate__animated animate__fadeInUp" data-i18n="Every Drop Counts">Every Drop Counts</h1>
+      <h1 class="company-name" data-i18n="Blue Basin Co">Blue Basin Co</h1>
+      <p class="slogan" data-i18n="Transformando la agricultura con inteligencia y respeto por la tierra">Transformando la agricultura con inteligencia y respeto por la tierra</p>
       <div class="auth-buttons">
-        <a href="login.html" class="btn btn-auth btn-signin">Sign In</a>
-        <a href="signup.html" class="btn btn-auth btn-signup">Sign Up</a>
+        <a href="login.html" class="btn btn-auth btn-signin" data-i18n="Sign In">Sign In</a>
+        <a href="signup.html" class="btn btn-auth btn-signup" data-i18n="Sign Up">Sign Up</a>
       </div>
     </div>
   </header>
@@ -714,10 +723,10 @@
           <p class="lead">Blue Basin apuesta por una agricultura regenerativa, la agricultura del futuro.</p>
           <p>Nuestra solución integral de riego inteligente optimiza agua, fertilizantes y energía mediante IA para crear sistemas agrícolas sostenibles y productivos.</p>
           <p>Combina datos satelitales, sensores IoT y aprendizaje automático para tomar decisiones precisas que mejoran el rendimiento mientras protegen los recursos naturales.</p>
-          <a href="funcionam.html" class="btn btn-signin mt-4">Conoce más</a>
+          <a href="funcionam.html" class="btn btn-success mt-3">Conoce más</a>
         </div>
         <div class="col-lg-6 animate-on-scroll">
-          <img src="images/irrigation1.png" alt="Agricultura regenerativa" class="img-fluid rounded-3 shadow-lg" />
+          <img src="images/irrigation1.png" alt="Agricultura regenerativa" class="img-fluid rounded shadow" />
         </div>
       </div>
     </div>
@@ -727,17 +736,10 @@
   <section id="technology" class="py-5 bg-white">
     <div class="container">
       <h2 class="section-title text-center mb-5">Sistemas de Riego vs Blue Basin</h2>
-      <p class="lead text-center mb-5" style="max-width:700px;margin:0 auto;">
-        Descubre cómo nuestra solución de riego inteligente supera los métodos tradicionales. Utilizamos sensores, datos satelitales y algoritmos de inteligencia artificial para optimizar cada gota de agua y maximizar la productividad agrícola de manera sostenible.
+      <p class="lead text-center mb-4" style="max-width:700px;margin:0 auto 24px auto;">
+        Descubre cómo nuestra solución de riego inteligente funciona en campo real. Utilizamos sensores, datos satelitales y algoritmos de inteligencia artificial para optimizar cada gota de agua y maximizar la productividad agrícola de manera sostenible. ¡Mira nuestros videos para ver la tecnología en acción!
       </p>
-      
-      <div id="carouselVideos" class="carousel slide video-carousel" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselVideos" data-bs-slide-to="0" class="active"></button>
-          <button type="button" data-bs-target="#carouselVideos" data-bs-slide-to="1"></button>
-          <button type="button" data-bs-target="#carouselVideos" data-bs-slide-to="2"></button>
-        </div>
-        
+      <div id="carouselVideos" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <video autoplay loop muted>
@@ -788,15 +790,15 @@
   <!-- Beneficios -->
   <section class="section-dark">
     <div class="container">
-      <h2 class="section-title text-center mb-5">¿Por qué elegir Blue Basin?</h2>
+      <h2 class="section-title text-center mb-5" data-i18n="¿Por qué elegir Blue Basin?">¿Por qué elegir Blue Basin?</h2>
       <div class="row g-4">
         <div class="col-md-4 animate-on-scroll">
           <div class="feature-card">
             <div class="card-icon">
               <i class="fas fa-tint"></i>
             </div>
-            <h3 class="card-title">Ahorro de Agua</h3>
-            <p class="card-text">Reduce el consumo de agua hasta en un 40% mediante riego inteligente basado en datos reales.</p>
+            <h3 class="card-title" data-i18n="Ahorro de Agua">Ahorro de Agua</h3>
+            <p class="card-text" data-i18n="Reduce el consumo de agua hasta en un 40% mediante riego inteligente basado en datos reales.">Reduce el consumo de agua hasta en un 40% mediante riego inteligente basado en datos reales.</p>
           </div>
         </div>
         <div class="col-md-4 animate-on-scroll">
@@ -804,8 +806,8 @@
             <div class="card-icon">
               <i class="fas fa-chart-line"></i>
             </div>
-            <h3 class="card-title">Mayor Productividad</h3>
-            <p class="card-text">Incrementa el rendimiento de tus cultivos con recomendaciones personalizadas para cada parcela.</p>
+            <h3 class="card-title" data-i18n="Mayor Productividad">Mayor Productividad</h3>
+            <p class="card-text" data-i18n="Incrementa el rendimiento de tus cultivos con recomendaciones personalizadas para cada parcela.">Incrementa el rendimiento de tus cultivos con recomendaciones personalizadas para cada parcela.</p>
           </div>
         </div>
         <div class="col-md-4 animate-on-scroll">
@@ -813,8 +815,8 @@
             <div class="card-icon">
               <i class="fas fa-leaf"></i>
             </div>
-            <h3 class="card-title">Sostenibilidad</h3>
-            <p class="card-text">Promueve prácticas agrícolas regenerativas que mejoran la salud del suelo a largo plazo.</p>
+            <h3 class="card-title" data-i18n="Sostenibilidad">Sostenibilidad</h3>
+            <p class="card-text" data-i18n="Promueve prácticas agrícolas regenerativas que mejoran la salud del suelo a largo plazo.">Promueve prácticas agrícolas regenerativas que mejoran la salud del suelo a largo plazo.</p>
           </div>
         </div>
       </div>
@@ -824,25 +826,30 @@
   <!-- Estadísticas -->
   <section id="solutions" class="bg-light">
     <div class="container text-center">
-      <h2 class="section-title mb-5">Blue Basin en Números</h2>
+      <h2 class="section-title mb-5" data-i18n="Blue Basin en Números">Blue Basin en Números</h2>
       <div class="row">
         <div class="col-md-3 animate-on-scroll">
           <div class="stat-item">
             <div class="stat-number">40%</div>
-            <p class="stat-label">Ahorro de agua</p>
+            <p class="stat-label" data-i18n="Ahorro de agua">Ahorro de agua</p>
           </div>
         </div>
         <div class="col-md-3 animate-on-scroll">
           <div class="stat-item">
-            <div class="stat-number">30%</div>
+            <div class="stat-number">25%</div>
             <p class="stat-label">Aumento productividad</p>
           </div>
         </div>
+        <div class="col-md-3 animate-on-scroll">
+          <div class="stat-item">
+            <div class="stat-number">100+</div>
+            <p class="stat-label">Hectáreas monitoreadas</p>
+          </div>
         </div>
         <div class="col-md-3 animate-on-scroll">
           <div class="stat-item">
             <div class="stat-number">24/7</div>
-            <p class="stat-label">Monitoreo continuo</p>
+            <p class="stat-label" data-i18n="Monitoreo continuo">Monitoreo continuo</p>
           </div>
         </div>
       </div>
@@ -852,20 +859,20 @@
   <!-- DEMO SISRI MAPA 3D -->
   <section id="demo" class="my-5">
     <div class="container-fluid py-3">
-      <h2 class="text-center mb-4">Demo: Selección de Áreas y Variables Ambientales</h2>
+      <h2 class="text-center mb-4" data-i18n="Demo: Selección de Áreas y Variables Ambientales">Demo: Selección de Áreas y Variables Ambientales</h2>
       <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
-        <a href="tablero.html" class="btn btn-auth btn-signin">Tablero</a>
-        <a href="dassh.html" class="btn btn-auth btn-signup">Demo Dashboard</a>
-        <a href="modelo.html" class="btn btn-auth">Modelo</a>
-        <a href="servicios.html" class="btn btn-auth">Servicios</a>
-        <a href="funcionam.html" class="btn btn-auth">Funcionamiento</a>
-        <a href="sobrenos.html" class="btn btn-auth">Sobre Nosotros</a>
+        <a href="tablero.html" class="btn btn-auth btn-signin" data-i18n="Tablero">Tablero</a>
+        <a href="dassh.html" class="btn btn-auth btn-signup" data-i18n="Demo Dashboard">Demo Dashboard</a>
+        <a href="modelo.html" class="btn btn-auth" data-i18n="Modelo">Modelo</a>
+        <a href="servicios.html" class="btn btn-auth" data-i18n="Servicios">Servicios</a>
+        <a href="funcionam.html" class="btn btn-auth" data-i18n="Funcionamiento">Funcionamiento</a>
+        <a href="sobrenos.html" class="btn btn-auth" data-i18n="Sobre Nosotros">Sobre Nosotros</a>
       </div>
       <div id="sisri-demo-map" style="width:100vw;max-width:100%;height:80vh;margin-bottom:2rem;"></div>
       <div class="variables-panel" id="sisriVariablesPanel">
-        <h4>Variables Ambientales de la Zona Seleccionada</h4>
+        <h4 data-i18n="Variables Ambientales de la Zona Seleccionada">Variables Ambientales de la Zona Seleccionada</h4>
         <div id="sisriVariablesContent">
-          <em>Selecciona un área en el mapa para ver los datos ambientales.</em>
+          <em data-i18n="Selecciona un área en el mapa para ver los datos ambientales.">Selecciona un área en el mapa para ver los datos ambientales.</em>
         </div>
       </div>
     </div>
@@ -940,29 +947,29 @@
   <!-- Contacto -->
   <section id="contact" class="bg-light">
     <div class="container">
-      <h2 class="section-title text-center mb-5">Contáctanos</h2>
+      <h2 class="section-title text-center mb-5" data-i18n="Contáctanos">Contáctanos</h2>
       <div class="row justify-content-between">
         <div class="col-lg-6 mb-5 mb-lg-0 animate-on-scroll">
           <form class="contact-form">
             <div class="row">
               <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Tu nombre" required />
+                <input type="text" class="form-control" placeholder="Tu nombre" data-i18n="Tu nombre" required />
               </div>
               <div class="col-md-6">
-                <input type="email" class="form-control" placeholder="Correo electrónico" required />
+                <input type="email" class="form-control" placeholder="Correo electrónico" data-i18n="Correo electrónico" required />
               </div>
             </div>
-            <input type="text" class="form-control" placeholder="Asunto" />
-            <textarea rows="5" class="form-control" placeholder="Escribe tu mensaje..." required></textarea>
-            <button type="submit" class="btn btn-submit">Enviar Mensaje</button>
+            <input type="text" class="form-control" placeholder="Asunto" data-i18n="Asunto" />
+            <textarea rows="5" class="form-control" placeholder="Escribe tu mensaje..." data-i18n="Escribe tu mensaje..." required></textarea>
+            <button type="submit" class="btn btn-submit" data-i18n="Enviar Mensaje">Enviar Mensaje</button>
           </form>
         </div>
         <div class="col-lg-5 animate-on-scroll">
-          <h4 class="mb-4">Información de Contacto</h4>
+          <h4 class="mb-4" data-i18n="Información de Contacto">Información de Contacto</h4>
           <div class="mb-4">
-            <p><i class="fas fa-map-marker-alt"></i> Hermosillo, Sonora, México</p>
-            <p><i class="fas fa-phone"></i> +52 662 184 7257</p>
-            <p><i class="fas fa-envelope"></i> sisrisistemasderiego@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="Hermosillo, Sonora, México">Hermosillo, Sonora, México</span></p>
+            <p><i class="fas fa-phone"></i> <span data-i18n="+52 662 123 4567">+52 662 123 4567</span></p>
+            <p><i class="fas fa-envelope"></i> <span data-i18n="contacto@bluebasin.ai">contacto@bluebasin.ai</span></p>
           </div>
           <div class="map-container">
             <iframe src="https://maps.google.com/maps?q=Hermosillo%20Sonora&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" frameborder="0" allowfullscreen=""></iframe>
@@ -976,61 +983,248 @@
   <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 mb-5 mb-lg-0">
-          <a href="#" class="footer-logo d-flex align-items-center">
-            <img src="images/logo sisri blanco (1).png" alt="Blue Basin" width="40" height="40" class="me-2" />
-            Blue Basin
-          </a>
-          <p class="footer-about">Solución integral de riego inteligente que optimiza agua, fertilizantes y energía mediante IA para una agricultura sostenible.</p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+        <div class="col-md-4 mb-5 mb-lg-0">
+          <h5 data-i18n="Contacto">Contacto</h5>
+          <ul class="list-unstyled">
+            <li data-i18n="Email">Email</li>
+            <li data-i18n="Telefono">Teléfono</li>
+            <li data-i18n="Direccion">Dirección</li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-5 mb-lg-0">
+          <h5 data-i18n="Enlaces">Enlaces</h5>
+          <ul class="footer-links list-unstyled">
+            <li><a href="index.html" data-i18n="Inicio">Inicio</a></li>
+            <li><a href="sobrenos.html" data-i18n="Sobre Nosotros">Sobre Nosotros</a></li>
+            <li><a href="tecnologia.html" data-i18n="Tecnología">Tecnología</a></li>
+            <li><a href="solucion.html" data-i18n="Soluciones">Soluciones</a></li>
+            <li><a href="dassh.html" data-i18n="Demo">Demo</a></li>
+            <li><a href="tablero.html" data-i18n="Tablero">Tablero</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 data-i18n="Horario">Horario</h5>
+          <ul class="list-unstyled">
+            <li data-i18n="Lunes-Viernes: 9:00 - 18:00">Lunes-Viernes: 9:00 - 18:00</li>
+          </ul>
+          <div class="social-links mt-3">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
-          <div class="footer-links">
-            <h5>Enlaces</h5>
-            <ul>
-              <li><a href="#home">Inicio</a></li>
-              <li><a href="#about">Sobre Nosotros</a></li>
-              <li><a href="#technology">Tecnología</a></li>
-              <li><a href="#solutions">Soluciones</a></li>
-              <li><a href="#demo">Demo</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="footer-links">
-            <h5>Productos</h5>
-            <ul>
-              <li><a href="servicios.html">Servicios</a></li>
-              <li><a href="funcionam.html">Funcionamiento</a></li>
-              <li><a href="dassh.html">Demo</a></li>
-              <li><a href="modelo.html">Modelo</a></li>
-              <li><a href="tablero.html">Tablero</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="footer-contact">
-            <h5>Contacto</h5>
-            <p><i class="fas fa-map-marker-alt"></i> Hermosillo, Sonora, México</p>
-            <p><i class="fas fa-phone"></i> +52 662 123 4567</p>
-            <p><i class="fas fa-envelope"></i> contacto@bluebasin.ai</p>
-            <p><i class="fas fa-clock"></i> Lunes-Viernes: 9:00 - 18:00</p>
+            <a href="#"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
-      <div class="copyright">
-        <p> 2025 Blue Basin Co. Todos los derechos reservados.</p>
+      <div class="text-center mt-3">
+        <small data-i18n="Todos los derechos reservados.">Todos los derechos reservados.</small>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+    // --- Language selector with persistence ---
+    const translations = {
+      es: {
+        'Inicio': 'Inicio',
+        'Sobre Nosotros': 'Sobre Nosotros',
+        'Tecnología': 'Tecnología',
+        'Soluciones': 'Soluciones',
+        'Demo': 'Demo',
+        'Servicios': 'Servicios',
+        'Funcionamiento': 'Funcionamiento',
+        'Modelo': 'Modelo',
+        'Tablero': 'Tablero',
+        'Productos': 'Productos',
+        'Contacto': 'Contacto',
+        'Enlaces': 'Enlaces',
+        'Horario': 'Horario',
+        'Lunes-Viernes: 9:00 - 18:00': 'Lunes-Viernes: 9:00 - 18:00',
+        'Todos los derechos reservados.': 'Todos los derechos reservados.',
+        'Sign In': 'Iniciar Sesión',
+        'Sign Up': 'Registrarse',
+        'Blue Basin - Smart Irrigation Solutions': 'Blue Basin - Soluciones Inteligentes de Riego',
+        'Blue Basin Co': 'Blue Basin Co',
+        'Every Drop Counts': 'Cada Gota Cuenta',
+        'Transformando la agricultura con inteligencia y respeto por la tierra': 'Transformando la agricultura con inteligencia y respeto por la tierra',
+        'Agricultura Regenerativa': 'Agricultura Regenerativa',
+        'Blue Basin apuesta por una agricultura regenerativa, la agricultura del futuro.': 'Blue Basin apuesta por una agricultura regenerativa, la agricultura del futuro.',
+        'Nuestra solución integral de riego inteligente optimiza agua, fertilizantes y energía mediante IA para crear sistemas agrícolas sostenibles y productivos.': 'Nuestra solución integral de riego inteligente optimiza agua, fertilizantes y energía mediante IA para crear sistemas agrícolas sostenibles y productivos.',
+        'Combina datos satelitales, sensores IoT y aprendizaje automático para tomar decisiones precisas que mejoran el rendimiento mientras protegen los recursos naturales.': 'Combina datos satelitales, sensores IoT y aprendizaje automático para tomar decisiones precisas que mejoran el rendimiento mientras protegen los recursos naturales.',
+        'Conoce más': 'Conoce más',
+        'Sistemas de Riego vs Blue Basin': 'Sistemas de Riego vs Blue Basin',
+        'Descubre cómo nuestra solución de riego inteligente funciona en campo real. Utilizamos sensores, datos satelitales y algoritmos de inteligencia artificial para optimizar cada gota de agua y maximizar la productividad agrícola de manera sostenible. ¡Mira nuestros videos para ver la tecnología en acción!': 'Descubre cómo nuestra solución de riego inteligente funciona en campo real. Utilizamos sensores, datos satelitales y algoritmos de inteligencia artificial para optimizar cada gota de agua y maximizar la productividad agrícola de manera sostenible. ¡Mira nuestros videos para ver la tecnología en acción!',
+        '¿Por qué elegir Blue Basin?': '¿Por qué elegir Blue Basin?',
+        'Ahorro de Agua': 'Ahorro de Agua',
+        'Reduce el consumo de agua hasta en un 40% mediante riego inteligente basado en datos reales.': 'Reduce el consumo de agua hasta en un 40% mediante riego inteligente basado en datos reales.',
+        'Mayor Productividad': 'Mayor Productividad',
+        'Incrementa el rendimiento de tus cultivos con recomendaciones personalizadas para cada parcela.': 'Incrementa el rendimiento de tus cultivos con recomendaciones personalizadas para cada parcela.',
+        'Sostenibilidad': 'Sostenibilidad',
+        'Promueve prácticas agrícolas regenerativas que mejoran la salud del suelo a largo plazo.': 'Promueve prácticas agrícolas regenerativas que mejoran la salud del suelo a largo plazo.',
+        'Blue Basin en Números': 'Blue Basin en Números',
+        'Ahorro de agua': 'Ahorro de agua',
+        'Aumento productividad': 'Aumento productividad',
+        'Hectáreas monitoreadas': 'Hectáreas monitoreadas',
+        'Monitoreo continuo': 'Monitoreo continuo',
+        'Demo: Selección de Áreas y Variables Ambientales': 'Demo: Selección de Áreas y Variables Ambientales',
+        'Demo Dashboard': 'Demo Dashboard',
+        'Variables Ambientales de la Zona Seleccionada': 'Variables Ambientales de la Zona Seleccionada',
+        'Selecciona un área en el mapa para ver los datos ambientales.': 'Selecciona un área en el mapa para ver los datos ambientales.',
+        'Email': 'Email',
+        'Telefono': 'Teléfono',
+        'Direccion': 'Dirección',
+        'Video de fondo': 'Video de fondo',
+        'Tu navegador no soporta video HTML5.': 'Tu navegador no soporta video HTML5.',
+        'Nuestro Equipo': 'Nuestro Equipo',
+        'Innovando en soluciones sostenibles para el futuro de la agricultura': 'Innovando en soluciones sostenibles para el futuro de la agricultura',
+        'Conócenos': 'Conócenos',
+        'Contactar': 'Contactar',
+        'Nuestra Misión': 'Nuestra Misión',
+        'Nuestra Visión': 'Nuestra Visión',
+        'Conoce a los fundadores y al equipo detrás de Sisri.': 'Conoce a los fundadores y al equipo detrás de Sisri.',
+        'Estamos comprometidos con impulsar una agricultura más sostenible, resolviendo el desperdicio excesivo de agua y mejorando los servicios en la industria agrícola.': 'Estamos comprometidos con impulsar una agricultura más sostenible, resolviendo el desperdicio excesivo de agua y mejorando los servicios en la industria agrícola.',
+        'Sisri es un sistema de riego innovador de pulsaciones, creado por jóvenes alumnos de Prepa Tec Campus Sonora Norte. Este sistema integral optimiza el uso del agua mediante inteligencia artificial, facilitando el acceso a cultivos y combatiendo el desperdicio de agua.': 'Sisri es un sistema de riego innovador de pulsaciones, creado por jóvenes alumnos de Prepa Tec Campus Sonora Norte. Este sistema integral optimiza el uso del agua mediante inteligencia artificial, facilitando el acceso a cultivos y combatiendo el desperdicio de agua.',
+        'El 69% del agua en México va destinada a la agricultura, y el 57% de este total es considerado desperdicio. Sisri combate el desperdicio de agua suministrándola de manera óptima. Además, promueve la soberanía alimentaria, ayudando a que más personas tengan acceso a cultivos.': 'El 69% del agua en México va destinada a la agricultura, y el 57% de este total es considerado desperdicio. Sisri combate el desperdicio de agua suministrándola de manera óptima. Además, promueve la soberanía alimentaria, ayudando a que más personas tengan acceso a cultivos.',
+        'Visión y Misión': 'Visión y Misión',
+        'Visión': 'Visión',
+        'Nuestra visión es crear impacto en la sociedad desde tres enfoques: socioambiental, económico y médico. Queremos reducir el desperdicio de agua, fomentar el autoconsumo, crear nuevas fuentes de ingresos, mejorar el bienestar físico y mitigar el cambio climático.': 'Nuestra visión es crear impacto en la sociedad desde tres enfoques: socioambiental, económico y médico. Queremos reducir el desperdicio de agua, fomentar el autoconsumo, crear nuevas fuentes de ingresos, mejorar el bienestar físico y mitigar el cambio climático.',
+        'Misión': 'Misión',
+        'Nosotros, jóvenes participantes en Prepapps, buscamos captar la atención de posibles inversionistas para llevar nuestro prototipo a una escala mayor. Queremos aprovechar esta oportunidad para ayudar a otras personas con nuestra idea innovadora.': 'Nosotros, jóvenes participantes en Prepapps, buscamos captar la atención de posibles inversionistas para llevar nuestro prototipo a una escala mayor. Queremos aprovechar esta oportunidad para ayudar a otras personas con nuestra idea innovadora.',
+        'Casos': 'Casos',
+        'Demostramos compromiso, pasión y eficiencia en cada solución desarrollada.': 'Demostramos compromiso, pasión y eficiencia en cada solución desarrollada.',
+        'Clientes': 'Clientes',
+        'Brindamos soluciones personalizadas y soporte dedicado a cada colaborador.': 'Brindamos soluciones personalizadas y soporte dedicado a cada colaborador.',
+        'Compromiso': 'Compromiso',
+        'Vamos más allá con un compromiso real por el impacto positivo del proyecto.': 'Vamos más allá con un compromiso real por el impacto positivo del proyecto.',
+        'Contribuimos a los Objetivos de Desarrollo Sostenible': 'Contribuimos a los Objetivos de Desarrollo Sostenible',
+        'Hambre Cero': 'Hambre Cero',
+        'Mejoramos la productividad agrícola para combatir el hambre.': 'Mejoramos la productividad agrícola para combatir el hambre.',
+        'Salud y Bienestar': 'Salud y Bienestar',
+        'Promovemos alimentos sanos y producción sustentable.': 'Promovemos alimentos sanos y producción sustentable.',
+        'Agua Limpia y Saneamiento': 'Agua Limpia y Saneamiento',
+        'Optimizamos el uso del agua para un futuro sostenible.': 'Optimizamos el uso del agua para un futuro sostenible.',
+        'Anterior': 'Anterior',
+        'Siguiente': 'Siguiente',
+        'Solución integral de riego inteligente que optimiza agua, fertilizantes y energía mediante IA para una agricultura sostenible.': 'Solución integral de riego inteligente que optimiza agua, fertilizantes y energía mediante IA para una agricultura sostenible.',
+        'Hermosillo, Sonora, México': 'Hermosillo, Sonora, México',
+        '+52 662 123 4567': '+52 662 123 4567',
+        'contacto@bluebasin.ai': 'contacto@bluebasin.ai'
+      },
+      en: {
+        'Inicio': 'Home',
+        'Sobre Nosotros': 'About Us',
+        'Tecnología': 'Technology',
+        'Soluciones': 'Solutions',
+        'Demo': 'Demo',
+        'Servicios': 'Services',
+        'Funcionamiento': 'How it works',
+        'Modelo': 'Model',
+        'Tablero': 'Dashboard',
+        'Productos': 'Products',
+        'Contacto': 'Contact',
+        'Enlaces': 'Links',
+        'Horario': 'Schedule',
+        'Lunes-Viernes: 9:00 - 18:00': 'Mon-Fri: 9:00am - 6:00pm',
+        'Todos los derechos reservados.': 'All rights reserved.',
+        'Sign In': 'Sign In',
+        'Sign Up': 'Sign Up',
+        'Blue Basin - Smart Irrigation Solutions': 'Blue Basin - Smart Irrigation Solutions',
+        'Video de fondo': 'Background video',
+        'Tu navegador no soporta video HTML5.': 'Your browser does not support HTML5 video.',
+        'Nuestro Equipo': 'Our Team',
+        'Innovando en soluciones sostenibles para el futuro de la agricultura': 'Innovating in sustainable solutions for the future of agriculture',
+        'Conócenos': 'Meet Us',
+        'Contactar': 'Contact',
+        'Nuestra Misión': 'Our Mission',
+        'Nuestra Visión': 'Our Vision',
+        'Conoce a los fundadores y al equipo detrás de Sisri.': 'Meet the founders and the team behind Sisri.',
+        'Estamos comprometidos con impulsar una agricultura más sostenible, resolviendo el desperdicio excesivo de agua y mejorando los servicios en la industria agrícola.': 'We are committed to promoting a more sustainable agriculture, solving the excessive waste of water and improving services in the agricultural industry.',
+        'Sisri es un sistema de riego innovador de pulsaciones, creado por jóvenes alumnos de Prepa Tec Campus Sonora Norte. Este sistema integral optimiza el uso del agua mediante inteligencia artificial, facilitando el acceso a cultivos y combatiendo el desperdicio de agua.': 'Sisri is an innovative pulse irrigation system, created by young students from Prepa Tec Campus Sonora Norte. This integral system optimizes water use through artificial intelligence, facilitating access to crops and combating water waste.',
+        'El 69% del agua en México va destinada a la agricultura, y el 57% de este total es considerado desperdicio. Sisri combate el desperdicio de agua suministrándola de manera óptima. Además, promueve la soberanía alimentaria, ayudando a que más personas tengan acceso a cultivos.': '69% of the water in Mexico is destined for agriculture, and 57% of this total is considered waste. Sisri combats water waste by supplying it in an optimal way. In addition, it promotes food sovereignty, helping more people to have access to crops.',
+        'Visión y Misión': 'Vision and Mission',
+        'Visión': 'Vision',
+        'Nuestra visión es crear impacto en la sociedad desde tres enfoques: socioambiental, económico y médico. Queremos reducir el desperdicio de agua, fomentar el autoconsumo, crear nuevas fuentes de ingresos, mejorar el bienestar físico y mitigar el cambio climático.': 'Our vision is to create impact in society from three approaches: socio-environmental, economic, and medical. We want to reduce water waste, promote self-consumption, create new sources of income, improve physical well-being, and mitigate climate change.',
+        'Misión': 'Mission',
+        'Nosotros, jóvenes participantes en Prepapps, buscamos captar la atención de posibles inversionistas para llevar nuestro prototipo a una escala mayor. Queremos aprovechar esta oportunidad para ayudar a otras personas con nuestra idea innovadora.': 'We, young participants in Prepapps, seek to capture the attention of potential investors to take our prototype to a larger scale. We want to take this opportunity to help others with our innovative idea.',
+        'Casos': 'Cases',
+        'Demostramos compromiso, pasión y eficiencia en cada solución desarrollada.': 'We demonstrate commitment, passion, and efficiency in every solution developed.',
+        'Clientes': 'Clients',
+        'Brindamos soluciones personalizadas y soporte dedicado a cada colaborador.': 'We provide personalized solutions and dedicated support to every collaborator.',
+        'Compromiso': 'Commitment',
+        'Vamos más allá con un compromiso real por el impacto positivo del proyecto.': 'We go further with a real commitment to the positive impact of the project.',
+        'Contribuimos a los Objetivos de Desarrollo Sostenible': 'We contribute to the Sustainable Development Goals',
+        'Hambre Cero': 'Zero Hunger',
+        'Mejoramos la productividad agrícola para combatir el hambre.': 'We improve agricultural productivity to combat hunger.',
+        'Salud y Bienestar': 'Health and Well-being',
+        'Promovemos alimentos sanos y producción sustentable.': 'We promote healthy food and sustainable production.',
+        'Agua Limpia y Saneamiento': 'Clean Water and Sanitation',
+        'Optimizamos el uso del agua para un futuro sostenible.': 'We optimize water use for a sustainable future.',
+        'Anterior': 'Previous',
+        'Siguiente': 'Next',
+        'Solución integral de riego inteligente que optimiza agua, fertilizantes y energía mediante IA para una agricultura sostenible.': 'Integral smart irrigation solution that optimizes water, fertilizers, and energy through AI for sustainable agriculture.',
+        'Hermosillo, Sonora, México': 'Hermosillo, Sonora, Mexico',
+        '+52 662 123 4567': '+52 662 123 4567',
+        'contacto@bluebasin.ai': 'contact@bluebasin.ai',
+        'Transformando la agricultura con inteligencia y respeto por la tierra': 'Transforming agriculture with intelligence and respect for the land',
+        'Agricultura Regenerativa': 'Regenerative Agriculture',
+        'Blue Basin apuesta por una agricultura regenerativa, la agricultura del futuro.': 'Blue Basin is committed to regenerative agriculture, the agriculture of the future.',
+        'Nuestra solución integral de riego inteligente optimiza agua, fertilizantes y energía mediante IA para crear sistemas agrícolas sostenibles y productivos.': 'Our comprehensive smart irrigation solution optimizes water, fertilizers, and energy using AI to create sustainable and productive agricultural systems.',
+        'Combina datos satelitales, sensores IoT y aprendizaje automático para tomar decisiones precisas que mejoran el rendimiento mientras protegen los recursos naturales.': 'It combines satellite data, IoT sensors, and machine learning to make precise decisions that improve yields while protecting natural resources.',
+        'Agricultura regenerativa': 'Regenerative agriculture',
+        'Sistemas de Riego vs Blue Basin': 'Irrigation Systems vs Blue Basin',
+        'Descubre cómo nuestra solución de riego inteligente funciona en campo real. Utilizamos sensores, datos satelitales y algoritmos de inteligencia artificial para optimizar cada gota de agua y maximizar la productividad agrícola de manera sostenible. ¡Mira nuestros videos para ver la tecnología en acción!': 'Discover how our smart irrigation solution works in real fields. We use sensors, satellite data, and AI algorithms to optimize every drop of water and maximize agricultural productivity sustainably. Watch our videos to see the technology in action!',
+        '¿Por qué elegir Blue Basin?': 'Why choose Blue Basin?',
+        'Ahorro de Agua': 'Water Savings',
+        'Reduce el consumo de agua hasta en un 40% mediante riego inteligente basado en datos reales.': 'Reduce water consumption by up to 40% through data-driven smart irrigation.',
+        'Mayor Productividad': 'Higher Productivity',
+        'Incrementa el rendimiento de tus cultivos con recomendaciones personalizadas para cada parcela.': 'Increase your crop yields with personalized recommendations for each plot.',
+        'Sostenibilidad': 'Sustainability',
+        'Promotes regenerative agricultural practices that improve long-term soil health.': 'Promotes regenerative agricultural practices that improve long-term soil health.',
+        'Blue Basin en Números': 'Blue Basin by the Numbers',
+        'Ahorro de agua': 'Water savings',
+        'Aumento productividad': 'Productivity increase',
+        'Hectáreas monitoreadas': 'Monitored hectares',
+        'Monitoreo continuo': 'Continuous monitoring',
+        'Demo: Selección de Áreas y Variables Ambientales': 'Demo: Area and Environmental Variables Selection',
+        'Variables Ambientales de la Zona Seleccionada': 'Environmental Variables of the Selected Area',
+        'Selecciona un área en el mapa para ver los datos ambientales.': 'Select an area on the map to view environmental data.',
+        'Contáctanos': 'Contact Us',
+        'Tu nombre': 'Your Name',
+        'Correo electrónico': 'Email',
+        'Asunto': 'Subject',
+        'Escribe tu mensaje...': 'Write your message...',
+        'Información de Contacto': 'Contact Information',
+        'Hermosillo, Sonora, México': 'Hermosillo, Sonora, Mexico',
+        '+52 662 123 4567': '+52 662 123 4567',
+        'contacto@bluebasin.ai': 'contact@bluebasin.ai',
+      }
+    };
+    function translatePage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      document.title = translations[lang]['Blue Basin - Smart Irrigation Solutions'];
+      document.getElementById('selected-lang').textContent = lang === 'es' ? 'ES' : 'EN';
+    }
+    function setLang(lang) {
+      localStorage.setItem('sisri_lang', lang);
+      translatePage(lang);
+    }
+    function getLang() {
+      return localStorage.getItem('sisri_lang') || 'es';
+    }
+    document.querySelectorAll('.lang-option').forEach(opt => {
+      opt.addEventListener('click', function(e) {
+        e.preventDefault();
+        const lang = this.getAttribute('data-lang');
+        setLang(lang);
+      });
+    });
+    // Inicializar con idioma guardado
+    setLang(getLang());
+    // --- Fin language selector ---
     // Navbar scroll effect
     window.addEventListener('scroll', function() {
       const navbar = document.querySelector('.navbar');
