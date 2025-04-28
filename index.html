@@ -256,97 +256,133 @@
     }
 
     /* Carrusel de videos */
-    .video-carousel {
-      margin: 60px auto;
-      max-width: 1000px;
-      position: relative;
-      overflow: hidden;
+  .hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+    z-index: 1;
+  }
+  
+  .hero-animation-container {
+    height: 180px; /* Altura fija para evitar saltos */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .tagline {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  .company-name {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 2s forwards;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .slogan {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 3s forwards;
+  }
+  
+  .auth-buttons {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 4s forwards;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
     }
-    
-    .video-carousel .carousel-item {
-      transition: opacity 0.3s ease;
-      position: relative;
+    100% {
+      transform: translateY(0);
+      opacity: 1;
     }
-    
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20px);
+      display: none;
+    }
+  }
+
+  /* Carrusel de videos mejorado - horizontal y más pequeño */
+  .video-carousel {
+    margin: 60px auto;
+    max-width: 800px; /* Reducido el ancho máximo */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .video-carousel .carousel-item {
+    transition: opacity 0.3s ease;
+    position: relative;
+  }
+  
+  .video-carousel video {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Altura reducida */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    object-fit: cover;
+  }
+  
+  .video-comparison-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(15, 29, 61, 0.9), transparent 90%);
+    border-radius: 0 0 12px 12px;
+    color: white;
+    text-align: left;
+  }
+  
+  .comparison-title {
+    font-size: 1.4rem; /* Reducido tamaño del título */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+  
+  .comparison-text {
+    font-size: 0.95rem; /* Reducido tamaño del texto */
+    max-width: 95%;
+    line-height: 1.4;
+  }
+  
+  /* Responsive para videos */
+  @media (max-width: 768px) {
     .video-carousel video {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    
-    .video-comparison-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 2rem;
-      background: linear-gradient(to top, rgba(15, 29, 61, 0.9), transparent 70%);
-      border-radius: 12px;
-      color: white;
-      text-align: left;
+      max-height: 250px;
     }
     
     .comparison-title {
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: #fff;
+      font-size: 1.2rem;
     }
     
     .comparison-text {
-      font-size: 1.1rem;
-      max-width: 90%;
-      line-height: 1.5;
-    }
-    
-    .comparison-tag {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      background: var(--accent-color);
-      color: var(--primary-color);
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-      font-size: 0.9rem;
-    }
-    
-    .carousel-control-prev, .carousel-control-next {
-      width: 5%;
-      opacity: 0.7;
-    }
-    
-    .carousel-control-prev-icon, .carousel-control-next-icon {
-      background-color: var(--secondary-color);
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      background-size: 60%;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    
-    .carousel-indicators {
-      bottom: -40px;
-    }
-    
-    .carousel-indicators button {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      margin: 0 5px;
-      background-color: var(--secondary-color);
-      opacity: 0.4;
-    }
-    
-    .carousel-indicators button.active {
-      opacity: 1;
-      transform: scale(1.2);
+      font-size: 0.85rem;
     }
 
     /* Tarjetas */
@@ -403,7 +439,7 @@
     .feature-card .card-text {
       color: #555;
       font-size: 1.1rem;
-    }
+    }}
 
     /* Stats */
     .stats-section {
